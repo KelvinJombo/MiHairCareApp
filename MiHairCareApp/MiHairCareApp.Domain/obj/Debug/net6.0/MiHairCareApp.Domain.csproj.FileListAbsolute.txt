@@ -1,0 +1,14 @@
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Domain\bin\Debug\net6.0\MiHairCareApp.Domain.deps.json
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Domain\bin\Debug\net6.0\MiHairCareApp.Domain.dll
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Domain\bin\Debug\net6.0\MiHairCareApp.Domain.pdb
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Domain\obj\Debug\net6.0\MiHairCareApp.Domain.csproj.AssemblyReference.cache
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Domain\obj\Debug\net6.0\MiHairCareApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Domain\obj\Debug\net6.0\MiHairCareApp.Domain.AssemblyInfoInputs.cache
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Domain\obj\Debug\net6.0\MiHairCareApp.Domain.AssemblyInfo.cs
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Domain\obj\Debug\net6.0\MiHairCareApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Domain\obj\Debug\net6.0\MiHairCareApp.Domain.dll
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Domain\obj\Debug\net6.0\refint\MiHairCareApp.Domain.dll
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Domain\obj\Debug\net6.0\MiHairCareApp.Domain.pdb
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Domain\obj\Debug\net6.0\ref\MiHairCareApp.Domain.dll
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Domain\bin\Debug\net6.0\MiHairCareApp.Domain.runtimeconfig.json
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Domain\obj\Debug\net6.0\MiHairCareApp.Domain.genruntimeconfig.cache

@@ -1,0 +1,17 @@
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\bin\Debug\net6.0\MiHairCareApp.Commons.deps.json
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\bin\Debug\net6.0\MiHairCareApp.Commons.dll
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\bin\Debug\net6.0\MiHairCareApp.Commons.pdb
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\obj\Debug\net6.0\MiHairCareApp.Commons.csproj.AssemblyReference.cache
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\obj\Debug\net6.0\MiHairCareApp.Commons.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\obj\Debug\net6.0\MiHairCareApp.Commons.AssemblyInfoInputs.cache
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\obj\Debug\net6.0\MiHairCareApp.Commons.AssemblyInfo.cs
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\obj\Debug\net6.0\MiHairCareApp.Commons.csproj.CoreCompileInputs.cache
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\obj\Debug\net6.0\MiHairCareApp.Commons.dll
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\obj\Debug\net6.0\refint\MiHairCareApp.Commons.dll
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\obj\Debug\net6.0\MiHairCareApp.Commons.pdb
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\obj\Debug\net6.0\ref\MiHairCareApp.Commons.dll
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\bin\Debug\net6.0\MiHairCareApp.Domain.dll
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\bin\Debug\net6.0\MiHairCareApp.Domain.pdb
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\obj\Debug\net6.0\MiHairCareApp.Commons.csproj.CopyComplete
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\bin\Debug\net6.0\MiHairCareApp.Commons.runtimeconfig.json
+C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Commons\obj\Debug\net6.0\MiHairCareApp.Commons.genruntimeconfig.cache

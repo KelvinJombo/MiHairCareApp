@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiHairCareApp", "MiHairCareApp\MiHairCareApp.csproj", "{5FE8AEA9-9692-4FFB-904C-8C1A94482B48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiHairCareApp.Persistence", "MiHairCareApp.Persistence\MiHairCareApp.Persistence.csproj", "{A52982B5-EBE6-44DF-9643-E461DAE815F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiHairCareApp.Domain", "MiHairCareApp.Domain\MiHairCareApp.Domain.csproj", "{7B09F4FB-EE7E-4BEB-BD37-70036B2A6656}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiHairCareApp.Commons", "MiHairCareApp.Commons\MiHairCareApp.Commons.csproj", "{C1FCEB9C-1DAD-4548-BB32-09321D87413B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiHairCareApp.Application", "MiHairCareApp.Application\MiHairCareApp.Application.csproj", "{BC160914-AE6C-4D89-99CE-1C468F930E63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FE8AEA9-9692-4FFB-904C-8C1A94482B48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FE8AEA9-9692-4FFB-904C-8C1A94482B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FE8AEA9-9692-4FFB-904C-8C1A94482B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FE8AEA9-9692-4FFB-904C-8C1A94482B48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A52982B5-EBE6-44DF-9643-E461DAE815F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A52982B5-EBE6-44DF-9643-E461DAE815F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A52982B5-EBE6-44DF-9643-E461DAE815F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A52982B5-EBE6-44DF-9643-E461DAE815F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B09F4FB-EE7E-4BEB-BD37-70036B2A6656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B09F4FB-EE7E-4BEB-BD37-70036B2A6656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B09F4FB-EE7E-4BEB-BD37-70036B2A6656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B09F4FB-EE7E-4BEB-BD37-70036B2A6656}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1FCEB9C-1DAD-4548-BB32-09321D87413B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1FCEB9C-1DAD-4548-BB32-09321D87413B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1FCEB9C-1DAD-4548-BB32-09321D87413B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1FCEB9C-1DAD-4548-BB32-09321D87413B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC160914-AE6C-4D89-99CE-1C468F930E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC160914-AE6C-4D89-99CE-1C468F930E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC160914-AE6C-4D89-99CE-1C468F930E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC160914-AE6C-4D89-99CE-1C468F930E63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3483896-6518-4D0A-AC3D-586BA5A05BF3}
+	EndGlobalSection
+EndGlobal

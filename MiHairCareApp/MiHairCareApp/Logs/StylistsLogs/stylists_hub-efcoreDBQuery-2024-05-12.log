@@ -1,0 +1,396 @@
+2024-05-12 01:17:53.8239|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<IdentityRole>()
+    .FirstOrDefault(r => r.NormalizedName == __normalizedName_0)'
+2024-05-12 01:17:54.9109|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<IdentityRole>(
+    asyncEnumerable: new SingleQueryingEnumerable<IdentityRole>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: IdentityRole.Id (string) Required PK AfterSave:Throw, 0], [Property: IdentityRole.ConcurrencyStamp (string) Concurrency, 1], [Property: IdentityRole.Name (string) MaxLength(256), 2], [Property: IdentityRole.NormalizedName (string) Index MaxLength(256), 3] }
+            SELECT TOP(1) a.Id, a.ConcurrencyStamp, a.Name, a.NormalizedName
+            FROM AspNetRoles AS a
+            WHERE a.NormalizedName == @__normalizedName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, IdentityRole>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 01:17:57.6530|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<AppUser>()
+    .FirstOrDefault(u => u.NormalizedUserName == __normalizedUserName_0)'
+2024-05-12 01:17:57.6801|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<AppUser>(
+    asyncEnumerable: new SingleQueryingEnumerable<AppUser>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (string) Required PK AfterSave:Throw, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.Address (string) Required, 2], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 3], [Property: AppUser.CreatedAt (DateTime) Required, 4], [Property: AppUser.Email (string) MaxLength(256), 5], [Property: AppUser.EmailConfirmed (bool) Required, 6], [Property: AppUser.FirstName (string) Required, 7], [Property: AppUser.ImageUrl (string) Required, 8], [Property: AppUser.IsDeleted (bool) Required, 9], [Property: AppUser.LastLogin (DateTime) Required, 10], [Property: AppUser.LockoutEnabled (bool) Required, 11], [Property: AppUser.LockoutEnd (DateTimeOffset?), 12], [Property: AppUser.LoyaltyPoints (int) Required, 13], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 14], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 15], [Property: AppUser.Password (string) Required, 16], [Property: AppUser.PasswordHash (string), 17], [Property: AppUser.PasswordResetToken (string) Required, 18], [Property: AppUser.PhoneNumber (string), 19], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 20], [Property: AppUser.ResetTokenExpires (DateTime?), 21], [Property: AppUser.SecurityStamp (string), 22], [Property: AppUser.TwoFactorEnabled (bool) Required, 23], [Property: AppUser.UserName (string) MaxLength(256), 24] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.Address, a.ConcurrencyStamp, a.CreatedAt, a.Email, a.EmailConfirmed, a.FirstName, a.ImageUrl, a.IsDeleted, a.LastLogin, a.LockoutEnabled, a.LockoutEnd, a.LoyaltyPoints, a.NormalizedEmail, a.NormalizedUserName, a.Password, a.PasswordHash, a.PasswordResetToken, a.PhoneNumber, a.PhoneNumberConfirmed, a.ResetTokenExpires, a.SecurityStamp, a.TwoFactorEnabled, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedUserName == @__normalizedUserName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AppUser>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 01:34:38.5970|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<IdentityRole>()
+    .FirstOrDefault(r => r.NormalizedName == __normalizedName_0)'
+2024-05-12 01:34:39.0320|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<IdentityRole>(
+    asyncEnumerable: new SingleQueryingEnumerable<IdentityRole>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: IdentityRole.Id (string) Required PK AfterSave:Throw, 0], [Property: IdentityRole.ConcurrencyStamp (string) Concurrency, 1], [Property: IdentityRole.Name (string) MaxLength(256), 2], [Property: IdentityRole.NormalizedName (string) Index MaxLength(256), 3] }
+            SELECT TOP(1) a.Id, a.ConcurrencyStamp, a.Name, a.NormalizedName
+            FROM AspNetRoles AS a
+            WHERE a.NormalizedName == @__normalizedName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, IdentityRole>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 01:34:39.9018|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<AppUser>()
+    .FirstOrDefault(u => u.NormalizedUserName == __normalizedUserName_0)'
+2024-05-12 01:34:39.9312|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<AppUser>(
+    asyncEnumerable: new SingleQueryingEnumerable<AppUser>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (string) Required PK AfterSave:Throw, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.Address (string) Required, 2], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 3], [Property: AppUser.CreatedAt (DateTime) Required, 4], [Property: AppUser.Email (string) MaxLength(256), 5], [Property: AppUser.EmailConfirmed (bool) Required, 6], [Property: AppUser.FirstName (string) Required, 7], [Property: AppUser.ImageUrl (string) Required, 8], [Property: AppUser.IsDeleted (bool) Required, 9], [Property: AppUser.LastLogin (DateTime) Required, 10], [Property: AppUser.LockoutEnabled (bool) Required, 11], [Property: AppUser.LockoutEnd (DateTimeOffset?), 12], [Property: AppUser.LoyaltyPoints (int) Required, 13], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 14], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 15], [Property: AppUser.Password (string) Required, 16], [Property: AppUser.PasswordHash (string), 17], [Property: AppUser.PasswordResetToken (string) Required, 18], [Property: AppUser.PhoneNumber (string), 19], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 20], [Property: AppUser.ResetTokenExpires (DateTime?), 21], [Property: AppUser.SecurityStamp (string), 22], [Property: AppUser.TwoFactorEnabled (bool) Required, 23], [Property: AppUser.UserName (string) MaxLength(256), 24] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.Address, a.ConcurrencyStamp, a.CreatedAt, a.Email, a.EmailConfirmed, a.FirstName, a.ImageUrl, a.IsDeleted, a.LastLogin, a.LockoutEnabled, a.LockoutEnd, a.LoyaltyPoints, a.NormalizedEmail, a.NormalizedUserName, a.Password, a.PasswordHash, a.PasswordResetToken, a.PhoneNumber, a.PhoneNumberConfirmed, a.ResetTokenExpires, a.SecurityStamp, a.TwoFactorEnabled, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedUserName == @__normalizedUserName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AppUser>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 01:34:40.3392|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<IdentityRole>()
+    .SingleOrDefault(r => r.NormalizedName == __normalizedRoleName_0)'
+2024-05-12 01:34:40.3560|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<IdentityRole>(
+    asyncEnumerable: new SingleQueryingEnumerable<IdentityRole>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: IdentityRole.Id (string) Required PK AfterSave:Throw, 0], [Property: IdentityRole.ConcurrencyStamp (string) Concurrency, 1], [Property: IdentityRole.Name (string) MaxLength(256), 2], [Property: IdentityRole.NormalizedName (string) Index MaxLength(256), 3] }
+            SELECT TOP(2) a.Id, a.ConcurrencyStamp, a.Name, a.NormalizedName
+            FROM AspNetRoles AS a
+            WHERE a.NormalizedName == @__normalizedRoleName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, IdentityRole>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 01:34:40.3751|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<IdentityUserRole<string>>()
+    .FirstOrDefault(e => EF.Property<string>(e, "UserId") == __p_0 && EF.Property<string>(e, "RoleId") == __p_1)'
+2024-05-12 01:34:40.3920|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<IdentityUserRole<string>>(
+    asyncEnumerable: new SingleQueryingEnumerable<IdentityUserRole<string>>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: IdentityUserRole<string>.UserId (string) Required PK FK AfterSave:Throw, 0], [Property: IdentityUserRole<string>.RoleId (string) Required PK FK Index AfterSave:Throw, 1] }
+            SELECT TOP(1) a.UserId, a.RoleId
+            FROM AspNetUserRoles AS a
+            WHERE (a.UserId == @__p_0) && (a.RoleId == @__p_1)), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, IdentityUserRole<string>>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 01:43:38.1873|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<IdentityRole>()
+    .FirstOrDefault(r => r.NormalizedName == __normalizedName_0)'
+2024-05-12 01:43:38.8720|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<IdentityRole>(
+    asyncEnumerable: new SingleQueryingEnumerable<IdentityRole>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: IdentityRole.Id (string) Required PK AfterSave:Throw, 0], [Property: IdentityRole.ConcurrencyStamp (string) Concurrency, 1], [Property: IdentityRole.Name (string) MaxLength(256), 2], [Property: IdentityRole.NormalizedName (string) Index MaxLength(256), 3] }
+            SELECT TOP(1) a.Id, a.ConcurrencyStamp, a.Name, a.NormalizedName
+            FROM AspNetRoles AS a
+            WHERE a.NormalizedName == @__normalizedName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, IdentityRole>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 01:43:40.0486|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<AppUser>()
+    .FirstOrDefault(u => u.NormalizedUserName == __normalizedUserName_0)'
+2024-05-12 01:43:40.0486|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<AppUser>(
+    asyncEnumerable: new SingleQueryingEnumerable<AppUser>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (string) Required PK AfterSave:Throw, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.Address (string) Required, 2], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 3], [Property: AppUser.CreatedAt (DateTime) Required, 4], [Property: AppUser.Email (string) MaxLength(256), 5], [Property: AppUser.EmailConfirmed (bool) Required, 6], [Property: AppUser.FirstName (string) Required, 7], [Property: AppUser.ImageUrl (string) Required, 8], [Property: AppUser.IsDeleted (bool) Required, 9], [Property: AppUser.LastLogin (DateTime) Required, 10], [Property: AppUser.LockoutEnabled (bool) Required, 11], [Property: AppUser.LockoutEnd (DateTimeOffset?), 12], [Property: AppUser.LoyaltyPoints (int) Required, 13], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 14], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 15], [Property: AppUser.Password (string) Required, 16], [Property: AppUser.PasswordHash (string), 17], [Property: AppUser.PasswordResetToken (string) Required, 18], [Property: AppUser.PhoneNumber (string), 19], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 20], [Property: AppUser.ResetTokenExpires (DateTime?), 21], [Property: AppUser.SecurityStamp (string), 22], [Property: AppUser.TwoFactorEnabled (bool) Required, 23], [Property: AppUser.UserName (string) MaxLength(256), 24] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.Address, a.ConcurrencyStamp, a.CreatedAt, a.Email, a.EmailConfirmed, a.FirstName, a.ImageUrl, a.IsDeleted, a.LastLogin, a.LockoutEnabled, a.LockoutEnd, a.LoyaltyPoints, a.NormalizedEmail, a.NormalizedUserName, a.Password, a.PasswordHash, a.PasswordResetToken, a.PhoneNumber, a.PhoneNumberConfirmed, a.ResetTokenExpires, a.SecurityStamp, a.TwoFactorEnabled, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedUserName == @__normalizedUserName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AppUser>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 10:34:09.6428|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<IdentityRole>()
+    .FirstOrDefault(r => r.NormalizedName == __normalizedName_0)'
+2024-05-12 10:34:10.1776|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<IdentityRole>(
+    asyncEnumerable: new SingleQueryingEnumerable<IdentityRole>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: IdentityRole.Id (string) Required PK AfterSave:Throw, 0], [Property: IdentityRole.ConcurrencyStamp (string) Concurrency, 1], [Property: IdentityRole.Name (string) MaxLength(256), 2], [Property: IdentityRole.NormalizedName (string) Index MaxLength(256), 3] }
+            SELECT TOP(1) a.Id, a.ConcurrencyStamp, a.Name, a.NormalizedName
+            FROM AspNetRoles AS a
+            WHERE a.NormalizedName == @__normalizedName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, IdentityRole>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 10:34:11.3865|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<AppUser>()
+    .FirstOrDefault(u => u.NormalizedUserName == __normalizedUserName_0)'
+2024-05-12 10:34:11.4171|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<AppUser>(
+    asyncEnumerable: new SingleQueryingEnumerable<AppUser>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (string) Required PK AfterSave:Throw, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.Address (string) Required, 2], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 3], [Property: AppUser.CreatedAt (DateTime) Required, 4], [Property: AppUser.Email (string) MaxLength(256), 5], [Property: AppUser.EmailConfirmed (bool) Required, 6], [Property: AppUser.FirstName (string) Required, 7], [Property: AppUser.ImageUrl (string) Required, 8], [Property: AppUser.IsDeleted (bool) Required, 9], [Property: AppUser.LastLogin (DateTime) Required, 10], [Property: AppUser.LockoutEnabled (bool) Required, 11], [Property: AppUser.LockoutEnd (DateTimeOffset?), 12], [Property: AppUser.LoyaltyPoints (int) Required, 13], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 14], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 15], [Property: AppUser.Password (string) Required, 16], [Property: AppUser.PasswordHash (string), 17], [Property: AppUser.PasswordResetToken (string) Required, 18], [Property: AppUser.PhoneNumber (string), 19], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 20], [Property: AppUser.ResetTokenExpires (DateTime?), 21], [Property: AppUser.SecurityStamp (string), 22], [Property: AppUser.TwoFactorEnabled (bool) Required, 23], [Property: AppUser.UserName (string) MaxLength(256), 24] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.Address, a.ConcurrencyStamp, a.CreatedAt, a.Email, a.EmailConfirmed, a.FirstName, a.ImageUrl, a.IsDeleted, a.LastLogin, a.LockoutEnabled, a.LockoutEnd, a.LoyaltyPoints, a.NormalizedEmail, a.NormalizedUserName, a.Password, a.PasswordHash, a.PasswordResetToken, a.PhoneNumber, a.PhoneNumberConfirmed, a.ResetTokenExpires, a.SecurityStamp, a.TwoFactorEnabled, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedUserName == @__normalizedUserName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AppUser>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 10:40:15.4330|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<AppUser>()
+    .SingleOrDefault(u => u.NormalizedEmail == __normalizedEmail_0)'
+2024-05-12 10:40:15.4330|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<AppUser>(
+    asyncEnumerable: new SingleQueryingEnumerable<AppUser>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (string) Required PK AfterSave:Throw, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.Address (string) Required, 2], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 3], [Property: AppUser.CreatedAt (DateTime) Required, 4], [Property: AppUser.Email (string) MaxLength(256), 5], [Property: AppUser.EmailConfirmed (bool) Required, 6], [Property: AppUser.FirstName (string) Required, 7], [Property: AppUser.ImageUrl (string) Required, 8], [Property: AppUser.IsDeleted (bool) Required, 9], [Property: AppUser.LastLogin (DateTime) Required, 10], [Property: AppUser.LockoutEnabled (bool) Required, 11], [Property: AppUser.LockoutEnd (DateTimeOffset?), 12], [Property: AppUser.LoyaltyPoints (int) Required, 13], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 14], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 15], [Property: AppUser.Password (string) Required, 16], [Property: AppUser.PasswordHash (string), 17], [Property: AppUser.PasswordResetToken (string) Required, 18], [Property: AppUser.PhoneNumber (string), 19], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 20], [Property: AppUser.ResetTokenExpires (DateTime?), 21], [Property: AppUser.SecurityStamp (string), 22], [Property: AppUser.TwoFactorEnabled (bool) Required, 23], [Property: AppUser.UserName (string) MaxLength(256), 24] }
+            SELECT TOP(2) a.Id, a.AccessFailedCount, a.Address, a.ConcurrencyStamp, a.CreatedAt, a.Email, a.EmailConfirmed, a.FirstName, a.ImageUrl, a.IsDeleted, a.LastLogin, a.LockoutEnabled, a.LockoutEnd, a.LoyaltyPoints, a.NormalizedEmail, a.NormalizedUserName, a.Password, a.PasswordHash, a.PasswordResetToken, a.PhoneNumber, a.PhoneNumberConfirmed, a.ResetTokenExpires, a.SecurityStamp, a.TwoFactorEnabled, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedEmail == @__normalizedEmail_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AppUser>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 10:40:15.4824|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<AppUser>()
+    .Where(x => x.PhoneNumber == __createDto_PhoneNumber_0)'
+2024-05-12 10:40:15.4824|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<AppUser>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (string) Required PK AfterSave:Throw, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.Address (string) Required, 2], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 3], [Property: AppUser.CreatedAt (DateTime) Required, 4], [Property: AppUser.Email (string) MaxLength(256), 5], [Property: AppUser.EmailConfirmed (bool) Required, 6], [Property: AppUser.FirstName (string) Required, 7], [Property: AppUser.ImageUrl (string) Required, 8], [Property: AppUser.IsDeleted (bool) Required, 9], [Property: AppUser.LastLogin (DateTime) Required, 10], [Property: AppUser.LockoutEnabled (bool) Required, 11], [Property: AppUser.LockoutEnd (DateTimeOffset?), 12], [Property: AppUser.LoyaltyPoints (int) Required, 13], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 14], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 15], [Property: AppUser.Password (string) Required, 16], [Property: AppUser.PasswordHash (string), 17], [Property: AppUser.PasswordResetToken (string) Required, 18], [Property: AppUser.PhoneNumber (string), 19], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 20], [Property: AppUser.ResetTokenExpires (DateTime?), 21], [Property: AppUser.SecurityStamp (string), 22], [Property: AppUser.TwoFactorEnabled (bool) Required, 23], [Property: AppUser.UserName (string) MaxLength(256), 24] }
+        SELECT a.Id, a.AccessFailedCount, a.Address, a.ConcurrencyStamp, a.CreatedAt, a.Email, a.EmailConfirmed, a.FirstName, a.ImageUrl, a.IsDeleted, a.LastLogin, a.LockoutEnabled, a.LockoutEnd, a.LoyaltyPoints, a.NormalizedEmail, a.NormalizedUserName, a.Password, a.PasswordHash, a.PasswordResetToken, a.PhoneNumber, a.PhoneNumberConfirmed, a.ResetTokenExpires, a.SecurityStamp, a.TwoFactorEnabled, a.UserName
+        FROM AspNetUsers AS a
+        WHERE a.PhoneNumber == @__createDto_PhoneNumber_0), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AppUser>, 
+    MiHairCareApp.Persistence.Context.StylistsDBContext, 
+    False, 
+    False, 
+    True
+)'
+2024-05-12 10:40:15.9565|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<IdentityRole>()
+    .SingleOrDefault(r => r.NormalizedName == __normalizedRoleName_0)'
+2024-05-12 10:40:15.9612|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<IdentityRole>(
+    asyncEnumerable: new SingleQueryingEnumerable<IdentityRole>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: IdentityRole.Id (string) Required PK AfterSave:Throw, 0], [Property: IdentityRole.ConcurrencyStamp (string) Concurrency, 1], [Property: IdentityRole.Name (string) MaxLength(256), 2], [Property: IdentityRole.NormalizedName (string) Index MaxLength(256), 3] }
+            SELECT TOP(2) a.Id, a.ConcurrencyStamp, a.Name, a.NormalizedName
+            FROM AspNetRoles AS a
+            WHERE a.NormalizedName == @__normalizedRoleName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, IdentityRole>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 10:40:15.9898|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<IdentityUserRole<string>>()
+    .FirstOrDefault(e => EF.Property<string>(e, "UserId") == __p_0 && EF.Property<string>(e, "RoleId") == __p_1)'
+2024-05-12 10:40:16.0124|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<IdentityUserRole<string>>(
+    asyncEnumerable: new SingleQueryingEnumerable<IdentityUserRole<string>>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: IdentityUserRole<string>.UserId (string) Required PK FK AfterSave:Throw, 0], [Property: IdentityUserRole<string>.RoleId (string) Required PK FK Index AfterSave:Throw, 1] }
+            SELECT TOP(1) a.UserId, a.RoleId
+            FROM AspNetUserRoles AS a
+            WHERE (a.UserId == @__p_0) && (a.RoleId == @__p_1)), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, IdentityUserRole<string>>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 15:07:34.4756|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<IdentityRole>()
+    .FirstOrDefault(r => r.NormalizedName == __normalizedName_0)'
+2024-05-12 15:07:35.0614|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<IdentityRole>(
+    asyncEnumerable: new SingleQueryingEnumerable<IdentityRole>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: IdentityRole.Id (string) Required PK AfterSave:Throw, 0], [Property: IdentityRole.ConcurrencyStamp (string) Concurrency, 1], [Property: IdentityRole.Name (string) MaxLength(256), 2], [Property: IdentityRole.NormalizedName (string) Index MaxLength(256), 3] }
+            SELECT TOP(1) a.Id, a.ConcurrencyStamp, a.Name, a.NormalizedName
+            FROM AspNetRoles AS a
+            WHERE a.NormalizedName == @__normalizedName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, IdentityRole>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 15:07:36.3398|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<AppUser>()
+    .FirstOrDefault(u => u.NormalizedUserName == __normalizedUserName_0)'
+2024-05-12 15:07:36.3548|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<AppUser>(
+    asyncEnumerable: new SingleQueryingEnumerable<AppUser>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (string) Required PK AfterSave:Throw, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.Address (string) Required, 2], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 3], [Property: AppUser.CreatedAt (DateTime) Required, 4], [Property: AppUser.Email (string) MaxLength(256), 5], [Property: AppUser.EmailConfirmed (bool) Required, 6], [Property: AppUser.FirstName (string) Required, 7], [Property: AppUser.ImageUrl (string) Required, 8], [Property: AppUser.IsDeleted (bool) Required, 9], [Property: AppUser.LastLogin (DateTime) Required, 10], [Property: AppUser.LockoutEnabled (bool) Required, 11], [Property: AppUser.LockoutEnd (DateTimeOffset?), 12], [Property: AppUser.LoyaltyPoints (int) Required, 13], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 14], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 15], [Property: AppUser.Password (string) Required, 16], [Property: AppUser.PasswordHash (string), 17], [Property: AppUser.PasswordResetToken (string) Required, 18], [Property: AppUser.PhoneNumber (string), 19], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 20], [Property: AppUser.ResetTokenExpires (DateTime?), 21], [Property: AppUser.SecurityStamp (string), 22], [Property: AppUser.TwoFactorEnabled (bool) Required, 23], [Property: AppUser.UserName (string) MaxLength(256), 24] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.Address, a.ConcurrencyStamp, a.CreatedAt, a.Email, a.EmailConfirmed, a.FirstName, a.ImageUrl, a.IsDeleted, a.LastLogin, a.LockoutEnabled, a.LockoutEnd, a.LoyaltyPoints, a.NormalizedEmail, a.NormalizedUserName, a.Password, a.PasswordHash, a.PasswordResetToken, a.PhoneNumber, a.PhoneNumberConfirmed, a.ResetTokenExpires, a.SecurityStamp, a.TwoFactorEnabled, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedUserName == @__normalizedUserName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AppUser>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 15:10:09.8216|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<AppUser>()
+    .SingleOrDefault(u => u.NormalizedEmail == __normalizedEmail_0)'
+2024-05-12 15:10:09.8216|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<AppUser>(
+    asyncEnumerable: new SingleQueryingEnumerable<AppUser>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (string) Required PK AfterSave:Throw, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.Address (string) Required, 2], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 3], [Property: AppUser.CreatedAt (DateTime) Required, 4], [Property: AppUser.Email (string) MaxLength(256), 5], [Property: AppUser.EmailConfirmed (bool) Required, 6], [Property: AppUser.FirstName (string) Required, 7], [Property: AppUser.ImageUrl (string) Required, 8], [Property: AppUser.IsDeleted (bool) Required, 9], [Property: AppUser.LastLogin (DateTime) Required, 10], [Property: AppUser.LockoutEnabled (bool) Required, 11], [Property: AppUser.LockoutEnd (DateTimeOffset?), 12], [Property: AppUser.LoyaltyPoints (int) Required, 13], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 14], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 15], [Property: AppUser.Password (string) Required, 16], [Property: AppUser.PasswordHash (string), 17], [Property: AppUser.PasswordResetToken (string) Required, 18], [Property: AppUser.PhoneNumber (string), 19], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 20], [Property: AppUser.ResetTokenExpires (DateTime?), 21], [Property: AppUser.SecurityStamp (string), 22], [Property: AppUser.TwoFactorEnabled (bool) Required, 23], [Property: AppUser.UserName (string) MaxLength(256), 24] }
+            SELECT TOP(2) a.Id, a.AccessFailedCount, a.Address, a.ConcurrencyStamp, a.CreatedAt, a.Email, a.EmailConfirmed, a.FirstName, a.ImageUrl, a.IsDeleted, a.LastLogin, a.LockoutEnabled, a.LockoutEnd, a.LoyaltyPoints, a.NormalizedEmail, a.NormalizedUserName, a.Password, a.PasswordHash, a.PasswordResetToken, a.PhoneNumber, a.PhoneNumberConfirmed, a.ResetTokenExpires, a.SecurityStamp, a.TwoFactorEnabled, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedEmail == @__normalizedEmail_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AppUser>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 15:10:09.8904|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<AppUser>()
+    .Where(x => x.PhoneNumber == __createDto_PhoneNumber_0)'
+2024-05-12 15:10:09.8988|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<AppUser>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (string) Required PK AfterSave:Throw, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.Address (string) Required, 2], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 3], [Property: AppUser.CreatedAt (DateTime) Required, 4], [Property: AppUser.Email (string) MaxLength(256), 5], [Property: AppUser.EmailConfirmed (bool) Required, 6], [Property: AppUser.FirstName (string) Required, 7], [Property: AppUser.ImageUrl (string) Required, 8], [Property: AppUser.IsDeleted (bool) Required, 9], [Property: AppUser.LastLogin (DateTime) Required, 10], [Property: AppUser.LockoutEnabled (bool) Required, 11], [Property: AppUser.LockoutEnd (DateTimeOffset?), 12], [Property: AppUser.LoyaltyPoints (int) Required, 13], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 14], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 15], [Property: AppUser.Password (string) Required, 16], [Property: AppUser.PasswordHash (string), 17], [Property: AppUser.PasswordResetToken (string) Required, 18], [Property: AppUser.PhoneNumber (string), 19], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 20], [Property: AppUser.ResetTokenExpires (DateTime?), 21], [Property: AppUser.SecurityStamp (string), 22], [Property: AppUser.TwoFactorEnabled (bool) Required, 23], [Property: AppUser.UserName (string) MaxLength(256), 24] }
+        SELECT a.Id, a.AccessFailedCount, a.Address, a.ConcurrencyStamp, a.CreatedAt, a.Email, a.EmailConfirmed, a.FirstName, a.ImageUrl, a.IsDeleted, a.LastLogin, a.LockoutEnabled, a.LockoutEnd, a.LoyaltyPoints, a.NormalizedEmail, a.NormalizedUserName, a.Password, a.PasswordHash, a.PasswordResetToken, a.PhoneNumber, a.PhoneNumberConfirmed, a.ResetTokenExpires, a.SecurityStamp, a.TwoFactorEnabled, a.UserName
+        FROM AspNetUsers AS a
+        WHERE a.PhoneNumber == @__createDto_PhoneNumber_0), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AppUser>, 
+    MiHairCareApp.Persistence.Context.StylistsDBContext, 
+    False, 
+    False, 
+    True
+)'
+2024-05-12 15:10:10.4998|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<IdentityRole>()
+    .SingleOrDefault(r => r.NormalizedName == __normalizedRoleName_0)'
+2024-05-12 15:10:10.4998|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<IdentityRole>(
+    asyncEnumerable: new SingleQueryingEnumerable<IdentityRole>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: IdentityRole.Id (string) Required PK AfterSave:Throw, 0], [Property: IdentityRole.ConcurrencyStamp (string) Concurrency, 1], [Property: IdentityRole.Name (string) MaxLength(256), 2], [Property: IdentityRole.NormalizedName (string) Index MaxLength(256), 3] }
+            SELECT TOP(2) a.Id, a.ConcurrencyStamp, a.Name, a.NormalizedName
+            FROM AspNetRoles AS a
+            WHERE a.NormalizedName == @__normalizedRoleName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, IdentityRole>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-05-12 15:10:10.5359|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<IdentityUserRole<string>>()
+    .FirstOrDefault(e => EF.Property<string>(e, "UserId") == __p_0 && EF.Property<string>(e, "RoleId") == __p_1)'
+2024-05-12 15:10:10.5641|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<IdentityUserRole<string>>(
+    asyncEnumerable: new SingleQueryingEnumerable<IdentityUserRole<string>>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: IdentityUserRole<string>.UserId (string) Required PK FK AfterSave:Throw, 0], [Property: IdentityUserRole<string>.RoleId (string) Required PK FK Index AfterSave:Throw, 1] }
+            SELECT TOP(1) a.UserId, a.RoleId
+            FROM AspNetUserRoles AS a
+            WHERE (a.UserId == @__p_0) && (a.RoleId == @__p_1)), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, IdentityUserRole<string>>, 
+        MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
