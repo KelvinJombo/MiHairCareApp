@@ -16,7 +16,7 @@ namespace MiHairCareApp.Persistence.Repositories
             RatingsRepository = new RatingsRepository(_dbContext);
             ReferralsRepository = new ReferralsRepository(_dbContext);
             HairStyleRepository = new HairStyleRepository(_dbContext);
-            StylistRepository = new StylistRepository(_dbContext);
+            //StylistRepository = new StylistRepository(_dbContext);
             ReviewsRepository = new ReviewsRepository(_dbContext);
             WalletRepository = new WalletRepository(_dbContext);
 
@@ -25,7 +25,7 @@ namespace MiHairCareApp.Persistence.Repositories
 
         public IUserRepository UserRepository { get; set; }
 
-        public IStylistRepository StylistRepository { get; set; }
+       // public IStylistRepository StylistRepository { get; set; }
 
         public IHairStyleRepository HairStyleRepository { get; set; }
 

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace MiHairCareApp.Persistence.Context
 {
-    public class StylistsDBContext : IdentityDbContext<IdentityUser>
+    public class StylistsDBContext : IdentityDbContext<AppUser>
     {
         public StylistsDBContext(DbContextOptions<StylistsDBContext> options)
             : base(options)
@@ -25,69 +25,27 @@ namespace MiHairCareApp.Persistence.Context
         public DbSet<WalletFunding> WalletFundings { get; set; }
         public DbSet<UserTransaction> UserTransactionsSavings { get; set; }
 
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configure IdentityUser discriminator
-            modelBuilder.Entity<IdentityUser>()
-                .ToTable("AppUsers")
-                .HasDiscriminator<string>("UserType")
-                .HasValue<AppUser>("AppUser")
-                .HasValue<Stylist>("Stylist");
+            // Configure the relationship between AppUser and Referral
+            modelBuilder.Entity<AppUser>()
+                .HasMany(u => u.ReferralsMade)
+                .WithOne(r => r.ReferrerUser)
+                .HasForeignKey(r => r.ReferrerUserId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            // Additional configurations for AppUser
-            modelBuilder.Entity<AppUser>(entity =>
-            {
-                entity.Property(u => u.Id).ValueGeneratedOnAdd();
-                entity.Property(u => u.FirstName).HasMaxLength(50);
-                entity.Property(u => u.Password).HasMaxLength(100);
-                entity.Property(u => u.Address).HasMaxLength(100);
-                entity.Property(u => u.PasswordResetToken).HasMaxLength(100);
-                entity.Property(u => u.ImageUrl).HasMaxLength(255);
-            });
+            // Other model configurations...
 
-            // Additional configurations for Stylist
-            modelBuilder.Entity<Stylist>(entity =>
-            {
-                entity.Property(s => s.Id).ValueGeneratedOnAdd();
-                entity.Property(s => s.StylistName).HasMaxLength(50);
-                entity.Property(s => s.CompanyName).HasMaxLength(100);
-                entity.Property(s => s.Email).HasMaxLength(256);
-                entity.Property(s => s.PasswordResetToken).HasMaxLength(100);
-                entity.Property(s => s.Address).HasMaxLength(100);
-                entity.Property(s => s.Town).HasMaxLength(50);
-                entity.Property(s => s.Street).HasMaxLength(50);
-                entity.Property(s => s.ImageUrl).HasMaxLength(255);
-                entity.Property(s => s.BookingLink).HasMaxLength(100);
-                entity.Property(s => s.PhoneNumber).HasMaxLength(20);
-            });
-
-            // Configure Referral foreign key relationships
-            modelBuilder.Entity<Referral>(entity =>
-            {
-                entity.HasOne(r => r.ReferrerUser)
-                    .WithMany(u => u.ReferralsMade)
-                    .HasForeignKey(r => r.ReferrerUserId)
-                    .OnDelete(DeleteBehavior.Restrict);
-
-                entity.HasOne(r => r.Stylist)
-                    .WithMany()
-                    .HasForeignKey(r => r.StylistID)
-                    .OnDelete(DeleteBehavior.Restrict);
-            });
-
-            // Configure Booking foreign key relationships
+            // Configure other entities similarly to avoid cycles
             modelBuilder.Entity<Booking>(entity =>
             {
-                entity.HasOne(b => b.AppUser)
+                entity.HasOne(b => b.User)
                     .WithMany(u => u.Bookings)
                     .HasForeignKey(b => b.AppUserId)
-                    .OnDelete(DeleteBehavior.Restrict);
-
-                entity.HasOne(b => b.Stylist)
-                    .WithMany(s => s.Bookings)
-                    .HasForeignKey(b => b.StylistID)
                     .OnDelete(DeleteBehavior.Restrict);
 
                 entity.HasOne(b => b.HairStyle)
@@ -95,16 +53,25 @@ namespace MiHairCareApp.Persistence.Context
                     .HasForeignKey(b => b.HairStyleID)
                     .OnDelete(DeleteBehavior.Restrict);
 
-                entity.HasOne(b => b.Referral)
-                    .WithMany(r => r.Bookings)
-                    .HasForeignKey(b => b.ReferralID)
+                if (entity.HasOne(b => b.Referral) != null)
+                {
+                    entity.HasOne(b => b.Referral)
+                        .WithMany(r => r.Bookings)
+                        .HasForeignKey(b => b.ReferralID)
+                        .OnDelete(DeleteBehavior.Restrict);
+                }
+            });
+             
+            modelBuilder.Entity<HairStyle>(entity =>
+            {
+                entity.HasMany(h => h.Bookings)
+                    .WithOne(b => b.HairStyle)
+                    .HasForeignKey(b => b.HairStyleID)
                     .OnDelete(DeleteBehavior.Restrict);
             });
         }
-
-
     }
 
-
+     
 
 }

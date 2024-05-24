@@ -13,7 +13,7 @@ namespace MiHairCareApp.Domain.Entities
 
         // Foreign key for the AppUser who made the booking
         public string AppUserId { get; set; }
-        public AppUser AppUser { get; set; }
+        public AppUser User { get; set; }
 
         // Foreign key for the HairStyle booked
         public string HairStyleID { get; set; }
@@ -21,11 +21,7 @@ namespace MiHairCareApp.Domain.Entities
 
         // Appointment details
         public DateTime AppointmentDate { get; set; }
-
-        // Foreign key for the Stylist associated with the booking
-        public string StylistID { get; set; }
-        public Stylist Stylist { get; set; }
-
+         
         // Indicates if payment for the booking has been completed
         public bool PaymentCompleted { get; set; }
 

@@ -17,17 +17,30 @@ namespace MiHairCareApp.Persistence.Extensions
     {
         public static void AddDependencies(this IServiceCollection services, IConfiguration configuration)
         {
+            // Register the DbContext
             services.AddDbContext<StylistsDBContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("StylistsConnection")));
 
-            services.AddIdentity<AppUser, IdentityRole>()
-                .AddEntityFrameworkStores<StylistsDBContext>()
-                .AddDefaultTokenProviders();
+            // Register Identity services for AppUser
+            services.AddIdentity<AppUser, IdentityRole>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 8;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = true;
+                options.Password.RequireLowercase = false;
+                options.User.RequireUniqueEmail = true;
+            })
+            .AddEntityFrameworkStores<StylistsDBContext>()
+            .AddDefaultTokenProviders();
+             
 
-            services.AddIdentity<Stylist, IdentityRole>()
-                .AddEntityFrameworkStores<StylistsDBContext>()
-                .AddDefaultTokenProviders();
+            // Register UserManager and RoleManager for both AppUser and Stylist
+            services.AddScoped<UserManager<AppUser>>();
+            //services.AddScoped<UserManager<Stylist>>();
+            services.AddScoped<RoleManager<IdentityRole>>();
 
+            // Register other services
             var emailSettings = new EmailSettings();
             configuration.GetSection("EmailSettings").Bind(emailSettings);
             services.AddSingleton(emailSettings);
@@ -36,8 +49,10 @@ namespace MiHairCareApp.Persistence.Extensions
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IWalletServices, WalletServices>();
             services.AddScoped<IAuthenticationServices, AuthenticationServices>();
-            services.AddScoped<IStylistServices, StylistServices>();
-        }
-    }
+            services.AddScoped<IStylistAuthServices, StylistAuthServices>();
 
+        }
+
+
+    }
 }

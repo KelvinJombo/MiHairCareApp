@@ -9,7 +9,7 @@ namespace MiHairCareApp.Domain.Entities
 {
     public class WalletFunding : BaseEntity
     {
-        public decimal FundAmount { get; set; }
+        public double FundAmount { get; set; }
         public string Reference { get; set; } = string.Empty;
         public string Narration { get; set; } = string.Empty;
         //public TransactionType TransactionType { get; set; }

@@ -18,8 +18,8 @@ namespace MiHairCareApp.Domain.Entities
         public AppUser ReferrerUser { get; set; }
 
         // Foreign key for the Stylist associated with the referral
-        public string StylistID { get; set; }
-        public Stylist Stylist { get; set; }
+        public string UserID { get; set; }
+        public AppUser User { get; set; }
 
         // Navigation property for bookings resulting from this referral
         public ICollection<Booking> Bookings { get; set; }

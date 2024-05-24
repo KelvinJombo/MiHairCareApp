@@ -13,8 +13,8 @@ namespace MiHairCareApp.Domain.Entities
          
         public string StylePicturesLink { get; set; }
         public string StyleVideoLink { get; set; }
-        [ForeignKey("StylistID")]
-        public string StylistID { get; set; }
-        public Stylist Stylist { get; set; }
+        [ForeignKey("AppUser")]
+        public string UserID { get; set; }
+        public AppUser User { get; set; }
     }
 }

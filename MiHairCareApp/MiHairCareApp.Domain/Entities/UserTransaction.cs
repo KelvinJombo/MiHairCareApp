@@ -9,7 +9,7 @@ namespace MiHairCareApp.Domain.Entities
     public class UserTransaction : BaseEntity
     {         
         public string Description { get; set; } = string.Empty;
-        public decimal Amount { get; set; }
+        public double Amount { get; set; }
         public string Currency { get; set; }
         public string ReceiverWalletNumber { get; set; } = string.Empty;
         public string SenderWalletNumber { get; set; } = string.Empty;

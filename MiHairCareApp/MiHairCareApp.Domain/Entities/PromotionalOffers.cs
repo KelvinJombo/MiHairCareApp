@@ -10,8 +10,8 @@ namespace MiHairCareApp.Domain.Entities
     public class PromotionalOffers : BaseEntity
     {
           
-        public string StylistID { get; set; }
-        public Stylist Stylist { get; set; }
+        public string AppUserID { get; set; }
+        public AppUser User { get; set; }
         public string Description { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }

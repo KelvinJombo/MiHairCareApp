@@ -22,9 +22,6 @@ namespace MiHairCareApp.Configuration
                 ClockSkew = TimeSpan.Zero
             };
 
-
-
-
             services.AddSingleton(tokenValidationParameters);
 
             services.AddAuthentication(options =>
@@ -38,7 +35,7 @@ namespace MiHairCareApp.Configuration
                 options.SaveToken = true;
                 options.TokenValidationParameters = tokenValidationParameters;
             });
-
         }
+
     }
 }

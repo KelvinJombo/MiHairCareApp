@@ -5,6 +5,9 @@ using MiHairCareApp.Configuration;
 using MiHairCareApp.Persistence.Extensions;
 using NLog;
 using NLog.Web;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationHelper.InstantiateConfiguration(builder.Configuration);
@@ -18,14 +21,17 @@ try
     builder.Services.AddDependencies(configuration);
     builder.Services.AddControllers();
 
-    // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-    builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen();
-    builder.Services.AddAuthentication();
+    
 
+    // Ensure AddAuthentication is called only once
     builder.Services.ConfigureAuthentication(configuration);
     builder.Services.AddMailService(configuration);
     builder.Services.AddAutoMapper(typeof(MapperProfiles));
+
+    // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
+
     builder.Logging.ClearProviders();
     builder.Host.UseNLog();
 
@@ -36,6 +42,7 @@ try
     {
         app.UseSwagger();
         app.UseSwaggerUI();
+        app.UseDeveloperExceptionPage();
     }
 
     using (var scope = app.Services.CreateScope())
@@ -45,10 +52,16 @@ try
     }
 
     app.UseHttpsRedirection();
-    app.UseAuthentication();
+    app.UseRouting();
+    app.UseAuthentication(); // Ensure UseAuthentication is called only once
     app.UseAuthorization();
 
-    app.MapControllers();
+    app.UseEndpoints(endpoints =>
+    {
+        endpoints.MapControllerRoute(
+            name: "default",
+            pattern: "{controller=Home}/{action=Index}/{id?}");
+    });
 
     app.Run();
 }

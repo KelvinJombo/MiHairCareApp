@@ -11,10 +11,10 @@ namespace MiHairCareApp.Controllers
     [ApiController]
     public class StylistsController : ControllerBase
     {
-        private readonly IStylistServices _stylistServices;
+        private readonly IStylistAuthServices _stylistServices;
         private readonly IEmailServices _emailServices;
 
-        public StylistsController(IStylistServices stylistServices, IEmailServices emailServices)
+        public StylistsController(IStylistAuthServices stylistServices, IEmailServices emailServices)
         {
             _stylistServices = stylistServices;
             _emailServices = emailServices;

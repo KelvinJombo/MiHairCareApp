@@ -48,7 +48,7 @@ namespace MiHairCareApp.Commons.Utilities
                     userManager.AddToRoleAsync(user, "Admin").Wait();
                 }
             }
-        }
+        } 
 
     }
 }

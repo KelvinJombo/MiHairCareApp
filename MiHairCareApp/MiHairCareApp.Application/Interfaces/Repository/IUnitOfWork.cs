@@ -9,7 +9,7 @@ namespace MiHairCareApp.Application.Interfaces.Repository
     public interface IUnitOfWork : IDisposable
     {
         IUserRepository UserRepository { get; }
-        IStylistRepository StylistRepository { get; }
+        //IStylistRepository StylistRepository { get; }
         IHairStyleRepository HairStyleRepository { get; }
         IBookingRepository BookingRepository { get; }
         IRatingsRepository RatingsRepository { get; }
