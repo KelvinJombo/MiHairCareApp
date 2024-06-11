@@ -2,6 +2,7 @@
 using MiHairCareApp.Application.Interfaces.Repository;
 using MiHairCareApp.Persistence.Context;
 using System.Linq.Expressions;
+using System.Security.Claims;
 
 namespace MiHairCareApp.Persistence.Repositories
 {
@@ -65,5 +66,7 @@ namespace MiHairCareApp.Persistence.Repositories
         {
             _dbContext.Set<T>().Update(entity);
         }
+
+        
     }
 }

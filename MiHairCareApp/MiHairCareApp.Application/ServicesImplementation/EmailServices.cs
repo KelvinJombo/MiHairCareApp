@@ -62,7 +62,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
             }
         }
 
-        public async Task SendMailAsync(MailRequest mailRequest)
+        public async Task SendMailAsync(MailRequest mailRequest) 
         {
             try
             {

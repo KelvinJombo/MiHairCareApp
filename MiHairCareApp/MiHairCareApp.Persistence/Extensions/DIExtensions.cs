@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using CloudinaryDotNet;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -36,8 +37,7 @@ namespace MiHairCareApp.Persistence.Extensions
              
 
             // Register UserManager and RoleManager for both AppUser and Stylist
-            services.AddScoped<UserManager<AppUser>>();
-            //services.AddScoped<UserManager<Stylist>>();
+            services.AddScoped<UserManager<AppUser>>();             
             services.AddScoped<RoleManager<IdentityRole>>();
 
             // Register other services
@@ -51,7 +51,23 @@ namespace MiHairCareApp.Persistence.Extensions
             services.AddScoped<IAuthenticationServices, AuthenticationServices>();
             services.AddScoped<IStylistAuthServices, StylistAuthServices>();
 
-        }
+            // Register Cloudinary services
+            var cloudinarySettings = new CloudinarySettings();
+            configuration.GetSection("CloudinarySettings").Bind(cloudinarySettings);
+            services.AddSingleton(cloudinarySettings);
+            services.AddSingleton(provider =>
+            {
+                var account = new Account(
+                    cloudinarySettings.CloudName,
+                    cloudinarySettings.ApiKey,
+                    cloudinarySettings.ApiSecret);
+                return new Cloudinary(account);
+            });
+
+            // Example in Startup.cs
+            services.AddScoped(typeof(ICloudinaryServices<>), typeof(CloudinaryServices<>));
+
+        } 
 
 
     }

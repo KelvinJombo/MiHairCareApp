@@ -10,7 +10,7 @@ namespace MiHairCareApp.Domain.Entities
         public string Address { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public string PasswordResetToken { get; set; } = string.Empty;
-        //public bool IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
         public DateTime? ResetTokenExpires { get; set; }
         public string ImageUrl { get; set; } = string.Empty;
         public int LoyaltyPoints { get; set; }

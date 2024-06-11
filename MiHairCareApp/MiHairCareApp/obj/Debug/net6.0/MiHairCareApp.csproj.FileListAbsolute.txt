@@ -186,3 +186,7 @@ C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCare
 C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net6.0\MiHairCareApp.pdb
 C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net6.0\MiHairCareApp.genruntimeconfig.cache
 C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net6.0\ref\MiHairCareApp.dll
+C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\CloudinaryDotNet.dll
+C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net6.0\MiHairCareApp.Properties.Resources.resources
+C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net6.0\MiHairCareApp.csproj.GenerateResource.cache

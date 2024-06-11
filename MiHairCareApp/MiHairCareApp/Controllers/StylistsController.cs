@@ -1,23 +1,27 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces;
 using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Domain;
+using MiHairCareApp.Domain.Entities;
 
 namespace MiHairCareApp.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]")] 
     [ApiController]
     public class StylistsController : ControllerBase
     {
         private readonly IStylistAuthServices _stylistServices;
         private readonly IEmailServices _emailServices;
+        private readonly UserManager<AppUser> _userManager;
 
-        public StylistsController(IStylistAuthServices stylistServices, IEmailServices emailServices)
+        public StylistsController(IStylistAuthServices stylistServices, IEmailServices emailServices, UserManager<AppUser> userManager)
         {
             _stylistServices = stylistServices;
             _emailServices = emailServices;
+            _userManager = userManager;
         }
 
 
@@ -66,37 +70,84 @@ namespace MiHairCareApp.Controllers
 
 
 
-        //[HttpGet("confirm-email")]
-        //public async Task<IActionResult> ConfirmEmail(string userid, string token)
-        //{
-        //    return Ok(await _authenticationService.ConfirmEmail(userid, token));
-        //}
+        [HttpPost("update-password")]
+        public async Task<IActionResult> UpdatePassword([FromBody] UpdatePasswordDto model, [FromHeader(Name = "Authorization")] string authToken)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new ApiResponse<string>(false, "Invalid model state.", 400, null, ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage).ToList()));
+            }
 
-        //[HttpPost("reset-password")]
-        //public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        var errors = ModelState.Values
-        //            .SelectMany(v => v.Errors)
-        //            .Select(e => e.ErrorMessage)
-        //            .ToList();
+            if (string.IsNullOrWhiteSpace(authToken))
+            {
+                return Unauthorized(new ApiResponse<string>(false, "Authorization token is missing.", 401, null, new List<string>()));
+            }
 
-        //        return BadRequest(new ApiResponse<string>(false, "Invalid model state.", 400, null, ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage).ToList()));
-        //    }
+            var userIdResponse = _stylistServices.ExtractUserIdFromToken(authToken);
 
-        //    var response = await _authenticationService.ResetPasswordAsync(model.Email, model.Token, model.NewPassword);
+            if (!userIdResponse.Succeeded)
+            {
+                return Unauthorized(userIdResponse);
+            }
+            var userId = userIdResponse.Data;
 
-        //    if (response.Succeeded)
-        //    {
-        //        return Ok(new ApiResponse<string>(true, response.Message, response.StatusCode, null, new List<string>()));
-        //    }
-        //    else
-        //    {
-        //        return BadRequest(new ApiResponse<string>(false, response.Message, response.StatusCode, null, response.Errors));
-        //    }
+            var user = await _userManager.FindByEmailAsync(userId);
+
+            if (user == null)
+            {
+                return Unauthorized(new ApiResponse<string>(false, "User not found.", 401, null, new List<string>()));
+            }
+
+            var response = await _stylistServices.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
+
+            if (response.Succeeded)
+            {
+                return Ok(new ApiResponse<string>(true, response.Message, response.StatusCode, null, new List<string>()));
+            }
+            else
+            {
+                return BadRequest(new ApiResponse<string>(false, response.Message, response.StatusCode, null, response.Errors));
+            }
+        }
 
 
-        //}
+
+
+        [HttpGet("confirm-email")]
+        public async Task<IActionResult> ConfirmEmail(string userid, string token)
+        {
+            return Ok(await _stylistServices.ConfirmEmail(userid, token));
+        }
+
+
+        [HttpPost("reset-password")]
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto model)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .ToList();
+
+                return BadRequest(new ApiResponse<string>(false, "Invalid model state.", 400, null, ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage).ToList()));
+            }
+
+            var response = await _stylistServices.ResetPasswordAsync(model.Email, model.Token, model.NewPassword);
+
+            if (response.Succeeded)
+            {
+                return Ok(new ApiResponse<string>(true, response.Message, response.StatusCode, null, new List<string>()));
+            }
+            else
+            {
+                return BadRequest(new ApiResponse<string>(false, response.Message, response.StatusCode, null, response.Errors));
+            }
+
+
+        }
+
+
+         
     }
 }

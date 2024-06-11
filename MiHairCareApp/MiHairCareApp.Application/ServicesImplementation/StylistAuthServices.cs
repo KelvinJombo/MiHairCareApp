@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using static Org.BouncyCastle.Math.EC.ECCurve;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using MiHairCareApp.Domain.Entities.Helper;
 using MiHairCareApp.Application.Interfaces;
 
 namespace MiHairCareApp.Application.ServicesImplementation
@@ -198,6 +199,165 @@ namespace MiHairCareApp.Application.ServicesImplementation
         }
 
 
+        public async Task<ApiResponse<string>> ChangePasswordAsync(AppUser user, string currentPassword, string newPassword)
+        {
+            try
+            {
+                var result = await _userManager.ChangePasswordAsync(user, currentPassword, newPassword);
+
+                if (result.Succeeded)
+                {
+                    return new ApiResponse<string>(true, "Password changed successfully.", 200, null, new List<string>());
+                }
+                else
+                {
+                    return new ApiResponse<string>(false, "Password change failed.", 400, null, result.Errors.Select(error => error.Description).ToList());
+                }
+            }
+            catch (Exception ex) 
+            {
+                _logger.LogError(ex, "Error occurred while changing password");
+                var errorList = new List<string> { ex.Message };
+                return new ApiResponse<string>(true, "Error occurred while changing password", 500, null, errorList);
+            }
+        }
+        public async Task<ApiResponse<string>> ResetPasswordAsync(string email, string token, string newPassword)
+        {
+            try
+            {
+                var user = await _userManager.FindByEmailAsync(email);
+
+                if (user == null)
+                {
+                    return new ApiResponse<string>(false, "User not found.", 404, null, new List<string>());
+                }
+
+                // Additional token validation logic can be added here
+                if (token.Contains(" "))
+                {
+                    token = token.Replace(" ", "+");
+                }
+
+                var result = await _userManager.ResetPasswordAsync(user, token, newPassword);
+
+                if (result.Succeeded)
+                {
+                    // Update user properties if needed
+                    user.PasswordResetToken = null;
+                    user.ResetTokenExpires = null;
+                    await _userManager.UpdateAsync(user);
+
+                    return new ApiResponse<string>(true, "Password reset successful.", 200, null, new List<string>());
+                }
+                else
+                {
+                    return new ApiResponse<string>(false, "Password reset failed.", 400, null, result.Errors.Select(error => error.Description).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while resetting password for user with email {Email}", email);
+                var errorList = new List<string> { "An unexpected error occurred while resetting the password." };
+                return new ApiResponse<string>(true, "Error occurred while resetting password", 500, null, errorList);
+            }
+        }
+
+        public async Task<ApiResponse<string>> ForgotPasswordAsync(string email)
+        {
+            try
+            {
+                var stylist = await _userManager.FindByEmailAsync(email);
+
+                if (stylist == null)
+                {
+                    return new ApiResponse<string>(false, "Email does not exist", StatusCodes.Status404NotFound, null, new List<string>());
+                }
+
+                if (!stylist.EmailConfirmed)
+                {
+                    return new ApiResponse<string>(false, "Stylist's email not confirmed.", StatusCodes.Status404NotFound, null, new List<string>());
+                }
+
+                string token = await _userManager.GeneratePasswordResetTokenAsync(stylist);
+
+                //  token = HttpUtility.UrlEncode(token);
+
+                stylist.PasswordResetToken = token;
+                stylist.ResetTokenExpires = DateTime.UtcNow.AddHours(1);
+
+                await _userManager.UpdateAsync(stylist);
+
+                var resetPasswordUrl = "http://localhost:3000/confirmpassword?email=" + email + "&token=" + token;
+
+
+                var mailRequest = new MailRequest
+                {
+                    ToEmail = email,
+                    Subject = "Your Savi Password Reset Instructions",
+                    Body = $"Please reset your password by clicking <a href='{resetPasswordUrl}'>here</a>."
+                };
+                await _emailServices.SendMailAsync(mailRequest);
+
+                return new ApiResponse<string>(true, "Password reset email sent successfully.", 200, null, new List<string>());
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while processing forgot password for user with email {Email}", email);
+                var errorList = new List<string> { "An unexpected error occurred while processing the forgot password request." };
+                return new ApiResponse<string>(true, "Error occurred while processing forgot password", 500, null, errorList);
+            }
+        }
+
+        public async Task<ApiResponse<string>> ConfirmEmail(string userid, string token)
+        {
+            if (userid == null || token == null)
+            {
+                return ApiResponse<string>.Failed("Stylist id or token should not be null", StatusCodes.Status400BadRequest, new List<string>() { });
+            }
+
+            var user = await _userManager.FindByIdAsync(userid);
+            if (user == null)
+            {
+                return ApiResponse<string>.Failed("Stylist instance is Invalid", StatusCodes.Status404NotFound, new List<string>() { });
+            }
+            token = token.Replace(" ", "+");
+
+            var result = await _userManager.ConfirmEmailAsync(user, token);
+            if (result.Succeeded)
+            {
+                return ApiResponse<string>.Success("success", "Email confirmed successfully", StatusCodes.Status200OK);
+            }
+            else
+            {
+                return ApiResponse<string>.Failed("Failed. " + result.Errors.ToArray()[0].Description, StatusCodes.Status500InternalServerError, new List<string>() { });
+            }
+        }
+
+
+
+        public ApiResponse<string> ExtractUserIdFromToken(string authToken)
+        {
+            try
+            {
+                var token = authToken.Replace("Bearer ", "");
+
+                var handler = new JwtSecurityTokenHandler();
+                var jsonToken = handler.ReadToken(token) as JwtSecurityToken;
+
+                var userId = jsonToken?.Claims.FirstOrDefault(claim => claim.Type == JwtRegisteredClaimNames.Sub)?.Value;
+
+                if (string.IsNullOrWhiteSpace(userId))
+                {
+                    return new ApiResponse<string>(false, "Invalid or expired token.", 401, null, new List<string>());
+                }
+
+                return new ApiResponse<string>(true, "User ID extracted successfully.", 200, userId, new List<string>());
+            }
+            catch (Exception ex)
+            {
+                return new ApiResponse<string>(false, "Error extracting user ID from token.", 500, null, new List<string> { ex.Message });
+            }
+        }
 
     }
 }
