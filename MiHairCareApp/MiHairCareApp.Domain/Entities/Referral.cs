@@ -8,20 +8,14 @@ using System.Threading.Tasks;
 
 namespace MiHairCareApp.Domain.Entities
 {
-    public class Referral
-    {
-        [Key]
-        public Guid ReferralID { get; set; }
-
-        // Foreign key for the AppUser who made the referral
+    public class Referral : BaseEntity
+    {        
         public string ReferrerUserId { get; set; }
-        public AppUser ReferrerUser { get; set; }
-
-        // Foreign key for the Stylist associated with the referral
-        public string UserID { get; set; }
-        public AppUser User { get; set; }
-
-        // Navigation property for bookings resulting from this referral
+        public AppUser ReferrerUser { get; set; }        
+        public AppUser ReferredUser { get; set; }        
+        public AppUser ReferredUserId { get; set; }        
+        public string StylistID { get; set; }
+        public AppUser Stylist { get; set; }         
         public ICollection<Booking> Bookings { get; set; }
     }
 

@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("0ceb5b7e-c124-4b0c-a60f-120d63fd9a09")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiHairCareApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9884cb3aae9166dbe8b3fa27ff56ad9bc6f5864")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiHairCareApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiHairCareApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

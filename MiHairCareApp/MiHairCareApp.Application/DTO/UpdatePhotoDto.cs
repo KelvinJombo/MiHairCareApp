@@ -11,5 +11,6 @@ namespace MiHairCareApp.Application.DTO
     {
         public IFormFile Image { get; set; }
         public string UserId { get; set; }
+        public bool IsMain { get; set; }
     }
 }

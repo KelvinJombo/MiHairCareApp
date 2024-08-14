@@ -11,7 +11,8 @@ namespace MiHairCareApp.Domain.Entities
         public string Url { get; set; }
         public bool IsMain { get; set; }
         public string PublicId { get; set; }
-        public AppUser AppUser { get; set; }
-        public int UserId { get; set; }
+        public AppUser? AppUser { get; set; }
+        public string? UserId { get; set; }         
+        public string? HairStyleId { get; set; }
     }
-}
+} 

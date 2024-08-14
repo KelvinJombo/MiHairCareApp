@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MiHairCareApp.Application.DTO;
-using MiHairCareApp.Application.Interfaces;
 using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Domain;
 using MiHairCareApp.Domain.Entities;
@@ -26,6 +24,24 @@ namespace MiHairCareApp.Controllers
             _emailServices = emailServices;
             _signInManager = signInManager;
         }
+
+
+
+        [HttpPost("signin-google/{token}")]
+        public async Task<IActionResult> GoogleAuth([FromRoute] string token)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new ApiResponse<string>(false, "Invalid model state.", StatusCodes.Status400BadRequest, "", ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage).ToList()));
+            }
+            return Ok(await _authenticationService.VerifyAndAuthenticateUserAsync(token));
+        }
+
+
+
+
+
 
         [HttpPost("Register")] 
         public async Task<IActionResult> Register([FromBody]UserCreateDto createDto)
@@ -107,20 +123,14 @@ namespace MiHairCareApp.Controllers
              
         }
 
+         
+
 
 
         [HttpPost("update-password")]
         public async Task<IActionResult> UpdatePassword([FromBody] UpdatePasswordDto model, [FromHeader(Name = "Authorization")] string authToken)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(new ApiResponse<string>(false, "Invalid model state.", 400, null, ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage).ToList()));
-            }
-
-            if (string.IsNullOrWhiteSpace(authToken))
-            {
-                return Unauthorized(new ApiResponse<string>(false, "Authorization token is missing.", 401, null, new List<string>()));
-            }
+          
 
             var userIdResponse = _authenticationService.ExtractUserIdFromToken(authToken);
 
@@ -130,7 +140,7 @@ namespace MiHairCareApp.Controllers
             }
             var userId = userIdResponse.Data;
 
-            var user = await _userManager.FindByEmailAsync(userId);
+            var user = await _userManager.FindByIdAsync(userId);
 
             if (user == null)
             {
@@ -150,6 +160,7 @@ namespace MiHairCareApp.Controllers
         }
 
 
+
         [HttpPost("logout")]
         public async Task<IActionResult> Logout()
         {
@@ -159,6 +170,8 @@ namespace MiHairCareApp.Controllers
 
             return Ok(new ApiResponse<string>(true, "Logout successful", 200, null, new List<string>()));
         }
+
+
 
         [HttpPost("forgot-password")]
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDto model)
@@ -172,7 +185,7 @@ namespace MiHairCareApp.Controllers
 
             if (response.Succeeded)
             {
-                return Ok(new ApiResponse<string>(true, response.Message, response.StatusCode, null, new List<string>()));
+                return Ok(new ApiResponse<string>(true, response.Message, response.StatusCode, response.Data, new List<string>()));
             }
             else
             {

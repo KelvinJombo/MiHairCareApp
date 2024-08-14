@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 namespace MiHairCareApp.Domain.Entities
 {
     public class UserTransaction : BaseEntity
-    {         
+    {
+        public string CustomerId { get; set; }
         public string Description { get; set; } = string.Empty;
-        public double Amount { get; set; }
+        public long Amount { get; set; }
         public string Currency { get; set; }
-        public string ReceiverWalletNumber { get; set; } = string.Empty;
-        public string SenderWalletNumber { get; set; } = string.Empty;
+        public string PaymentReference { get; set; } = string.Empty;
+        public bool PaymentSucceeded { get; set; }
 
          
     }

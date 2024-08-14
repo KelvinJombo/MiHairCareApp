@@ -232,7 +232,6 @@ namespace MiHairCareApp.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PasswordResetToken")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
@@ -329,6 +328,47 @@ namespace MiHairCareApp.Persistence.Migrations
                     b.ToTable("Bookings");
                 });
 
+            modelBuilder.Entity("MiHairCareApp.Domain.Entities.HaircareProduct", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StockQuantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HaircareProducts");
+                });
+
             modelBuilder.Entity("MiHairCareApp.Domain.Entities.HairStyle", b =>
                 {
                     b.Property<string>("Id")
@@ -341,15 +381,20 @@ namespace MiHairCareApp.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImagesLinks")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("ModifiedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("Origin")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PhotoId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhotoId1")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<double>("PriceTag")
                         .HasColumnType("float");
@@ -362,10 +407,11 @@ namespace MiHairCareApp.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("VideoLinks")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PhotoId1");
 
                     b.ToTable("HairStyles");
                 });
@@ -398,6 +444,47 @@ namespace MiHairCareApp.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Notifications");
+                });
+
+            modelBuilder.Entity("MiHairCareApp.Domain.Entities.Photo", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("HairStyleId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PublicId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.ToTable("Photos");
                 });
 
             modelBuilder.Entity("MiHairCareApp.Domain.Entities.PromotionalOffers", b =>
@@ -487,15 +574,18 @@ namespace MiHairCareApp.Persistence.Migrations
                     b.ToTable("Referrals");
                 });
 
-            modelBuilder.Entity("MiHairCareApp.Domain.Entities.Reviews", b =>
+            modelBuilder.Entity("MiHairCareApp.Domain.Entities.Review", b =>
                 {
-                    b.Property<int>("ReviewID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReviewID"), 1L, 1);
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DateTime")
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ReviewText")
@@ -504,13 +594,17 @@ namespace MiHairCareApp.Persistence.Migrations
 
                     b.Property<string>("StylistID")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UserID")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("ReviewID");
+                    b.HasKey("Id");
+
+                    b.HasIndex("StylistID");
+
+                    b.HasIndex("UserID");
 
                     b.ToTable("Reviews");
                 });
@@ -551,13 +645,17 @@ namespace MiHairCareApp.Persistence.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<double>("Amount")
-                        .HasColumnType("float");
+                    b.Property<long>("Amount")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Currency")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -571,13 +669,12 @@ namespace MiHairCareApp.Persistence.Migrations
                     b.Property<DateTime>("ModifiedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ReceiverWalletNumber")
+                    b.Property<string>("PaymentReference")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SenderWalletNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("PaymentSucceeded")
+                        .HasColumnType("bit");
 
                     b.Property<string>("WalletId")
                         .HasColumnType("nvarchar(450)");
@@ -586,7 +683,7 @@ namespace MiHairCareApp.Persistence.Migrations
 
                     b.HasIndex("WalletId");
 
-                    b.ToTable("UserTransactionsSavings");
+                    b.ToTable("UserTransactions");
                 });
 
             modelBuilder.Entity("MiHairCareApp.Domain.Entities.Wallet", b =>
@@ -667,7 +764,7 @@ namespace MiHairCareApp.Persistence.Migrations
 
                     b.HasIndex("WalletId");
 
-                    b.ToTable("WalletFundings");
+                    b.ToTable("WalletFunding");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -757,6 +854,24 @@ namespace MiHairCareApp.Persistence.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("MiHairCareApp.Domain.Entities.HairStyle", b =>
+                {
+                    b.HasOne("MiHairCareApp.Domain.Entities.Photo", "Photo")
+                        .WithMany()
+                        .HasForeignKey("PhotoId1");
+
+                    b.Navigation("Photo");
+                });
+
+            modelBuilder.Entity("MiHairCareApp.Domain.Entities.Photo", b =>
+                {
+                    b.HasOne("MiHairCareApp.Domain.Entities.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
+                    b.Navigation("AppUser");
+                });
+
             modelBuilder.Entity("MiHairCareApp.Domain.Entities.PromotionalOffers", b =>
                 {
                     b.HasOne("MiHairCareApp.Domain.Entities.AppUser", "User")
@@ -787,6 +902,25 @@ namespace MiHairCareApp.Persistence.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("MiHairCareApp.Domain.Entities.Review", b =>
+                {
+                    b.HasOne("MiHairCareApp.Domain.Entities.AppUser", "Stylist")
+                        .WithMany()
+                        .HasForeignKey("StylistID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MiHairCareApp.Domain.Entities.AppUser", "User")
+                        .WithMany("Review")
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Stylist");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("MiHairCareApp.Domain.Entities.UserTransaction", b =>
                 {
                     b.HasOne("MiHairCareApp.Domain.Entities.Wallet", null)
@@ -810,6 +944,8 @@ namespace MiHairCareApp.Persistence.Migrations
                     b.Navigation("PromotionalOffers");
 
                     b.Navigation("ReferralsMade");
+
+                    b.Navigation("Review");
                 });
 
             modelBuilder.Entity("MiHairCareApp.Domain.Entities.HairStyle", b =>

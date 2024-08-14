@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MiHairCareApp.Application.DTO;
@@ -16,12 +17,14 @@ namespace MiHairCareApp.Controllers
         private readonly IStylistAuthServices _stylistServices;
         private readonly IEmailServices _emailServices;
         private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
 
-        public StylistsController(IStylistAuthServices stylistServices, IEmailServices emailServices, UserManager<AppUser> userManager)
+        public StylistsController(IStylistAuthServices stylistServices, IEmailServices emailServices, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
             _stylistServices = stylistServices;
             _emailServices = emailServices;
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
 
@@ -52,6 +55,23 @@ namespace MiHairCareApp.Controllers
         }
 
 
+
+        [HttpPost("signin-google/{token}")]
+        public async Task<IActionResult> GoogleAuth([FromRoute] string token)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new ApiResponse<string>(false, "Invalid model state.", StatusCodes.Status400BadRequest, "", ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage).ToList()));
+            }
+            return Ok(await _stylistServices.VerifyAndAuthenticateUserAsync(token));
+        }
+
+
+
+
+
+
         [HttpPost("Login")]
         public async Task<IActionResult> Login(StylistsLoginDto loginDTO)
         {
@@ -67,6 +87,32 @@ namespace MiHairCareApp.Controllers
         {
             return "http://localhost:3000/email-confirmed?UserId=" + id + "&token=" + token;
         }
+
+
+
+
+        [HttpPost("forgot-password")]
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDto model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new ApiResponse<string>(false, "Invalid model state.", 400, null, ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage).ToList()));
+            }
+
+            var response = await _stylistServices.ForgotPasswordAsync(model.Email);
+
+            if (response.Succeeded)
+            {
+                return Ok(new ApiResponse<string>(true, response.Message, response.StatusCode, response.Data, new List<string>()));
+            }
+            else
+            {
+                return BadRequest(new ApiResponse<string>(false, response.Message, response.StatusCode, null, response.Errors));
+            }
+        }
+
+
+
 
 
 
@@ -148,6 +194,20 @@ namespace MiHairCareApp.Controllers
         }
 
 
-         
+
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+
+            await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
+
+            return Ok(new ApiResponse<string>(true, "Logout successful", 200, null, new List<string>()));
+        }
+
+
+
+
+
     }
 }

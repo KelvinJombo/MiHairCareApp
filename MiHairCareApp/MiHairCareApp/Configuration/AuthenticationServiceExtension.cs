@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -23,6 +24,8 @@ namespace MiHairCareApp.Configuration
             };
 
             services.AddSingleton(tokenValidationParameters);
+
+            services.Configure<DataProtectionTokenProviderOptions>(opts => opts.TokenLifespan = TimeSpan.FromHours(2));
 
             services.AddAuthentication(options =>
             {

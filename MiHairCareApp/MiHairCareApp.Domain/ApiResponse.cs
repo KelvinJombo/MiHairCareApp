@@ -23,20 +23,9 @@ namespace MiHairCareApp.Domain
             Errors = errors;
         }
 
-        public ApiResponse(bool succeeded, T data, List<string> errors)
-            : this(succeeded, null, 0, data, errors) { }
-
-        public ApiResponse(T data, string message = null)
-            : this(true, message, 0, data, null) { }
-
         public static ApiResponse<T> Success(T data, string message, int statusCode)
         {
             return new ApiResponse<T>(true, message, statusCode, data, new List<string>());
-        }
-
-        public static ApiResponse<T> Failed(List<string> errors)
-        {
-            return new ApiResponse<T>(false, default, errors);
         }
 
         public static ApiResponse<T> Failed(string message, int statusCode, List<string> errors)
@@ -44,4 +33,5 @@ namespace MiHairCareApp.Domain
             return new ApiResponse<T>(false, message, statusCode, default, errors);
         }
     }
+
 }

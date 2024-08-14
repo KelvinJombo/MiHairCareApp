@@ -1,23 +1,18 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.IdentityModel.Tokens;
-using MiHairCareApp.Application.DTO;
-using MiHairCareApp.Application.Interfaces.Repository;
-using MiHairCareApp.Application.Interfaces.Services;
-using MiHairCareApp.Domain.Entities;
-using MiHairCareApp.Domain;
-using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using static Org.BouncyCastle.Math.EC.ECCurve;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using MiHairCareApp.Domain.Entities.Helper;
+using Microsoft.IdentityModel.Tokens;
+using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces;
+using MiHairCareApp.Application.Interfaces.Repository;
+using MiHairCareApp.Application.Interfaces.Services;
+using MiHairCareApp.Domain;
+using MiHairCareApp.Domain.Entities;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Google.Apis.Auth;
 
 namespace MiHairCareApp.Application.ServicesImplementation
 {
@@ -25,21 +20,23 @@ namespace MiHairCareApp.Application.ServicesImplementation
     {
         private readonly IEmailServices _emailServices;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IWalletServices _walletServices;
+        //private readonly IWalletServices _walletServices;
         private readonly IConfiguration _config;
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ILogger<StylistAuthServices> _logger;
+        //private readonly IWalletServices _walletService;
 
-        public StylistAuthServices(IEmailServices emailServices, IUnitOfWork unitOfWork, IWalletServices walletServices, IConfiguration config, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ILogger<StylistAuthServices> logger)
+        public StylistAuthServices(IEmailServices emailServices, IUnitOfWork unitOfWork, IConfiguration config, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ILogger<StylistAuthServices> logger)
         {
             _emailServices = emailServices;
             _unitOfWork = unitOfWork;
-            _walletServices = walletServices;
+            //_walletServices = walletServices;
             _config = config;
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            //_walletService = walletService;
         }
 
 
@@ -78,7 +75,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 if (result.Succeeded)
                 {
                     await _userManager.AddToRoleAsync(stylis, "Admin");
-                    token = await _userManager.GenerateEmailConfirmationTokenAsync(stylis);
+                   // token = 
 
 
                     var createWalletDto = new CreateWalletDto
@@ -87,8 +84,8 @@ namespace MiHairCareApp.Application.ServicesImplementation
                         UserId = stylis.Id
                     };
 
-                    var walletCreated = await _walletServices.CreateWallet(createWalletDto);
-                    if (walletCreated.Succeeded)
+                    var walletCreated = await _userManager.GenerateEmailConfirmationTokenAsync(stylis);
+                    if (!String.IsNullOrEmpty(walletCreated))
                     {
                         var response = new StylistsRegResponseDto
                         {
@@ -108,7 +105,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
                     else
                     {
                         _unitOfWork.UserRepository.DeleteAsync(stylis);
-                        return ApiResponse<StylistsRegResponseDto>.Failed(walletCreated.Message, StatusCodes.Status201Created, new List<string>());
+                        return ApiResponse<StylistsRegResponseDto>.Failed("Stylist creation failed", StatusCodes.Status201Created, new List<string>());
                     }
                 }
                 else
@@ -122,6 +119,92 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 return ApiResponse<StylistsRegResponseDto>.Failed("Error creating stylist.", StatusCodes.Status500InternalServerError, new List<string>() { ex.InnerException.ToString() });
             }
         }
+
+
+
+        public async Task<ApiResponse<string[]>> VerifyAndAuthenticateUserAsync(string idToken)
+        {
+            try
+            {
+                var payload = await GoogleJsonWebSignature.ValidateAsync(idToken, new GoogleJsonWebSignature.ValidationSettings());
+                var userEmail = payload.Email;
+                var existingUser = await _userManager.FindByEmailAsync(userEmail);
+                if (existingUser == null)
+                {
+                    return ApiResponse<string[]>.Failed("Email not registered", StatusCodes.Status404NotFound, new List<string>());
+                }
+                //var wallet = await _walletService.GetWalletByUserId(existingUser.Id);
+                //string wallletNumber = wallet.Data.WalletNumber;
+                string userId = existingUser.Id;
+                var user = await _unitOfWork.UserRepository.GetByIdAsync(userId);
+
+                string[] response = new string[] { userEmail, user.FirstName + " " + user.UserName, userId };
+
+
+                if (existingUser != null)
+                {
+                    await _signInManager.SignInAsync(existingUser, isPersistent: false);
+                    return ApiResponse<string[]>.Success(response, "User Logged in successfully", StatusCodes.Status200OK);
+                }
+                else
+                {
+                    return ApiResponse<string[]>.Failed("User not found", StatusCodes.Status404NotFound, new List<string>());
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while changing password");
+                return ApiResponse<string[]>.Failed("Error occurred while authenticating user", StatusCodes.Status500InternalServerError, new List<string> { ex.Message });
+            }
+        }
+
+
+
+
+        public async Task<ApiResponse<string>> ValidateTokenAsync(string token)
+        {
+            try
+            {
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.UTF8.GetBytes(_config.GetSection("JwtSettings:Secret").Value);
+
+                var validationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = _config.GetSection("JwtSettings:ValidIssuer").Value,
+                    ValidAudience = _config.GetSection("JwtSettings:ValidAudience").Value,
+                    IssuerSigningKey = new SymmetricSecurityKey(key)
+                };
+
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out SecurityToken securityToken);
+
+                var emailClaim = principal.FindFirst(JwtRegisteredClaimNames.Email)?.Value;
+
+                return new ApiResponse<string>(true, "Token is valid.", 200, null, new List<string>());
+            }
+            catch (SecurityTokenException ex)
+            {
+                _logger.LogError(ex, "Token validation failed");
+                var errorList = new List<string> { ex.Message };
+                return new ApiResponse<string>(false, "Token validation failed.", 400, null, errorList);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred during token validation");
+                var errorList = new List<string> { ex.Message };
+                return new ApiResponse<string>(false, "Error occurred during token validation", 500, null, errorList);
+            }
+        }
+
+
+
+
+
+
+
 
         public async Task<ApiResponse<StylistsLoginResponseDto>> LoginAsync(StylistsLoginDto loginDTO)
         {
@@ -170,7 +253,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 return ApiResponse<StylistsLoginResponseDto>.Failed("Some error occurred while login in." + ex.Message, StatusCodes.Status500InternalServerError, new List<string>() { ex.Message });
             }
         }
-        private string GenerateJwtToken(AppUser contact, string roles)
+        private string GenerateJwtToken(AppUser stylist, string roles)
         {
             var jwtSettings = _config.GetSection("JwtSettings:Secret").Value;
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings));
@@ -178,18 +261,16 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, contact.Id),
-                new Claim(JwtRegisteredClaimNames.Email, contact.Email),
+                new Claim(JwtRegisteredClaimNames.Sub, stylist.Id),
+                new Claim(JwtRegisteredClaimNames.Email, stylist.Email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.GivenName, contact.FirstName+" "+contact.CompanyName),
+                new Claim(JwtRegisteredClaimNames.GivenName, stylist.FirstName+" "+stylist.CompanyName),
                 new Claim(ClaimTypes.Role, roles)
             };
 
             var token = new JwtSecurityToken(
                 issuer: _config.GetValue<string>("JwtSettings:ValidIssuer"),
-                audience: _config.GetValue<string>("JwtSettings:ValidAudience"),
-                //issuer: null,
-                //audience: null,
+                audience: _config.GetValue<string>("JwtSettings:ValidAudience"),                 
                 claims: claims,
                 expires: DateTime.UtcNow.AddMinutes(int.Parse(_config.GetSection("JwtSettings:AccessTokenExpiration").Value)),
                 signingCredentials: credentials
@@ -280,25 +361,24 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
                 string token = await _userManager.GeneratePasswordResetTokenAsync(stylist);
 
-                //  token = HttpUtility.UrlEncode(token);
-
+                 
                 stylist.PasswordResetToken = token;
                 stylist.ResetTokenExpires = DateTime.UtcNow.AddHours(1);
 
                 await _userManager.UpdateAsync(stylist);
 
-                var resetPasswordUrl = "http://localhost:3000/confirmpassword?email=" + email + "&token=" + token;
+                //var resetPasswordUrl = "http://localhost:3000/confirmpassword?email=" + email + "&token=" + token;
 
 
-                var mailRequest = new MailRequest
-                {
-                    ToEmail = email,
-                    Subject = "Your Savi Password Reset Instructions",
-                    Body = $"Please reset your password by clicking <a href='{resetPasswordUrl}'>here</a>."
-                };
-                await _emailServices.SendMailAsync(mailRequest);
+                //var mailRequest = new MailRequest
+                //{
+                //    ToEmail = email,
+                //    Subject = "Your Savi Password Reset Instructions",
+                //    Body = $"Please reset your password by clicking <a href='{resetPasswordUrl}'>here</a>."
+                //};
+                //await _emailServices.SendMailAsync(mailRequest);
 
-                return new ApiResponse<string>(true, "Password reset email sent successfully.", 200, null, new List<string>());
+                return new ApiResponse<string>(true, "Password reset token retieved successfully.", 200, token, new List<string>());
             }
             catch (Exception ex)
             {

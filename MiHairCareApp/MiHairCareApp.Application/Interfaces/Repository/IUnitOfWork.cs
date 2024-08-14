@@ -15,7 +15,9 @@ namespace MiHairCareApp.Application.Interfaces.Repository
         IRatingsRepository RatingsRepository { get; }
         IReferralsRepository ReferralsRepository { get; }
         IReviewsRepository ReviewsRepository { get; }
-        IWalletRepository WalletRepository { get; }
+        ITransactionRepository TransactionRepository { get; }
+        IProductRepository ProductRepository { get; }
+        IPhotoRepository PhotoRepository { get; }
          
 
         Task<int> SaveChangesAsync();

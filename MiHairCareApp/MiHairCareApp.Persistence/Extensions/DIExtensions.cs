@@ -34,7 +34,12 @@ namespace MiHairCareApp.Persistence.Extensions
             })
             .AddEntityFrameworkStores<StylistsDBContext>()
             .AddDefaultTokenProviders();
-             
+
+            services.AddAuthentication().AddGoogle(googleOptions =>
+            {
+                googleOptions.ClientId = configuration["Authentication:Google:ClientId"];
+                googleOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"];
+            });
 
             // Register UserManager and RoleManager for both AppUser and Stylist
             services.AddScoped<UserManager<AppUser>>();             
@@ -47,9 +52,12 @@ namespace MiHairCareApp.Persistence.Extensions
 
             services.AddTransient<IEmailServices, EmailServices>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<IWalletServices, WalletServices>();
+            services.AddScoped<IHairStyleServices, HairStyleServices>();
             services.AddScoped<IAuthenticationServices, AuthenticationServices>();
             services.AddScoped<IStylistAuthServices, StylistAuthServices>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IReviewsService, ReviewsService>();
 
             // Register Cloudinary services
             var cloudinarySettings = new CloudinarySettings();
@@ -64,8 +72,11 @@ namespace MiHairCareApp.Persistence.Extensions
                 return new Cloudinary(account);
             });
 
-            // Example in Startup.cs
+             
             services.AddScoped(typeof(ICloudinaryServices<>), typeof(CloudinaryServices<>));
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+ 
+            services.AddScoped(typeof(CloudinaryServices<>));
 
         } 
 

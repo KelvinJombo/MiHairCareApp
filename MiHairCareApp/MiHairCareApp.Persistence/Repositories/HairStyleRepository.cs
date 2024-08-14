@@ -10,12 +10,11 @@ using System.Threading.Tasks;
 namespace MiHairCareApp.Persistence.Repositories
 {
     public class HairStyleRepository : GenericRepository<HairStyle>, IHairStyleRepository
-    {
-        private readonly StylistsDBContext dBContext;
+    {         
 
         public HairStyleRepository(StylistsDBContext dBContext) : base(dBContext) 
         {
-            this.dBContext = dBContext;
+             
         }
     }
 }

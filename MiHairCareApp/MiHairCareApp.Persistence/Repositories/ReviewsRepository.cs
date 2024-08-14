@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MiHairCareApp.Persistence.Repositories
 {
-    public class ReviewsRepository : GenericRepository<Reviews>, IReviewsRepository
+    public class ReviewsRepository : GenericRepository<Review>, IReviewsRepository
     {
         private readonly StylistsDBContext dBContext;
 

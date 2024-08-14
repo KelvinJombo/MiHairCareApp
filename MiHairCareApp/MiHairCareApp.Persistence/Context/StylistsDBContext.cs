@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MiHairCareApp.Domain.Entities;
-using System.Collections.Generic;
 
 namespace MiHairCareApp.Persistence.Context
 {
@@ -19,11 +17,13 @@ namespace MiHairCareApp.Persistence.Context
         public DbSet<PromotionalOffers> PromotionalOffers { get; set; }
         public DbSet<Ratings> Ratings { get; set; }
         public DbSet<Referral> Referrals { get; set; }
-        public DbSet<Reviews> Reviews { get; set; }
+        public DbSet<Review> Reviews { get; set; }
         public DbSet<StylistPortfolio> StylistPortfolios { get; set; }
-        public DbSet<Wallet> Wallets { get; set; }
-        public DbSet<WalletFunding> WalletFundings { get; set; }
-        public DbSet<UserTransaction> UserTransactionsSavings { get; set; }
+        public DbSet<Wallet> Wallets { get; set; }         
+        public DbSet<UserTransaction> UserTransactions { get; set; }
+        public DbSet<HaircareProduct> HaircareProducts { get; set; }       
+        //public DbSet<ProductReview> ProductReviews { get; set; }
+        public DbSet<Photo> Photos { get; set; }
 
 
 
@@ -36,9 +36,19 @@ namespace MiHairCareApp.Persistence.Context
                 .HasMany(u => u.ReferralsMade)
                 .WithOne(r => r.ReferrerUser)
                 .HasForeignKey(r => r.ReferrerUserId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Restrict);             
 
-            // Other model configurations...
+            //modelBuilder.Entity<AppUser>()
+            //    .HasMany(u => u.ProductReviews)
+            //    .WithOne(r => r.User)
+            //    .HasForeignKey(r => r.UserID)
+            //    .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<AppUser>()
+                .HasMany(u => u.Review)
+                .WithOne(r => r.User)
+                .HasForeignKey(r => r.UserID)
+                .OnDelete(DeleteBehavior.Restrict);
 
             // Configure other entities similarly to avoid cycles
             modelBuilder.Entity<Booking>(entity =>

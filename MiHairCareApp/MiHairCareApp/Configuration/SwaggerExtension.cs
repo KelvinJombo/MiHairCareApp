@@ -1,4 +1,5 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.OpenApi.Models;
 
 namespace MiHairCareApp.Configuration
 {
@@ -14,14 +15,14 @@ namespace MiHairCareApp.Configuration
                     Version = "v1",
                     Description = "MiHairCare_App is an application that enables Users to locate a hairstylist in a locality to access services or haircare care products."
                 });
-                config.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                config.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
                 {
                     In = ParameterLocation.Header,
-                    Description = "Insert Token",
+                    Description = "Insert Token Here",
                     Name = "Authorization",
                     Type = SecuritySchemeType.Http,
                     BearerFormat = "Jwt",
-                    Scheme = "Bearer"
+                    Scheme = "bearer"
                 });
                 config.AddSecurityRequirement(new OpenApiSecurityRequirement
             {
@@ -31,7 +32,7 @@ namespace MiHairCareApp.Configuration
                             Reference = new OpenApiReference
                             {
                                 Type = ReferenceType.SecurityScheme,
-                                Id = "Bearer"
+                                Id = JwtBearerDefaults.AuthenticationScheme
                             }
                         },
                         new string[] {}

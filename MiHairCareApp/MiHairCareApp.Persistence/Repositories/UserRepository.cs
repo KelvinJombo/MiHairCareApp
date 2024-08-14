@@ -11,10 +11,10 @@ namespace MiHairCareApp.Persistence.Repositories
 {
     public class UserRepository : GenericRepository<AppUser>, IUserRepository
     {
-        private readonly StylistsDBContext _dbContext;
+        
         public UserRepository(StylistsDBContext dbContext) : base(dbContext)
         {
-            _dbContext = dbContext;
+            
         }
          
         

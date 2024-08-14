@@ -1525,3 +1525,1172 @@
 2024-06-05 11:42:14.3084 Info Configuration initialized.
 2024-06-05 11:42:15.6453 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
 2024-06-05 11:42:15.6814 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-11 23:37:37.9306 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-11 23:37:37.9388 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-11 23:37:37.9388 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-11 23:37:37.9388 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-11 23:37:37.9388 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-11 23:37:37.9388 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-11 23:37:37.9917 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-11 23:37:38.0283 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-11 23:37:38.0650 Info Configuration initialized.
+2024-06-11 23:37:39.1192 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-11 23:37:39.1514 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-12 23:28:26.4168 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-12 23:28:26.4267 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-12 23:28:26.4267 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-12 23:28:26.4267 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-12 23:28:26.4267 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-12 23:28:26.4267 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-12 23:28:26.4945 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-12 23:28:26.5542 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-12 23:28:26.6124 Info Configuration initialized.
+2024-06-12 23:28:29.7157 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-12 23:28:29.7461 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-13 00:09:22.1011 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-13 00:09:22.1011 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-13 00:09:22.1011 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-13 00:09:22.1011 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-13 00:09:22.1011 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-13 00:09:22.1011 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-13 00:09:22.1497 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-13 00:09:22.1856 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 00:09:22.2320 Info Configuration initialized.
+2024-06-13 00:09:23.8639 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 00:09:23.8639 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-13 00:20:18.3287 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-13 00:20:18.3287 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-13 00:20:18.3287 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-13 00:20:18.3287 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-13 00:20:18.3287 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-13 00:20:18.3287 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-13 00:20:18.3551 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-13 00:20:18.3723 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 00:20:18.3881 Info Configuration initialized.
+2024-06-13 01:05:33.3791 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-13 01:05:33.3791 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-13 01:05:33.3791 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-13 01:05:33.3791 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-13 01:05:33.3791 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-13 01:05:33.3791 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-13 01:05:33.4080 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-13 01:05:33.4258 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 01:05:33.4429 Info Configuration initialized.
+2024-06-13 01:05:33.7739 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 01:05:33.7739 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-13 01:17:56.3062 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-13 01:17:56.3127 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-13 01:17:56.3127 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-13 01:17:56.3127 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-13 01:17:56.3127 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-13 01:17:56.3127 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-13 01:17:56.3400 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-13 01:17:56.3587 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 01:17:56.3762 Info Configuration initialized.
+2024-06-13 01:17:57.5611 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 01:17:57.5893 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-13 01:20:31.5523 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-13 01:20:31.5523 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-13 01:20:31.5523 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-13 01:20:31.5523 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-13 01:20:31.5523 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-13 01:20:31.5523 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-13 01:20:31.5837 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-13 01:20:31.6046 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 01:20:31.6216 Info Configuration initialized.
+2024-06-13 01:20:31.9338 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 01:20:31.9440 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-13 01:25:10.5236 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-13 01:25:10.5236 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-13 01:25:10.5236 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-13 01:25:10.5236 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-13 01:25:10.5236 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-13 01:25:10.5287 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-13 01:25:10.5489 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-13 01:25:10.5666 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 01:25:10.5666 Info Configuration initialized.
+2024-06-13 01:25:10.9653 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 01:25:10.9750 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-13 01:26:18.7785 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-13 01:26:18.7811 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-13 01:26:18.7811 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-13 01:26:18.7811 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-13 01:26:18.7811 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-13 01:26:18.7811 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-13 01:26:18.8045 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-13 01:26:18.8225 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 01:26:18.8410 Info Configuration initialized.
+2024-06-13 01:26:19.2515 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 01:26:19.2515 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-13 02:24:50.4906 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-13 02:24:50.4906 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-13 02:24:50.4906 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-13 02:24:50.4906 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-13 02:24:50.4906 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-13 02:24:50.4906 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-13 02:24:50.5174 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-13 02:24:50.5174 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 02:24:50.5487 Info Configuration initialized.
+2024-06-13 02:24:51.4739 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 02:24:51.4862 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-13 16:48:46.4551 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-13 16:48:46.4551 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-13 16:48:46.4551 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-13 16:48:46.4551 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-13 16:48:46.4551 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-13 16:48:46.4551 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-13 16:48:46.4870 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-13 16:48:46.5085 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 16:48:46.5283 Info Configuration initialized.
+2024-06-13 16:48:47.8589 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 16:48:47.8960 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-13 17:02:38.1960 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-13 17:02:38.1960 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-13 17:02:38.1960 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-13 17:02:38.1960 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-13 17:02:38.2008 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-13 17:02:38.2008 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-13 17:02:38.2255 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-13 17:02:38.2464 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 17:02:38.2652 Info Configuration initialized.
+2024-06-13 17:02:38.6918 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-13 17:02:38.7189 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-20 10:20:26.5548 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-20 10:20:26.5721 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-20 10:20:26.5721 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-20 10:20:26.5721 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-20 10:20:26.5721 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-20 10:20:26.5721 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-20 10:20:26.6746 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-20 10:20:26.7155 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 10:20:26.7472 Info Configuration initialized.
+2024-06-20 13:03:22.1692 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-20 13:03:22.2229 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-20 13:03:22.2229 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-20 13:03:22.2229 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-20 13:03:22.2229 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-20 13:03:22.2272 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-20 13:03:22.2806 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-20 13:03:22.3261 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 13:03:22.3742 Info Configuration initialized.
+2024-06-20 13:03:24.0556 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 13:03:24.0766 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-20 13:13:46.4677 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-20 13:13:46.4677 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-20 13:13:46.4677 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-20 13:13:46.4677 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-20 13:13:46.4677 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-20 13:13:46.4677 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-20 13:13:46.5287 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-20 13:13:46.5673 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 13:13:46.6017 Info Configuration initialized.
+2024-06-20 13:13:49.3124 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 13:13:49.3295 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-20 13:22:20.3744 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-20 13:22:20.3744 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-20 13:22:20.3744 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-20 13:22:20.3812 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-20 13:22:20.3812 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-20 13:22:20.3812 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-20 13:22:20.4405 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-20 13:22:20.4889 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 13:22:20.5333 Info Configuration initialized.
+2024-06-20 13:22:23.0388 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 13:22:23.0581 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-20 13:37:11.3212 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-20 13:37:11.3212 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-20 13:37:11.3212 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-20 13:37:11.3212 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-20 13:37:11.3212 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-20 13:37:11.3212 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-20 13:37:11.3400 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-20 13:37:11.3534 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 13:37:11.3534 Info Configuration initialized.
+2024-06-20 13:37:11.4583 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 13:37:11.4674 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-20 13:37:11.4901 Info Shutdown() called. Logger closing...
+2024-06-20 13:37:11.4901 Info Closing old configuration.
+2024-06-20 13:37:11.4901 Info Logger has been closed down.
+2024-06-20 13:37:44.4334 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-20 13:37:44.4334 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-20 13:37:44.4334 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-20 13:37:44.4334 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-20 13:37:44.4334 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-20 13:37:44.4334 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-20 13:37:44.4502 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-20 13:37:44.4625 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 13:37:44.4740 Info Configuration initialized.
+2024-06-20 13:37:44.5695 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 13:37:44.5695 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-20 13:37:44.5990 Info Shutdown() called. Logger closing...
+2024-06-20 13:37:44.5990 Info Closing old configuration.
+2024-06-20 13:37:44.5990 Info Logger has been closed down.
+2024-06-20 13:38:40.7259 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-20 13:38:40.7259 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-20 13:38:40.7259 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-20 13:38:40.7259 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-20 13:38:40.7259 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-20 13:38:40.7259 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-20 13:38:40.7591 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-20 13:38:40.7897 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 13:38:40.8166 Info Configuration initialized.
+2024-06-20 13:38:41.2035 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 13:38:41.2163 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-20 14:04:26.9931 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-20 14:04:26.9931 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-20 14:04:26.9931 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-20 14:04:26.9931 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-20 14:04:26.9931 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-20 14:04:26.9931 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-20 14:04:27.0190 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-20 14:04:27.0371 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 14:04:27.0545 Info Configuration initialized.
+2024-06-20 14:04:27.4000 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 14:04:27.4000 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-20 14:21:43.6709 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-20 14:21:43.6709 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-20 14:21:43.6709 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-20 14:21:43.6769 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-20 14:21:43.6769 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-20 14:21:43.6769 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-20 14:21:43.7124 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-20 14:21:43.7434 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 14:21:43.7733 Info Configuration initialized.
+2024-06-20 14:21:54.3518 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 14:21:54.3707 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-20 14:36:38.8362 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-20 14:36:38.8362 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-20 14:36:38.8362 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-20 14:36:38.8362 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-20 14:36:38.8362 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-20 14:36:38.8362 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-20 14:36:38.8698 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-20 14:36:38.8920 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 14:36:38.9184 Info Configuration initialized.
+2024-06-20 14:36:39.3209 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-20 14:36:39.3209 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-26 13:23:15.1522 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-26 13:23:15.1522 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-26 13:23:15.1637 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-26 13:23:15.1637 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-26 13:23:15.1637 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-26 13:23:15.1637 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-26 13:23:15.2124 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-26 13:23:15.2499 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-26 13:23:15.2867 Info Configuration initialized.
+2024-06-26 13:23:16.5512 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-26 13:23:16.5836 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-26 14:07:14.0567 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-26 14:07:14.0567 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-26 14:07:14.0567 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-26 14:07:14.0567 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-26 14:07:14.0567 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-26 14:07:14.0567 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-26 14:07:14.0858 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-26 14:07:14.0858 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-26 14:07:14.1186 Info Configuration initialized.
+2024-06-26 14:07:14.4868 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-26 14:07:14.4868 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-26 14:41:39.9449 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-26 14:41:39.9449 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-26 14:41:39.9449 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-26 14:41:39.9449 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-26 14:41:39.9449 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-26 14:41:39.9449 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-26 14:41:39.9906 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-26 14:41:40.0185 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-26 14:41:40.0406 Info Configuration initialized.
+2024-06-26 14:41:40.3709 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-26 14:41:40.3829 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-26 15:54:57.9762 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-26 15:54:57.9762 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-26 15:54:57.9762 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-26 15:54:57.9762 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-26 15:54:57.9762 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-26 15:54:57.9762 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-26 15:54:58.0890 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-26 15:54:58.1400 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-26 15:54:58.1887 Info Configuration initialized.
+2024-06-26 15:54:58.8764 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-26 15:54:58.8987 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-26 18:24:42.4101 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-26 18:24:42.4135 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-26 18:24:42.4135 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-26 18:24:42.4135 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-26 18:24:42.4135 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-26 18:24:42.4135 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-26 18:24:42.4294 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-26 18:24:42.4429 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-26 18:24:42.4429 Info Configuration initialized.
+2024-06-26 18:24:42.6196 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-26 18:24:42.6196 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-26 18:24:42.6833 Info Shutdown() called. Logger closing...
+2024-06-26 18:24:42.6833 Info Closing old configuration.
+2024-06-26 18:24:42.6971 Info Logger has been closed down.
+2024-06-26 18:24:51.9106 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-26 18:24:51.9126 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-26 18:24:51.9126 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-26 18:24:51.9126 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-26 18:24:51.9126 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-26 18:24:51.9126 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-26 18:24:51.9126 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-26 18:24:51.9376 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-26 18:24:51.9485 Info Configuration initialized.
+2024-06-26 18:24:52.0254 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-26 18:24:52.0254 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-26 18:24:52.0499 Info Shutdown() called. Logger closing...
+2024-06-26 18:24:52.0499 Info Closing old configuration.
+2024-06-26 18:24:52.0616 Info Logger has been closed down.
+2024-06-26 18:25:34.3086 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-26 18:25:34.3086 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-26 18:25:34.3086 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-26 18:25:34.3086 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-26 18:25:34.3086 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-26 18:25:34.3086 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-26 18:25:34.3255 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-26 18:25:34.3372 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-26 18:25:34.3372 Info Configuration initialized.
+2024-06-26 18:25:34.4326 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-26 18:25:34.4326 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-26 18:25:34.4580 Info Shutdown() called. Logger closing...
+2024-06-26 18:25:34.4580 Info Closing old configuration.
+2024-06-26 18:25:34.4699 Info Logger has been closed down.
+2024-06-27 00:09:13.2450 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-27 00:09:13.2450 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-27 00:09:13.2450 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-27 00:09:13.2557 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-27 00:09:13.2557 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-27 00:09:13.2557 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-27 00:09:13.2934 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-27 00:09:13.3173 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 00:09:13.3463 Info Configuration initialized.
+2024-06-27 00:09:14.4714 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 00:09:14.4857 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-27 00:22:27.9142 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-27 00:22:27.9289 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-27 00:22:27.9726 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-27 00:22:27.9726 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-27 00:22:27.9763 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-27 00:22:27.9763 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-27 00:22:28.0437 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-27 00:22:28.1032 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 00:22:28.1520 Info Configuration initialized.
+2024-06-27 00:22:28.8362 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 00:22:28.8656 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-27 00:28:47.0735 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-27 00:28:47.0735 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-27 00:28:47.0735 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-27 00:28:47.0735 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-27 00:28:47.0735 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-27 00:28:47.0735 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-27 00:28:47.1223 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-27 00:28:47.1632 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 00:28:47.2033 Info Configuration initialized.
+2024-06-27 00:28:47.8055 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 00:28:47.8271 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-27 00:32:49.6584 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-27 00:32:49.6704 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-27 00:32:49.6704 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-27 00:32:49.6704 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-27 00:32:49.6704 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-27 00:32:49.6704 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-27 00:32:49.7255 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-27 00:32:49.7703 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 00:32:49.8052 Info Configuration initialized.
+2024-06-27 00:32:51.2206 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 00:32:51.2430 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-27 00:35:41.7332 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-27 00:35:41.7332 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-27 00:35:41.7332 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-27 00:35:41.7332 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-27 00:35:41.7419 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-27 00:35:41.7419 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-27 00:35:41.7921 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-27 00:35:41.8340 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 00:35:41.8653 Info Configuration initialized.
+2024-06-27 00:35:42.4695 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 00:35:42.4938 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-27 08:50:43.5242 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-27 08:50:43.5242 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-27 08:50:43.5242 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-27 08:50:43.5242 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-27 08:50:43.5242 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-27 08:50:43.5242 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-27 08:50:43.5593 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-27 08:50:43.5816 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 08:50:43.6031 Info Configuration initialized.
+2024-06-27 08:50:44.2347 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 08:50:44.2487 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-27 09:29:10.5919 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-27 09:29:10.5995 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-27 09:29:10.5995 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-27 09:29:10.5995 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-27 09:29:10.5995 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-27 09:29:10.5995 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-27 09:29:10.6310 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-27 09:29:10.6633 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 09:29:10.6821 Info Configuration initialized.
+2024-06-27 09:29:11.1075 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 09:29:11.1204 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-27 09:46:14.0825 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-27 09:46:14.0890 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-27 09:46:14.0890 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-27 09:46:14.0890 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-27 09:46:14.0890 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-27 09:46:14.0890 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-27 09:46:14.1187 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-27 09:46:14.1453 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 09:46:14.1645 Info Configuration initialized.
+2024-06-27 09:46:14.5917 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 09:46:14.6031 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-27 09:57:03.5192 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-27 09:57:03.5234 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-27 09:57:03.5234 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-27 09:57:03.5234 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-27 09:57:03.5234 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-27 09:57:03.5234 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-27 09:57:03.5534 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-27 09:57:03.5788 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 09:57:03.6062 Info Configuration initialized.
+2024-06-27 09:57:04.0307 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 09:57:04.0429 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-27 10:01:00.7658 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-27 10:01:00.7658 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-27 10:01:00.7658 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-27 10:01:00.7658 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-27 10:01:00.7730 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-27 10:01:00.7730 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-27 10:01:00.8160 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-27 10:01:00.8525 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 10:01:00.8884 Info Configuration initialized.
+2024-06-27 10:01:01.2786 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 10:01:01.2894 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-06-27 10:33:46.1100 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-06-27 10:33:46.1168 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-06-27 10:33:46.1168 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-06-27 10:33:46.1168 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-06-27 10:33:46.1168 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-06-27 10:33:46.1168 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-06-27 10:33:46.1776 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-06-27 10:33:46.2278 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 10:33:46.2682 Info Configuration initialized.
+2024-06-27 10:33:47.0263 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-06-27 10:33:47.0617 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-08 16:47:57.7633 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-08 16:47:57.7959 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-08 16:47:57.7959 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-08 16:47:57.7959 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-08 16:47:57.7959 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-08 16:47:57.7959 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-08 16:47:57.8555 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-08 16:47:57.9053 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 16:47:57.9615 Info Configuration initialized.
+2024-07-08 16:48:01.2529 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 16:48:01.2791 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-08 16:52:16.7729 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-08 16:52:16.7855 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-08 16:52:16.7855 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-08 16:52:16.7855 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-08 16:52:16.7855 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-08 16:52:16.7855 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-08 16:52:16.8496 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-08 16:52:16.8939 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 16:52:16.9373 Info Configuration initialized.
+2024-07-08 16:52:18.4105 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 16:52:18.4345 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-08 17:21:54.9416 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-08 17:21:54.9416 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-08 17:21:54.9416 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-08 17:21:54.9416 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-08 17:21:54.9416 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-08 17:21:54.9416 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-08 17:21:54.9687 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-08 17:21:54.9849 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 17:21:55.0029 Info Configuration initialized.
+2024-07-08 17:21:56.0215 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 17:21:56.0215 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-08 19:25:39.6287 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-08 19:25:39.6287 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-08 19:25:39.6372 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-08 19:25:39.6372 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-08 19:25:39.6372 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-08 19:25:39.6372 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-08 19:25:39.6868 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-08 19:25:39.7291 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 19:25:39.7736 Info Configuration initialized.
+2024-07-08 19:25:44.9444 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 19:25:44.9702 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-08 22:43:53.1601 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-08 22:43:53.1711 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-08 22:43:53.1711 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-08 22:43:53.1711 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-08 22:43:53.1711 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-08 22:43:53.1711 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-08 22:43:53.2518 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-08 22:43:53.3371 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 22:43:53.4149 Info Configuration initialized.
+2024-07-08 22:43:54.4416 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 22:43:54.4810 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-08 22:45:04.1345 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-08 22:45:04.1345 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-08 22:45:04.1345 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-08 22:45:04.1345 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-08 22:45:04.1345 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-08 22:45:04.1345 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-08 22:45:04.1607 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-08 22:45:04.1810 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 22:45:04.1980 Info Configuration initialized.
+2024-07-08 22:45:04.3207 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 22:45:04.3357 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-08 22:45:04.4346 Info Shutdown() called. Logger closing...
+2024-07-08 22:45:04.4346 Info Closing old configuration.
+2024-07-08 22:45:04.4594 Info Logger has been closed down.
+2024-07-08 22:45:19.0416 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-08 22:45:19.0443 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-08 22:45:19.0443 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-08 22:45:19.0443 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-08 22:45:19.0443 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-08 22:45:19.0443 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-08 22:45:19.0698 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-08 22:45:19.0972 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 22:45:19.1189 Info Configuration initialized.
+2024-07-08 22:45:19.2453 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 22:45:19.2601 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-08 22:45:19.3081 Info Shutdown() called. Logger closing...
+2024-07-08 22:45:19.3081 Info Closing old configuration.
+2024-07-08 22:45:19.3334 Info Logger has been closed down.
+2024-07-08 22:47:39.7568 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-08 22:47:39.7627 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-08 22:47:39.7627 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-08 22:47:39.7627 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-08 22:47:39.7627 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-08 22:47:39.7627 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-08 22:47:39.8206 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-08 22:47:39.8576 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 22:47:39.8794 Info Configuration initialized.
+2024-07-08 22:47:40.4771 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 22:47:40.5012 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-08 22:50:36.5976 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-08 22:50:36.6005 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-08 22:50:36.6005 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-08 22:50:36.6005 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-08 22:50:36.6005 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-08 22:50:36.6005 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-08 22:50:36.6315 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-08 22:50:36.6591 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 22:50:36.6861 Info Configuration initialized.
+2024-07-08 22:50:36.8358 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 22:50:36.8469 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-08 22:50:36.8813 Info Shutdown() called. Logger closing...
+2024-07-08 22:50:36.8813 Info Closing old configuration.
+2024-07-08 22:50:36.9024 Info Logger has been closed down.
+2024-07-08 22:51:01.1048 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-08 22:51:01.1085 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-08 22:51:01.1085 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-08 22:51:01.1085 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-08 22:51:01.1085 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-08 22:51:01.1085 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-08 22:51:01.1291 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-08 22:51:01.1492 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 22:51:01.1762 Info Configuration initialized.
+2024-07-08 22:51:01.3355 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 22:51:01.3454 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-08 22:51:01.3748 Info Shutdown() called. Logger closing...
+2024-07-08 22:51:01.3748 Info Closing old configuration.
+2024-07-08 22:51:01.3965 Info Logger has been closed down.
+2024-07-08 22:51:26.6598 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-08 22:51:26.6598 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-08 22:51:26.6643 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-08 22:51:26.6643 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-08 22:51:26.6643 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-08 22:51:26.6643 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-08 22:51:26.6907 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-08 22:51:26.7137 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 22:51:26.7395 Info Configuration initialized.
+2024-07-08 22:51:26.9543 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 22:51:26.9657 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-08 22:51:27.0022 Info Shutdown() called. Logger closing...
+2024-07-08 22:51:27.0022 Info Closing old configuration.
+2024-07-08 22:51:27.0257 Info Logger has been closed down.
+2024-07-08 22:52:33.2285 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-08 22:52:33.2285 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-08 22:52:33.2285 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-08 22:52:33.2285 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-08 22:52:33.2285 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-08 22:52:33.2285 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-08 22:52:33.3007 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-08 22:52:33.3553 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 22:52:33.4053 Info Configuration initialized.
+2024-07-08 22:52:34.2264 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-08 22:52:34.2575 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-12 12:50:04.3667 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-12 12:50:04.3667 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-12 12:50:04.3667 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-12 12:50:04.3667 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-12 12:50:04.3667 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-12 12:50:04.3851 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-12 12:50:04.4413 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-12 12:50:04.4912 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-12 12:50:04.5322 Info Configuration initialized.
+2024-07-12 12:52:59.7095 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-12 12:52:59.7137 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-12 12:52:59.7137 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-12 12:52:59.7137 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-12 12:52:59.7137 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-12 12:52:59.7137 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-12 12:52:59.7550 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-12 12:52:59.7836 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-12 12:52:59.8115 Info Configuration initialized.
+2024-07-13 00:27:48.6577 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 00:27:48.6828 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 00:27:48.6828 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 00:27:48.6828 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 00:27:48.6828 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 00:27:48.6828 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 00:27:48.7481 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 00:27:48.8086 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 00:27:48.8744 Info Configuration initialized.
+2024-07-13 00:34:19.6891 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 00:34:19.6891 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 00:34:19.6891 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 00:34:19.6891 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 00:34:19.6891 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 00:34:19.6891 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 00:34:19.7439 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 00:34:19.7840 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 00:34:19.8210 Info Configuration initialized.
+2024-07-13 00:37:31.7021 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 00:37:31.7225 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 00:37:31.7225 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 00:37:31.7225 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 00:37:31.7225 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 00:37:31.7225 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 00:37:31.7848 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 00:37:31.8477 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 00:37:31.9073 Info Configuration initialized.
+2024-07-13 00:37:32.9104 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 00:37:32.9413 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 00:41:02.7097 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 00:41:02.7129 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 00:41:02.7129 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 00:41:02.7129 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 00:41:02.7129 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 00:41:02.7129 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 00:41:02.7448 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 00:41:02.7615 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 00:41:02.7799 Info Configuration initialized.
+2024-07-13 00:41:03.0072 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 00:41:03.0217 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 00:41:03.0599 Info Shutdown() called. Logger closing...
+2024-07-13 00:41:03.0599 Info Closing old configuration.
+2024-07-13 00:41:03.0841 Info Logger has been closed down.
+2024-07-13 00:41:40.8130 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 00:41:40.8130 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 00:41:40.8130 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 00:41:40.8130 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 00:41:40.8190 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 00:41:40.8190 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 00:41:40.8444 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 00:41:40.8670 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 00:41:40.8895 Info Configuration initialized.
+2024-07-13 00:41:41.0468 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 00:41:41.0579 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 00:41:41.0985 Info Shutdown() called. Logger closing...
+2024-07-13 00:41:41.0992 Info Closing old configuration.
+2024-07-13 00:41:41.1233 Info Logger has been closed down.
+2024-07-13 00:43:16.7524 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 00:43:16.7524 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 00:43:16.7524 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 00:43:16.7524 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 00:43:16.7572 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 00:43:16.7572 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 00:43:16.7775 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 00:43:16.7972 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 00:43:16.8119 Info Configuration initialized.
+2024-07-13 00:43:16.9423 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 00:43:16.9533 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 00:43:16.9827 Info Shutdown() called. Logger closing...
+2024-07-13 00:43:16.9827 Info Closing old configuration.
+2024-07-13 00:43:17.0041 Info Logger has been closed down.
+2024-07-13 00:43:23.6430 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 00:43:23.6430 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 00:43:23.6430 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 00:43:23.6430 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 00:43:23.6430 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 00:43:23.6486 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 00:43:23.6660 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 00:43:23.6848 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 00:43:23.7020 Info Configuration initialized.
+2024-07-13 00:43:23.9504 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 00:43:23.9504 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 00:43:24.0013 Info Shutdown() called. Logger closing...
+2024-07-13 00:43:24.0013 Info Closing old configuration.
+2024-07-13 00:43:24.0248 Info Logger has been closed down.
+2024-07-13 00:43:34.1542 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 00:43:34.1542 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 00:43:34.1542 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 00:43:34.1542 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 00:43:34.1542 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 00:43:34.1542 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 00:43:34.1881 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 00:43:34.2140 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 00:43:34.2393 Info Configuration initialized.
+2024-07-13 00:43:34.4244 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 00:43:34.4365 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 00:43:34.4657 Info Shutdown() called. Logger closing...
+2024-07-13 00:43:34.4657 Info Closing old configuration.
+2024-07-13 00:43:34.4910 Info Logger has been closed down.
+2024-07-13 00:45:43.9527 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 00:45:43.9643 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 00:45:43.9643 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 00:45:43.9643 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 00:45:43.9643 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 00:45:43.9643 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 00:45:44.0215 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 00:45:44.1118 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 00:45:44.2210 Info Configuration initialized.
+2024-07-13 00:45:44.9202 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 00:45:44.9490 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 01:38:50.3560 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 01:38:50.3560 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 01:38:50.3560 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 01:38:50.3560 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 01:38:50.3560 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 01:38:50.3560 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 01:38:50.3943 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 01:38:50.4169 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 01:38:50.4425 Info Configuration initialized.
+2024-07-13 01:38:50.9164 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 01:38:50.9316 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 01:44:33.4929 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 01:44:33.4929 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 01:44:33.4929 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 01:44:33.4929 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 01:44:33.4929 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 01:44:33.4929 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 01:44:33.5442 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 01:44:33.5821 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 01:44:33.6152 Info Configuration initialized.
+2024-07-13 01:44:34.0646 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 01:44:34.0809 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 02:11:25.8564 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 02:11:25.8678 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 02:11:25.8678 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 02:11:25.8678 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 02:11:25.8678 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 02:11:25.8678 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 02:11:25.9506 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 02:11:26.0044 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:11:26.0412 Info Configuration initialized.
+2024-07-13 02:11:27.7097 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:11:27.7339 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 02:18:11.3532 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 02:18:11.3580 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 02:18:11.3580 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 02:18:11.3580 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 02:18:11.3580 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 02:18:11.3580 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 02:18:11.3820 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 02:18:11.3979 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:18:11.4149 Info Configuration initialized.
+2024-07-13 02:18:11.5627 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:18:11.5785 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 02:18:11.6219 Info Shutdown() called. Logger closing...
+2024-07-13 02:18:11.6219 Info Closing old configuration.
+2024-07-13 02:18:11.6467 Info Logger has been closed down.
+2024-07-13 02:18:35.6552 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 02:18:35.6552 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 02:18:35.6552 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 02:18:35.6552 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 02:18:35.6552 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 02:18:35.6552 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 02:18:35.6867 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 02:18:35.7101 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:18:35.7324 Info Configuration initialized.
+2024-07-13 02:18:35.8732 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:18:35.8816 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 02:18:35.9127 Info Shutdown() called. Logger closing...
+2024-07-13 02:18:35.9127 Info Closing old configuration.
+2024-07-13 02:18:35.9369 Info Logger has been closed down.
+2024-07-13 02:20:31.9039 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 02:20:31.9161 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 02:20:31.9161 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 02:20:31.9161 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 02:20:31.9161 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 02:20:31.9161 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 02:20:31.9618 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 02:20:32.0095 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:20:32.0587 Info Configuration initialized.
+2024-07-13 02:20:32.8092 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:20:32.8428 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 02:22:00.0124 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 02:22:00.0124 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 02:22:00.0124 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 02:22:00.0124 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 02:22:00.0124 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 02:22:00.0227 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 02:22:00.1160 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 02:22:00.1731 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:22:00.2417 Info Configuration initialized.
+2024-07-13 02:22:00.9949 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:22:01.0190 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 02:24:27.3824 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 02:24:27.3824 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 02:24:27.3824 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 02:24:27.3824 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 02:24:27.3824 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 02:24:27.3824 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 02:24:27.4130 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 02:24:27.4360 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:24:27.4562 Info Configuration initialized.
+2024-07-13 02:24:27.6360 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:24:27.6577 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 02:24:27.7089 Info Shutdown() called. Logger closing...
+2024-07-13 02:24:27.7089 Info Closing old configuration.
+2024-07-13 02:24:27.7340 Info Logger has been closed down.
+2024-07-13 02:24:48.4634 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 02:24:48.4634 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 02:24:48.4634 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 02:24:48.4634 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 02:24:48.4634 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 02:24:48.4634 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 02:24:48.4919 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 02:24:48.5113 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:24:48.5302 Info Configuration initialized.
+2024-07-13 02:24:48.6512 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:24:48.6656 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 02:24:48.6969 Info Shutdown() called. Logger closing...
+2024-07-13 02:24:48.6969 Info Closing old configuration.
+2024-07-13 02:24:48.7185 Info Logger has been closed down.
+2024-07-13 02:25:07.5675 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 02:25:07.5797 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 02:25:07.5797 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 02:25:07.6040 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 02:25:07.6127 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 02:25:07.6127 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 02:25:07.6745 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 02:25:07.7314 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:25:07.7816 Info Configuration initialized.
+2024-07-13 02:25:08.4630 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:25:08.4922 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 02:34:16.6541 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 02:34:16.6541 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 02:34:16.6541 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 02:34:16.6541 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 02:34:16.6541 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 02:34:16.6541 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 02:34:16.6849 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 02:34:16.7122 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:34:16.7315 Info Configuration initialized.
+2024-07-13 02:34:16.8797 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:34:16.8994 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 02:34:16.9512 Info Shutdown() called. Logger closing...
+2024-07-13 02:34:16.9512 Info Closing old configuration.
+2024-07-13 02:34:16.9760 Info Logger has been closed down.
+2024-07-13 02:34:44.3597 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 02:34:44.3597 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 02:34:44.3597 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 02:34:44.3597 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 02:34:44.3597 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 02:34:44.3662 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 02:34:44.3927 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 02:34:44.4170 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:34:44.4397 Info Configuration initialized.
+2024-07-13 02:34:44.5858 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:34:44.5997 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 02:34:44.6330 Info Shutdown() called. Logger closing...
+2024-07-13 02:34:44.6330 Info Closing old configuration.
+2024-07-13 02:34:44.6530 Info Logger has been closed down.
+2024-07-13 02:34:58.2598 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 02:34:58.2753 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 02:34:58.2753 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 02:34:58.2753 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 02:34:58.2753 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 02:34:58.2753 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 02:34:58.3261 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 02:34:58.3616 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:34:58.3978 Info Configuration initialized.
+2024-07-13 02:34:59.2131 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 02:34:59.2417 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 09:59:04.5397 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 09:59:04.5397 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 09:59:04.5397 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 09:59:04.5397 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 09:59:04.5397 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 09:59:04.5397 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 09:59:04.5665 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 09:59:04.5843 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 09:59:04.6018 Info Configuration initialized.
+2024-07-13 09:59:04.7805 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 09:59:04.7909 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 09:59:04.8538 Info Shutdown() called. Logger closing...
+2024-07-13 09:59:04.8538 Info Closing old configuration.
+2024-07-13 09:59:04.8653 Info Logger has been closed down.
+2024-07-13 10:01:05.4883 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 10:01:05.4909 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 10:01:05.4909 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 10:01:05.4909 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 10:01:05.4909 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 10:01:05.4909 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 10:01:05.5102 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 10:01:05.5265 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 10:01:05.5420 Info Configuration initialized.
+2024-07-13 10:01:05.6566 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 10:01:05.6657 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 10:01:05.6884 Info Shutdown() called. Logger closing...
+2024-07-13 10:01:05.6884 Info Closing old configuration.
+2024-07-13 10:01:05.7011 Info Logger has been closed down.
+2024-07-13 10:01:47.2045 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 10:01:47.2045 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 10:01:47.2045 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 10:01:47.2085 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 10:01:47.2085 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 10:01:47.2085 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 10:01:47.2268 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 10:01:47.2402 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 10:01:47.2555 Info Configuration initialized.
+2024-07-13 10:01:47.3722 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 10:01:47.3722 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-13 10:01:47.4045 Info Shutdown() called. Logger closing...
+2024-07-13 10:01:47.4045 Info Closing old configuration.
+2024-07-13 10:01:47.4182 Info Logger has been closed down.
+2024-07-13 10:02:05.4183 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-13 10:02:05.4183 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-13 10:02:05.4183 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-13 10:02:05.4183 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-13 10:02:05.4183 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-13 10:02:05.4183 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-13 10:02:05.4562 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-13 10:02:05.4778 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 10:02:05.5040 Info Configuration initialized.
+2024-07-13 10:02:06.2116 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-13 10:02:06.2284 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-14 00:48:12.7698 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-14 00:48:12.7698 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-14 00:48:12.7698 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-14 00:48:12.7698 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-14 00:48:12.7698 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-14 00:48:12.7698 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-14 00:48:12.8067 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-14 00:48:12.8342 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-14 00:48:12.8647 Info Configuration initialized.
+2024-07-14 00:48:13.1547 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-14 00:48:13.1547 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-14 00:48:13.2652 Info Shutdown() called. Logger closing...
+2024-07-14 00:48:13.2652 Info Closing old configuration.
+2024-07-14 00:48:13.2909 Info Logger has been closed down.
+2024-07-14 00:53:10.8458 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-14 00:53:10.8458 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-14 00:53:10.8458 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-14 00:53:10.8458 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-14 00:53:10.8458 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-14 00:53:10.8458 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-14 00:53:10.8875 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-14 00:53:10.9142 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-14 00:53:10.9381 Info Configuration initialized.
+2024-07-14 00:53:11.1541 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-14 00:53:11.1727 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-14 00:53:11.2238 Info Shutdown() called. Logger closing...
+2024-07-14 00:53:11.2238 Info Closing old configuration.
+2024-07-14 00:53:11.2542 Info Logger has been closed down.
+2024-07-15 14:09:21.5038 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-15 14:09:21.5038 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-15 14:09:21.5038 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-15 14:09:21.5038 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-15 14:09:21.5038 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-15 14:09:21.5038 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-15 14:09:21.5250 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-15 14:09:21.5378 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 14:09:21.5511 Info Configuration initialized.
+2024-07-15 14:09:21.7621 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 14:09:21.7705 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-15 14:09:21.8509 Info Shutdown() called. Logger closing...
+2024-07-15 14:09:21.8509 Info Closing old configuration.
+2024-07-15 14:09:21.8655 Info Logger has been closed down.
+2024-07-15 14:09:38.5214 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-15 14:09:38.5214 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-15 14:09:38.5214 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-15 14:09:38.5214 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-15 14:09:38.5214 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-15 14:09:38.5214 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-15 14:09:38.5379 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-15 14:09:38.5499 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 14:09:38.5617 Info Configuration initialized.
+2024-07-15 14:09:38.6423 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 14:09:38.6423 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-15 14:09:38.6678 Info Shutdown() called. Logger closing...
+2024-07-15 14:09:38.6678 Info Closing old configuration.
+2024-07-15 14:09:38.6798 Info Logger has been closed down.
+2024-07-15 14:10:12.7822 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-15 14:10:12.7822 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-15 14:10:12.7822 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-15 14:10:12.7822 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-15 14:10:12.7822 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-15 14:10:12.7822 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-15 14:10:12.8011 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-15 14:10:12.8139 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 14:10:12.8298 Info Configuration initialized.
+2024-07-15 14:10:12.9685 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 14:10:12.9685 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-15 14:10:13.0093 Info Shutdown() called. Logger closing...
+2024-07-15 14:10:13.0093 Info Closing old configuration.
+2024-07-15 14:10:13.0205 Info Logger has been closed down.
+2024-07-15 14:25:06.0343 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-15 14:25:06.0343 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-15 14:25:06.0343 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-15 14:25:06.0343 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-15 14:25:06.0343 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-15 14:25:06.0343 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-15 14:25:06.0513 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-15 14:25:06.0634 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 14:25:06.0634 Info Configuration initialized.
+2024-07-15 14:25:06.1641 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 14:25:06.1718 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-15 14:25:06.1928 Info Shutdown() called. Logger closing...
+2024-07-15 14:25:06.1928 Info Closing old configuration.
+2024-07-15 14:25:06.2051 Info Logger has been closed down.
+2024-07-15 14:25:22.9008 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-15 14:25:22.9008 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-15 14:25:22.9008 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-15 14:25:22.9008 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-15 14:25:22.9008 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-15 14:25:22.9047 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-15 14:25:22.9047 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-15 14:25:22.9301 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 14:25:22.9424 Info Configuration initialized.
+2024-07-15 14:25:23.0332 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 14:25:23.0332 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-15 14:25:23.0628 Info Shutdown() called. Logger closing...
+2024-07-15 14:25:23.0628 Info Closing old configuration.
+2024-07-15 14:25:23.0628 Info Logger has been closed down.
+2024-07-15 14:45:12.8162 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-15 14:45:12.8162 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-15 14:45:12.8162 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-15 14:45:12.8162 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-15 14:45:12.8162 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-15 14:45:12.8277 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-15 14:45:12.8600 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-15 14:45:12.8942 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 14:45:12.9262 Info Configuration initialized.
+2024-07-15 14:45:13.2040 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 14:45:13.2345 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-15 14:45:13.3221 Info Shutdown() called. Logger closing...
+2024-07-15 14:45:13.3221 Info Closing old configuration.
+2024-07-15 14:45:13.3588 Info Logger has been closed down.
+2024-07-15 15:22:42.4599 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-15 15:22:42.4599 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-15 15:22:42.4599 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-15 15:22:42.4599 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-15 15:22:42.4599 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-15 15:22:42.4599 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-15 15:22:42.4941 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-15 15:22:42.5224 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 15:22:42.5489 Info Configuration initialized.
+2024-07-15 15:22:43.6320 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 15:22:43.6466 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-15 15:22:43.6965 Info Shutdown() called. Logger closing...
+2024-07-15 15:22:43.6965 Info Closing old configuration.
+2024-07-15 15:22:43.7224 Info Logger has been closed down.
+2024-07-15 15:22:50.4843 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-15 15:22:50.4843 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-15 15:22:50.4843 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-15 15:22:50.4843 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-15 15:22:50.4843 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-15 15:22:50.4843 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-15 15:22:50.5084 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-15 15:22:50.5257 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 15:22:50.5487 Info Configuration initialized.
+2024-07-15 15:22:50.7037 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 15:22:50.7146 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-15 15:22:50.7473 Info Shutdown() called. Logger closing...
+2024-07-15 15:22:50.7473 Info Closing old configuration.
+2024-07-15 15:22:50.7706 Info Logger has been closed down.
+2024-07-15 15:24:18.1330 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-15 15:24:18.1330 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-15 15:24:18.1330 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-15 15:24:18.1330 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-15 15:24:18.1330 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-15 15:24:18.1395 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-15 15:24:18.1676 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-15 15:24:18.1857 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 15:24:18.2039 Info Configuration initialized.
+2024-07-15 15:24:18.3353 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 15:24:18.3497 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-15 15:24:18.3873 Info Shutdown() called. Logger closing...
+2024-07-15 15:24:18.3873 Info Closing old configuration.
+2024-07-15 15:24:18.4119 Info Logger has been closed down.
+2024-07-15 15:25:26.8494 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-15 15:25:26.8494 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-15 15:25:26.8494 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-15 15:25:26.8494 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-15 15:25:26.8494 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-15 15:25:26.8494 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-15 15:25:26.8767 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-15 15:25:26.8968 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 15:25:26.9188 Info Configuration initialized.
+2024-07-15 15:25:27.0987 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 15:25:27.1117 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-15 15:25:27.1554 Info Shutdown() called. Logger closing...
+2024-07-15 15:25:27.1554 Info Closing old configuration.
+2024-07-15 15:25:27.1786 Info Logger has been closed down.
+2024-07-15 15:32:53.2370 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-15 15:32:53.2370 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-15 15:32:53.2370 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-15 15:32:53.2370 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-15 15:32:53.2370 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-15 15:32:53.2370 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-15 15:32:53.2928 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-15 15:32:53.3336 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 15:32:53.3713 Info Configuration initialized.
+2024-07-15 15:32:54.2401 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 15:32:54.2672 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-15 15:46:45.7281 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-15 15:46:45.7281 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-15 15:46:45.7281 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-15 15:46:45.7281 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-15 15:46:45.7342 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-15 15:46:45.7342 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-15 15:46:45.7566 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-15 15:46:45.7763 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 15:46:45.7947 Info Configuration initialized.
+2024-07-15 15:46:45.9875 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 15:46:46.0074 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-15 15:46:46.0494 Info Shutdown() called. Logger closing...
+2024-07-15 15:46:46.0494 Info Closing old configuration.
+2024-07-15 15:46:46.0772 Info Logger has been closed down.
+2024-07-15 15:47:03.8398 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-15 15:47:03.8442 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-15 15:47:03.8442 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-15 15:47:03.8442 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-15 15:47:03.8442 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-15 15:47:03.8442 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-15 15:47:03.8723 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-15 15:47:03.9005 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 15:47:03.9276 Info Configuration initialized.
+2024-07-15 15:47:04.0768 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 15:47:04.0881 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-15 15:47:04.1189 Info Shutdown() called. Logger closing...
+2024-07-15 15:47:04.1189 Info Closing old configuration.
+2024-07-15 15:47:04.1398 Info Logger has been closed down.
+2024-07-15 15:47:35.1623 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-15 15:47:35.1745 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-15 15:47:35.1745 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-15 15:47:35.1745 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-15 15:47:35.1745 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-15 15:47:35.1745 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-15 15:47:35.2395 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-15 15:47:35.2900 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 15:47:35.3415 Info Configuration initialized.
+2024-07-15 15:47:36.1648 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 15:47:36.1925 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.
+2024-07-15 16:03:11.7337 Info Registered target NLog.Targets.FileTarget(Name=customLog)
+2024-07-15 16:03:11.7337 Info Registered target NLog.Targets.FileTarget(Name=efcoreLog)
+2024-07-15 16:03:11.7337 Info Registered target NLog.Targets.FileTarget(Name=dbUpdateExcept)
+2024-07-15 16:03:11.7337 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBCommand)
+2024-07-15 16:03:11.7337 Info Registered target NLog.Targets.FileTarget(Name=efcoreDBQuery)
+2024-07-15 16:03:11.7337 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-07-15 16:03:11.8032 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.2.2526. Product version: 5.3.2+8d52d4f3fcdbd84beae3442e1fdc8125598ed81f. GlobalAssemblyCache: False
+2024-07-15 16:03:11.8552 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 16:03:11.9096 Info Configuration initialized.
+2024-07-15 16:03:12.5706 Info Validating config: Targets=6, ConfigItems=97, FilePath=C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net6.0\NLog.config
+2024-07-15 16:03:12.5939 Warn Logger: Microsoft.Hosting.Lifetime configured with duplicate output to target: ConsoleTarget(Name=lifetimeConsole). LoggingRule with NamePattern='Microsoft.Hosting.Lifetime' and Level=Info has been skipped.

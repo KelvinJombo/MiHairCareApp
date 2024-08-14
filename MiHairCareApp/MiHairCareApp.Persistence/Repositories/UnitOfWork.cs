@@ -16,17 +16,16 @@ namespace MiHairCareApp.Persistence.Repositories
             RatingsRepository = new RatingsRepository(_dbContext);
             ReferralsRepository = new ReferralsRepository(_dbContext);
             HairStyleRepository = new HairStyleRepository(_dbContext);
-            //StylistRepository = new StylistRepository(_dbContext);
+            PhotoRepository = new PhotoRepository(_dbContext);
             ReviewsRepository = new ReviewsRepository(_dbContext);
-            WalletRepository = new WalletRepository(_dbContext);
+            TransactionRepository = new TransactionRepository(_dbContext);
+            ProductRepository = new ProductRepository(_dbContext);
 
 
         }
 
         public IUserRepository UserRepository { get; set; }
-
-       // public IStylistRepository StylistRepository { get; set; }
-
+         
         public IHairStyleRepository HairStyleRepository { get; set; }
 
         public IBookingRepository BookingRepository { get; set; }
@@ -36,7 +35,10 @@ namespace MiHairCareApp.Persistence.Repositories
         public IReferralsRepository ReferralsRepository { get; set; }
 
         public IReviewsRepository ReviewsRepository { get; set; }
-        public IWalletRepository WalletRepository { get; set; }
+        public ITransactionRepository TransactionRepository { get; set; }
+        public IProductRepository ProductRepository { get; set; }
+        public IPhotoRepository PhotoRepository { get; set; }
+
 
 
 

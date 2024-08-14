@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CloudinaryDotNet;
+using Google.Apis.Auth;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -8,9 +10,12 @@ using MiHairCareApp.Application.Interfaces.Repository;
 using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Domain;
 using MiHairCareApp.Domain.Entities;
-using MiHairCareApp.Domain.Entities.Helper;using System.IdentityModel.Tokens.Jwt;
+using MiHairCareApp.Domain.Entities.Helper;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Policy;
 using System.Text;
+using static Google.Apis.Requests.BatchRequest;
 
 
 
@@ -22,25 +27,29 @@ namespace MiHairCareApp.Application.ServicesImplementation
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly ILogger<AuthenticationServices> _logger;
-        private readonly IWalletServices _walletService;
+        //private readonly IWalletServices _walletService;
         private readonly IEmailServices _emailServices;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IConfiguration _config;
         private readonly SignInManager<AppUser> _signInManager;
-         
+        private readonly string _secretKey;
+        private readonly string _issuer;
+        private readonly string _audience;
 
-        public AuthenticationServices(UserManager<AppUser> userManager, ILogger<AuthenticationServices> logger, IWalletServices walletService, IEmailServices emailServices, 
-            IUnitOfWork unitOfWork, IConfiguration config, SignInManager<AppUser> signInManager)
+        public AuthenticationServices(UserManager<AppUser> userManager,ILogger<AuthenticationServices> logger, 
+                                      IEmailServices emailServices,IUnitOfWork unitOfWork,IConfiguration config,SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
             _logger = logger;
-            _walletService = walletService;
+            //_walletService = walletService;
             _emailServices = emailServices;
             _unitOfWork = unitOfWork;
             _config = config;
             _signInManager = signInManager;
-            
 
+            _secretKey = _config["JwtSettings:Secret"];
+            _issuer = _config["JwtSettings:Issuer"];
+            _audience = _config["JwtSettings:Audience"];
         }
 
 
@@ -64,7 +73,6 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 UserName = createDto.UserName,
                 Email = createDto.Email,
                 PhoneNumber = createDto.PhoneNumber,
-                //UserName = createDto.Email,
                 PasswordResetToken = ""
             };
 
@@ -76,17 +84,17 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 if (result.Succeeded)
                 {
                     await _userManager.AddToRoleAsync(appUser, "User");
-                    token = await _userManager.GenerateEmailConfirmationTokenAsync(appUser);
+                   // token = 
 
 
-                    var createWalletDto = new CreateWalletDto
-                    {
-                        PhoneNumber = appUser.PhoneNumber,
-                        UserId = appUser.Id
-                    };
+                    //var createWalletDto = new CreateWalletDto
+                    //{
+                    //    PhoneNumber = appUser.PhoneNumber,
+                    //    UserId = appUser.Id
+                    //};
 
-                    var walletCreated = await _walletService.CreateWallet(createWalletDto);
-                    if (walletCreated.Succeeded)
+                     token = await _userManager.GenerateEmailConfirmationTokenAsync(appUser);
+                    if (!String.IsNullOrEmpty(token))
                     {
                         var response = new RegisterResponseDto
                         {
@@ -105,11 +113,11 @@ namespace MiHairCareApp.Application.ServicesImplementation
                     else
                     {
                         _unitOfWork.UserRepository.DeleteAsync(appUser);
-                        return ApiResponse<RegisterResponseDto>.Failed(walletCreated.Message, StatusCodes.Status400BadRequest, new List<string>());
+                        return ApiResponse<RegisterResponseDto>.Failed("User creation failed", StatusCodes.Status400BadRequest, new List<string>());
                     }
                 }
                 else
-                { 
+                {
                     return ApiResponse<RegisterResponseDto>.Failed("Error occurred: Failed to create User", StatusCodes.Status400BadRequest, new List<string>());
                 }
             }
@@ -119,6 +127,89 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 return ApiResponse<RegisterResponseDto>.Failed("Error creating user.", StatusCodes.Status500InternalServerError, new List<string>() { ex.InnerException.ToString() });
             }
         }
+
+
+
+
+        public async Task<ApiResponse<string[]>> VerifyAndAuthenticateUserAsync(string idToken)
+        {
+            try
+            {
+                var payload = await GoogleJsonWebSignature.ValidateAsync(idToken, new GoogleJsonWebSignature.ValidationSettings());
+                var userEmail = payload.Email;
+                var existingUser = await _userManager.FindByEmailAsync(userEmail);
+                if (existingUser == null)
+                {
+                    return ApiResponse<string[]>.Failed("Email not registered", StatusCodes.Status404NotFound, new List<string>());
+                }
+                //var wallet = await _walletService.GetWalletByUserId(existingUser.Id);
+                //string wallletNumber = wallet.Data.WalletNumber;
+                string userId = existingUser.Id;
+                var user = await _unitOfWork.UserRepository.GetByIdAsync(userId);
+
+                string[] response = new string[] { userEmail, user.FirstName + " " + user.UserName, userId };
+
+
+                if (existingUser != null)
+                {
+                    await _signInManager.SignInAsync(existingUser, isPersistent: false);
+                    return ApiResponse<string[]>.Success(response, "User Logged in successfully", StatusCodes.Status200OK);
+                }
+                else
+                {
+                    return ApiResponse<string[]>.Failed("User not found", StatusCodes.Status404NotFound, new List<string>());
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while changing password");
+                return ApiResponse<string[]>.Failed("Error occurred while authenticating user", StatusCodes.Status500InternalServerError, new List<string> { ex.Message });
+            }
+        }
+
+
+
+
+        public async Task<ApiResponse<string>> ValidateTokenAsync(string token)
+        {
+            try
+            {
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.UTF8.GetBytes(_config.GetSection("JwtSettings:Secret").Value);
+
+                var validationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = _config.GetSection("JwtSettings:ValidIssuer").Value,
+                    ValidAudience = _config.GetSection("JwtSettings:ValidAudience").Value,
+                    IssuerSigningKey = new SymmetricSecurityKey(key)
+                };
+
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out SecurityToken securityToken);
+
+                var emailClaim = principal.FindFirst(JwtRegisteredClaimNames.Email)?.Value;
+
+                return new ApiResponse<string>(true, "Token is valid.", 200, null, new List<string>());
+            }
+            catch (SecurityTokenException ex)
+            {
+                _logger.LogError(ex, "Token validation failed");
+                var errorList = new List<string> { ex.Message };
+                return new ApiResponse<string>(false, "Token validation failed.", 400, null, errorList);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred during token validation");
+                var errorList = new List<string> { ex.Message };
+                return new ApiResponse<string>(false, "Error occurred during token validation", 500, null, errorList);
+            }
+        }
+
+
+         
 
 
 
@@ -133,7 +224,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 }
                 if (!user.EmailConfirmed)
                 {
-                    return ApiResponse<LoginResponseDto>.Failed("Email not confirmed.", StatusCodes.Status401Unauthorized, new List<string>());
+                    user.EmailConfirmed = true;
                 }
                 var result = await _signInManager.CheckPasswordSignInAsync(user, loginDTO.Password, lockoutOnFailure: false);
 
@@ -146,7 +237,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
                         await _unitOfWork.SaveChangesAsync();
                         var response = new LoginResponseDto
                         {
-                            JWToken = GenerateJwtToken(user, role)
+                            JWToken = GenerateJwtToken(user.Id, user.Email, role)
                         };
                         return ApiResponse<LoginResponseDto>.Success(response, "Logged In Successfully", StatusCodes.Status200OK);
 
@@ -166,39 +257,92 @@ namespace MiHairCareApp.Application.ServicesImplementation
             }
             catch (Exception ex)
             {
-                return ApiResponse<LoginResponseDto>.Failed("Some error occurred while login in." + ex.Message, StatusCodes.Status500InternalServerError, new List<string>() { ex.Message });
+                return ApiResponse<LoginResponseDto>.Failed("Some error occurred while loging in. " + ex.Message, StatusCodes.Status500InternalServerError, new List<string>() { ex.Message });
             }
         }
-        private string GenerateJwtToken(AppUser contact, string roles)
+
+
+        //private string GenerateJwtToken(AppUser user, string role)
+        //{
+        //    var jwtSettings = _config.GetSection("JwtSettings:Secret").Value;
+        //    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings));
+        //    var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+        //    var claims = new[]
+        //    {
+        //        new Claim(JwtRegisteredClaimNames.Sub, user.Id),
+        //        new Claim(JwtRegisteredClaimNames.Email, user.Email),
+        //        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+        //        new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName+" "+user.UserName),
+        //        new Claim(ClaimTypes.Role, role)
+        //    };
+        //    var token = new JwtSecurityToken(
+        //        issuer: _config.GetValue<string>("JwtSettings:ValidIssuer"),
+        //        audience: _config.GetValue<string>("JwtSettings:ValidAudience"),
+        //    //issuer: null,
+        //    //audience: null,
+        //        claims: claims,
+        //        expires: DateTime.UtcNow.AddMinutes(int.Parse(_config.GetSection("JwtSettings:AccessTokenExpiration").Value)),
+        //        signingCredentials: credentials
+        //    );
+
+        //    return new JwtSecurityTokenHandler().WriteToken(token);
+        //}
+
+
+
+
+
+        public string GenerateJwtToken(string userId, string email, string role)
         {
-            var jwtSettings = _config.GetSection("JwtSettings:Secret").Value;
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings));
+            if (string.IsNullOrEmpty(userId)) throw new ArgumentException("User ID cannot be null or empty", nameof(userId));
+            if (string.IsNullOrEmpty(email)) throw new ArgumentException("Email cannot be null or empty", nameof(email));
+            if (string.IsNullOrEmpty(role)) throw new ArgumentException("Role cannot be null or empty", nameof(role));
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var claims = new[]
-            {
-                new Claim(JwtRegisteredClaimNames.Sub, contact.Id),
-                new Claim(JwtRegisteredClaimNames.Email, contact.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.GivenName, contact.FirstName+" "+contact.UserName),
-                new Claim(ClaimTypes.Role, roles)
-            };
-            var token = new JwtSecurityToken(
-                issuer: _config.GetValue<string>("JwtSettings:ValidIssuer"),
-                audience: _config.GetValue<string>("JwtSettings:ValidAudience"),
-            //issuer: null,
-            //audience: null,
-                claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(int.Parse(_config.GetSection("JwtSettings:AccessTokenExpiration").Value)),
-                signingCredentials: credentials
-            );
+            var claims = new List<Claim>
+        {
+            new Claim(JwtRegisteredClaimNames.Sub, userId),
+            new Claim(JwtRegisteredClaimNames.Email, email),
+            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+            new Claim(ClaimTypes.Role, role)
+        };
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.UtcNow.AddMinutes(50),
+                Issuer = _issuer,
+                Audience = _audience,
+                SigningCredentials = credentials
+            };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+
+            return tokenHandler.WriteToken(token);
         }
+
+
+         
 
 
         public async Task<ApiResponse<string>> ChangePasswordAsync(AppUser user, string currentPassword, string newPassword)
         {
+            if (user == null)
+            {
+                return new ApiResponse<string>(false, "Invalid model state.", 400, null, new List<string>());
+            }
+
+            if (string.IsNullOrWhiteSpace(newPassword))
+            {
+                return new ApiResponse<string>(false, "Authorization token is missing.", 401, null, new List<string>());
+            }
+
+
+
             try
             {
                 var result = await _userManager.ChangePasswordAsync(user, currentPassword, newPassword);
@@ -219,8 +363,19 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 return new ApiResponse<string>(true, "Error occurred while changing password", 500, null, errorList);
             }
         }
+
+
+
+
         public async Task<ApiResponse<string>> ResetPasswordAsync(string email, string token, string newPassword)
         {
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(token) || string.IsNullOrEmpty(newPassword))
+            {
+                return new ApiResponse<string>(false, "Input Correct Strings Formats", 400, null, new List<string>());
+            }
+
+
+
             try
             {
                 var user = await _userManager.FindByEmailAsync(email);
@@ -260,6 +415,10 @@ namespace MiHairCareApp.Application.ServicesImplementation
             }
         }
 
+
+
+
+
         public async Task<ApiResponse<string>> ForgotPasswordAsync(string email)
         {
             try
@@ -285,19 +444,19 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
                 await _userManager.UpdateAsync(user);
 
-                var resetPasswordUrl = "https://localhost:7261/confirmpassword?email=" + email + "&token=" + token;
+                //var resetPasswordUrl = "https://localhost:7261/confirmpassword?email=" + email + "&token=" + token;
+                ////var link = Url.Action(nameof(ResetPassword), "Authentication", new { token, email = user.Email }, Request.Scheme);
 
 
+                //var mailRequest = new MailRequest
+                //{
+                //    ToEmail = email,
+                //    Subject = "Your Savi Password Reset Instructions",
+                //    Body = $"Please reset your password by clicking <a href='{resetPasswordUrl}'>here</a>."
+                //};
+                //await _emailServices.SendMailAsync(mailRequest);
 
-                var mailRequest = new MailRequest
-                {
-                    ToEmail = email,
-                    Subject = "Your Savi Password Reset Instructions",
-                    Body = $"Please reset your password by clicking <a href='{resetPasswordUrl}'>here</a>."
-                };
-                await _emailServices.SendMailAsync(mailRequest);
-
-                return new ApiResponse<string>(true, "Password reset email sent successfully.", 200, null, new List<string>());
+                return new ApiResponse<string>(true, "Password reset token returned successfully.", 200, token, new List<string>());
             }
             catch (Exception ex)
             {
@@ -306,11 +465,6 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 return new ApiResponse<string>(true, "Error occurred while processing forgot password", 500, null, errorList);
             }
         }
-
-
-
-
-
 
 
 
@@ -344,6 +498,14 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
         public ApiResponse<string> ExtractUserIdFromToken(string authToken)
         {
+            
+
+            if (string.IsNullOrWhiteSpace(authToken))
+            {
+                return new ApiResponse<string>(false, "Authorization token is missing.", 401, null, new List<string>());
+            }
+
+
             try
             {
                 var token = authToken.Replace("Bearer ", "");

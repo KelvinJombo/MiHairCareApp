@@ -17,6 +17,12 @@ C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Application
 C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Application\bin\Debug\net6.0\MiHairCareApp.Commons.pdb
 C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Application\bin\Debug\net6.0\MiHairCareApp.Application.runtimeconfig.json
 C:\Users\HP\OneDrive\Desktop\HairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\MiHairCareApp.Application.genruntimeconfig.cache
+C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\MiHairCareApp.Application.csproj.AssemblyReference.cache
+C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\MiHairCareApp.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\MiHairCareApp.Application.AssemblyInfoInputs.cache
+C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\MiHairCareApp.Application.AssemblyInfo.cs
+C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\MiHairCareApp.Application.csproj.CoreCompileInputs.cache
+C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\MiHairCareApp.Application.sourcelink.json
 C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\bin\Debug\net6.0\MiHairCareApp.Application.deps.json
 C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\bin\Debug\net6.0\MiHairCareApp.Application.runtimeconfig.json
 C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\bin\Debug\net6.0\MiHairCareApp.Application.dll
@@ -25,12 +31,7 @@ C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCare
 C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\bin\Debug\net6.0\MiHairCareApp.Domain.dll
 C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\bin\Debug\net6.0\MiHairCareApp.Commons.pdb
 C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\bin\Debug\net6.0\MiHairCareApp.Domain.pdb
-C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\MiHairCareApp.Application.csproj.AssemblyReference.cache
-C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\MiHairCareApp.Application.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\MiHairCareApp.Application.AssemblyInfoInputs.cache
-C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\MiHairCareApp.Application.AssemblyInfo.cs
-C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\MiHairCareApp.Application.csproj.CoreCompileInputs.cache
-C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\MiHairCareApp.Application.csproj.CopyComplete
+C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\MiHairCa.DD60174F.Up2Date
 C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\MiHairCareApp.Application.dll
 C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\refint\MiHairCareApp.Application.dll
 C:\Users\HP\OneDrive\Desktop\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp.Application\obj\Debug\net6.0\MiHairCareApp.Application.pdb

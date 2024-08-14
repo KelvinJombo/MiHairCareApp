@@ -12,6 +12,7 @@ namespace MiHairCareApp.Application.Interfaces
     public interface IStylistAuthServices
     {
         Task<ApiResponse<StylistsRegResponseDto>> RegisterAsync(CreateStylistsDto createStylistsDto);
+        Task<ApiResponse<string[]>> VerifyAndAuthenticateUserAsync(string idToken);
         Task<ApiResponse<StylistsLoginResponseDto>> LoginAsync(StylistsLoginDto loginDTO);
         Task<ApiResponse<string>> ResetPasswordAsync(string email, string token, string newPassword);
         Task<ApiResponse<string>> ChangePasswordAsync(AppUser user, string currentPassword, string newPassword);

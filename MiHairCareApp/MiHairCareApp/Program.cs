@@ -1,3 +1,4 @@
+using Microsoft.OpenApi.Models;
 using MiHairCareApp.AutoMapper;
 using MiHairCareApp.Commons;
 using MiHairCareApp.Commons.Utilities;
@@ -5,9 +6,6 @@ using MiHairCareApp.Configuration;
 using MiHairCareApp.Persistence.Extensions;
 using NLog;
 using NLog.Web;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationHelper.InstantiateConfiguration(builder.Configuration);
@@ -21,7 +19,7 @@ try
     builder.Services.AddDependencies(configuration);
     builder.Services.AddControllers();
 
-    
+
 
     // Ensure AddAuthentication is called only once
     builder.Services.ConfigureAuthentication(configuration);
@@ -30,7 +28,35 @@ try
 
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen();
+    builder.Services.AddSwaggerGen(c =>
+    {
+        c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+
+        c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+        {
+            In = ParameterLocation.Header,
+            Description = "Please enter token",
+            Name = "Authorization",
+            Type = SecuritySchemeType.ApiKey,
+            Scheme = "Bearer"
+        });
+
+        c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] { }
+        }
+    });
+    });
+
 
     builder.Logging.ClearProviders();
     builder.Host.UseNLog();
