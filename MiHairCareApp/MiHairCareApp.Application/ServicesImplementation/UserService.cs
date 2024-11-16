@@ -249,7 +249,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
                         PaymentSucceeded = charge.Status == "succeeded",
                         Amount = charge.Amount,   
                         CreatedAt = DateTime.UtcNow,
-                        Currency = charge.Currency,
+                        //Currency = charge.Currency,
                         Description = charge.Description,
                         CustomerId = customer.Id,
                         PaymentReference = charge.BalanceTransactionId,

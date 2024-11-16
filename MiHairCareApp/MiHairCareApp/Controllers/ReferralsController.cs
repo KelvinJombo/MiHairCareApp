@@ -27,7 +27,7 @@ namespace MiHairCareApp.Controllers
             {
                 return BadRequest();
             }
-            return Ok(referResult);
+            return Ok(referResult);             
         }
 
         [HttpGet("getById")]

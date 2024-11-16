@@ -19,7 +19,7 @@ try
     builder.Services.AddDependencies(configuration);
     builder.Services.AddControllers();
 
-
+     
 
     // Ensure AddAuthentication is called only once
     builder.Services.ConfigureAuthentication(configuration);

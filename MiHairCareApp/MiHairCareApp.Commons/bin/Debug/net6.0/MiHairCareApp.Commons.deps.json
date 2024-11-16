@@ -1284,7 +1284,10 @@
           "Microsoft.Extensions.Identity.Stores": "6.0.12"
         },
         "runtime": {
-          "MiHairCareApp.Domain.dll": {}
+          "MiHairCareApp.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

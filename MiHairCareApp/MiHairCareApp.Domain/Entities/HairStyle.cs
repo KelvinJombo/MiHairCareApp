@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace MiHairCareApp.Domain.Entities
@@ -16,7 +17,8 @@ namespace MiHairCareApp.Domain.Entities
         public Photo? Photo { get; set; }
         public string? PhotoId { get; set; }
         public string? VideoLinks { get; set; }
-        public double PriceTag { get; set; }         
+        public double PriceTag { get; set; }
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public HairStyleOrigin Origin { get; set; }
         public bool PromotionalOffer { get; set; }
         public ICollection<Booking> Bookings { get; set; }

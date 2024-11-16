@@ -1,28 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Persistence\\MiHairCareApp.Persistence.csproj": {}
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Persistence\\MiHairCareApp.Persistence.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Application\\MiHairCareApp.Application.csproj": {
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Application\\MiHairCareApp.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Application\\MiHairCareApp.Application.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Application\\MiHairCareApp.Application.csproj",
         "projectName": "MiHairCareApp.Application",
-        "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Application\\MiHairCareApp.Application.csproj",
+        "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Application\\MiHairCareApp.Application.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Application\\obj\\",
+        "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Application\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -30,14 +26,14 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Commons\\MiHairCareApp.Commons.csproj": {
-                "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Commons\\MiHairCareApp.Commons.csproj"
+              "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Commons\\MiHairCareApp.Commons.csproj": {
+                "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Commons\\MiHairCareApp.Commons.csproj"
               },
-              "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj": {
-                "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj"
+              "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj": {
+                "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj"
               }
             }
           }
@@ -54,8 +50,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -71,61 +67,61 @@
             },
             "MailKit": {
               "target": "Package",
-              "version": "[4.5.0, )"
+              "version": "[4.8.0, )"
             },
             "Microsoft.AspNetCore.Authentication.Google": {
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[8.0.11, )"
             },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
-              "version": "[2.1.39, )"
+              "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[8.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Binder": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.FileExtensions": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[9.0.0, )"
             },
             "MimeKit": {
               "target": "Package",
-              "version": "[4.5.0, )"
+              "version": "[4.8.0, )"
             },
             "Stripe.net": {
               "target": "Package",
-              "version": "[45.2.0, )"
+              "version": "[47.0.0, )"
             }
           },
           "imports": [
@@ -144,29 +140,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Commons\\MiHairCareApp.Commons.csproj": {
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Commons\\MiHairCareApp.Commons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Commons\\MiHairCareApp.Commons.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Commons\\MiHairCareApp.Commons.csproj",
         "projectName": "MiHairCareApp.Commons",
-        "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Commons\\MiHairCareApp.Commons.csproj",
+        "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Commons\\MiHairCareApp.Commons.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Commons\\obj\\",
+        "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Commons\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -174,11 +166,11 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj": {
-                "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj"
+              "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj": {
+                "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj"
               }
             }
           }
@@ -195,8 +187,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "CloudinaryDotNet": {
               "target": "Package",
@@ -204,37 +196,37 @@
             },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
-              "version": "[2.1.39, )"
+              "version": "[2.2.0, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.FileExtensions": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[9.0.0, )"
             }
           },
           "imports": [
@@ -253,29 +245,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj": {
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj",
         "projectName": "MiHairCareApp.Domain",
-        "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj",
+        "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\obj\\",
+        "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -283,8 +271,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -300,8 +288,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "CloudinaryDotNet": {
               "target": "Package",
@@ -309,41 +297,41 @@
             },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
-              "version": "[2.1.39, )"
+              "version": "[2.2.0, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.FileExtensions": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[9.0.0, )"
             }
           },
           "imports": [
@@ -362,29 +350,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Persistence\\MiHairCareApp.Persistence.csproj": {
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Persistence\\MiHairCareApp.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Persistence\\MiHairCareApp.Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Persistence\\MiHairCareApp.Persistence.csproj",
         "projectName": "MiHairCareApp.Persistence",
-        "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Persistence\\MiHairCareApp.Persistence.csproj",
+        "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Persistence\\MiHairCareApp.Persistence.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Persistence\\obj\\",
+        "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Persistence\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -392,14 +376,14 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Application\\MiHairCareApp.Application.csproj": {
-                "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Application\\MiHairCareApp.Application.csproj"
+              "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Application\\MiHairCareApp.Application.csproj": {
+                "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Application\\MiHairCareApp.Application.csproj"
               },
-              "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj": {
-                "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj"
+              "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj": {
+                "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Code_Projects\\HairCareRepo\\MiHairCareApp\\MiHairCareApp\\MiHairCareApp.Domain\\MiHairCareApp.Domain.csproj"
               }
             }
           }
@@ -416,8 +400,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "CloudinaryDotNet": {
               "target": "Package",
@@ -425,45 +409,49 @@
             },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
-              "version": "[2.1.39, )"
+              "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[8.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Binder": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.FileExtensions": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[9.0.0, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[4.8.0, )"
             }
           },
           "imports": [
@@ -482,7 +470,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
