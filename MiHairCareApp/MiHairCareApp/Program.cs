@@ -1,3 +1,5 @@
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
 using Microsoft.OpenApi.Models;
 using MiHairCareApp.AutoMapper;
 using MiHairCareApp.Commons;
@@ -7,11 +9,17 @@ using MiHairCareApp.Persistence.Extensions;
 using NLog;
 using NLog.Web;
 
+
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationHelper.InstantiateConfiguration(builder.Configuration);
 var configuration = builder.Configuration;
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
+
+FirebaseApp.Create(new AppOptions()
+{
+    Credential = GoogleCredential.FromFile(Path.Combine(builder.Environment.ContentRootPath, "firebase-adminsdk-fbsvc-8fba3f0b9e.json"))
+});
 
 try
 {
@@ -23,6 +31,21 @@ try
 
     // Ensure AddAuthentication is called only once
     builder.Services.ConfigureAuthentication(configuration);
+
+    builder.Services.AddCors(options =>
+    {
+        options.AddPolicy("AllowReactApp", policy =>
+        {
+            policy.WithOrigins("http://localhost:3000", "https://mihaircareapp.netlify.app")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod()
+                  .AllowCredentials();
+        });
+    });
+
+
+
+
     builder.Services.AddMailService(configuration);
     builder.Services.AddAutoMapper(typeof(MapperProfiles));
 
@@ -63,7 +86,7 @@ try
 
     var app = builder.Build();
 
-    // Configure the HTTP request pipeline.
+     
     if (app.Environment.IsDevelopment())
     {
         app.UseSwagger();
@@ -71,25 +94,27 @@ try
         app.UseDeveloperExceptionPage();
     }
 
+     
+    app.UseHttpsRedirection();
+    app.UseRouting();
+
+    app.UseCors("AllowReactApp");
+
+    app.UseAuthentication();
+    app.UseAuthorization();
+
+     
+    app.MapControllers();
+
+     
     using (var scope = app.Services.CreateScope())
     {
         var serviceProvider = scope.ServiceProvider;
         await Seeder.SeedRolesAndSuperAdmin(serviceProvider);
     }
 
-    app.UseHttpsRedirection();
-    app.UseRouting();
-    app.UseAuthentication(); // Ensure UseAuthentication is called only once
-    app.UseAuthorization();
-
-    app.UseEndpoints(endpoints =>
-    {
-        endpoints.MapControllerRoute(
-            name: "default",
-            pattern: "{controller=Home}/{action=Index}/{id?}");
-    });
-
     app.Run();
+
 }
 catch (Exception ex)
 {

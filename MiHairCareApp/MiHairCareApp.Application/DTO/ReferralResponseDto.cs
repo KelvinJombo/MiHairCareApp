@@ -9,8 +9,9 @@ namespace MiHairCareApp.Application.DTO
 {
     public class ReferralResponseDto
     {
-        public Guid ReferralID { get; set; }            
+        public Guid ReferralID { get; set; }
+        public string ReferrerUserID { get; set; }       
         public string StylistID { get; set; }
-        public AppUser ReferredUserId { get; set; }
-    }
+        public string ReferredUserId { get; set; }
+    } 
 }

@@ -9,7 +9,7 @@ namespace MiHairCareApp.Configuration
     {
         public static void ConfigureAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
-            var jwtSecret = configuration["JwtSettings:Secret"];
+            var jwtSecret = configuration["JwtSettings:Key"];
 
             var tokenValidationParameters = new TokenValidationParameters
             {

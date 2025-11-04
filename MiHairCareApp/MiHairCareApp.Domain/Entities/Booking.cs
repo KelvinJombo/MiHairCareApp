@@ -10,8 +10,7 @@ namespace MiHairCareApp.Domain.Entities
 {
     public class Booking : BaseEntity
     {         
-
-         
+                 
         public string AppUserId { get; set; }
         public AppUser User { get; set; }         
         public string HairStyleID { get; set; }
@@ -19,7 +18,7 @@ namespace MiHairCareApp.Domain.Entities
         public DateTime AppointmentDate { get; set; }         
         public bool PaymentCompleted { get; set; }         
         public bool Referred { get; set; }         
-        public Guid? ReferralID { get; set; }
+        public string? ReferralID { get; set; }
         public Referral Referral { get; set; }
     }
 

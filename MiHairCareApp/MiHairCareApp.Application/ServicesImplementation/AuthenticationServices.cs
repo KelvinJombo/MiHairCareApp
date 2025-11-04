@@ -1,10 +1,10 @@
-﻿using CloudinaryDotNet;
+﻿using FirebaseAdmin.Auth;
 using Google.Apis.Auth;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Microsoft.IdentityModel.Tokens;
 using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces.Repository;
 using MiHairCareApp.Application.Interfaces.Services;
@@ -12,10 +12,7 @@ using MiHairCareApp.Domain;
 using MiHairCareApp.Domain.Entities;
 using MiHairCareApp.Domain.Entities.Helper;
 using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Security.Policy;
 using System.Text;
-using static Google.Apis.Requests.BatchRequest;
 
 
 
@@ -27,29 +24,26 @@ namespace MiHairCareApp.Application.ServicesImplementation
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly ILogger<AuthenticationServices> _logger;
-        //private readonly IWalletServices _walletService;
+        private readonly IWalletServices _walletServices;
         private readonly IEmailServices _emailServices;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IConfiguration _config;
         private readonly SignInManager<AppUser> _signInManager;
-        private readonly string _secretKey;
-        private readonly string _issuer;
-        private readonly string _audience;
+        private readonly IJwtTokenService _jwtTokenService;
+        private readonly string _clientUrl;
 
-        public AuthenticationServices(UserManager<AppUser> userManager,ILogger<AuthenticationServices> logger, 
-                                      IEmailServices emailServices,IUnitOfWork unitOfWork,IConfiguration config,SignInManager<AppUser> signInManager)
+        public AuthenticationServices(UserManager<AppUser> userManager, IWalletServices walletServices, ILogger<AuthenticationServices> logger, 
+                                      IEmailServices emailServices,IUnitOfWork unitOfWork,IConfiguration config,SignInManager<AppUser> signInManager, IJwtTokenService jwtTokenService)
         {
             _userManager = userManager;
             _logger = logger;
-            //_walletService = walletService;
+            _walletServices = walletServices;
             _emailServices = emailServices;
             _unitOfWork = unitOfWork;
             _config = config;
             _signInManager = signInManager;
-
-            _secretKey = _config["JwtSettings:Secret"];
-            _issuer = _config["JwtSettings:Issuer"];
-            _audience = _config["JwtSettings:Audience"];
+            _jwtTokenService = jwtTokenService;
+            _clientUrl = config["AppSettings:ClientUrl"] ?? "";
         }
 
 
@@ -78,22 +72,48 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
             try
             {
-                var token = "";
+                
 
                 var result = await _userManager.CreateAsync(appUser, createDto.Password);
                 if (result.Succeeded)
                 {
                     await _userManager.AddToRoleAsync(appUser, "User");
-                   // token = 
+
+                    var walletCreated = await _walletServices.CreateWallet(new CreateWalletDto
+                    {
+                        PhoneNumber = appUser.PhoneNumber,
+                        UserId = appUser.Id
+                    });
 
 
-                    //var createWalletDto = new CreateWalletDto
-                    //{
-                    //    PhoneNumber = appUser.PhoneNumber,
-                    //    UserId = appUser.Id
-                    //};
+                    if (walletCreated == null)
+                    {
+                        await _userManager.DeleteAsync(appUser); 
+                        return ApiResponse<RegisterResponseDto>.Failed(
+                            "Wallet creation failed. User registration rolled back.",
+                            StatusCodes.Status500InternalServerError, new List<string>());
+                    }
 
-                     token = await _userManager.GenerateEmailConfirmationTokenAsync(appUser);
+                    var token = await _userManager.GenerateEmailConfirmationTokenAsync(appUser);
+                    var encodedToken = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(token));
+                    var confirmationLink = $"{_clientUrl}/confirm-email?userId={appUser.Id}&token={encodedToken}";
+
+
+                    // 🔹 Send confirmation email
+                    var emailSent = await _emailServices.SendMailAsync(new MailRequest
+                    {
+                        ToEmail = appUser.Email!,
+                        Subject = "Confirm your email - MiHairCare App",
+                        Body = $"Hi {appUser.FirstName}, <br/> Please confirm your account by clicking <a href='{confirmationLink}'>here</a>."
+                    });
+
+                    if (!emailSent)
+                    {
+                        await _userManager.DeleteAsync(appUser);  //roll back Stylist Creation
+                        return ApiResponse<RegisterResponseDto>.Failed(
+                            "Stylist created, but confirmation email could not be sent. Registration rolled back.",
+                            StatusCodes.Status500InternalServerError, new List<string>());
+                    }
                     if (!String.IsNullOrEmpty(token))
                     {
                         var response = new RegisterResponseDto
@@ -130,86 +150,154 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
 
 
+        public async Task<ApiResponse<string[]>> RegisterWithGoogleAsync(string idToken, string phoneNumber)
+        {
+            try
+            {
+                 
+                var decodedToken = await FirebaseAuth.DefaultInstance.VerifyIdTokenAsync(idToken);
+                var email = decodedToken.Claims["email"]?.ToString();
+                var name = decodedToken.Claims.ContainsKey("name") ? decodedToken.Claims["name"].ToString() : "Unknown";
 
-        public async Task<ApiResponse<string[]>> VerifyAndAuthenticateUserAsync(string idToken)
+               
+
+                 
+                var existingUser = await _userManager.FindByEmailAsync(email);
+                if (existingUser != null)
+                {
+                    return ApiResponse<string[]>.Failed("User already registered. Please log in instead.", StatusCodes.Status400BadRequest, new List<string>());
+                }
+
+                
+                var newUser = new AppUser
+                {
+                    UserName = email,
+                    Email = email,
+                    FirstName = name,
+                    EmailConfirmed = true, // Google verified email
+                };
+
+                var createUserResult = await _userManager.CreateAsync(newUser);
+                if (!createUserResult.Succeeded)
+                {
+                    var errors = createUserResult.Errors.Select(e => e.Description).ToList();
+                    return ApiResponse<string[]>.Failed("User creation failed", StatusCodes.Status400BadRequest, errors);
+                }
+
+                 
+                var walletDto = new CreateWalletDto
+                {
+                    UserId = newUser.Id,
+                    PhoneNumber = phoneNumber,  
+                };
+
+                var walletResponse = await _walletServices.CreateWallet(walletDto);
+                if (!walletResponse.Succeeded)
+                {
+                    return ApiResponse<string[]>.Failed("Failed to create wallet for user", StatusCodes.Status500InternalServerError, new List<string>());
+                }
+
+                 
+                await _signInManager.SignInAsync(newUser, isPersistent: false);
+
+                 
+                string[] response = new string[]
+                {
+                    email,
+                    name,
+                    newUser.Id
+                };
+
+                return ApiResponse<string[]>.Success(response, "User registered and signed in successfully", StatusCodes.Status200OK);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while registering user with Google");
+                return ApiResponse<string[]>.Failed("Error occurred while registering user", StatusCodes.Status500InternalServerError, new List<string> { ex.Message });
+            }
+        }
+
+
+
+
+
+
+        public async Task<ApiResponse<LoginResponseDto>> VerifyAndAuthenticateUserAsync(string idToken)
         {
             try
             {
                 var payload = await GoogleJsonWebSignature.ValidateAsync(idToken, new GoogleJsonWebSignature.ValidationSettings());
                 var userEmail = payload.Email;
+
                 var existingUser = await _userManager.FindByEmailAsync(userEmail);
                 if (existingUser == null)
                 {
-                    return ApiResponse<string[]>.Failed("Email not registered", StatusCodes.Status404NotFound, new List<string>());
+                    return ApiResponse<LoginResponseDto>.Failed("Email not registered", StatusCodes.Status404NotFound, new List<string>());
                 }
-                //var wallet = await _walletService.GetWalletByUserId(existingUser.Id);
-                //string wallletNumber = wallet.Data.WalletNumber;
-                string userId = existingUser.Id;
-                var user = await _unitOfWork.UserRepository.GetByIdAsync(userId);
 
-                string[] response = new string[] { userEmail, user.FirstName + " " + user.UserName, userId };
+                await _signInManager.SignInAsync(existingUser, isPersistent: false);
 
-
-                if (existingUser != null)
+                var role = (await _userManager.GetRolesAsync(existingUser)).FirstOrDefault() ?? "User";
+                var response = new LoginResponseDto
                 {
-                    await _signInManager.SignInAsync(existingUser, isPersistent: false);
-                    return ApiResponse<string[]>.Success(response, "User Logged in successfully", StatusCodes.Status200OK);
-                }
-                else
-                {
-                    return ApiResponse<string[]>.Failed("User not found", StatusCodes.Status404NotFound, new List<string>());
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error occurred while changing password");
-                return ApiResponse<string[]>.Failed("Error occurred while authenticating user", StatusCodes.Status500InternalServerError, new List<string> { ex.Message });
-            }
-        }
-
-
-
-
-        public async Task<ApiResponse<string>> ValidateTokenAsync(string token)
-        {
-            try
-            {
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.UTF8.GetBytes(_config.GetSection("JwtSettings:Secret").Value);
-
-                var validationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = _config.GetSection("JwtSettings:ValidIssuer").Value,
-                    ValidAudience = _config.GetSection("JwtSettings:ValidAudience").Value,
-                    IssuerSigningKey = new SymmetricSecurityKey(key)
+                    Token = _jwtTokenService.GenerateToken(existingUser.Id, existingUser.Email!, role),
+                    UserId = existingUser.Id,
+                    Email = existingUser.Email
                 };
 
-                var principal = tokenHandler.ValidateToken(token, validationParameters, out SecurityToken securityToken);
-
-                var emailClaim = principal.FindFirst(JwtRegisteredClaimNames.Email)?.Value;
-
-                return new ApiResponse<string>(true, "Token is valid.", 200, null, new List<string>());
-            }
-            catch (SecurityTokenException ex)
-            {
-                _logger.LogError(ex, "Token validation failed");
-                var errorList = new List<string> { ex.Message };
-                return new ApiResponse<string>(false, "Token validation failed.", 400, null, errorList);
+                return ApiResponse<LoginResponseDto>.Success(response, "User logged in successfully", StatusCodes.Status200OK);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error occurred during token validation");
-                var errorList = new List<string> { ex.Message };
-                return new ApiResponse<string>(false, "Error occurred during token validation", 500, null, errorList);
+                _logger.LogError(ex, "Error occurred while authenticating user");
+                return ApiResponse<LoginResponseDto>.Failed("Error occurred while authenticating user", StatusCodes.Status500InternalServerError, new List<string> { ex.Message });
             }
         }
 
 
-         
+
+
+
+        //public async Task<ApiResponse<string>> ValidateTokenAsync(string token)
+        //{
+        //    try
+        //    {
+        //        var tokenHandler = new JwtSecurityTokenHandler();
+        //        var key = Encoding.UTF8.GetBytes(_config.GetSection("JwtSettings:Secret").Value);
+
+        //        var validationParameters = new TokenValidationParameters
+        //        {
+        //            ValidateIssuer = true,
+        //            ValidateAudience = true,
+        //            ValidateLifetime = true,
+        //            ValidateIssuerSigningKey = true,
+        //            ValidIssuer = _config.GetSection("JwtSettings:ValidIssuer").Value,
+        //            ValidAudience = _config.GetSection("JwtSettings:ValidAudience").Value,
+        //            IssuerSigningKey = new SymmetricSecurityKey(key)
+        //        };
+
+        //        var principal = tokenHandler.ValidateToken(token, validationParameters, out SecurityToken securityToken);
+
+        //        var emailClaim = principal.FindFirst(JwtRegisteredClaimNames.Email)?.Value;
+
+        //        return new ApiResponse<string>(true, "Token is valid.", 200, null, new List<string>());
+        //    }
+        //    catch (SecurityTokenException ex)
+        //    {
+        //        _logger.LogError(ex, "Token validation failed");
+        //        var errorList = new List<string> { ex.Message };
+        //        return new ApiResponse<string>(false, "Token validation failed.", 400, null, errorList);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex, "Error occurred during token validation");
+        //        var errorList = new List<string> { ex.Message };
+        //        return new ApiResponse<string>(false, "Error occurred during token validation", 500, null, errorList);
+        //    }
+        //}
+
+
+
 
 
 
@@ -225,8 +313,10 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 if (!user.EmailConfirmed)
                 {
                     user.EmailConfirmed = true;
+                    //return ApiResponse<StylistsLoginResponseDto>.Failed("Email not confirmed.", StatusCodes.Status401Unauthorized, new List<string>());
                 }
                 var result = await _signInManager.CheckPasswordSignInAsync(user, loginDTO.Password, lockoutOnFailure: false);
+
 
                 switch (result)
                 {
@@ -237,7 +327,10 @@ namespace MiHairCareApp.Application.ServicesImplementation
                         await _unitOfWork.SaveChangesAsync();
                         var response = new LoginResponseDto
                         {
-                            JWToken = GenerateJwtToken(user.Id, user.Email, role)
+                            Token = _jwtTokenService.GenerateToken(user.Id, user.Email!, role),
+                            UserId = user.Id,
+                            Email = loginDTO.Email,                             
+
                         };
                         return ApiResponse<LoginResponseDto>.Success(response, "Logged In Successfully", StatusCodes.Status200OK);
 
@@ -261,72 +354,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
             }
         }
 
-
-        //private string GenerateJwtToken(AppUser user, string role)
-        //{
-        //    var jwtSettings = _config.GetSection("JwtSettings:Secret").Value;
-        //    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings));
-        //    var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-        //    var claims = new[]
-        //    {
-        //        new Claim(JwtRegisteredClaimNames.Sub, user.Id),
-        //        new Claim(JwtRegisteredClaimNames.Email, user.Email),
-        //        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-        //        new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName+" "+user.UserName),
-        //        new Claim(ClaimTypes.Role, role)
-        //    };
-        //    var token = new JwtSecurityToken(
-        //        issuer: _config.GetValue<string>("JwtSettings:ValidIssuer"),
-        //        audience: _config.GetValue<string>("JwtSettings:ValidAudience"),
-        //    //issuer: null,
-        //    //audience: null,
-        //        claims: claims,
-        //        expires: DateTime.UtcNow.AddMinutes(int.Parse(_config.GetSection("JwtSettings:AccessTokenExpiration").Value)),
-        //        signingCredentials: credentials
-        //    );
-
-        //    return new JwtSecurityTokenHandler().WriteToken(token);
-        //}
-
-
-
-
-
-        public string GenerateJwtToken(string userId, string email, string role)
-        {
-            if (string.IsNullOrEmpty(userId)) throw new ArgumentException("User ID cannot be null or empty", nameof(userId));
-            if (string.IsNullOrEmpty(email)) throw new ArgumentException("Email cannot be null or empty", nameof(email));
-            if (string.IsNullOrEmpty(role)) throw new ArgumentException("Role cannot be null or empty", nameof(role));
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));
-            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-            var claims = new List<Claim>
-        {
-            new Claim(JwtRegisteredClaimNames.Sub, userId),
-            new Claim(JwtRegisteredClaimNames.Email, email),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            new Claim(ClaimTypes.Role, role)
-        };
-
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddMinutes(50),
-                Issuer = _issuer,
-                Audience = _audience,
-                SigningCredentials = credentials
-            };
-
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-
-            return tokenHandler.WriteToken(token);
-        }
-
-
-         
+                 
 
 
         public async Task<ApiResponse<string>> ChangePasswordAsync(AppUser user, string currentPassword, string newPassword)

@@ -6,12 +6,6 @@ using MiHairCareApp.Application.Interfaces.Repository;
 using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Domain;
 using MiHairCareApp.Domain.Entities;
-using Stripe;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiHairCareApp.Application.ServicesImplementation
 {
@@ -36,36 +30,47 @@ namespace MiHairCareApp.Application.ServicesImplementation
         {
             if (bookingDto == null)
             {
-                return ApiResponse<BookingResponseDto>.Failed("Booking DTO cannot be null", 400, new List<string> { "Invalid input" });
-            }
-
-            var bookingModel = _mapper.Map<Booking>(bookingDto);
-
-            if (bookingModel == null)
-            {
-                return ApiResponse<BookingResponseDto>.Failed("Mapping Booking DTO to Booking Model failed", 500, new List<string> { "Mapping failure" });
+                return ApiResponse<BookingResponseDto>.Failed(
+                    "Booking DTO cannot be null",
+                    StatusCodes.Status400BadRequest,
+                    new List<string> { "Invalid input" });
             }
 
             try
             {
+                // Map DTO to domain model
+                var bookingModel = _mapper.Map<Booking>(bookingDto);
+
+                // Add to repository and save changes
                 await _unitOfWork.BookingRepository.AddAsync(bookingModel);
                 await _unitOfWork.SaveChangesAsync();
+
+                // Map to response DTO
+                var bookingSetDto = _mapper.Map<BookingResponseDto>(bookingModel);
+
+                return ApiResponse<BookingResponseDto>.Success(
+                    bookingSetDto,
+                    "Booking created successfully",
+                    StatusCodes.Status201Created);
+            }
+            catch (AutoMapperMappingException ex)
+            {
+                _logger.LogError(ex, "Mapping failure in CreateBookingAsync");
+                return ApiResponse<BookingResponseDto>.Failed(
+                    "An error occurred while mapping the Booking DTO",
+                    StatusCodes.Status500InternalServerError,
+                    new List<string> { ex.Message });
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "An error occurred while creating the booking");
-                return ApiResponse<BookingResponseDto>.Failed("An error occurred while adding the review", 500, new List<string> { ex.Message });
+                return ApiResponse<BookingResponseDto>.Failed(
+                    "An error occurred while processing your request",
+                    StatusCodes.Status500InternalServerError,
+                    new List<string> { ex.Message });
             }
-
-            var bookingSetDto = _mapper.Map<BookingResponseDto>(bookingModel);
-
-            if (bookingSetDto == null)
-            {
-                return ApiResponse<BookingResponseDto>.Failed("Mapping Review model to ReviewSent DTO failed", 500, new List<string> { "Mapping failure" });
-            }
-
-            return ApiResponse<BookingResponseDto>.Success(bookingSetDto, "Review added successfully", 201);
         }
+
 
         public async Task<ApiResponse<bool>> DeleteABookingAsync(string bookingId)
         {
@@ -120,7 +125,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
         {
             try
             {
-                var booking = await _unitOfWork.BookingRepository.FindAsync(b => b.Id == bookingId);
+                var booking = await _unitOfWork.BookingRepository.FindSingleAsync(b => b.Id == bookingId);
 
                 if (booking == null)
                 {

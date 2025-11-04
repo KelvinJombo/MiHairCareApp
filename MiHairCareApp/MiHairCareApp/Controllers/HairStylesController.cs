@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces.Services;
-using MiHairCareApp.Domain.Entities;
+using MiHairCareApp.Domain;
 
 namespace MiHairCareApp.Controllers
 {
@@ -18,7 +18,7 @@ namespace MiHairCareApp.Controllers
         }
 
 
-
+        //[Authorize(Roles = "Admin")]
         [HttpPost("addHairStyle")]
         public async Task<IActionResult> AddHairStyle(CreateHairStyleDto createHairStyleDto)
         {
@@ -28,18 +28,16 @@ namespace MiHairCareApp.Controllers
 
 
 
-
-
-        [HttpGet("id")]
-        public async Task<IActionResult> GetUserById(string hairStyleId)
+        //[Authorize(Roles = "Admin")]
+        [HttpGet("getById")]
+        public async Task<IActionResult> GetHairStyleById(string hairStyleId)
         {
             return Ok(await _hairStyleServices.GetHairStyleById(hairStyleId));
         }
 
 
 
-         
-
+        //[Authorize(Roles = "Admin, User")]
         [HttpGet("all-HairStyles")]
         public async Task<IActionResult> GetHairStyles()
         {
@@ -53,15 +51,14 @@ namespace MiHairCareApp.Controllers
 
 
 
-
-
+        //[Authorize(Roles = "Admin, User")]
         [HttpGet("all-African")]
         public async Task<IActionResult> GetAllAfricanHairStyles()
         {
             return Ok(await _hairStyleServices.GetAllAfricanHairStyles());
         }
 
-
+        //[Authorize(Roles = "Admin, User")]
         [HttpGet("all-American")]
         public async Task<IActionResult> GetAllAmricanHairStyles()
         {
@@ -69,21 +66,21 @@ namespace MiHairCareApp.Controllers
         }
 
 
-
+        //[Authorize(Roles = "Admin, User")]
         [HttpGet("all-European")]
         public async Task<IActionResult> GetAllEuropeanHairStyles()
         {
-            return Ok(await _hairStyleServices.GetAllAfricanHairStyles());
+            return Ok(await _hairStyleServices.GetAllEuropianHairStyles());
         }
 
-
+        //[Authorize(Roles = "Admin, User")]
         [HttpGet("all-Asian")]
         public async Task<IActionResult> GetAllAsianHairStyles()
         {
             return Ok(await _hairStyleServices.GetAllAsianHairStyles());
         }
 
-
+        //[Authorize(Roles = "Admin")]
         [HttpPost("addHairStylePhoto")]
         public async Task<IActionResult> AddPhoto([FromForm] UpdateHairStylePhotoDto updatePhotoDto)
         {
@@ -91,7 +88,7 @@ namespace MiHairCareApp.Controllers
         }
 
 
-
+        //[Authorize(Roles = "Admin, User")]
         [HttpGet("getHairStylePhoto")]
         public async Task<IActionResult> ViewPhoto(string photoId)
         {
@@ -109,7 +106,7 @@ namespace MiHairCareApp.Controllers
 
 
 
-
+        //[Authorize(Roles = "Admin")]
         [HttpDelete("deleteHairStylePhoto")]
         public async Task<IActionResult> DeletePhoto(string photoId)
         {
@@ -117,8 +114,18 @@ namespace MiHairCareApp.Controllers
         }
 
 
-
-
-
+        //[Authorize(Roles = "Admin")]
+        [HttpPut("update")]
+        [ProducesResponseType(typeof(ApiResponse<HairStyleResponseDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiResponse<HairStyleResponseDto>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiResponse<HairStyleResponseDto>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> UpdateHairStyle([FromForm] UpdateHairStylePhotoDto updatePhotoDto)
+        {
+            var response = await _hairStyleServices.UpdateHairStyleAsync(updatePhotoDto);
+            return StatusCode(response.StatusCode, response);
+        }
     }
+
+
 }
+

@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Google.Apis.Auth;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
@@ -9,10 +11,9 @@ using MiHairCareApp.Application.Interfaces.Repository;
 using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Domain;
 using MiHairCareApp.Domain.Entities;
+using MiHairCareApp.Domain.Entities.Helper;
 using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using System.Text;
-using Google.Apis.Auth;
 
 namespace MiHairCareApp.Application.ServicesImplementation
 {
@@ -20,141 +21,274 @@ namespace MiHairCareApp.Application.ServicesImplementation
     {
         private readonly IEmailServices _emailServices;
         private readonly IUnitOfWork _unitOfWork;
-        //private readonly IWalletServices _walletServices;
+        private readonly IWalletServices _walletServices;
         private readonly IConfiguration _config;
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ILogger<StylistAuthServices> _logger;
-        //private readonly IWalletServices _walletService;
+        private readonly IJwtTokenService _jwtTokenService;
+        private readonly string _clientUrl;
 
-        public StylistAuthServices(IEmailServices emailServices, IUnitOfWork unitOfWork, IConfiguration config, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ILogger<StylistAuthServices> logger)
+        public StylistAuthServices(IEmailServices emailServices, IUnitOfWork unitOfWork, IWalletServices walletServices, IConfiguration config, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ILogger<StylistAuthServices> logger, IJwtTokenService jwtTokenService)
         {
             _emailServices = emailServices;
             _unitOfWork = unitOfWork;
-            //_walletServices = walletServices;
+            _walletServices = walletServices;
             _config = config;
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
-            //_walletService = walletService;
+            _jwtTokenService = jwtTokenService;
+            _clientUrl = config["AppSettings:ClientUrl"] ?? "";
         }
 
 
         public async Task<ApiResponse<StylistsRegResponseDto>> RegisterAsync(CreateStylistsDto createStylistsDto)
         {
-            var stylist = await _userManager.FindByEmailAsync(createStylistsDto.Email);
-            if (stylist != null)
-            {
-                return ApiResponse<StylistsRegResponseDto>.Failed("Stylist with this email already exists.", StatusCodes.Status400BadRequest, new List<string>());
-            }
-
-            var stylists = await _unitOfWork.UserRepository.FindAsync(x => x.PhoneNumber == createStylistsDto.PhoneNumber);
-            if (stylists.Count > 0)
-            {
-                return ApiResponse<StylistsRegResponseDto>.Failed("Stylist with this phone number already exists.", StatusCodes.Status400BadRequest, new List<string>());
-            }
-
-            var stylis = new AppUser()
-            {
-                FirstName = createStylistsDto.StylistName,
-                CompanyName = createStylistsDto.CompanyName,
-                Email = createStylistsDto.Email,
-                PhoneNumber = createStylistsDto.PhoneNumber,
-                UserName = createStylistsDto.Email,
-                Town = createStylistsDto.Town,
-                Street = createStylistsDto.Street,
-                HomeService = createStylistsDto.HomeService,
-                PasswordResetToken = ""
-            };
-
             try
             {
-                var token = "";
-
-                var result = await _userManager.CreateAsync(stylis, createStylistsDto.Password);
-                if (result.Succeeded)
+                // 🔹 Check if email already exists
+                if (await _userManager.FindByEmailAsync(createStylistsDto.Email) is not null)
                 {
-                    await _userManager.AddToRoleAsync(stylis, "Admin");
-                   // token = 
-
-
-                    var createWalletDto = new CreateWalletDto
-                    {
-                        PhoneNumber = stylis.PhoneNumber,
-                        UserId = stylis.Id
-                    };
-
-                    var walletCreated = await _userManager.GenerateEmailConfirmationTokenAsync(stylis);
-                    if (!String.IsNullOrEmpty(walletCreated))
-                    {
-                        var response = new StylistsRegResponseDto
-                        {
-                            //Id = stylis.Id,
-                            Email = stylis.Email,
-                            PhoneNumber = stylis.PhoneNumber,
-                            StylistName = stylis.FirstName,
-                            UserName = stylis.UserName,
-                            CompanyName = stylis.CompanyName,
-                            Token = token
-                        };
-
-
-
-                        return ApiResponse<StylistsRegResponseDto>.Success(response, "Stylist registered successfully. Please click on the link sent to your email to confirm your account", StatusCodes.Status201Created);
-                    }
-                    else
-                    {
-                        _unitOfWork.UserRepository.DeleteAsync(stylis);
-                        return ApiResponse<StylistsRegResponseDto>.Failed("Stylist creation failed", StatusCodes.Status201Created, new List<string>());
-                    }
+                    return ApiResponse<StylistsRegResponseDto>.Failed(
+                        "Stylist with this email already exists. Try the Reset Password Route",
+                        StatusCodes.Status400BadRequest, new List<string>());
                 }
-                else
+
+
+                var phoneExists = await _unitOfWork.UserRepository.FindAsync(x => x.PhoneNumber == createStylistsDto.PhoneNumber);
+                if (phoneExists != null)
                 {
-                    return ApiResponse<StylistsRegResponseDto>.Failed("Error occurred: Failed to create wallet", StatusCodes.Status201Created, new List<string>());
+                    return ApiResponse<StylistsRegResponseDto>.Failed(
+                        "Stylist with this phone number already exists. Try the Reset Password Route",
+                        StatusCodes.Status400BadRequest, new List<string>());
                 }
+
+                // 🔹 Create new stylist entity
+                var stylist = new AppUser
+                {
+                    FirstName = createStylistsDto.StylistName,
+                    CompanyName = createStylistsDto.CompanyName,
+                    Email = createStylistsDto.Email,
+                    PhoneNumber = createStylistsDto.PhoneNumber,
+                    UserName = createStylistsDto.Email,
+                    Town = createStylistsDto.Town,
+                    Street = createStylistsDto.Street,
+                    HomeService = createStylistsDto.HomeService,
+                    PasswordResetToken = string.Empty
+                };
+
+                // 🔹 Save user
+                var result = await _userManager.CreateAsync(stylist, createStylistsDto.Password);
+                if (!result.Succeeded)
+                {
+                    return ApiResponse<StylistsRegResponseDto>.Failed(
+                        "Failed to create stylist account.",
+                        StatusCodes.Status400BadRequest,
+                        result.Errors.Select(e => e.Description).ToList());
+                }
+
+                // 🔹 Assign role
+                await _userManager.AddToRoleAsync(stylist, "Admin");
+
+                // 🔹 Create wallet
+                var walletCreated = await _walletServices.CreateWallet(new CreateWalletDto
+                {
+                    PhoneNumber = stylist.PhoneNumber,
+                    UserId = stylist.Id
+                });
+
+                if (walletCreated == null)
+                {
+                    await _userManager.DeleteAsync(stylist); // rollback
+                    return ApiResponse<StylistsRegResponseDto>.Failed(
+                        "Wallet creation failed. Stylist registration rolled back.",
+                        StatusCodes.Status500InternalServerError, new List<string>());
+                }
+
+                // 🔹 Generate confirmation link
+                var token = await _userManager.GenerateEmailConfirmationTokenAsync(stylist);
+                var encodedToken = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(token));
+                var confirmationLink = $"{_clientUrl}/confirm-email?userId={stylist.Id}&token={encodedToken}";
+
+                // 🔹 Send confirmation email
+                var emailSent = await _emailServices.SendMailAsync(new MailRequest
+                {
+                    ToEmail = stylist.Email!,
+                    Subject = "Confirm your email - MiHairCare App",
+                    Body = $"Hi {stylist.FirstName}, <br/> Please confirm your account by clicking <a href='{confirmationLink}'>here</a>."
+                });
+
+                if (!emailSent)
+                {
+                    await _userManager.DeleteAsync(stylist);  //roll back Stylist Creation
+                    return ApiResponse<StylistsRegResponseDto>.Failed(
+                        "Stylist created, but confirmation email could not be sent. Registration rolled back.",
+                        StatusCodes.Status500InternalServerError, new List<string>());
+                }
+
+                // 🔹 Build success response
+                var response = new StylistsRegResponseDto
+                {
+                    Email = stylist.Email,
+                    PhoneNumber = stylist.PhoneNumber,
+                    StylistName = stylist.FirstName,
+                    UserName = stylist.UserName,
+                    CompanyName = stylist.CompanyName
+                };
+
+                return ApiResponse<StylistsRegResponseDto>.Success(
+                    response,
+                    "Stylist registered successfully. Please check your email to confirm your account.",
+                    StatusCodes.Status201Created);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error occurred while adding a manager " + ex.InnerException);
-                return ApiResponse<StylistsRegResponseDto>.Failed("Error creating stylist.", StatusCodes.Status500InternalServerError, new List<string>() { ex.InnerException.ToString() });
+                _logger.LogError(ex, "Error occurred while registering stylist.");
+                return ApiResponse<StylistsRegResponseDto>.Failed(
+                    "An unexpected error occurred while registering stylist.",
+                    StatusCodes.Status500InternalServerError,
+                    new List<string> { ex.Message });
+            }
+        }
+
+
+        public async Task<ApiResponse<StylistsRegResponseDto>> RegisterWithGoogleAsync(string idToken, string phoneNumber)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(idToken))
+                    return ApiResponse<StylistsRegResponseDto>.Failed("Google has not authenticated this user", StatusCodes.Status400BadRequest, new List<string>());
+
+                // ✅ Step 1: Validate Google Token
+                var payload = await GoogleJsonWebSignature.ValidateAsync(
+                    idToken,
+                    new GoogleJsonWebSignature.ValidationSettings()
+                );
+
+                var email = payload.Email;
+                var name = payload.Name ?? payload.GivenName ?? "Unknown";
+                var googleId = payload.Subject;
+
+                // ✅ Step 2: Check if user already exists
+                var existingUser = await _userManager.FindByEmailAsync(email);
+                if (existingUser != null)
+                {
+                    return ApiResponse<StylistsRegResponseDto>.Failed(
+                        "User already registered. Please log in instead.",
+                        StatusCodes.Status400BadRequest,
+                        new List<string>()
+                    );
+                }
+
+                // ✅ Step 3: Collect additional details (from frontend or Google data)
+                // You can pass phoneNumber from the frontend or use `payload.PhoneNumber` if available.
+                var newUser = new AppUser
+                {
+                    FirstName = name,
+                    Email = email,
+                    UserName = email,
+                    PhoneNumber = phoneNumber,
+                    EmailConfirmed = true,
+                    PasswordResetToken = string.Empty,
+                    // Optional additional fields for stylist registration
+                    CompanyName = "N/A",
+                    Town = "N/A",
+                    Street = "N/A",
+                    HomeService = false
+                };
+
+                // ✅ Step 4: Create user in the Identity system
+                var createUserResult = await _userManager.CreateAsync(newUser);
+                if (!createUserResult.Succeeded)
+                {
+                    var errors = createUserResult.Errors.Select(e => e.Description).ToList();
+                    return ApiResponse<StylistsRegResponseDto>.Failed(
+                        "Failed to create user.",
+                        StatusCodes.Status400BadRequest,
+                        errors
+                    );
+                }
+
+                // ✅ Step 5: Create Wallet for the new user
+                var walletDto = new CreateWalletDto
+                {
+                    UserId = newUser.Id,
+                    PhoneNumber = phoneNumber
+                };
+
+                var walletResponse = await _walletServices.CreateWallet(walletDto);
+                if (!walletResponse.Succeeded)
+                {
+                    return ApiResponse<StylistsRegResponseDto>.Failed(
+                        "Failed to create wallet for user.",
+                        StatusCodes.Status500InternalServerError,
+                        new List<string>()
+                    );
+                }
+
+                // ✅ Step 6: Sign in the user
+                await _signInManager.SignInAsync(newUser, isPersistent: false);
+
+                // ✅ Step 7: Build comprehensive success response
+                var response = new StylistsRegResponseDto
+                {
+                    Email = newUser.Email,
+                    PhoneNumber = newUser.PhoneNumber,
+                    StylistName = newUser.FirstName,
+                    UserName = newUser.UserName,
+                    CompanyName = newUser.CompanyName
+                };
+
+                return ApiResponse<StylistsRegResponseDto>.Success(
+                    response,
+                    "User registered successfully with Google and wallet created.",
+                    StatusCodes.Status201Created
+                );
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while registering user with Google");
+                return ApiResponse<StylistsRegResponseDto>.Failed(
+                    "Error occurred while registering user.",
+                    StatusCodes.Status500InternalServerError,
+                    new List<string> { ex.Message }
+                );
             }
         }
 
 
 
-        public async Task<ApiResponse<string[]>> VerifyAndAuthenticateUserAsync(string idToken)
+
+        public async Task<ApiResponse<LoginResponseDto>> VerifyAndAuthenticateUserAsync(string idToken)
         {
             try
             {
                 var payload = await GoogleJsonWebSignature.ValidateAsync(idToken, new GoogleJsonWebSignature.ValidationSettings());
                 var userEmail = payload.Email;
+
                 var existingUser = await _userManager.FindByEmailAsync(userEmail);
                 if (existingUser == null)
                 {
-                    return ApiResponse<string[]>.Failed("Email not registered", StatusCodes.Status404NotFound, new List<string>());
+                    return ApiResponse<LoginResponseDto>.Failed("Email not registered", StatusCodes.Status404NotFound, new List<string>());
                 }
-                //var wallet = await _walletService.GetWalletByUserId(existingUser.Id);
-                //string wallletNumber = wallet.Data.WalletNumber;
-                string userId = existingUser.Id;
-                var user = await _unitOfWork.UserRepository.GetByIdAsync(userId);
 
-                string[] response = new string[] { userEmail, user.FirstName + " " + user.UserName, userId };
+                await _signInManager.SignInAsync(existingUser, isPersistent: false);
 
-
-                if (existingUser != null)
+                var role = (await _userManager.GetRolesAsync(existingUser)).FirstOrDefault() ?? "User";
+                var response = new LoginResponseDto
                 {
-                    await _signInManager.SignInAsync(existingUser, isPersistent: false);
-                    return ApiResponse<string[]>.Success(response, "User Logged in successfully", StatusCodes.Status200OK);
-                }
-                else
-                {
-                    return ApiResponse<string[]>.Failed("User not found", StatusCodes.Status404NotFound, new List<string>());
-                }
+                    Token = _jwtTokenService.GenerateToken(existingUser.Id, existingUser.Email!, role),
+                    UserId = existingUser.Id,
+                    Email = existingUser.Email
+                };
+
+                return ApiResponse<LoginResponseDto>.Success(response, "User logged in successfully", StatusCodes.Status200OK);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error occurred while changing password");
-                return ApiResponse<string[]>.Failed("Error occurred while authenticating user", StatusCodes.Status500InternalServerError, new List<string> { ex.Message });
+                _logger.LogError(ex, "Error occurred while authenticating user");
+                return ApiResponse<LoginResponseDto>.Failed("Error occurred while authenticating user", StatusCodes.Status500InternalServerError, new List<string> { ex.Message });
             }
         }
 
@@ -166,7 +300,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
             try
             {
                 var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.UTF8.GetBytes(_config.GetSection("JwtSettings:Secret").Value);
+                var key = Encoding.UTF8.GetBytes(_config.GetSection("JwtSettings:Secret").Value!);
 
                 var validationParameters = new TokenValidationParameters
                 {
@@ -203,21 +337,19 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
 
 
-
-
-
-        public async Task<ApiResponse<StylistsLoginResponseDto>> LoginAsync(StylistsLoginDto loginDTO)
+        public async Task<ApiResponse<LoginResponseDto>> LoginAsync(StylistsLoginDto loginDTO)
         {
             try
             {
                 var stylist = await _userManager.FindByEmailAsync(loginDTO.Email);
                 if (stylist == null)
                 {
-                    return ApiResponse<StylistsLoginResponseDto>.Failed("Stylist not found.", StatusCodes.Status404NotFound, new List<string>());
+                    return ApiResponse<LoginResponseDto>.Failed("Stylist not found.", StatusCodes.Status404NotFound, new List<string>());
                 }
                 if (!stylist.EmailConfirmed)
                 {
-                    return ApiResponse<StylistsLoginResponseDto>.Failed("Email not confirmed.", StatusCodes.Status401Unauthorized, new List<string>());
+                    stylist.EmailConfirmed = true;
+                    //return ApiResponse<StylistsLoginResponseDto>.Failed("Email not confirmed.", StatusCodes.Status401Unauthorized, new List<string>());
                 }
                 var result = await _signInManager.CheckPasswordSignInAsync(stylist, loginDTO.Password, lockoutOnFailure: false);
 
@@ -228,56 +360,37 @@ namespace MiHairCareApp.Application.ServicesImplementation
                         stylist.LastLogin = DateTime.Now;
                         _unitOfWork.UserRepository.Update(stylist);
                         await _unitOfWork.SaveChangesAsync();
-                        var response = new StylistsLoginResponseDto
+                        var response = new LoginResponseDto
                         {
-                            JWToken = GenerateJwtToken(stylist, role)
+                            Token = _jwtTokenService.GenerateToken(stylist.Id, stylist.Email!, role),
+                            UserId = stylist.Id,
+                            Email = loginDTO.Email,
+
                         };
-                        return ApiResponse<StylistsLoginResponseDto>.Success(response, "Logged In Successfully", StatusCodes.Status200OK);
+                        return ApiResponse<LoginResponseDto>.Success(response, "Logged In Successfully", StatusCodes.Status200OK);
 
                     case { IsLockedOut: true }:
-                        return ApiResponse<StylistsLoginResponseDto>.Failed($"Account is locked out. Please try again later or contact support." +
+                        return ApiResponse<LoginResponseDto>.Failed($"Account is locked out. Please try again later or contact support." +
                             $" You can unlock your account after {_userManager.Options.Lockout.DefaultLockoutTimeSpan.TotalMinutes} minutes.", StatusCodes.Status403Forbidden, new List<string>());
 
                     case { RequiresTwoFactor: true }:
-                        return ApiResponse<StylistsLoginResponseDto>.Failed("Two-factor authentication is required.", StatusCodes.Status401Unauthorized, new List<string>());
+                        return ApiResponse<LoginResponseDto>.Failed("Two-factor authentication is required.", StatusCodes.Status401Unauthorized, new List<string>());
 
                     case { IsNotAllowed: true }:
-                        return ApiResponse<StylistsLoginResponseDto>.Failed("Login failed. Email confirmation is required.", StatusCodes.Status401Unauthorized, new List<string>());
+                        return ApiResponse<LoginResponseDto>.Failed("Login failed. Email confirmation is required.", StatusCodes.Status401Unauthorized, new List<string>());
 
                     default:
-                        return ApiResponse<StylistsLoginResponseDto>.Failed("Login failed. Invalid email or password.", StatusCodes.Status401Unauthorized, new List<string>());
+                        return ApiResponse<LoginResponseDto>.Failed("Login failed. Invalid email or password.", StatusCodes.Status401Unauthorized, new List<string>());
                 }
             }
             catch (Exception ex)
             {
-                return ApiResponse<StylistsLoginResponseDto>.Failed("Some error occurred while login in." + ex.Message, StatusCodes.Status500InternalServerError, new List<string>() { ex.Message });
+                return ApiResponse<LoginResponseDto>.Failed("Some error occurred while login in." + ex.Message, StatusCodes.Status500InternalServerError, new List<string>() { ex.Message });
             }
         }
-        private string GenerateJwtToken(AppUser stylist, string roles)
-        {
-            var jwtSettings = _config.GetSection("JwtSettings:Secret").Value;
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings));
-            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var claims = new[]
-            {
-                new Claim(JwtRegisteredClaimNames.Sub, stylist.Id),
-                new Claim(JwtRegisteredClaimNames.Email, stylist.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.GivenName, stylist.FirstName+" "+stylist.CompanyName),
-                new Claim(ClaimTypes.Role, roles)
-            };
 
-            var token = new JwtSecurityToken(
-                issuer: _config.GetValue<string>("JwtSettings:ValidIssuer"),
-                audience: _config.GetValue<string>("JwtSettings:ValidAudience"),                 
-                claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(int.Parse(_config.GetSection("JwtSettings:AccessTokenExpiration").Value)),
-                signingCredentials: credentials
-            );
-
-            return new JwtSecurityTokenHandler().WriteToken(token);
-        }
+        
 
 
         public async Task<ApiResponse<string>> ChangePasswordAsync(AppUser user, string currentPassword, string newPassword)

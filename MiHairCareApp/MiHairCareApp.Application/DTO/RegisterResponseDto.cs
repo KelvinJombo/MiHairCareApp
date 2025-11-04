@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MiHairCareApp.Application.DTO
+﻿namespace MiHairCareApp.Application.DTO
 {
     public class RegisterResponseDto
     {
@@ -18,5 +12,7 @@ namespace MiHairCareApp.Application.DTO
         public DateTime LastLogin { get; set; }
         public string IsDeleted { get; set; }
         public string ImageUrl { get; set; }
+        public int Longitude { get; set; }
+        public int Latitude { get; set; }
     }
 }

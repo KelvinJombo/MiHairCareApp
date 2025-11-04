@@ -1,10 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MiHairCareApp.Application.DTO;
-using MiHairCareApp.Application.Interfaces;
 using MiHairCareApp.Application.Interfaces.Services;
-using MiHairCareApp.Application.ServicesImplementation;
-using MiHairCareApp.Domain.Entities;
 
 namespace MiHairCareApp.Controllers
 {
@@ -92,13 +88,18 @@ namespace MiHairCareApp.Controllers
             return Ok(await _userService.DeletePhotoAsync(photoId));
         }
 
+        
 
 
-
-        [HttpDelete("stripePay")]
-        public async Task<IActionResult> PayByStripe(StripePayDto stripePayDto)
+        [HttpGet("hairstylists/{hairStyleId}")]
+        public async Task<IActionResult> GetStylistsByHairStyle(string hairStyleId)
         {
-            return Ok(await _userService.StripePay(stripePayDto));
+            var response = await _userService.GetStylistsByHairStyle(hairStyleId);
+
+            //if (!response.Success)
+            //    return NotFound(response);
+
+            return Ok(response);
         }
 
 

@@ -1,4 +1,5 @@
-﻿using MiHairCareApp.Application.Interfaces.Repository;
+﻿using Microsoft.EntityFrameworkCore;
+using MiHairCareApp.Application.Interfaces.Repository;
 using MiHairCareApp.Domain.Entities;
 using MiHairCareApp.Persistence.Context;
 using System;

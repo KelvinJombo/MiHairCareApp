@@ -1,16 +1,12 @@
 ﻿using MiHairCareApp.Application.DTO;
-using MiHairCareApp.Domain.Entities;
 using MiHairCareApp.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MiHairCareApp.Domain.Entities;
 
 namespace MiHairCareApp.Application.Interfaces.Services
 {
     public interface IAuthenticationServices
     {
+        Task<ApiResponse<string[]>> RegisterWithGoogleAsync(string idToken, string phoneNumber);
         //Task<ApiResponse<string>> ValidateTokenAsync(string token);
         ApiResponse<string> ExtractUserIdFromToken(string authToken);
         Task<ApiResponse<LoginResponseDto>> LoginAsync(AppUserLoginDto loginDTO);
@@ -20,7 +16,8 @@ namespace MiHairCareApp.Application.Interfaces.Services
         Task<ApiResponse<string>> ForgotPasswordAsync(string email);
         //Task<ApiResponse<string>> SendConfirmationEmail(string email, string link);
         Task<ApiResponse<string>> ConfirmEmail(string userid, string token);
-        Task<ApiResponse<string[]>> VerifyAndAuthenticateUserAsync(string idToken); 
-         
+        public Task<ApiResponse<LoginResponseDto>> VerifyAndAuthenticateUserAsync(string idToken);
+
+
     }
 }

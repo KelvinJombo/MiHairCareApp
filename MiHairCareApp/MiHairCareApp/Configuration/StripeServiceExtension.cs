@@ -1,6 +1,4 @@
-﻿using CloudinaryDotNet;
-using Microsoft.Extensions.Options;
-using MiHairCareApp.Domain.Entities.Helper;
+﻿using MiHairCareApp.Domain.Entities.Helper;
 using Stripe;
 
 namespace MiHairCareApp.Configuration

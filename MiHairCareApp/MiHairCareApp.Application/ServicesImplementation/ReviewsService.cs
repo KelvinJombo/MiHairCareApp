@@ -66,7 +66,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
         }
 
 
-        public async Task<ApiResponse<ReviewSentDto>> CreateUserReviewAsync(CreateUserReviewDto reviewDto)
+        public async Task<ApiResponse<ReviewSentDto>> CreateUserReviewAsync(CreateStylistReviewDto reviewDto)
         {
             if (reviewDto == null)
             {

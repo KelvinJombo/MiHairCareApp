@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MiHairCareApp.Application.DTO;
@@ -7,6 +6,7 @@ using MiHairCareApp.Application.Interfaces;
 using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Domain;
 using MiHairCareApp.Domain.Entities;
+
 
 namespace MiHairCareApp.Controllers
 {
@@ -54,9 +54,46 @@ namespace MiHairCareApp.Controllers
             }
         }
 
+        /// <summary>
+        /// Register a new user using Google Authentication
+        /// </summary>
+        [HttpPost("google-register")]
+        [ProducesResponseType(typeof(ApiResponse<StylistsRegResponseDto>), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ApiResponse<StylistsRegResponseDto>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiResponse<StylistsRegResponseDto>), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> RegisterWithGoogle([FromBody] GoogleRegisterRequestDto model)
+        {
+            if (model == null || string.IsNullOrWhiteSpace(model.IdToken))
+                return BadRequest(ApiResponse<StylistsRegResponseDto>.Failed(
+                    "Invalid request data",
+                    StatusCodes.Status400BadRequest,
+                    new List<string> { "Google ID token is required" }
+                ));
+
+            try
+            {
+                var result = await _stylistServices.RegisterWithGoogleAsync(model.IdToken, model.PhoneNumber);
+
+                if (result.Succeeded)
+                    return StatusCode(StatusCodes.Status201Created, result);
+
+                return StatusCode(result.StatusCode, result);
+            }
+            catch (Exception ex)
+            {
+                 
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    ApiResponse<StylistsRegResponseDto>.Failed(
+                        "An unexpected error occurred during Google registration",
+                        StatusCodes.Status500InternalServerError,
+                        new List<string> { ex.Message }
+                    ));
+            }
+        }
 
 
-        [HttpPost("signin-google/{token}")]
+
+        [HttpPost("login-google/{token}")]
         public async Task<IActionResult> GoogleAuth([FromRoute] string token)
         {
 
@@ -204,8 +241,7 @@ namespace MiHairCareApp.Controllers
 
             return Ok(new ApiResponse<string>(true, "Logout successful", 200, null, new List<string>()));
         }
-
-
+               
 
 
 

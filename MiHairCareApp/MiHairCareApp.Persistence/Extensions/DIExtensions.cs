@@ -7,6 +7,7 @@ using MiHairCareApp.Application.Interfaces;
 using MiHairCareApp.Application.Interfaces.Repository;
 using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Application.ServicesImplementation;
+using MiHairCareApp.Commons.Utilities;
 using MiHairCareApp.Domain.Entities;
 using MiHairCareApp.Domain.Entities.Helper;
 using MiHairCareApp.Persistence.Context;
@@ -37,8 +38,8 @@ namespace MiHairCareApp.Persistence.Extensions
 
             services.AddAuthentication().AddGoogle(googleOptions =>
             {
-                googleOptions.ClientId = configuration["Authentication:Google:ClientId"];
-                googleOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"];
+                googleOptions.ClientId = configuration["Authentication:Google:ClientId"]!;
+                googleOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"]!;
             });
 
             // Register UserManager and RoleManager for both AppUser and Stylist
@@ -58,6 +59,12 @@ namespace MiHairCareApp.Persistence.Extensions
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IReviewsService, ReviewsService>();
+            services.AddScoped<IBookingService, BookingService>();
+            services.AddScoped<IReferralService, ReferralService>();
+            services.AddScoped<IJwtTokenService, JwtTokenService>();
+            services.AddScoped<IWalletServices, WalletServices>();
+            services.AddScoped<ICartService, CartService>();
+
 
             // Register Cloudinary services
             var cloudinarySettings = new CloudinarySettings();

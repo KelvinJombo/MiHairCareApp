@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces.Services;
-using MiHairCareApp.Application.ServicesImplementation;
-using MiHairCareApp.Domain;
+using MiHairCareApp.Domain.Enums;
 
 namespace MiHairCareApp.Controllers
 {
@@ -69,10 +67,46 @@ namespace MiHairCareApp.Controllers
         }
 
 
+        [HttpGet("growth")]
+        public async Task<IActionResult> GetGrowthProducts()
+        {
+            var result = await _productService.GetProductsByCategoryAsync(ProductCategory.Growth);
+            return StatusCode(result.StatusCode, result);
+        }
+
+        [HttpGet("treatment")]
+        public async Task<IActionResult> GetTreatmentProducts()
+        {
+            var result = await _productService.GetProductsByCategoryAsync(ProductCategory.Treatment);
+            return StatusCode(result.StatusCode, result);
+        }
+
+        [HttpGet("styling")]
+        public async Task<IActionResult> GetStylingProducts()
+        {
+            var result = await _productService.GetProductsByCategoryAsync(ProductCategory.Styling);
+            return StatusCode(result.StatusCode, result);
+        }
+
+        [HttpGet("gadgets")]
+        public async Task<IActionResult> GetGadgets()
+        {
+            var result = await _productService.GetProductsByCategoryAsync(ProductCategory.Gadgets);
+            return StatusCode(result.StatusCode, result);
+        }
+
+        [HttpGet("extensions")]
+        public async Task<IActionResult> GetExtensions()
+        {
+            var result = await _productService.GetProductsByCategoryAsync(ProductCategory.Extensions);
+            return StatusCode(result.StatusCode, result);
+        }
+
+
 
 
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateProduct([FromBody] UpdateProductsDto productDto)
+        public async Task<IActionResult> UpdateProduct([FromForm] UpdateProductsDto productDto)
         {            
 
             var response = await _productService.UpdateProduct(productDto);
@@ -84,9 +118,6 @@ namespace MiHairCareApp.Controllers
 
             return BadRequest(response);
         }
-
-
-
          
 
 

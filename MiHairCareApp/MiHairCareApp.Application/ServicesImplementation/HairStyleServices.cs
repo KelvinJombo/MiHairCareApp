@@ -1,21 +1,13 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Logging;
 using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces;
 using MiHairCareApp.Application.Interfaces.Repository;
-using MiHairCareApp.Domain.Entities.Helper;
-using MiHairCareApp.Domain.Entities;
-using MiHairCareApp.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MiHairCareApp.Domain.Enums;
-using Microsoft.AspNetCore.Mvc;
 using MiHairCareApp.Application.Interfaces.Services;
-using Microsoft.Extensions.Logging;
+using MiHairCareApp.Domain;
+using MiHairCareApp.Domain.Entities;
+using MiHairCareApp.Domain.Enums;
 
 namespace MiHairCareApp.Application.ServicesImplementation
 {
@@ -47,30 +39,53 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
             if (hairStyleModel == null)
             {
-                return ApiResponse<HairStyleResponseDto>.Failed("Mapping Hair DTO to product model failed", 500, new List<string> { "Mapping failure" });
+                return ApiResponse<HairStyleResponseDto>.Failed("Mapping Hair DTO to HairStyle model failed", 500, new List<string> { "Mapping failure" });
             }
 
             try
             {
+                // Handle photo upload if an image is provided
+                if (hairDto.Image != null)
+                {
+                    var img = await _cloudinaryServices.UploadImageAsync(hairDto.Image);
+                    if (img == null)
+                    {
+                        return ApiResponse<HairStyleResponseDto>.Failed("Image upload failed", StatusCodes.Status500InternalServerError, new List<string>());
+                    }
+
+                    var photo = new Photo
+                    {
+                        Url = img.Url,
+                        PublicId = img.PublicId,
+                        IsMain = hairDto.IsMainPhoto,                        
+                    };                    
+                    hairStyleModel.Photos = new List<Photo> { photo };
+
+
+                    // Add photo to hairstyle navigation property
+                    //hairStyleModel.Photo ??= new List<Photo>();
+                    //hairStyleModel.Photo.Add(photo);
+                }
+
                 await _unitOfWork.HairStyleRepository.AddAsync(hairStyleModel);
                 await _unitOfWork.SaveChangesAsync();
             }
             catch (Exception ex)
             {
-
                 _logger.LogError(ex, "An error occurred while adding the hairStyle");
-                return ApiResponse<HairStyleResponseDto>.Failed("An error occurred while adding the product", 500, new List<string> { ex.Message });
+                return ApiResponse<HairStyleResponseDto>.Failed("An error occurred while adding the hairStyle", 500, new List<string> { ex.Message });
             }
 
-            var viewProduct = _mapper.Map<HairStyleResponseDto>(hairStyleModel);
+            var viewHairStyle = _mapper.Map<HairStyleResponseDto>(hairStyleModel);
 
-            if (viewProduct == null)
+            if (viewHairStyle == null)
             {
-                return ApiResponse<HairStyleResponseDto>.Failed("Mapping hairStyle model to view product DTO failed", 500, new List<string> { "Mapping failure" });
+                return ApiResponse<HairStyleResponseDto>.Failed("Mapping hairStyle model to response DTO failed", 500, new List<string> { "Mapping failure" });
             }
 
-            return ApiResponse<HairStyleResponseDto>.Success(viewProduct, "HairStyle added successfully", 201);
+            return ApiResponse<HairStyleResponseDto>.Success(viewHairStyle, "HairStyle added successfully", 201);
         }
+
 
 
 
@@ -201,6 +216,77 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
             return ApiResponse<PhotoDto>.Success(photoDto, "HairStyle photo added successfully", StatusCodes.Status200OK);
         }
+
+
+
+
+
+        public async Task<ApiResponse<HairStyleResponseDto>> UpdateHairStyleAsync(UpdateHairStylePhotoDto updatePhotoDto)
+        {
+            if (string.IsNullOrEmpty(updatePhotoDto.HairStyleId))
+            {
+                return ApiResponse<HairStyleResponseDto>.Failed("Input a valid HairStyle Id.", StatusCodes.Status400BadRequest, new List<string>());
+            }
+
+            var hairStyle = await _unitOfWork.HairStyleRepository.GetByIdAsync(updatePhotoDto.HairStyleId);
+            if (hairStyle == null)
+            {
+                return ApiResponse<HairStyleResponseDto>.Failed("HairStyle not found", StatusCodes.Status404NotFound, new List<string>());
+            }
+
+            // ✅ Update hairstyle info
+            if (!string.IsNullOrEmpty(updatePhotoDto.StyleName))
+                hairStyle.StyleName = updatePhotoDto.StyleName;
+
+            if (!string.IsNullOrEmpty(updatePhotoDto.Description))
+                hairStyle.Description = updatePhotoDto.Description;
+
+            // ✅ Add new photo if uploaded
+            if (updatePhotoDto.Image != null)
+            {
+                var img = await _cloudinaryServices.UploadImageAsync(updatePhotoDto.Image);
+                if (img == null)
+                {
+                    return ApiResponse<HairStyleResponseDto>.Failed("Image upload failed", StatusCodes.Status500InternalServerError, new List<string>());
+                }
+
+                var newPhoto = new Photo
+                {
+                    Url = img.Url,
+                    PublicId = img.PublicId,
+                    IsMain = updatePhotoDto.IsMain,
+                    HairStyleId = updatePhotoDto.HairStyleId
+                };
+
+                hairStyle.Photos.Add(newPhoto);
+            }
+
+            await _unitOfWork.SaveChangesAsync();
+
+            // ✅ Map to DTO
+            var hairStyleDto = new HairStyleResponseDto
+            {
+                StyleName = hairStyle.StyleName,
+                Description = hairStyle.Description,
+                PriceTag = hairStyle.PriceTag,
+                PromotionalOffer = hairStyle.PromotionalOffer,
+                Photos = hairStyle.Photos.Select(p => new PhotoDto
+                {
+                    Url = p.Url,
+                    PublicId = p.PublicId,
+                    IsMain = p.IsMain
+                }).ToList()
+
+
+            };
+
+            return ApiResponse<HairStyleResponseDto>.Success(hairStyleDto, "HairStyle updated successfully", StatusCodes.Status200OK);
+        }
+
+
+
+
+
 
 
 

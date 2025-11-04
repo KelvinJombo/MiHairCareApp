@@ -1,5 +1,6 @@
 ﻿using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Domain;
+using MiHairCareApp.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,6 @@ namespace MiHairCareApp.Application.Interfaces.Services
         Task<ApiResponse<IEnumerable<ViewProductDto>>> GetAllProducts();
         Task<ApiResponse<ViewProductDto>> UpdateProduct(UpdateProductsDto productDto);
         Task<ApiResponse<bool>> DeleteProduct(string id);
+        Task<ApiResponse<IEnumerable<ViewProductDto>>> GetProductsByCategoryAsync(ProductCategory category);
     }
 }

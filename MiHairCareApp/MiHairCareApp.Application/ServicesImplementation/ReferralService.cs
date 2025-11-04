@@ -60,7 +60,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
             return ApiResponse<ReferralResponseDto>.Success(referralSetDto, "Referral added successfully", 201);
         }
 
-        public async Task<ApiResponse<bool>> DeleteABookingAsync(string referralId)
+        public async Task<ApiResponse<bool>> DeleteReferralAsync(string referralId)
         {
             if (string.IsNullOrEmpty(referralId))
             {
@@ -113,7 +113,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
         {
             try
             {
-                var referal = await _unitOfWork.ReferralsRepository.FindAsync(b => b.Id == referralId);
+                var referal = await _unitOfWork.ReferralsRepository.FindSingleAsync(b => b.Id == referralId);
 
                 if (referal == null)
                 {

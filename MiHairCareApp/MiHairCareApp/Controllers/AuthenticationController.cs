@@ -26,20 +26,41 @@ namespace MiHairCareApp.Controllers
         }
 
 
-
-        [HttpPost("signin-google/{token}")]
-        public async Task<IActionResult> GoogleAuth([FromRoute] string token)
+        [HttpPost("RegisterWithGoogle")]
+        public async Task<IActionResult> RegisterWithGoogle([FromBody] GoogleAuthRequest request)
         {
+            if (string.IsNullOrWhiteSpace(request.IdToken))
+                return BadRequest(ApiResponse<string[]>.Failed("Missing Google ID token", 400, new List<string>()));
 
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(new ApiResponse<string>(false, "Invalid model state.", StatusCodes.Status400BadRequest, "", ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage).ToList()));
-            }
-            return Ok(await _authenticationService.VerifyAndAuthenticateUserAsync(token));
+            var result = await _authenticationService.RegisterWithGoogleAsync(request.IdToken, request.PhoneNumber);
+            return StatusCode(result.StatusCode, result);
         }
 
 
 
+
+
+        //[HttpPost("login-google/{token}")]
+        //public async Task<IActionResult> GoogleAuth([FromRoute] string token)
+        //{
+
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(new ApiResponse<string>(false, "Invalid model state.", StatusCodes.Status400BadRequest, "", ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage).ToList()));
+        //    }
+        //    return Ok(await _authenticationService.VerifyAndAuthenticateUserAsync(token));
+        //}
+
+
+        [HttpPost("login-with-google")]
+        public async Task<IActionResult> LoginWithGoogle([FromBody] GoogleAuthRequest request)
+        {
+            if (string.IsNullOrWhiteSpace(request.IdToken))
+                return BadRequest(ApiResponse<string[]>.Failed("Missing Google ID token", 400, new List<string>()));
+
+            var result = await _authenticationService.VerifyAndAuthenticateUserAsync(request.IdToken);
+            return StatusCode(result.StatusCode, result);
+        }
 
 
 

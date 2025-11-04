@@ -10,7 +10,7 @@ namespace MiHairCareApp.Application.Interfaces.Services
 {
     public interface IReviewsService
     {
-        Task<ApiResponse<ReviewSentDto>> CreateUserReviewAsync(CreateUserReviewDto reviewDto);
+        Task<ApiResponse<ReviewSentDto>> CreateUserReviewAsync(CreateStylistReviewDto reviewDto);
         Task<ApiResponse<ReviewSentDto>> CreateProductReviewAsync(CreateProductReviewDto reviewDto);
         Task<ApiResponse<ViewReviewDto>> GetUserReviewAsync(string ReviewId);
         Task<ApiResponse<ViewReviewDto>> GetProductReviewAsync(string ReviewId);

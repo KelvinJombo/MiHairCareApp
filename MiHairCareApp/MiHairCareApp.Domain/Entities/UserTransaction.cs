@@ -12,6 +12,7 @@ namespace MiHairCareApp.Domain.Entities
     {
         public string CustomerId { get; set; }
         public string Description { get; set; } = string.Empty;
+        public string ReceiptEmail { get; set; } = string.Empty;
         public long Amount { get; set; }
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public Currency Currency { get; set; }

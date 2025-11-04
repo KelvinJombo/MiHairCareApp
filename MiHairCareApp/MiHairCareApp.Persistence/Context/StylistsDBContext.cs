@@ -20,6 +20,7 @@ namespace MiHairCareApp.Persistence.Context
         public DbSet<Review> Reviews { get; set; }
         public DbSet<StylistPortfolio> StylistPortfolios { get; set; }
         public DbSet<Wallet> Wallets { get; set; }         
+        public DbSet<Cart> Carts { get; set; }         
         public DbSet<UserTransaction> UserTransactions { get; set; }
         public DbSet<HaircareProduct> HaircareProducts { get; set; }       
         //public DbSet<ProductReview> ProductReviews { get; set; }
@@ -31,57 +32,77 @@ namespace MiHairCareApp.Persistence.Context
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configure the relationship between AppUser and Referral
-            modelBuilder.Entity<AppUser>()
-                .HasMany(u => u.ReferralsMade)
-                .WithOne(r => r.ReferrerUser)
+            // Referral Configurations
+            modelBuilder.Entity<Referral>()
+                .HasOne(r => r.ReferrerUser)
+                .WithMany(u => u.ReferralsMade)
                 .HasForeignKey(r => r.ReferrerUserId)
-                .OnDelete(DeleteBehavior.Restrict);             
+                .OnDelete(DeleteBehavior.Restrict);
 
-            //modelBuilder.Entity<AppUser>()
-            //    .HasMany(u => u.ProductReviews)
-            //    .WithOne(r => r.User)
-            //    .HasForeignKey(r => r.UserID)
-            //    .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Referral>()
+                .HasOne(r => r.ReferredUser)
+                .WithMany(u => u.ReferralsReceived)
+                .HasForeignKey(r => r.ReferredUserId)
+                .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<Referral>()
+                .HasOne(r => r.Stylist)
+                .WithMany() // No inverse navigation
+                .HasForeignKey(r => r.StylistID)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Booking Configurations
+            modelBuilder.Entity<Booking>()
+                .HasOne(b => b.User)
+                .WithMany(u => u.Bookings)
+                .HasForeignKey(b => b.AppUserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Booking>()
+                .HasOne(b => b.HairStyle)
+                .WithMany(h => h.Bookings)
+                .HasForeignKey(b => b.HairStyleID)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Booking>()
+                 .HasOne(b => b.Referral) 
+                 .WithMany(r => r.Bookings)
+                 .HasForeignKey(b => b.ReferralID)
+                 .OnDelete(DeleteBehavior.Restrict);
+
+
+            // HairStyle Configurations
+            modelBuilder.Entity<HairStyle>()
+                .HasMany(h => h.Bookings)
+                .WithOne(b => b.HairStyle)
+                .HasForeignKey(b => b.HairStyleID)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Review Configurations
             modelBuilder.Entity<AppUser>()
                 .HasMany(u => u.Review)
                 .WithOne(r => r.User)
                 .HasForeignKey(r => r.UserID)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Configure other entities similarly to avoid cycles
-            modelBuilder.Entity<Booking>(entity =>
-            {
-                entity.HasOne(b => b.User)
-                    .WithMany(u => u.Bookings)
-                    .HasForeignKey(b => b.AppUserId)
-                    .OnDelete(DeleteBehavior.Restrict);
 
-                entity.HasOne(b => b.HairStyle)
-                    .WithMany(h => h.Bookings)
-                    .HasForeignKey(b => b.HairStyleID)
-                    .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Review>()
+                .HasOne(r => r.User)
+                .WithMany(u => u.Review)
+                .HasForeignKey(r => r.UserID)
+                .OnDelete(DeleteBehavior.Restrict);
 
-                if (entity.HasOne(b => b.Referral) != null)
-                {
-                    entity.HasOne(b => b.Referral)
-                        .WithMany(r => r.Bookings)
-                        .HasForeignKey(b => b.ReferralID)
-                        .OnDelete(DeleteBehavior.Restrict);
-                }
-            });
-             
-            modelBuilder.Entity<HairStyle>(entity =>
-            {
-                entity.HasMany(h => h.Bookings)
-                    .WithOne(b => b.HairStyle)
-                    .HasForeignKey(b => b.HairStyleID)
-                    .OnDelete(DeleteBehavior.Restrict);
-            });
+            modelBuilder.Entity<Photo>()
+                 .HasOne(p => p.HairStyle)
+                 .WithMany(h => h.Photos)
+                 .HasForeignKey(p => p.HairStyleId)
+                 .OnDelete(DeleteBehavior.Cascade);
+
+
         }
+
     }
 
-     
+
 
 }

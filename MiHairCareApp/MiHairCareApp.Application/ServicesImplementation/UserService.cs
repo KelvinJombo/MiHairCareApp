@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces;
@@ -10,11 +9,6 @@ using MiHairCareApp.Domain;
 using MiHairCareApp.Domain.Entities;
 using MiHairCareApp.Domain.Entities.Helper;
 using Stripe;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiHairCareApp.Application.ServicesImplementation
 {
@@ -217,77 +211,33 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
 
 
-        public async Task<ApiResponse<StripeResultDto>> StripePay(StripePayDto stripePayDto)
+        
+
+        public async Task<ApiResponse<List<RegisterResponseDto>>> GetStylistsByHairStyle(string hairStyleId)
         {
-            try
+            var stylists = await _unitOfWork.UserRepository.GetStylistsByHairStyleAsync(hairStyleId);
+
+            if (stylists == null || !stylists.Any())
             {
-                var customers = new CustomerService();
-                var charges = new ChargeService();
-
-                // Create the customer
-                var customerCreateOptions = new CustomerCreateOptions
-                {
-                    Email = stripePayDto.StripeEmail,
-                    Source = stripePayDto.StripeToken,
-                };
-                var customer = await customers.CreateAsync(customerCreateOptions);
-
-                // Create the charge
-                var chargeCreateOptions = new ChargeCreateOptions
-                {
-                    Amount = stripePayDto.Amount,
-                    Description = stripePayDto.Description,
-                    Currency = stripePayDto.Currency,
-                    Customer = customer.Id,
-                };
-                var charge = await charges.CreateAsync(chargeCreateOptions);
-
-                if (charge != null)
-                {
-                    var userTransaction = new UserTransaction
-                    {
-                        PaymentSucceeded = charge.Status == "succeeded",
-                        Amount = charge.Amount,   
-                        CreatedAt = DateTime.UtcNow,
-                        //Currency = charge.Currency,
-                        Description = charge.Description,
-                        CustomerId = customer.Id,
-                        PaymentReference = charge.BalanceTransactionId,
-                        //ReceiptEmail = charge.ReceiptEmail,
-                    };
-
-                    await _unitOfWork.TransactionRepository.AddAsync(userTransaction);
-                    await _unitOfWork.SaveChangesAsync();
-
-                    //var stripeResultDto = new StripeResultDto
-                    //{
-                    //    PaymentSucceeded = userTransaction.PaymentSucceeded,
-                    //    Amount = userTransaction.Amount,
-                    //    Currency = userTransaction.Currency,
-                    //    Description = userTransaction.Description,
-                    //    CustomerId = userTransaction.CustomerId,
-                    //    PaymentReference = userTransaction.PaymentReference
-                    //};
-
-                    var stripeResultDto = _mapper.Map<StripeResultDto>(userTransaction);
-
-                    return ApiResponse<StripeResultDto>.Success(stripeResultDto, "Payment succeeded", 200);
-                }
-                else
-                {
-                    return ApiResponse<StripeResultDto>.Failed("Payment failed", 400, new List<string> { "Charge creation failed" });
-                }
+                return new ApiResponse<List<RegisterResponseDto>>(
+                    false,
+                    "No stylists found for this hairstyle",
+                    404,
+                    null,
+                    new List<string> { "No matching stylists" }
+                );
             }
-            catch (StripeException ex)
-            {
-                return ApiResponse<StripeResultDto>.Failed("Stripe error", 500, new List<string> { ex.Message });
-            }
-            catch (Exception ex)
-            {
-                return ApiResponse<StripeResultDto>.Failed("Server error", 500, new List<string> { ex.Message });
-            }
+
+            var mappedStylists = _mapper.Map<List<RegisterResponseDto>>(stylists);
+
+            return new ApiResponse<List<RegisterResponseDto>>(
+                true,
+                "Stylists retrieved successfully",
+                200,
+                mappedStylists,
+                null
+            );
         }
-
 
     }
 }

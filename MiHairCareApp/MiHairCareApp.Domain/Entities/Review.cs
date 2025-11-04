@@ -10,15 +10,15 @@ namespace MiHairCareApp.Domain.Entities
     public class Review : BaseEntity
     {
         [ForeignKey(nameof(AppUser))]
-        public string UserID { get; set; }
-        public AppUser User { get; set; }
+        public string UserID { get; set; }               // Foreign key to AppUser
+        public AppUser User { get; set; }                // Navigation property
 
-        [ForeignKey(nameof(Stylist))]
-        public string StylistID { get; set; }
-        public AppUser Stylist { get; set; }
+        public string? StylistID { get; set; }           // Optional foreign key for Stylist
+        public string? ProductId { get; set; }           // Optional foreign key for Product
 
-        public string ReviewText { get; set; }
+        public string ReviewText { get; set; } = string.Empty; // Ensure default value
     }
+
 
 
 }

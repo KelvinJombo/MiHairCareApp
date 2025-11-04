@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MiHairCareApp.Application.Interfaces.Repository
+﻿namespace MiHairCareApp.Application.Interfaces.Repository
 {
     public interface IUnitOfWork : IDisposable
     {
@@ -18,6 +12,8 @@ namespace MiHairCareApp.Application.Interfaces.Repository
         ITransactionRepository TransactionRepository { get; }
         IProductRepository ProductRepository { get; }
         IPhotoRepository PhotoRepository { get; }
+        IWalletRepository WalletRepository { get; }
+        ICartRepository CartRepository { get; }
          
 
         Task<int> SaveChangesAsync();

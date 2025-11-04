@@ -19,7 +19,7 @@ namespace MiHairCareApp.Controllers
 
 
         [HttpPost("addStylistReview")]
-        public async Task<ActionResult> AddStylistReview(CreateUserReviewDto reviewDto)
+        public async Task<ActionResult> AddStylistReview(CreateStylistReviewDto reviewDto)
         { 
             
            return Ok(await _reviewsService.CreateUserReviewAsync(reviewDto));

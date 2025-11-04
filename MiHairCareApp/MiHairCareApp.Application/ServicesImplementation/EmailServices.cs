@@ -24,7 +24,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
         }
 
 
-        public async Task<string> SendEmailAsync(string link, string email, string id)
+        public async Task<string> SendEmailAsync(string link, string email, string id) 
         {
             try
             {
@@ -62,42 +62,36 @@ namespace MiHairCareApp.Application.ServicesImplementation
             }
         }
 
-        public async Task SendMailAsync(MailRequest mailRequest) 
+        public async Task<bool> SendMailAsync(MailRequest mailRequest)
         {
             try
             {
                 var emailMessage = new MimeMessage();
-
                 emailMessage.From.Add(new MailboxAddress(_emailSettings.DisplayName, _emailSettings.Email));
                 emailMessage.To.Add(new MailboxAddress(mailRequest.ToEmail, mailRequest.ToEmail));
-
                 emailMessage.Subject = mailRequest.Subject;
 
-                var bodyBuilder = new BodyBuilder
-                {
-                    HtmlBody = $"{mailRequest.Body}<br/>"
-                };
-
+                var bodyBuilder = new BodyBuilder { HtmlBody = $"{mailRequest.Body}<br/>" };
                 emailMessage.Body = bodyBuilder.ToMessageBody();
 
                 using var client = new SmtpClient();
-                await client.ConnectAsync(_emailSettings.Host, _emailSettings.Port, SecureSocketOptions.SslOnConnect);
-                await client.AuthenticateAsync(_emailSettings.Email, _emailSettings.Password);
-                await client.SendAsync(emailMessage);
-                await client.DisconnectAsync(true);
+                await client.ConnectAsync(_emailSettings.Host, _emailSettings.Port, SecureSocketOptions.SslOnConnect).ConfigureAwait(false);
+                await client.AuthenticateAsync(_emailSettings.Email, _emailSettings.Password).ConfigureAwait(false);
+                await client.SendAsync(emailMessage).ConfigureAwait(false);
+                await client.DisconnectAsync(true).ConfigureAwait(false);
+
+                return true;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occurred while sending email.");
-                throw;
+                return false;  
             }
-
-
-
         }
+
     }
 
 
 
-    
+
 }

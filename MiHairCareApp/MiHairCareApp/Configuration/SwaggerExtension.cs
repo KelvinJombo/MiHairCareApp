@@ -15,6 +15,11 @@ namespace MiHairCareApp.Configuration
                     Version = "v1",
                     Description = "MiHairCare_App is an application that enables Users to locate a hairstylist in a locality to access services or haircare care products."
                 });
+                config.MapType<string?>(() => new Microsoft.OpenApi.Models.OpenApiSchema
+                {
+                    Type = "string",
+                    Nullable = true
+                });
                 config.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
                 {
                     In = ParameterLocation.Header,

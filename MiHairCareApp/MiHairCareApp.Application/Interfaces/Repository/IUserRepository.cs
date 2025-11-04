@@ -9,5 +9,6 @@ namespace MiHairCareApp.Application.Interfaces.Repository
 {
     public interface IUserRepository : IGenericRepository<AppUser>
     {
+        Task<List<AppUser>> GetStylistsByHairStyleAsync(string hairStyleId);
     }
 }

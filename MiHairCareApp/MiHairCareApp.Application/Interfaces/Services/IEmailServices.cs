@@ -11,6 +11,6 @@ namespace MiHairCareApp.Application.Interfaces.Services
     {
         Task<string> SendEmailAsync(string link, string email, string id);
 
-        Task SendMailAsync(MailRequest mailRequest); 
+        Task <bool>SendMailAsync(MailRequest mailRequest); 
     }
 }

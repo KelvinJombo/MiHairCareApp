@@ -5,16 +5,7 @@ using Microsoft.Extensions.Configuration;
 using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces;
 using MiHairCareApp.Application.Interfaces.Repository;
-using MiHairCareApp.Application.Interfaces.Services;
-using MiHairCareApp.Domain.Entities;
 using MiHairCareApp.Domain.Entities.Helper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiHairCareApp.Application.ServicesImplementation
 {

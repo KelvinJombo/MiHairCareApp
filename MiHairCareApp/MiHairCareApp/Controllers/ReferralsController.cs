@@ -31,9 +31,9 @@ namespace MiHairCareApp.Controllers
         }
 
         [HttpGet("getById")]
-        public async Task<ActionResult> GetReferralById(string bookingId)
+        public async Task<ActionResult> GetReferralById(string referralId)
         {
-            var referral = await _referralService.GetReferralByIdAsync(bookingId);
+            var referral = await _referralService.GetReferralByIdAsync(referralId);
             if (referral == null)
             {
                 return BadRequest();
@@ -53,9 +53,9 @@ namespace MiHairCareApp.Controllers
 
 
         [HttpDelete("deleteReferral")]
-        public async Task<ActionResult> UndoBooking(string referralId)
+        public async Task<ActionResult> UndoReferral(string referralId)
         {
-            var deleted = await _referralService.DeleteABookingAsync(referralId);
+            var deleted = await _referralService.DeleteReferralAsync(referralId);
             return Ok(deleted);
         }
 

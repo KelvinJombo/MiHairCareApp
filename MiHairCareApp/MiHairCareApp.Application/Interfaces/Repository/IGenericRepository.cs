@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using MiHairCareApp.Domain.Entities;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiHairCareApp.Application.Interfaces.Repository
 {
@@ -19,5 +15,7 @@ namespace MiHairCareApp.Application.Interfaces.Repository
         void DeleteAllAsync(List<T> entities);
         void SaveChangesAsync();
         Task<T> FindSingleAsync(Expression<Func<T, bool>> expression);
+        Task<Cart?> GetCartWithItemsAsync(string userId);
+        public Task<Cart?> GetCartWithItemsByUserIdAsync(string userId);
     }
 }

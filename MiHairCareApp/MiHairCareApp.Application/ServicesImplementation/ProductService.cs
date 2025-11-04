@@ -5,11 +5,8 @@ using MiHairCareApp.Application.Interfaces.Repository;
 using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Domain;
 using MiHairCareApp.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MiHairCareApp.Domain.Enums;
+using Stripe;
 
 namespace MiHairCareApp.Application.ServicesImplementation
 {
@@ -25,7 +22,6 @@ namespace MiHairCareApp.Application.ServicesImplementation
             _mapper = mapper;
             _logger = logger;
         }
-
 
 
 
@@ -72,7 +68,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
         {
             try
             {
-                var product = await _unitOfWork.ProductRepository.FindAsync(p => p.Id == id);
+                var product = await _unitOfWork.ProductRepository.FindSingleAsync(p => p.Id == id);
 
                 if (product == null)
                 {
@@ -89,7 +85,6 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 return ApiResponse<ViewProductDto>.Failed("An error occurred while retrieving the product", 500, new List<string> { ex.Message });
             }
         }
-
 
 
 
@@ -116,6 +111,44 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 return ApiResponse<IEnumerable<ViewProductDto>>.Failed("An error occurred while retrieving the products", 500, new List<string> { ex.Message });
             }
         }
+
+
+        public async Task<ApiResponse<IEnumerable<ViewProductDto>>> GetProductsByCategoryAsync(ProductCategory category)
+        {
+            try
+            {
+                var products = await _unitOfWork.ProductRepository
+                    .FindAsync(p => p.Category == category);
+
+                if (products == null || !products.Any())
+                {
+                    return ApiResponse<IEnumerable<ViewProductDto>>.Failed(
+                        $"No products found in category '{category}'",
+                        404,
+                        new List<string> { "Nothing found" }
+                    );
+                }
+
+                var viewProducts = _mapper.Map<List<ViewProductDto>>(products);
+
+                return ApiResponse<IEnumerable<ViewProductDto>>.Success(
+                    viewProducts,
+                    $"Products in category '{category}' retrieved successfully",
+                    200
+                );
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while retrieving products for category {Category}", category);
+
+                return ApiResponse<IEnumerable<ViewProductDto>>.Failed(
+                    "An error occurred while retrieving products",
+                    500,
+                    new List<string> { ex.Message }
+                );
+            }
+        }
+
 
 
 
@@ -149,11 +182,6 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
 
 
-
-
-
-
-
         public async Task<ApiResponse<bool>> DeleteProduct(string id)
         {
             try
@@ -179,6 +207,8 @@ namespace MiHairCareApp.Application.ServicesImplementation
         }
 
 
+
+       
 
     }
 }

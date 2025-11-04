@@ -14,5 +14,6 @@ namespace MiHairCareApp.Application.DTO
         public string Description { get; set; }
         public string CustomerId { get; set; }
         public string PaymentReference { get; set; }
+        public string ClientSecret { get; set; }
     }
 }

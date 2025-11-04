@@ -18,7 +18,9 @@ namespace MiHairCareApp.AutoMapper
             CreateMap<UserTransaction, StripeResultDto>();
             CreateMap<Review, ViewReviewDto>();
             CreateMap<Review, ReviewSentDto>();
-            CreateMap<CreateUserReviewDto, Review>();
+            CreateMap<Photo, PhotoDto>();
+            CreateMap<CreateStylistReviewDto, Review>();
+            CreateMap<CreateProductReviewDto, Review>();
             CreateMap<UpdateReviewDto, Review>();
             CreateMap<CreateBookingDto, Booking>();
             CreateMap<Booking, BookingResponseDto>();
@@ -33,6 +35,12 @@ namespace MiHairCareApp.AutoMapper
             .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Price))
             .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ImageUrl))
             .ForMember(dest => dest.StockQuantity, opt => opt.MapFrom(src => src.StockQuantity));
+            CreateMap<Cart, CartDto>()
+            .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
+
+            CreateMap<CartItem, CartItemDto>()
+                .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.ProductName))
+                .ForMember(dest => dest.TotalPrice, opt => opt.MapFrom(src => src.TotalPrice));
         }
     }
 }
