@@ -1,10 +1,11 @@
 ﻿namespace MiHairCareApp.Application.DTO
 {
     public class AddToCartDto
-    {
-        public string ProductId { get; set; }
-        public int Quantity { get; set; }
+    {         
+        public string Id { get; set; } = string.Empty;
+        public int Quantity { get; set; } = 1;
     }
+
 
     public class CartViewDto
     {
@@ -14,8 +15,8 @@
 
     public class CartItemViewDto
     {
-        public string ProductId { get; set; }
-        public string ProductName { get; set; }
+        public string Id { get; set; } = string.Empty;
+        public string ProductName { get; set; } = string.Empty;
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal TotalPrice { get; set; }

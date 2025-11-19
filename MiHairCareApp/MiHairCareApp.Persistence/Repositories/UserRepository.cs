@@ -12,12 +12,20 @@ namespace MiHairCareApp.Persistence.Repositories
 {
     public class UserRepository : GenericRepository<AppUser>, IUserRepository
     {
-        
+        private readonly StylistsDBContext _dbContext;
+
         public UserRepository(StylistsDBContext dbContext) : base(dbContext)
         {
-            
+            _dbContext = dbContext;
         }
-         
-        
+
+        public async Task<List<AppUser>> GetStylistsByHairStyleAsync(string hairStyleId)
+        {
+            return await _dbContext.Users
+                .Include(u => u.AvailableStyles)
+                .Where(u => u.AvailableStyles.Any(h => h.Id == hairStyleId))
+                .ToListAsync();
+        }
+
     }
 }

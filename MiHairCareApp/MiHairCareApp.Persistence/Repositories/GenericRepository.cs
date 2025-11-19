@@ -1,9 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MiHairCareApp.Application.Interfaces.Repository;
-using MiHairCareApp.Domain.Entities;
 using MiHairCareApp.Persistence.Context;
 using System.Linq.Expressions;
-using System.Security.Claims;
 
 namespace MiHairCareApp.Persistence.Repositories
 {
@@ -31,28 +29,17 @@ namespace MiHairCareApp.Persistence.Repositories
             _dbContext.Set<T>().Remove(entity);
         }
 
+        public IQueryable<T> Query()
+        {
+            return _dbContext.Set<T>().AsQueryable();
+        }
+
+
         public async Task<List<T>> FindAsync(Expression<Func<T, bool>> expression)
         {
             return await _dbContext.Set<T>().Where(expression).ToListAsync();
         }
-
-
-
-        public async Task<Cart?> GetCartWithItemsAsync(string userId)
-        {
-            return await _dbContext.Carts
-                .Include(c => c.Items)
-                .FirstOrDefaultAsync(c => c.UserId == userId);
-        }
-
-        public async Task<Cart?> GetCartWithItemsByUserIdAsync(string userId)
-        {
-            return await _dbContext.Carts
-                .Include(c => c.Items)
-                .ThenInclude(i => i.Product)
-                .FirstOrDefaultAsync(c => c.UserId == userId);
-        }
-
+               
 
         public async Task<T> FindSingleAsync(Expression<Func<T, bool>> expression)
         {
@@ -76,19 +63,7 @@ namespace MiHairCareApp.Persistence.Repositories
             return await _dbContext.Set<T>().FindAsync(id);
         }
 
-        public async Task<List<AppUser>> GetStylistsByHairStyleAsync(string hairStyleId)
-        {
-            return await _dbContext.Users
-                .Include(u => u.AvailableStyles)
-                .Where(u => u.AvailableStyles.Any(h => h.Id == hairStyleId))
-                .ToListAsync();
-        }
-
-
-
-
-
-
+        
 
         public async void SaveChangesAsync()
         {

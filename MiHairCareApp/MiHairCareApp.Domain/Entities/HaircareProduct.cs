@@ -9,7 +9,7 @@ namespace MiHairCareApp.Domain.Entities
         public ProductCategory Category { get; set; }    
         public string Description { get; set; }
         public decimal Price { get; set; }
-        public string ImageUrl { get; set; }
+        public ICollection<Photo> Photos { get; set; } = new List<Photo>();         
         public int StockQuantity { get; set; }
     }
 

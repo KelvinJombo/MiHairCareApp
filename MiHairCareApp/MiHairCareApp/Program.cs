@@ -8,6 +8,8 @@ using MiHairCareApp.Configuration;
 using MiHairCareApp.Persistence.Extensions;
 using NLog;
 using NLog.Web;
+using Stripe;
+using System.Text.Json;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,9 +27,15 @@ try
 {
     // Add services to the container.
     builder.Services.AddDependencies(configuration);
-    builder.Services.AddControllers();
+    builder.Services.AddControllers().AddJsonOptions(opts =>
+    {
+        opts.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;        
+        
+        opts.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+        
+    });
 
-     
+    StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
 
     // Ensure AddAuthentication is called only once
     builder.Services.ConfigureAuthentication(configuration);

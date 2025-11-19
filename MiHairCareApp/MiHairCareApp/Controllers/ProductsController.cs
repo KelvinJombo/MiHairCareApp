@@ -18,8 +18,15 @@ namespace MiHairCareApp.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> CreateProduct([FromBody] CreateProductDto productDto)
-        { 
+        public async Task<IActionResult> CreateProduct([FromForm] CreateProductDto productDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errors = string.Join("; ", ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage));
+                return BadRequest(new { Message = "Model binding failed", Errors = errors });
+            }
 
             var response = await _productService.AddProductAsync(productDto);
 
@@ -47,9 +54,18 @@ namespace MiHairCareApp.Controllers
             return NotFound(response);
         }
 
+        [HttpGet("getByName")]
+        public async Task<IActionResult> GetProductByName(string productName)
+        {
+            var response = await _productService.GetProductByName(productName);
 
+            if (response.Succeeded)
+            {
+                return Ok(response);
+            }
 
-
+            return NotFound(response);
+        }
 
 
 
@@ -133,11 +149,6 @@ namespace MiHairCareApp.Controllers
 
             return NotFound(response);
         }
-
-
-
-
-
 
 
 

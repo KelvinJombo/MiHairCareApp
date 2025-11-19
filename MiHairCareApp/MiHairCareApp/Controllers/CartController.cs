@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces.Services;
 using System.Security.Claims;
@@ -35,10 +34,11 @@ namespace MiHairCareApp.Controllers
         }
 
         [HttpPost("checkout")]
-        public async Task<IActionResult> Checkout()
+        public async Task<IActionResult> Checkout([FromBody] CheckoutRequest req)
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var result = await _cartService.CheckoutAsync(userId);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);                                                                          
+
+            var result = await _cartService.CheckoutAsync(userId, req.PaymentIntentId);
             return StatusCode(result.StatusCode, result);
         }
 
@@ -58,11 +58,7 @@ namespace MiHairCareApp.Controllers
             return StatusCode(result.StatusCode, result);
         }
 
-        [HttpDelete("stripePay")]
-        public async Task<IActionResult> PayByStripe(StripePayDto stripePayDto)
-        {
-            return Ok(await _cartService.StripePay(stripePayDto));
-        }
+       
 
 
     }

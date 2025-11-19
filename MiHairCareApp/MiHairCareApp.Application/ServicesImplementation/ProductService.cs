@@ -1,12 +1,14 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using MiHairCareApp.Application.DTO;
+using MiHairCareApp.Application.Interfaces;
 using MiHairCareApp.Application.Interfaces.Repository;
 using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Domain;
 using MiHairCareApp.Domain.Entities;
 using MiHairCareApp.Domain.Enums;
-using Stripe;
 
 namespace MiHairCareApp.Application.ServicesImplementation
 {
@@ -15,12 +17,14 @@ namespace MiHairCareApp.Application.ServicesImplementation
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly ILogger _logger;
+        private readonly ICloudinaryServices<ProductService> _cloudinaryServices;
 
-        public ProductService(IUnitOfWork unitOfWork, IMapper mapper, ILogger<ProductService> logger)
+        public ProductService(IUnitOfWork unitOfWork, IMapper mapper, ILogger<ProductService> logger, ICloudinaryServices<ProductService> cloudinaryServices)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _logger = logger;
+            _cloudinaryServices = cloudinaryServices;
         }
 
 
@@ -33,18 +37,40 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 return ApiResponse<ViewProductDto>.Failed("Product DTO cannot be null", 400, new List<string> { "Invalid input" });
             }
 
+
             var productModel = _mapper.Map<HaircareProduct>(productDto);
 
             if (productModel == null)
             {
                 return ApiResponse<ViewProductDto>.Failed("Mapping product DTO to product model failed", 500, new List<string> { "Mapping failure" });
             }
+             
 
             try
             {
+                // Handle photo upload if an image is provided
+                if (productDto.Image != null)
+                {
+                    var img = await _cloudinaryServices.UploadImageAsync(productDto.Image);
+                    if (img == null)
+                    {
+                        return ApiResponse<ViewProductDto>.Failed("Image upload failed", StatusCodes.Status500InternalServerError, new List<string>());
+                    }
+
+                    var photo = new Photo
+                    {
+                        Url = img.Url,
+                        PublicId = img.PublicId,
+                        IsMain = productDto.IsMainPhoto,
+                    };
+
+                    productModel.Photos = new List<Photo> { photo };                    
+
+                }
+
                 await _unitOfWork.ProductRepository.AddAsync(productModel);
-                await _unitOfWork.SaveChangesAsync(); 
-            }
+                await _unitOfWork.SaveChangesAsync();
+            }            
             catch (Exception ex)
             {
                  
@@ -68,7 +94,30 @@ namespace MiHairCareApp.Application.ServicesImplementation
         {
             try
             {
-                var product = await _unitOfWork.ProductRepository.FindSingleAsync(p => p.Id == id);
+                var product = await _unitOfWork.ProductRepository.Query().Include(p => p.Photos).FirstOrDefaultAsync(p => p.Id == id);
+
+                if (product == null)
+                {
+                    return ApiResponse<ViewProductDto>.Failed("Can't find a product with the specified ID", 404, new List<string> { "No Product Found" });
+                }
+
+                var viewProduct = _mapper.Map<ViewProductDto>(product);
+
+                return ApiResponse<ViewProductDto>.Success(viewProduct, "Product retrieved successfully", 200);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while retrieving the product");
+                return ApiResponse<ViewProductDto>.Failed("An error occurred while retrieving the product", 500, new List<string> { ex.Message });
+            }
+        }
+
+
+        public async Task<ApiResponse<ViewProductDto>> GetProductByName(string productName)
+        {
+            try
+            {
+                var product = await _unitOfWork.ProductRepository.Query().Include(p => p.Photos).FirstOrDefaultAsync(p => p.ProductName == productName);
 
                 if (product == null)
                 {
@@ -93,7 +142,8 @@ namespace MiHairCareApp.Application.ServicesImplementation
         {
             try
             {
-                var products = await _unitOfWork.ProductRepository.GetAllAsync();
+                var products = await _unitOfWork.ProductRepository.Query().Include(p => p.Photos).ToListAsync();
+
 
                 if (products == null || !products.Any())
                 {
@@ -117,8 +167,8 @@ namespace MiHairCareApp.Application.ServicesImplementation
         {
             try
             {
-                var products = await _unitOfWork.ProductRepository
-                    .FindAsync(p => p.Category == category);
+                var products = await _unitOfWork.ProductRepository.Query().Include(p => p.Photos).Where(p => p.Category == category).ToListAsync();
+
 
                 if (products == null || !products.Any())
                 {
@@ -163,7 +213,26 @@ namespace MiHairCareApp.Application.ServicesImplementation
                     return ApiResponse<ViewProductDto>.Failed("Product not found", 404, new List<string> { "No Product Found" });
                 }
 
-                _mapper.Map(productDto, product);  
+                // Handle photo upload if an image is provided
+                if (productDto.Image != null)
+                {
+                    var img = await _cloudinaryServices.UploadImageAsync(productDto.Image);
+                    if (img == null)
+                    {
+                        return ApiResponse<ViewProductDto>.Failed("Image upload failed", StatusCodes.Status500InternalServerError, new List<string>());
+                    }
+
+                    var photo = new Photo
+                    {
+                        Url = img.Url,
+                        PublicId = img.PublicId,
+                        IsMain = productDto.IsMainPhoto,
+                    };
+
+                    product.Photos = new List<Photo> { photo };
+
+
+                }                     
 
                 _unitOfWork.ProductRepository.Update(product);  
                 await _unitOfWork.SaveChangesAsync();  

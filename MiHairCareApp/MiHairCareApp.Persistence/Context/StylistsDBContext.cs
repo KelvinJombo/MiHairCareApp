@@ -20,10 +20,11 @@ namespace MiHairCareApp.Persistence.Context
         public DbSet<Review> Reviews { get; set; }
         public DbSet<StylistPortfolio> StylistPortfolios { get; set; }
         public DbSet<Wallet> Wallets { get; set; }         
-        public DbSet<Cart> Carts { get; set; }         
+        public DbSet<Cart> Carts { get; set; }     
+        public DbSet<SalesRecord> SalesRecords { get; set; }
         public DbSet<UserTransaction> UserTransactions { get; set; }
         public DbSet<HaircareProduct> HaircareProducts { get; set; }       
-        //public DbSet<ProductReview> ProductReviews { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public DbSet<Photo> Photos { get; set; }
 
 

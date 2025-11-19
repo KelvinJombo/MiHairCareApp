@@ -17,6 +17,7 @@ namespace MiHairCareApp.Application.Interfaces.Services
         Task<ApiResponse<List<HairStyleResponseDto>>> GetAllAsianHairStyles();
         Task<ApiResponse<List<HairStyleResponseDto>>> GetAllEuropianHairStyles();
         Task<ApiResponse<HairStyleResponseDto>> GetHairStyleById(string hairStyleId);
+        Task<ApiResponse<HairStyleResponseDto>> GetHairStyleByTitle(string hairStyleTitle);
         Task<ApiResponse<bool>> DeleteAHairStyle(string hairStyleId);
         Task<ApiResponse<PhotoDto>> AddHairStylePhoto(UpdateHairStylePhotoDto updatePhotoDto);
         Task<ApiResponse<string>> GetHairStylePhotoAsync(string photoId);

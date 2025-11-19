@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http;
 
 namespace MiHairCareApp.Application.DTO
 {
@@ -12,7 +8,9 @@ namespace MiHairCareApp.Application.DTO
         public string Brand { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
-        public string ImageUrl { get; set; }
+        public IFormFile? Image { get; set; }
         public int StockQuantity { get; set; }
+        public bool IsMainPhoto { get; set; } = true;
     }
+
 }

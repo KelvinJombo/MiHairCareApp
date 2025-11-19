@@ -4,12 +4,11 @@ namespace MiHairCareApp.Application.DTO
 {
     public class HairStyleResponseDto
     {
-        public string StyleName { get; set; }
-        public string Description { get; set; }
-       // public string ImagesLinks { get; set; }         
+        public string StyleName { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string HairStyleId { get; set; } = string.Empty;
         public double PriceTag { get; set; }
-        public bool PromotionalOffer { get; set; }
-        //public ICollection<Photo> Photos { get; set; } = new List<Photo>();
+        public bool PromotionalOffer { get; set; }         
         public ICollection<PhotoDto> Photos { get; set; }
 
     }

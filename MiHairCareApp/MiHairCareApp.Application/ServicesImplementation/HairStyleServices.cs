@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces;
@@ -15,10 +16,10 @@ namespace MiHairCareApp.Application.ServicesImplementation
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        private readonly ICloudinaryServices<UserService> _cloudinaryServices;
+        private readonly ICloudinaryServices<HairStyleServices> _cloudinaryServices;
         private readonly ILogger<HairStyleServices> _logger;
 
-        public HairStyleServices(IUnitOfWork unitOfWork, IMapper mapper, ICloudinaryServices<UserService> cloudinaryServices, ILogger<HairStyleServices> logger)
+        public HairStyleServices(IUnitOfWork unitOfWork, IMapper mapper, ICloudinaryServices<HairStyleServices> cloudinaryServices, ILogger<HairStyleServices> logger)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -32,39 +33,38 @@ namespace MiHairCareApp.Application.ServicesImplementation
         {
             if (hairDto == null)
             {
-                return ApiResponse<HairStyleResponseDto>.Failed("Hair DTO cannot be null", 400, new List<string> { "Invalid input" });
+                return ApiResponse<HairStyleResponseDto>.Failed(
+                    "Hair DTO cannot be null", 400, new List<string> { "Invalid input" });
             }
 
             var hairStyleModel = _mapper.Map<HairStyle>(hairDto);
 
+            // Assign the enum
+            hairStyleModel.Origin = hairDto.OriginEnum;
+
             if (hairStyleModel == null)
             {
-                return ApiResponse<HairStyleResponseDto>.Failed("Mapping Hair DTO to HairStyle model failed", 500, new List<string> { "Mapping failure" });
+                return ApiResponse<HairStyleResponseDto>.Failed(
+                    "Mapping Hair DTO to HairStyle model failed", 500, new List<string> { "Mapping failure" });
             }
 
             try
             {
-                // Handle photo upload if an image is provided
                 if (hairDto.Image != null)
                 {
                     var img = await _cloudinaryServices.UploadImageAsync(hairDto.Image);
                     if (img == null)
-                    {
-                        return ApiResponse<HairStyleResponseDto>.Failed("Image upload failed", StatusCodes.Status500InternalServerError, new List<string>());
-                    }
+                        return ApiResponse<HairStyleResponseDto>.Failed(
+                            "Image upload failed", StatusCodes.Status500InternalServerError, new List<string>());
 
                     var photo = new Photo
                     {
                         Url = img.Url,
                         PublicId = img.PublicId,
-                        IsMain = hairDto.IsMainPhoto,                        
-                    };                    
+                        IsMain = hairDto.IsMainPhoto,
+                    };
+
                     hairStyleModel.Photos = new List<Photo> { photo };
-
-
-                    // Add photo to hairstyle navigation property
-                    //hairStyleModel.Photo ??= new List<Photo>();
-                    //hairStyleModel.Photo.Add(photo);
                 }
 
                 await _unitOfWork.HairStyleRepository.AddAsync(hairStyleModel);
@@ -73,14 +73,16 @@ namespace MiHairCareApp.Application.ServicesImplementation
             catch (Exception ex)
             {
                 _logger.LogError(ex, "An error occurred while adding the hairStyle");
-                return ApiResponse<HairStyleResponseDto>.Failed("An error occurred while adding the hairStyle", 500, new List<string> { ex.Message });
+                return ApiResponse<HairStyleResponseDto>.Failed(
+                    "An error occurred while adding the hairStyle", 500, new List<string> { ex.Message });
             }
 
             var viewHairStyle = _mapper.Map<HairStyleResponseDto>(hairStyleModel);
 
             if (viewHairStyle == null)
             {
-                return ApiResponse<HairStyleResponseDto>.Failed("Mapping hairStyle model to response DTO failed", 500, new List<string> { "Mapping failure" });
+                return ApiResponse<HairStyleResponseDto>.Failed(
+                    "Mapping hairStyle model to response DTO failed", 500, new List<string> { "Mapping failure" });
             }
 
             return ApiResponse<HairStyleResponseDto>.Success(viewHairStyle, "HairStyle added successfully", 201);
@@ -90,29 +92,45 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
 
 
-
-
-
         public async Task<ApiResponse<List<HairStyleResponseDto>>> GetAllHairStyles()
         {
-            var hairStyles = await _unitOfWork.HairStyleRepository.GetAllAsync();
+            var hairStyles = await _unitOfWork.HairStyleRepository
+                .Query()
+                .Include(h => h.Photos)
+                .ToListAsync();
+
             var result = _mapper.Map<List<HairStyleResponseDto>>(hairStyles);
-            return ApiResponse<List<HairStyleResponseDto>>.Success(result, "HairStyles retrieved successfully", 200);
+
+            return ApiResponse<List<HairStyleResponseDto>>
+                .Success(result, "HairStyles retrieved successfully", 200);
         }
+
 
 
 
 
         public async Task<ApiResponse<List<HairStyleResponseDto>>> GetAllAfricanHairStyles()
         {
-            var hairStyles = await _unitOfWork.HairStyleRepository.FindAsync(hs => hs.Origin == HairStyleOrigin.African);
+            var hairStyles = await _unitOfWork.HairStyleRepository
+                .Query()
+                .Where(h => h.Origin == HairStyleOrigin.African)
+                .Include(h => h.Photos)
+                .ToListAsync();
+
             var result = _mapper.Map<List<HairStyleResponseDto>>(hairStyles);
-            return ApiResponse<List<HairStyleResponseDto>>.Success(result, "African  HairStyles retrieved successfully", 200);
+
+            return ApiResponse<List<HairStyleResponseDto>>
+                .Success(result, "African HairStyles retrieved successfully", 200);
         }
+
 
         public async Task<ApiResponse<List<HairStyleResponseDto>>> GetAllAmericanHairStyles()
         {
-            var hairStyles = await _unitOfWork.HairStyleRepository.FindAsync(hs => hs.Origin == HairStyleOrigin.American);
+            var hairStyles = await _unitOfWork.HairStyleRepository
+                .Query()
+                .Where(h => h.Origin == HairStyleOrigin.American)
+                .Include(h => h.Photos)
+                .ToListAsync();
             var result = _mapper.Map<List<HairStyleResponseDto>>(hairStyles);
             return ApiResponse<List<HairStyleResponseDto>>.Success(result, "American HairStyles retrieved successfully", 200);
         }
@@ -121,7 +139,11 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
         public async Task<ApiResponse<List<HairStyleResponseDto>>> GetAllAsianHairStyles()
         {
-            var hairStyles = await _unitOfWork.HairStyleRepository.FindAsync(hs => hs.Origin == HairStyleOrigin.Asian);
+            var hairStyles = await _unitOfWork.HairStyleRepository
+                .Query()
+                .Where(h => h.Origin == HairStyleOrigin.Asian)
+                .Include(h => h.Photos)
+                .ToListAsync();
             var result = _mapper.Map<List<HairStyleResponseDto>>(hairStyles);
             return ApiResponse<List<HairStyleResponseDto>>.Success(result, "Asian HairStyles retrieved successfully", 200);
         }
@@ -130,7 +152,11 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
         public async Task<ApiResponse<List<HairStyleResponseDto>>> GetAllEuropianHairStyles()
         {
-            var hairStyles = await _unitOfWork.HairStyleRepository.FindAsync(hs => hs.Origin == HairStyleOrigin.European);
+            var hairStyles = await _unitOfWork.HairStyleRepository
+                .Query()
+                .Where(h => h.Origin == HairStyleOrigin.European)
+                .Include(h => h.Photos)
+                .ToListAsync();
             var result = _mapper.Map<List<HairStyleResponseDto>>(hairStyles);
             return ApiResponse<List<HairStyleResponseDto>>.Success(result, "European HairStyles retrieved successfully", 200);
         }
@@ -139,14 +165,47 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
         public async Task<ApiResponse<HairStyleResponseDto>> GetHairStyleById(string hairStyleId)
         {
-            var hairStyle = await _unitOfWork.HairStyleRepository.GetByIdAsync(hairStyleId);
-            if (hairStyle == null)
+            try
             {
-                return ApiResponse<HairStyleResponseDto>.Failed("", 400, new List<string>() { "Given id does not exits in Database" });
+                var hairStyle = await _unitOfWork.HairStyleRepository.Query().Include(p => p.Photos).FirstOrDefaultAsync(p => p.Id == hairStyleId);
+                if (hairStyle == null)
+                {
+                    return ApiResponse<HairStyleResponseDto>.Failed("", 400, new List<string>() { "Given id does not exits in Database" });
+                }
+                var hairStyledata = _mapper.Map<HairStyleResponseDto>(hairStyle);
+                return ApiResponse<HairStyleResponseDto>.Success(hairStyledata, "HairStyle information retrieved successfully", 200);
             }
-            var hairStyledata = _mapper.Map<HairStyleResponseDto>(hairStyle);
-            return ApiResponse<HairStyleResponseDto>.Success(hairStyledata, "HairStyle information retrieved successfully", 200);
+            catch (Exception ex)
+            {
+
+                _logger.LogError(ex, "An error occurred while retrieving the hairStyle");
+                return ApiResponse<HairStyleResponseDto>.Failed("An error occurred while retrieving the hairStyle", 500, new List<string> { ex.Message });
+            }
+            
         }
+
+
+        public async Task<ApiResponse<HairStyleResponseDto>> GetHairStyleByTitle(string hairStyleTitle)
+        {
+            try
+            {
+                var hairStyle = await _unitOfWork.HairStyleRepository.Query().Include(p => p.Photos).FirstOrDefaultAsync(p => p.StyleName == hairStyleTitle);
+                if (hairStyle == null)
+                {
+                    return ApiResponse<HairStyleResponseDto>.Failed("", 400, new List<string>() { "Given id does not exits in Database" });
+                }
+                var hairStyledata = _mapper.Map<HairStyleResponseDto>(hairStyle);
+                return ApiResponse<HairStyleResponseDto>.Success(hairStyledata, "HairStyle information retrieved successfully", 200);
+            }
+            catch (Exception ex)
+            {
+
+                _logger.LogError(ex, "An error occurred while retrieving the hairStyle");
+                return ApiResponse<HairStyleResponseDto>.Failed("An error occurred while retrieving the hairStyle", 500, new List<string> { ex.Message });
+            }
+
+        }
+
 
 
 
@@ -216,7 +275,6 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
             return ApiResponse<PhotoDto>.Success(photoDto, "HairStyle photo added successfully", StatusCodes.Status200OK);
         }
-
 
 
 

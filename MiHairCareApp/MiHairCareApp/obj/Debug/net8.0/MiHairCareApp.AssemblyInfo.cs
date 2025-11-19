@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiHairCareApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4fe7f6c2ba7310c3c623700708a86b90062b514")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+455fd8f5e0b1b1ee95bf333f63a7c7b20fcda4f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiHairCareApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiHairCareApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

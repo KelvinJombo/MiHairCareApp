@@ -318,20 +318,10 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MiHairCareApp.Controllers.CartController",
-    "Method": "PayByStripe",
-    "RelativePath": "api/Cart/stripePay",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
     "Parameters": [
       {
-        "Name": "stripePayDto",
-        "Type": "MiHairCareApp.Application.DTO.StripePayDto",
+        "Name": "req",
+        "Type": "MiHairCareApp.Application.DTO.CheckoutRequest",
         "IsRequired": true
       }
     ],
@@ -366,6 +356,11 @@
         "IsRequired": false
       },
       {
+        "Name": "OriginEnum",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Image",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
@@ -387,6 +382,11 @@
     "Order": 0,
     "Parameters": [
       {
+        "Name": "HairStyleId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "StyleName",
         "Type": "System.String",
         "IsRequired": false
@@ -399,11 +399,6 @@
       {
         "Name": "Image",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      },
-      {
-        "Name": "HairStyleId",
-        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -466,6 +461,22 @@
   },
   {
     "ContainingType": "MiHairCareApp.Controllers.HairStylesController",
+    "Method": "DeleteHairStyle",
+    "RelativePath": "api/HairStyles/deleteHairStyle",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "hairStyleId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MiHairCareApp.Controllers.HairStylesController",
     "Method": "DeletePhoto",
     "RelativePath": "api/HairStyles/deleteHairStylePhoto",
     "HttpMethod": "DELETE",
@@ -498,6 +509,22 @@
   },
   {
     "ContainingType": "MiHairCareApp.Controllers.HairStylesController",
+    "Method": "GetHairStyleByName",
+    "RelativePath": "api/HairStyles/getByTitle",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "hairStyleTitle",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MiHairCareApp.Controllers.HairStylesController",
     "Method": "ViewPhoto",
     "RelativePath": "api/HairStyles/getHairStylePhoto",
     "HttpMethod": "GET",
@@ -521,6 +548,11 @@
     "Order": 0,
     "Parameters": [
       {
+        "Name": "HairStyleId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "StyleName",
         "Type": "System.String",
         "IsRequired": false
@@ -533,11 +565,6 @@
       {
         "Name": "Image",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      },
-      {
-        "Name": "HairStyleId",
-        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -577,6 +604,32 @@
     ]
   },
   {
+    "ContainingType": "PaymentController",
+    "Method": "CreateIntent",
+    "RelativePath": "api/Payment/create-intent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "MiHairCareApp.Application.DTO.CreatePaymentRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaymentController",
+    "Method": "StripeWebhook",
+    "RelativePath": "api/Payment/webhook",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MiHairCareApp.Controllers.ProductsController",
     "Method": "CreateProduct",
     "RelativePath": "api/Products",
@@ -585,9 +638,39 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "productDto",
-        "Type": "MiHairCareApp.Application.DTO.CreateProductDto",
-        "IsRequired": true
+        "Name": "ProductName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Brand",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockQuantity",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsMainPhoto",
+        "Type": "System.Boolean",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -656,6 +739,22 @@
   },
   {
     "ContainingType": "MiHairCareApp.Controllers.ProductsController",
+    "Method": "GetProductByName",
+    "RelativePath": "api/Products/getByName",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MiHairCareApp.Controllers.ProductsController",
     "Method": "GetGrowthProducts",
     "RelativePath": "api/Products/growth",
     "HttpMethod": "GET",
@@ -714,12 +813,17 @@
       },
       {
         "Name": "Price",
-        "Type": "System.Decimal",
+        "Type": "System.Double",
         "IsRequired": false
       },
       {
         "Name": "Image",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsMainPhoto",
+        "Type": "System.Boolean",
         "IsRequired": false
       },
       {

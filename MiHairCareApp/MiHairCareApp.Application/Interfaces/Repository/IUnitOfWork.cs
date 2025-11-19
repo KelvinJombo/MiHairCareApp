@@ -14,6 +14,8 @@
         IPhotoRepository PhotoRepository { get; }
         IWalletRepository WalletRepository { get; }
         ICartRepository CartRepository { get; }
+        IOrderRepository OrderRepository { get; }
+        ISalesRecordRepository SalesRecordRepository { get; }
          
 
         Task<int> SaveChangesAsync();

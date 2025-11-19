@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Domain;
+using MiHairCareApp.Domain.Enums;
 
 namespace MiHairCareApp.Controllers
 {
@@ -18,12 +18,35 @@ namespace MiHairCareApp.Controllers
         }
 
 
+
         //[Authorize(Roles = "Admin")]
         [HttpPost("addHairStyle")]
-        public async Task<IActionResult> AddHairStyle(CreateHairStyleDto createHairStyleDto)
+        public async Task<IActionResult> AddHairStyle([FromForm] CreateHairStyleDto dto)
         {
-            return Ok(await _hairStyleServices.AddHairStyleAsync(createHairStyleDto));
+            if (!ModelState.IsValid)
+            {
+                var errors = string.Join("; ", ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage));
+                return BadRequest(new { Message = "Model binding failed", Errors = errors });
+            }
+
+            if (!Enum.TryParse<HairStyleOrigin>(dto.Origin, true, out var originEnum))
+            {
+                return BadRequest($"Invalid origin value: {dto.Origin}");
+            }
+
+            dto.OriginEnum = originEnum;
+
+            var result = await _hairStyleServices.AddHairStyleAsync(dto);
+
+            if (!result.Succeeded)
+                return StatusCode(result.StatusCode, result);
+
+            return Ok(result);
         }
+
+
 
 
 
@@ -34,6 +57,14 @@ namespace MiHairCareApp.Controllers
         {
             return Ok(await _hairStyleServices.GetHairStyleById(hairStyleId));
         }
+
+
+        [HttpGet("getByTitle")]
+        public async Task<IActionResult> GetHairStyleByName(string hairStyleTitle)
+        {
+            return Ok(await _hairStyleServices.GetHairStyleByTitle(hairStyleTitle));
+        }
+
 
 
 
@@ -103,6 +134,14 @@ namespace MiHairCareApp.Controllers
                 return BadRequest(photoResponse);
             }
         }
+
+        //[Authorize(Roles = "Admin")]
+        [HttpDelete("deleteHairStyle")]
+        public async Task<IActionResult> DeleteHairStyle(string hairStyleId)
+        {
+            return Ok(await _hairStyleServices.DeleteAHairStyle(hairStyleId));
+        }
+
 
 
 

@@ -12,7 +12,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
 {
     public class CartService : ICartService
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork; 
         private readonly ILogger<CartService> _logger;
         private readonly IMapper _mapper;
 
@@ -49,9 +49,6 @@ namespace MiHairCareApp.Application.ServicesImplementation
         }
 
 
-
-
-
         public async Task<ApiResponse<CartViewDto>> AddToCartAsync(string userId, AddToCartDto dto)
         {
             try
@@ -59,24 +56,25 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 if (string.IsNullOrEmpty(userId))
                     return ApiResponse<CartViewDto>.Failed("User ID is required.", 400, new List<string> { });
 
-                var cart = await _unitOfWork.CartRepository.GetCartWithItemsByUserIdAsync(userId) ?? new Cart { UserId = userId };
-
+                var cart = await _unitOfWork.CartRepository.GetCartWithItemsByUserIdAsync(userId);
 
                 if (cart == null)
                 {
                     cart = new Cart
                     {
                         UserId = userId,
-                        Items = new List<CartItem>() // ✅ Initialize items
+                        Items = new List<CartItem>()
                     };
+
                     await _unitOfWork.CartRepository.AddAsync(cart);
                 }
 
-                var product = await _unitOfWork.ProductRepository.GetByIdAsync(dto.ProductId);
+
+                var product = await _unitOfWork.ProductRepository.GetByIdAsync(dto.Id);
                 if (product == null)
                     return ApiResponse<CartViewDto>.Failed("Product not found", 404, new List<string> { });
 
-                var existingItem = cart.Items.FirstOrDefault(i => i.ProductId == dto.ProductId);
+                var existingItem = cart.Items.FirstOrDefault(i => i.ProductId == dto.Id);
                 if (existingItem != null)
                 {
                     existingItem.Quantity += dto.Quantity;
@@ -97,7 +95,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 {
                     Items = cart.Items.Select(i => new CartItemViewDto
                     {
-                        ProductId = i.ProductId,
+                        Id = i.ProductId,
                         ProductName = i.Product?.ProductName
                             ?? _unitOfWork.ProductRepository.GetByIdAsync(i.ProductId).Result?.ProductName
                             ?? "Unknown Product",
@@ -120,48 +118,67 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
 
 
-        public async Task<ApiResponse<StripeResultDto>> CheckoutAsync(string userId)
+        public async Task<ApiResponse<StripeResultDto>> CheckoutAsync(string userId, string paymentIntentId)
         {
             try
             {
-                var cart = await _unitOfWork.CartRepository.GetByIdAsync(userId);  // GetCartWithItemsByUserIdAsync
-                if (cart == null || !cart.Items.Any())
-                    return ApiResponse<StripeResultDto>.Failed("Cart is empty", 400, new List<string>());
+                if (string.IsNullOrEmpty(userId)) return ApiResponse<StripeResultDto>.Failed("User required", 400, new List<string>());
 
-                var totalAmount = (long)(cart.Items.Sum(i => i.TotalPrice) * 100); // Stripe expects cents
+                var cart = await _unitOfWork.CartRepository.GetCartWithItemsByUserIdAsync(userId);
+                if (cart == null || !cart.Items.Any()) return ApiResponse<StripeResultDto>.Failed("Cart is empty", 400, new List<string>());
 
-                var options = new PaymentIntentCreateOptions
-                {
-                    Amount = totalAmount,
-                    Currency = "Dollar",
-                    AutomaticPaymentMethods = new PaymentIntentAutomaticPaymentMethodsOptions
-                    {
-                        Enabled = true,
-                    },
-                };
+                // Prevent double-finalization
+                var existingTx = await _unitOfWork.TransactionRepository.FindByPaymentIntentIdAsync(paymentIntentId);
+                if (existingTx != null && existingTx.PaymentSucceeded)
+                    return ApiResponse<StripeResultDto>.Failed("Payment already processed", 400, new List<string>());
 
+                // Verify payment intent with Stripe
                 var service = new PaymentIntentService();
-                var paymentIntent = await service.CreateAsync(options);
+                var pi = await service.GetAsync(paymentIntentId);
+                if (pi == null) return ApiResponse<StripeResultDto>.Failed("PaymentIntent not found", 400, new List<string>());
 
-                // Optionally persist order record
-                var order = new UserTransaction
+                if (pi.Status != "succeeded")
                 {
-                    PaymentSucceeded = false, // will be updated on webhook
-                    Amount = totalAmount,
-                    Currency = Currency.Dollar,
-                    Description = "Haircare Products Checkout",
-                    CustomerId = userId,
-                    CreatedAt = DateTime.UtcNow,
+                    // If not succeeded, return informative result; webhook could handle success asynchronously
+                    return ApiResponse<StripeResultDto>.Failed($"Payment not completed (status: {pi.Status})", 400, new List<string>());
+                }
+
+
+                var order = new Order
+                {
+                    UserId = userId,  // string now
+                    SubTotal = cart.Items.Sum(i => i.TotalPrice),
+                    Tax = 0,
+                    ShippingFee = 0,
+                    Currency = Currency.Pounds,
+                    PaymentIntentId = paymentIntentId,
+                    OrderDate = DateTime.UtcNow,
+                    Items = cart.Items.Select(i => new OrderItem
+                    {
+                        ProductId = i.ProductId,
+                        Quantity = i.Quantity,
+                        UnitPrice = i.UnitPrice
+                    }).ToList()
                 };
 
-                await _unitOfWork.TransactionRepository.AddAsync(order);
+
+                await _unitOfWork.OrderRepository.AddAsync(order);
+
+                // mark transaction associated with paymentIntentId as succeeded (if exists)
+                var tx = await _unitOfWork.TransactionRepository.FindByPaymentIntentIdAsync(paymentIntentId);
+                if (tx != null)
+                {
+                    tx.PaymentSucceeded = true;
+                    tx.Status = "succeeded";
+                    tx.CreatedAt = DateTime.UtcNow;
+                }
+
+                // Clear cart items
+                cart.Items.Clear();
+
                 await _unitOfWork.SaveChangesAsync();
 
-                return ApiResponse<StripeResultDto>.Success(
-                    new StripeResultDto { ClientSecret = paymentIntent.ClientSecret },
-                    "Checkout initiated",
-                    200
-                );
+                return ApiResponse<StripeResultDto>.Success(null, "Checkout completed", 200);
             }
             catch (Exception ex)
             {
@@ -170,84 +187,6 @@ namespace MiHairCareApp.Application.ServicesImplementation
             }
         }
 
-
-        public async Task<ApiResponse<StripeResultDto>> StripePay(StripePayDto stripePayDto)
-        {
-            try
-            {
-                var customers = new CustomerService();
-                var charges = new ChargeService();
-
-                // Create the customer
-                var customerCreateOptions = new CustomerCreateOptions
-                {
-                    Email = stripePayDto.StripeEmail,
-                    Source = stripePayDto.StripeToken,
-                };
-                var customer = await customers.CreateAsync(customerCreateOptions);
-
-                // Create the charge
-                var chargeCreateOptions = new ChargeCreateOptions
-                {
-                    Amount = stripePayDto.Amount,
-                    Description = stripePayDto.Description,
-                    Currency = stripePayDto.Currency,
-                    Customer = customer.Id,
-                };
-                var charge = await charges.CreateAsync(chargeCreateOptions);
-
-                if (charge != null)
-                {
-                    var currencyEnum = Enum.TryParse<Currency>(
-                                            charge.Currency,   // string from Stripe, e.g. "usd"
-                                            true,              // ignore case
-                                            out var parsedCurrency
-                                        ) ? parsedCurrency : Currency.Unknown; // fallback if parsing fails
-
-                    var userTransaction = new UserTransaction
-                    {
-                        PaymentSucceeded = charge.Status == "succeeded",
-                        Amount = charge.Amount,
-                        CreatedAt = DateTime.UtcNow,
-                        Currency = currencyEnum,
-                        Description = charge.Description,
-                        CustomerId = customer.Id,
-                        PaymentReference = charge.BalanceTransactionId,
-                        ReceiptEmail = charge.ReceiptEmail,
-                    };
-
-
-                    await _unitOfWork.TransactionRepository.AddAsync(userTransaction);
-                    await _unitOfWork.SaveChangesAsync();
-
-                    var stripeResultDto = new StripeResultDto
-                    {
-                        PaymentSucceeded = userTransaction.PaymentSucceeded,
-                        Amount = userTransaction.Amount,
-                        Currency = userTransaction.Currency.ToString(),
-                        Description = userTransaction.Description,
-                        CustomerId = userTransaction.CustomerId,
-                        PaymentReference = userTransaction.PaymentReference
-                    };
-
-                    stripeResultDto = _mapper.Map<StripeResultDto>(userTransaction);
-
-                    return ApiResponse<StripeResultDto>.Success(stripeResultDto, "Payment succeeded", 200);
-                }
-                else
-                {
-                    return ApiResponse<StripeResultDto>.Failed("Payment failed", 400, new List<string> { "Charge creation failed" });
-                }
-            }
-            catch (StripeException ex)
-            {
-                return ApiResponse<StripeResultDto>.Failed("Stripe error", 500, new List<string> { ex.Message });
-            }
-            catch (Exception ex)
-            {
-                return ApiResponse<StripeResultDto>.Failed("Server error", 500, new List<string> { ex.Message });
-            }
-        }
 
 
 

@@ -8,12 +8,10 @@ namespace MiHairCareApp.Application.DTO
         public string ProductName { get; set; }
         public string Brand { get; set; }
         public string Description { get; set; }
-        public decimal Price { get; set; }
-        public IFormFile Image { get; set; }         
-        public int StockQuantity { get; set; }
-         
-
-         
+        public double Price { get; set; }
+        public IFormFile? Image { get; set; }
+        public bool IsMainPhoto { get; set; } = true;
+        public int StockQuantity { get; set; }         
 
     }
 }

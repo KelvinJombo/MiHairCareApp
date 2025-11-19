@@ -51,6 +51,8 @@ namespace MiHairCareApp.Persistence.Extensions
             configuration.GetSection("EmailSettings").Bind(emailSettings);
             services.AddSingleton(emailSettings);
 
+            services.AddScoped<IPaymentService, PaymentService>();
+
             services.AddTransient<IEmailServices, EmailServices>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IHairStyleServices, HairStyleServices>();
@@ -64,6 +66,7 @@ namespace MiHairCareApp.Persistence.Extensions
             services.AddScoped<IJwtTokenService, JwtTokenService>();
             services.AddScoped<IWalletServices, WalletServices>();
             services.AddScoped<ICartService, CartService>();
+            services.AddScoped<IPaymentService, PaymentService>();
 
 
             // Register Cloudinary services

@@ -22,6 +22,8 @@ namespace MiHairCareApp.Persistence.Repositories
             ProductRepository = new ProductRepository(_dbContext);
             WalletRepository = new WalletRepository(_dbContext);
             CartRepository = new CartRepository(_dbContext);
+            OrderRepository = new OrderRepository(_dbContext);
+            SalesRecordRepository = new SalesRecordRepository(_dbContext);
 
 
         }
@@ -42,6 +44,8 @@ namespace MiHairCareApp.Persistence.Repositories
         public IPhotoRepository PhotoRepository { get; set; }
         public IWalletRepository WalletRepository { get; set; }
         public ICartRepository CartRepository { get; set; }
+        public IOrderRepository OrderRepository { get; set; }
+        public  ISalesRecordRepository SalesRecordRepository { get; set; }
 
 
 
