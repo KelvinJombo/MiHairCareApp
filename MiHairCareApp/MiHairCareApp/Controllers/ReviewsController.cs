@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces.Services;
-using MiHairCareApp.Domain;
 
 namespace MiHairCareApp.Controllers
 {
