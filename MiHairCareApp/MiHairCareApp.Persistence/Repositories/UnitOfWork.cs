@@ -24,6 +24,7 @@ namespace MiHairCareApp.Persistence.Repositories
             CartRepository = new CartRepository(_dbContext);
             OrderRepository = new OrderRepository(_dbContext);
             SalesRecordRepository = new SalesRecordRepository(_dbContext);
+            PortfolioRepository = new PortfolioRepository(_dbContext);
 
 
         }
@@ -46,10 +47,14 @@ namespace MiHairCareApp.Persistence.Repositories
         public ICartRepository CartRepository { get; set; }
         public IOrderRepository OrderRepository { get; set; }
         public  ISalesRecordRepository SalesRecordRepository { get; set; }
+        public IPortfolioRepository PortfolioRepository { get; set; }
 
 
 
-
+        public async Task<int> CompleteAsync()
+        {
+            return await _dbContext.SaveChangesAsync();
+        }
 
 
         public async Task<int> SaveChangesAsync()

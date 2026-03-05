@@ -329,7 +329,8 @@ namespace MiHairCareApp.Application.ServicesImplementation
                         {
                             Token = _jwtTokenService.GenerateToken(user.Id, user.Email!, role),
                             UserId = user.Id,
-                            Email = loginDTO.Email,                             
+                            Email = loginDTO.Email,
+                            FirstName = user.FirstName,                            
 
                         };
                         return ApiResponse<LoginResponseDto>.Success(response, "Logged In Successfully", StatusCodes.Status200OK);

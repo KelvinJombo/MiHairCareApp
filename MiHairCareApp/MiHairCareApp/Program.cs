@@ -9,7 +9,7 @@ using MiHairCareApp.Persistence.Extensions;
 using NLog;
 using NLog.Web;
 using Stripe;
-using System.Text.Json;
+using System.Text.Json; 
 
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,11 +1,13 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces.Repository;
 using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Domain;
 using MiHairCareApp.Domain.Entities;
+using static MiHairCareApp.Application.DTO.AvailabilityDto;
 
 namespace MiHairCareApp.Application.ServicesImplementation
 {
@@ -70,6 +72,36 @@ namespace MiHairCareApp.Application.ServicesImplementation
                     new List<string> { ex.Message });
             }
         }
+
+
+        public async Task<AvailabilityResponseDto> GetStylistAvailabilityAsync(string userId, DateTime date)
+        {
+            // Get stylist
+            var stylist = await _unitOfWork.UserRepository.GetByIdAsync(userId);
+            if (stylist == null)
+                return null;
+
+            // Generate working hour slots (e.g., 30-minute intervals)
+            var workingHours = GenerateTimeSlots(stylist.StartHour, stylist.EndHour);
+
+            // Get booked slots from the booking table
+            var bookedSlots = await _unitOfWork.BookingRepository.Query(b => b.AppUserId == userId && b.AppointmentDate.Date == date.Date)
+            .Select(b => b.TimeSlot)
+            .ToListAsync();
+
+            // Calculate remaining (available) slots
+            var availableSlots = workingHours.Except(bookedSlots).ToList();
+
+            return new AvailabilityResponseDto(
+                userId,
+                date,
+                workingHours,
+                bookedSlots,
+                availableSlots
+            );
+        }
+
+
 
 
         public async Task<ApiResponse<bool>> DeleteABookingAsync(string bookingId)
@@ -169,5 +201,23 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 return ApiResponse<BookingResponseDto >.Failed("An error occurred while updating the booking", 500, new List<string> { ex.Message });
             }
         }
+
+
+        private List<string> GenerateTimeSlots(TimeSpan start, TimeSpan end)
+        {
+            List<string> slots = new();
+            var current = start;
+
+            while (current < end)
+            {
+                slots.Add(current.ToString(@"hh\:mm"));
+                current = current.Add(TimeSpan.FromMinutes(30));
+            }
+
+            return slots;
+        }
+
+
+
     }
 }

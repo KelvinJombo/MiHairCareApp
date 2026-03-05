@@ -10,6 +10,7 @@ namespace MiHairCareApp.Application.Interfaces.Repository
         Task<List<T>> FindAsync(Expression<Func<T, bool>> expression);
         Task AddAsync(T entity);
         IQueryable<T> Query();
+        IQueryable<T> Query(Expression<Func<T, bool>> predicate = null);
         void Update(T entity);
         void DeleteAsync(T entity);
         void DeleteAllAsync(List<T> entities);

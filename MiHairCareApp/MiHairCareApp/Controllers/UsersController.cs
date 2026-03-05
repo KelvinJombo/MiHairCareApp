@@ -23,16 +23,6 @@ namespace MiHairCareApp.Controllers
         }
 
 
-
-        [HttpGet("regular-users")]
-        public async Task<IActionResult> GetStylists()
-        {
-            var users = await _userService.GetUsersWithNullCompanyNameAsync();
-            return Ok(users);
-        }
-
-
-
         [HttpGet("stylist-users")]
         public async Task<IActionResult> GetUsersWithCompany()
         {
@@ -43,17 +33,6 @@ namespace MiHairCareApp.Controllers
             }
             return BadRequest(response);
         }
-
-
-
-
-
-        [HttpGet("regUsers")]
-        public async Task<IActionResult> GetRegularUsers()
-        {
-            return Ok(await _userService.GetUsersWithNullCompanyNameAsync());
-        }
-
 
 
         [HttpPost("add-photo")]
@@ -91,18 +70,7 @@ namespace MiHairCareApp.Controllers
         
 
 
-        [HttpGet("hairstylists/{hairStyleId}")]
-        public async Task<IActionResult> GetStylistsByHairStyle(string hairStyleId)
-        {
-            var response = await _userService.GetStylistsByHairStyle(hairStyleId);
-
-            //if (!response.Success)
-            //    return NotFound(response);
-
-            return Ok(response);
-        }
-
-
+        
 
 
     }

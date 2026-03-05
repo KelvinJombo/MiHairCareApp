@@ -8,7 +8,6 @@ using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Domain;
 using MiHairCareApp.Domain.Entities;
 using MiHairCareApp.Domain.Entities.Helper;
-using Stripe;
 
 namespace MiHairCareApp.Application.ServicesImplementation
 {
@@ -38,18 +37,6 @@ namespace MiHairCareApp.Application.ServicesImplementation
         }
 
 
-
-
-        public async Task<ApiResponse<List<RegisterResponseDto>>> GetUsersWithNullCompanyNameAsync()
-        {
-            var result = await _unitOfWork.UserRepository.FindAsync(user => user.CompanyName == null);
-            var results = _mapper.Map<List<RegisterResponseDto>>(result);
-            return ApiResponse<List<RegisterResponseDto>>.Success(results, "Users retrieved successfully", 200);
-        }
-
-
-
-
         public async Task<ApiResponse<GetUserResponseDto>> GetUserById(string userId)
         {
             var user = await _unitOfWork.UserRepository.GetByIdAsync(userId);
@@ -60,8 +47,6 @@ namespace MiHairCareApp.Application.ServicesImplementation
             var userdata = _mapper.Map<GetUserResponseDto>(user);
             return ApiResponse<GetUserResponseDto>.Success(userdata, "User information retrieved successfully", 200);
         }
-
-
 
 
 
@@ -84,8 +69,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
         }
 
 
-
-
+       
 
         public async Task<ApiResponse<PhotoDto>> AddPhoto(UpdatePhotoDto updatePhotoDto)
         {
@@ -155,11 +139,6 @@ namespace MiHairCareApp.Application.ServicesImplementation
         }
 
 
-
-
-
-
-
         public async Task<bool> DeletePhotoAsync(string photoId)
         {
             // Step 1: Get the user from the database
@@ -208,36 +187,9 @@ namespace MiHairCareApp.Application.ServicesImplementation
             var publicId = Path.GetFileNameWithoutExtension(fileName);
             return publicId;
         }
-
-
-
         
 
-        public async Task<ApiResponse<List<RegisterResponseDto>>> GetStylistsByHairStyle(string hairStyleId)
-        {
-            var stylists = await _unitOfWork.UserRepository.GetStylistsByHairStyleAsync(hairStyleId);
-
-            if (stylists == null || !stylists.Any())
-            {
-                return new ApiResponse<List<RegisterResponseDto>>(
-                    false,
-                    "No stylists found for this hairstyle",
-                    404,
-                    null,
-                    new List<string> { "No matching stylists" }
-                );
-            }
-
-            var mappedStylists = _mapper.Map<List<RegisterResponseDto>>(stylists);
-
-            return new ApiResponse<List<RegisterResponseDto>>(
-                true,
-                "Stylists retrieved successfully",
-                200,
-                mappedStylists,
-                null
-            );
-        }
+       
 
     }
 }

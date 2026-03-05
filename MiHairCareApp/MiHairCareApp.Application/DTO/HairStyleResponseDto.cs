@@ -1,6 +1,4 @@
-﻿using MiHairCareApp.Domain.Entities;
-
-namespace MiHairCareApp.Application.DTO
+﻿namespace MiHairCareApp.Application.DTO
 {
     public class HairStyleResponseDto
     {

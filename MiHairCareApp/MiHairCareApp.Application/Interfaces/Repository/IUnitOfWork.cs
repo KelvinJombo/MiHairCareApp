@@ -16,8 +16,9 @@
         ICartRepository CartRepository { get; }
         IOrderRepository OrderRepository { get; }
         ISalesRecordRepository SalesRecordRepository { get; }
-         
+        IPortfolioRepository PortfolioRepository { get; }
 
+        Task<int> CompleteAsync();
         Task<int> SaveChangesAsync();
         
     }

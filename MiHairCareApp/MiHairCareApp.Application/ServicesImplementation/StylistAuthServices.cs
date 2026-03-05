@@ -1,7 +1,9 @@
-﻿using Google.Apis.Auth;
+﻿using AutoMapper;
+using Google.Apis.Auth;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
@@ -27,9 +29,10 @@ namespace MiHairCareApp.Application.ServicesImplementation
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ILogger<StylistAuthServices> _logger;
         private readonly IJwtTokenService _jwtTokenService;
+        private readonly IMapper _mapper;
         private readonly string _clientUrl;
 
-        public StylistAuthServices(IEmailServices emailServices, IUnitOfWork unitOfWork, IWalletServices walletServices, IConfiguration config, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ILogger<StylistAuthServices> logger, IJwtTokenService jwtTokenService)
+        public StylistAuthServices(IEmailServices emailServices, IUnitOfWork unitOfWork, IWalletServices walletServices, IConfiguration config, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ILogger<StylistAuthServices> logger, IJwtTokenService jwtTokenService, IMapper mapper)
         {
             _emailServices = emailServices;
             _unitOfWork = unitOfWork;
@@ -39,6 +42,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
             _signInManager = signInManager;
             _logger = logger;
             _jwtTokenService = jwtTokenService;
+            _mapper = mapper;
             _clientUrl = config["AppSettings:ClientUrl"] ?? "";
         }
 
@@ -57,7 +61,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
 
                 var phoneExists = await _unitOfWork.UserRepository.FindAsync(x => x.PhoneNumber == createStylistsDto.PhoneNumber);
-                if (phoneExists != null)
+                if (phoneExists.Any())
                 {
                     return ApiResponse<StylistsRegResponseDto>.Failed(
                         "Stylist with this phone number already exists. Try the Reset Password Route",
@@ -258,7 +262,12 @@ namespace MiHairCareApp.Application.ServicesImplementation
         }
 
 
-
+        public async Task<ApiResponse<List<RegisterResponseDto>>> GetUsersWithNullCompanyNameAsync()
+        {
+            var result = await _unitOfWork.UserRepository.FindAsync(user => user.CompanyName == null);
+            var results = _mapper.Map<List<RegisterResponseDto>>(result);
+            return ApiResponse<List<RegisterResponseDto>>.Success(results, "Users retrieved successfully", 200);
+        }
 
         public async Task<ApiResponse<LoginResponseDto>> VerifyAndAuthenticateUserAsync(string idToken)
         {
@@ -332,9 +341,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 return new ApiResponse<string>(false, "Error occurred during token validation", 500, null, errorList);
             }
         }
-
-
-
+       
 
 
         public async Task<ApiResponse<LoginResponseDto>> LoginAsync(StylistsLoginDto loginDTO)
@@ -365,6 +372,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
                             Token = _jwtTokenService.GenerateToken(stylist.Id, stylist.Email!, role),
                             UserId = stylist.Id,
                             Email = loginDTO.Email,
+                            FirstName = stylist.FirstName,
 
                         };
                         return ApiResponse<LoginResponseDto>.Success(response, "Logged In Successfully", StatusCodes.Status200OK);
@@ -551,6 +559,107 @@ namespace MiHairCareApp.Application.ServicesImplementation
                 return new ApiResponse<string>(false, "Error extracting user ID from token.", 500, null, new List<string> { ex.Message });
             }
         }
+
+
+        public async Task<bool> UpdateStylistPortfolioAsync(string userId, List<string> hairStyleIds)
+        {
+            var user = await _unitOfWork.UserRepository.Query(u => u.Id == userId)
+                .Include(u => u.StylistPortfolio)
+                .ThenInclude(p => p.HairStyles)
+                .FirstOrDefaultAsync();
+
+            if (user == null) return false;
+
+            // Ensure a portfolio exists
+            if (user.StylistPortfolio == null)
+            {
+                user.StylistPortfolio = new StylistPortfolio
+                {
+                    UserID = userId,
+                    HairStyles = new List<HairStyle>()
+                };
+            }
+
+            // Load selected hairstyles
+            var selectedHairStyles = await _unitOfWork.HairStyleRepository
+                .Query(h => hairStyleIds.Contains(h.Id))
+                .ToListAsync();
+
+            // Update stylist portfolio
+            user.StylistPortfolio.HairStyles = selectedHairStyles;
+
+            await _unitOfWork.CompleteAsync();
+            return true;
+        }
+
+
+        public async Task<ApiResponse<List<PortfolioResponseDto>>> GetStylistsByHairStyle(string hairStyleId)
+        {
+            var stylists = await _unitOfWork.UserRepository.GetStylistsByHairStyleAsync(hairStyleId);
+
+            if (stylists == null || !stylists.Any())
+            {
+                return new ApiResponse<List<PortfolioResponseDto>>(
+                    false,
+                    "No stylists found for this hairstyle",
+                    404,
+                    null,
+                    new List<string> { "No matching stylists" }
+                );
+            }
+
+             
+            var mappedStylists = stylists.Select(s => new PortfolioResponseDto
+            {
+                StylistId = s.Id,
+                CompanyName = s.CompanyName ?? s.FirstName ?? "Unknown Stylist",
+                PhotoUrl = s.ImageUrl ?? "",
+                Ratings = s.Rating ?? new List<Ratings>(),
+
+                Town = s.Town ?? ""
+            }).ToList();
+
+            return new ApiResponse<List<PortfolioResponseDto>>(
+                true,
+                "Stylists retrieved successfully",
+                200,
+                mappedStylists,
+                null
+            );
+        }
+
+
+
+        public async Task<List<PortfolioHairStyleDto>?> GetStylistPortfolioAsync(string stylistId)
+        {
+            // Fetch stylist including portfolio hair styles & photos
+            var stylist = await _unitOfWork.UserRepository
+                .Query(s => s.Id == stylistId)
+                .Include(u => u.StylistPortfolio)
+                    .ThenInclude(sp => sp.HairStyles)
+                        .ThenInclude(h => h.Photos)
+                .FirstOrDefaultAsync();
+
+            if (stylist == null || stylist.StylistPortfolio == null)
+                return null;
+
+            // Portfolio contains many hairstyles — use StylistPortfolio.HairStyles
+            var result = stylist.StylistPortfolio.HairStyles
+                .Where(h => h != null)
+                .Select(h => new PortfolioHairStyleDto
+                {
+                    HairStyleId = h.Id,
+                    StyleName = h.StyleName,
+                    Origin = h.Origin,
+                    Photos = h.Photos
+                        .Select(photo => new PhotoDto { Url = photo.Url })
+                        .ToList()
+                })
+                .ToList();
+
+            return result;
+        }
+
 
     }
 }

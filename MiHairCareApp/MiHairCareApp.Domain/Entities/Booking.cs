@@ -15,7 +15,8 @@ namespace MiHairCareApp.Domain.Entities
         public AppUser User { get; set; }         
         public string HairStyleID { get; set; }
         public HairStyle HairStyle { get; set; }        
-        public DateTime AppointmentDate { get; set; }         
+        public DateTime AppointmentDate { get; set; }   
+        public string TimeSlot {  get; set; }
         public bool PaymentCompleted { get; set; }         
         public bool Referred { get; set; }         
         public string? ReferralID { get; set; }

@@ -106,6 +106,18 @@ namespace MiHairCareApp.Application.ServicesImplementation
         }
 
 
+        public async Task<ApiResponse<List<AllHairStylesResponseDto>>> GetAllPortFolioStyles()
+        {
+            var hairStyles = await _unitOfWork.HairStyleRepository
+                .Query()
+                .Include(h => h.Photos)
+                .ToListAsync();
+
+            var result = _mapper.Map<List<AllHairStylesResponseDto>>(hairStyles);
+
+            return ApiResponse<List<AllHairStylesResponseDto>>
+                .Success(result, "HairStyles retrieved successfully", 200);
+        }
 
 
 

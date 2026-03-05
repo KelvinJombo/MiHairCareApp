@@ -149,7 +149,16 @@ namespace MiHairCareApp.Controllers
         }
 
 
+        [HttpGet("{userId}/portfolio")]
+        public async Task<IActionResult> GetStylistPortfolio(string userId)
+        {
+            var portfolio = await _stylistServices.GetStylistPortfolioAsync(userId);
 
+            if (portfolio == null)
+                return NotFound("Stylist not found.");
+
+            return Ok(portfolio);
+        }
 
 
 
@@ -241,9 +250,43 @@ namespace MiHairCareApp.Controllers
 
             return Ok(new ApiResponse<string>(true, "Logout successful", 200, null, new List<string>()));
         }
-               
 
 
+        [HttpGet("stylistUsers")]
+        public async Task<IActionResult> GetStylists()
+        {
+            return Ok(await _stylistServices.GetUsersWithNullCompanyNameAsync());
+        }
+
+        [HttpGet("hairstylists/{hairStyleId}")]
+        public async Task<IActionResult> GetStylistsByHairStyle(string hairStyleId)
+        {
+            var response = await _stylistServices.GetStylistsByHairStyle(hairStyleId);
+
+            //if (!response.Success)
+            //    return NotFound(response);
+
+            return Ok(response);
+        }
+
+        [HttpPost("{userId}/portfolio")]
+        public async Task<IActionResult> UpdatePortfolio(
+        string userId,
+        [FromBody] UpdatePortfolioRequest request)
+        {
+            if (request == null || request.HairStyleIds.Count == 0)
+                return BadRequest("No hairstyles selected.");
+
+            var result = await _stylistServices.UpdateStylistPortfolioAsync(userId, request.HairStyleIds);
+
+            if (!result)
+                return NotFound("User not found.");
+
+            return Ok("Portfolio updated successfully.");
+        }
+
+
+        
 
     }
 }

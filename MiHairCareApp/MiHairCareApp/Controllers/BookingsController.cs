@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces.Services;
 using Stripe;
+using static MiHairCareApp.Application.DTO.AvailabilityDto;
 
 namespace MiHairCareApp.Controllers
 {
@@ -29,6 +30,17 @@ namespace MiHairCareApp.Controllers
                 return BadRequest();                
             }
             return Ok(bookingResult);
+        }
+
+        [HttpGet("stylists/{stylistId}/availability")]
+        public async Task<ActionResult<AvailabilityResponseDto>> GetAvailability(string stylistId, [FromQuery] DateTime date)
+        {
+            var availability = await _bookingService.GetStylistAvailabilityAsync(stylistId, date);
+
+            if (availability == null)
+                return NotFound("Stylist or availability not found.");
+
+            return Ok(availability);
         }
 
 

@@ -6,8 +6,7 @@ namespace MiHairCareApp.Persistence.Context
 {
     public class StylistsDBContext : IdentityDbContext<AppUser>
     {
-        public StylistsDBContext(DbContextOptions<StylistsDBContext> options)
-            : base(options)
+        public StylistsDBContext(DbContextOptions<StylistsDBContext> options) : base(options)
         {
         }
 

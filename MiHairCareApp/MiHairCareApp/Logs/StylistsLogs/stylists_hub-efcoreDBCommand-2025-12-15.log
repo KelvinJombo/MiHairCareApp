@@ -1,0 +1,71 @@
+2025-12-15 19:54:21.9327|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-15 19:54:21.9781|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (30ms).
+2025-12-15 19:54:22.0406|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (102ms).
+2025-12-15 19:54:22.0683|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-15 19:54:22.8492|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (775ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-15 19:54:23.3928|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-15 19:54:23.4201|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 553ms reading results.
+2025-12-15 19:54:23.4821|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-15 19:54:23.4821|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-15 19:54:23.4821|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-12-15 19:54:23.4821|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-15 19:54:23.5199|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (33ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-15 19:54:23.5199|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-15 19:54:23.5243|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 2ms reading results.
+2025-12-15 19:54:23.5243|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-15 19:54:23.5243|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-15 19:54:23.5243|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-15 19:54:23.5243|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-15 19:54:23.5243|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-15 19:54:23.5243|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-15 19:54:23.5243|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 1ms reading results.
+2025-12-15 19:54:23.7339|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-15 19:54:23.7339|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (2ms).
+2025-12-15 19:54:23.7339|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (3ms).
+2025-12-15 19:54:23.7339|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-12-15 19:54:23.7955|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (56ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-12-15 19:54:24.4943|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-15 19:54:24.4943|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 701ms reading results.
+2025-12-15 19:54:24.6360|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-15 19:54:24.6360|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-15 19:54:24.6360|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-12-15 19:54:24.6360|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HaircareProducts] AS [h]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-12-15 19:54:24.6632|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HaircareProducts] AS [h]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-12-15 19:54:24.6729|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-15 19:54:24.6729|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 9ms reading results.

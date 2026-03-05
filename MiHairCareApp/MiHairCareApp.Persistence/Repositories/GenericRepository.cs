@@ -8,10 +8,11 @@ namespace MiHairCareApp.Persistence.Repositories
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly StylistsDBContext _dbContext;
-
+        private readonly DbSet<T> _dbSet;
         public GenericRepository(StylistsDBContext dbContext)
         {
             _dbContext = dbContext;
+            _dbSet = _dbContext.Set<T>();
         }
 
         public async Task AddAsync(T entity)
@@ -33,6 +34,15 @@ namespace MiHairCareApp.Persistence.Repositories
         {
             return _dbContext.Set<T>().AsQueryable();
         }
+
+        public IQueryable<T> Query(Expression<Func<T, bool>> predicate = null)
+        {
+            if (predicate != null)
+                return _dbSet.Where(predicate);
+
+            return _dbSet;
+        }
+
 
 
         public async Task<List<T>> FindAsync(Expression<Func<T, bool>> expression)

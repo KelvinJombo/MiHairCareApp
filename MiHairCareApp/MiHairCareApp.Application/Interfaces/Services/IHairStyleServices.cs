@@ -23,6 +23,6 @@ namespace MiHairCareApp.Application.Interfaces.Services
         Task<ApiResponse<string>> GetHairStylePhotoAsync(string photoId);
         Task<bool> DeleteHairStylePhotoAsync(string photoId);
         Task<ApiResponse<HairStyleResponseDto>> UpdateHairStyleAsync(UpdateHairStylePhotoDto updatePhotoDto);
-
+        Task<ApiResponse<List<AllHairStylesResponseDto>>> GetAllPortFolioStyles();
     }
 }

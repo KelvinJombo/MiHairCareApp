@@ -19,10 +19,10 @@ namespace MiHairCareApp.Application.Interfaces.Services
         Task<ApiResponse<PhotoDto>> AddPhoto(UpdatePhotoDto updatePhotoDto);
         Task<ApiResponse<string>> GetPhoto(string photoId);
         Task<bool> DeletePhotoAsync(string photoId);
-        //Task<List<AppUser>> GetStylistsByHairStyleAsync(string hairStyleId);
-        Task<ApiResponse<List<RegisterResponseDto>>> GetStylistsByHairStyle(string hairStyleId);
-        Task<ApiResponse<List<RegisterResponseDto>>> GetUsersWithNullCompanyNameAsync();
+        //Task<List<RegisterResponseDto>> GetStylistsByHairStyleAsync(string hairStyleId);
         
+        //Task<bool> UpdateStylistPortfolioAsync(string userId, List<int> hairStyleIds);
+
 
 
     }

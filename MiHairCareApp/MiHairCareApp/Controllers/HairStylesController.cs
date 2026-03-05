@@ -80,6 +80,16 @@ namespace MiHairCareApp.Controllers
             return BadRequest(response);
         }
 
+        [HttpGet("stylesForPortfolio")]
+        public async Task<IActionResult> GetStylesForPortfolio()
+        {
+            var response = await _hairStyleServices.GetAllPortFolioStyles();
+            if (response != null)
+            {
+                return Ok(response);
+            }
+            return BadRequest(response);
+        }
 
 
         //[Authorize(Roles = "Admin, User")]

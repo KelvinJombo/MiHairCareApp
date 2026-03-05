@@ -9,7 +9,7 @@ using MiHairCareApp.Domain.Entities;
 using MiHairCareApp.Domain.Enums;
 using Stripe;
 
-
+ 
 
 
 namespace MiHairCareApp.Application.ServicesImplementation
@@ -35,31 +35,47 @@ namespace MiHairCareApp.Application.ServicesImplementation
         {
             try
             {
+                // Set default currency to NGN if not specified
+                string currency = req.Currency?.ToLower() ?? "ngn";
+
+                // Validate NGN-specific requirements
+                if (currency == "ngn")
+                {
+                    if (req.Amount < 500 || req.Amount > 100000000)
+                    {
+                        return ApiResponse<PaymentIntentResponseDto>.Failed(
+                            "NGN amount must be between 500 and 100,000,000",
+                            400,
+                            new List<string> { "Invalid amount range for NGN" }
+                        );
+                    }
+                }
+
                 var options = new PaymentIntentCreateOptions
                 {
-                    Amount = req.Amount,               
-                    Currency = req.Currency?.ToLower() ?? "gbp",
+                    Amount = req.Amount,   
+                    Currency = currency,
                     ReceiptEmail = req.Customer?.Email,
                     AutomaticPaymentMethods = new PaymentIntentAutomaticPaymentMethodsOptions
                     {
                         Enabled = true,
                     },
                     Metadata = new Dictionary<string, string>
-                {
-                    { "customer_name", req.Customer?.Name ?? "" },
-                    { "customer_email", req.Customer?.Email ?? "" },
-                }
+            {
+                { "customer_name", req.Customer?.Name ?? "" },
+                { "customer_email", req.Customer?.Email ?? "" },
+            }
                 };
 
                 var paymentIntent = await _paymentIntentService.CreateAsync(options);
 
-                // Save pending transaction
+                // Save pending transaction - update to handle NGN
                 var transaction = new UserTransaction
                 {
                     PaymentIntentId = paymentIntent.Id,
                     PaymentSucceeded = false,
                     Amount = req.Amount,
-                    Currency = Currency.Pounds,
+                    Currency = currency == "ngn" ? Currency.NGN : Currency.Pounds, 
                     Description = "Checkout initiated",
                     CustomerEmail = req.Customer?.Email!,
                     CustomerName = req.Customer?.Name!,

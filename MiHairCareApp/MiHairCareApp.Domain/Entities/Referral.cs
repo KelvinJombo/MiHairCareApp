@@ -1,7 +1,7 @@
 ﻿namespace MiHairCareApp.Domain.Entities
 {
     public class Referral : BaseEntity 
-    {        
+    {   
         public string ReferrerUserId { get; set; }
         public AppUser ReferrerUser { get; set; }
         public string ReferredUserId { get; set; }

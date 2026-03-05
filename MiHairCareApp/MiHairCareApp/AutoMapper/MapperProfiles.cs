@@ -29,7 +29,9 @@ namespace MiHairCareApp.AutoMapper
             CreateMap<CreateReferralDto, Referral>();
             CreateMap<Referral, ReferralResponseDto>();             
             CreateMap<CreateProductDto, HaircareProduct>();
-
+            CreateMap<HairStyle, AllHairStylesResponseDto>()
+            .ForMember(dest => dest.HairStyleId, opt => opt.MapFrom(src => src.Id))
+            .ForMember(dest => dest.Photos, opt => opt.MapFrom(src => src.Photos));
             CreateMap<HaircareProduct, ViewProductDto>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
             .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.ProductName))

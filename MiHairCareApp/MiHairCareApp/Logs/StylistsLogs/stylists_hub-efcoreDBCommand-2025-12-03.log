@@ -1,0 +1,1046 @@
+2025-12-03 00:51:53.1936|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 00:51:53.2123|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (7ms).
+2025-12-03 00:51:53.2208|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (22ms).
+2025-12-03 00:51:53.2341|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-03 00:51:53.5875|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (352ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-03 00:51:53.7646|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 00:51:53.7863|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 188ms reading results.
+2025-12-03 00:51:53.8183|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 00:51:53.8183|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 00:51:53.8183|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 00:51:53.8183|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-03 00:51:53.8309|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-03 00:51:53.8309|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 00:51:53.8309|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 1ms reading results.
+2025-12-03 00:51:53.8309|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 00:51:53.8309|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 00:51:53.8309|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 00:51:53.8309|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-03 00:51:53.8309|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-03 00:51:53.8309|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 00:51:53.8309|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 00:51:53.9269|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 00:51:53.9269|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 00:51:53.9269|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 00:51:53.9269|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-12-03 00:51:53.9621|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (32ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-12-03 00:51:54.2797|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 00:51:54.2797|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 318ms reading results.
+2025-12-03 00:51:54.3223|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 00:51:54.3223|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 00:51:54.3223|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 00:51:54.3223|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HaircareProducts] AS [h]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-12-03 00:51:54.3223|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HaircareProducts] AS [h]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-12-03 00:51:54.3373|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 00:51:54.3373|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 3ms reading results.
+2025-12-03 01:22:49.6937|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:22:49.6937|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (5ms).
+2025-12-03 01:22:49.6937|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (5ms).
+2025-12-03 01:22:49.6937|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:22:49.7410|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (41ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:22:49.9051|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:22:49.9051|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 166ms reading results.
+2025-12-03 01:23:40.5313|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:23:40.5313|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:23:40.5313|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:23:40.5313|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-03 01:23:40.5496|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (15ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-03 01:23:40.5496|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:23:40.5496|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 3ms reading results.
+2025-12-03 01:23:40.7814|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:23:40.7814|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:23:40.7814|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:23:40.7814|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-03 01:23:40.7814|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-03 01:23:40.7975|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:23:40.7975|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 1ms reading results.
+2025-12-03 01:23:41.0237|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:23:41.0237|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:23:41.0314|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (2ms).
+2025-12-03 01:23:41.0314|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@p41='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p42='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (DbType = Time), @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTimeOffset), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 256), @p25='?' (Size = 256), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Boolean), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime2), @p33='?' (Size = 4000), @p34='?' (DbType = Time), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Address] = @p1, [BookingID] = @p2, [City] = @p3, [CompanyName] = @p4, [ConcurrencyStamp] = @p5, [Country] = @p6, [CreatedAt] = @p7, [Email] = @p8, [EmailConfirmed] = @p9, [EndHour] = @p10, [FirstName] = @p11, [HairStyleId] = @p12, [HomeService] = @p13, [ImageUrl] = @p14, [IsActive] = @p15, [IsDeleted] = @p16, [LastLogin] = @p17, [LastName] = @p18, [Latitude] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [Longitude] = @p22, [LoyaltyPoints] = @p23, [NormalizedEmail] = @p24, [NormalizedUserName] = @p25, [PasswordHash] = @p26, [PasswordResetToken] = @p27, [PhoneNumber] = @p28, [PhoneNumberConfirmed] = @p29, [PostalCode] = @p30, [PromotionalOfferID] = @p31, [ResetTokenExpires] = @p32, [SecurityStamp] = @p33, [StartHour] = @p34, [State] = @p35, [Street] = @p36, [StylePortfolioID] = @p37, [Town] = @p38, [TwoFactorEnabled] = @p39, [UserName] = @p40
+OUTPUT 1
+WHERE [Id] = @p41 AND [ConcurrencyStamp] = @p42;
+2025-12-03 01:23:41.0712|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (39ms) [Parameters=[@p41='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p42='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (DbType = Time), @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTimeOffset), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 256), @p25='?' (Size = 256), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Boolean), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime2), @p33='?' (Size = 4000), @p34='?' (DbType = Time), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Address] = @p1, [BookingID] = @p2, [City] = @p3, [CompanyName] = @p4, [ConcurrencyStamp] = @p5, [Country] = @p6, [CreatedAt] = @p7, [Email] = @p8, [EmailConfirmed] = @p9, [EndHour] = @p10, [FirstName] = @p11, [HairStyleId] = @p12, [HomeService] = @p13, [ImageUrl] = @p14, [IsActive] = @p15, [IsDeleted] = @p16, [LastLogin] = @p17, [LastName] = @p18, [Latitude] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [Longitude] = @p22, [LoyaltyPoints] = @p23, [NormalizedEmail] = @p24, [NormalizedUserName] = @p25, [PasswordHash] = @p26, [PasswordResetToken] = @p27, [PhoneNumber] = @p28, [PhoneNumberConfirmed] = @p29, [PostalCode] = @p30, [PromotionalOfferID] = @p31, [ResetTokenExpires] = @p32, [SecurityStamp] = @p33, [StartHour] = @p34, [State] = @p35, [Street] = @p36, [StylePortfolioID] = @p37, [Town] = @p38, [TwoFactorEnabled] = @p39, [UserName] = @p40
+OUTPUT 1
+WHERE [Id] = @p41 AND [ConcurrencyStamp] = @p42;
+2025-12-03 01:23:41.0845|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:23:41.0845|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 12ms reading results.
+2025-12-03 01:24:17.9680|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:24:17.9680|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:24:17.9680|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:24:17.9680|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-03 01:24:17.9680|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-03 01:24:17.9680|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:24:17.9680|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:24:18.1256|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:24:18.1256|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:24:18.1256|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:24:18.1256|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-03 01:24:18.1256|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-03 01:24:18.1256|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:24:18.1256|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:24:18.1256|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:24:18.1256|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:24:18.1256|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:24:18.1256|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@p41='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p42='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (DbType = Time), @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTimeOffset), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 256), @p25='?' (Size = 256), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Boolean), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime2), @p33='?' (Size = 4000), @p34='?' (DbType = Time), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Address] = @p1, [BookingID] = @p2, [City] = @p3, [CompanyName] = @p4, [ConcurrencyStamp] = @p5, [Country] = @p6, [CreatedAt] = @p7, [Email] = @p8, [EmailConfirmed] = @p9, [EndHour] = @p10, [FirstName] = @p11, [HairStyleId] = @p12, [HomeService] = @p13, [ImageUrl] = @p14, [IsActive] = @p15, [IsDeleted] = @p16, [LastLogin] = @p17, [LastName] = @p18, [Latitude] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [Longitude] = @p22, [LoyaltyPoints] = @p23, [NormalizedEmail] = @p24, [NormalizedUserName] = @p25, [PasswordHash] = @p26, [PasswordResetToken] = @p27, [PhoneNumber] = @p28, [PhoneNumberConfirmed] = @p29, [PostalCode] = @p30, [PromotionalOfferID] = @p31, [ResetTokenExpires] = @p32, [SecurityStamp] = @p33, [StartHour] = @p34, [State] = @p35, [Street] = @p36, [StylePortfolioID] = @p37, [Town] = @p38, [TwoFactorEnabled] = @p39, [UserName] = @p40
+OUTPUT 1
+WHERE [Id] = @p41 AND [ConcurrencyStamp] = @p42;
+2025-12-03 01:24:18.1524|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (14ms) [Parameters=[@p41='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p42='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (DbType = Time), @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTimeOffset), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 256), @p25='?' (Size = 256), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Boolean), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime2), @p33='?' (Size = 4000), @p34='?' (DbType = Time), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Address] = @p1, [BookingID] = @p2, [City] = @p3, [CompanyName] = @p4, [ConcurrencyStamp] = @p5, [Country] = @p6, [CreatedAt] = @p7, [Email] = @p8, [EmailConfirmed] = @p9, [EndHour] = @p10, [FirstName] = @p11, [HairStyleId] = @p12, [HomeService] = @p13, [ImageUrl] = @p14, [IsActive] = @p15, [IsDeleted] = @p16, [LastLogin] = @p17, [LastName] = @p18, [Latitude] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [Longitude] = @p22, [LoyaltyPoints] = @p23, [NormalizedEmail] = @p24, [NormalizedUserName] = @p25, [PasswordHash] = @p26, [PasswordResetToken] = @p27, [PhoneNumber] = @p28, [PhoneNumberConfirmed] = @p29, [PostalCode] = @p30, [PromotionalOfferID] = @p31, [ResetTokenExpires] = @p32, [SecurityStamp] = @p33, [StartHour] = @p34, [State] = @p35, [Street] = @p36, [StylePortfolioID] = @p37, [Town] = @p38, [TwoFactorEnabled] = @p39, [UserName] = @p40
+OUTPUT 1
+WHERE [Id] = @p41 AND [ConcurrencyStamp] = @p42;
+2025-12-03 01:24:18.1524|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:24:18.1524|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:24:50.7357|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:24:50.7357|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:24:50.7357|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:24:50.7357|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:24:50.7565|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (15ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:24:50.7565|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:24:50.7565|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:33:46.7964|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:33:46.7964|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:33:46.7964|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:33:46.7964|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:33:46.8215|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (21ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:33:46.8215|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:33:46.8215|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:37:14.7184|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:37:14.7184|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:37:14.7184|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:37:14.7184|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:37:14.7429|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:37:14.7429|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:37:14.7429|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:37:15.7055|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:37:15.7055|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:37:15.7055|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:37:15.7055|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:37:15.7055|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:37:15.7055|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:37:15.7055|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:39:14.7366|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:39:14.7366|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:39:14.7366|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:39:14.7366|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:39:14.7586|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:39:14.7586|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:39:14.7586|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:39:16.7180|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:39:16.7180|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:39:16.7180|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (2ms).
+2025-12-03 01:39:16.7180|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:39:16.7180|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:39:16.7348|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:39:16.7348|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 1ms reading results.
+2025-12-03 01:39:24.1397|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:39:24.1561|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:39:24.1561|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:39:24.1561|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:39:24.1561|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:39:24.1561|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:39:24.1561|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:41:15.7183|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:41:15.7183|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:41:15.7183|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:41:15.7183|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:41:15.7402|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (15ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:41:15.7402|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:41:15.7402|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:41:16.7564|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:41:16.7564|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:41:16.7564|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:41:16.7564|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:41:16.7564|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:41:16.7564|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:41:16.7564|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:41:22.7183|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:41:22.7183|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:41:22.7183|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:41:22.7183|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:41:22.7183|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:41:22.7183|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:41:22.7183|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:41:27.6967|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:41:27.6967|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:41:27.6967|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:41:27.6967|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:41:27.6967|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:41:27.6967|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:41:27.6967|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:41:34.7231|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:41:34.7231|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:41:34.7231|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:41:34.7231|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:41:34.7231|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:41:34.7231|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:41:34.7231|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 1ms reading results.
+2025-12-03 01:47:23.8144|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:47:23.8144|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (3ms).
+2025-12-03 01:47:23.8144|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (4ms).
+2025-12-03 01:47:23.8144|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:47:23.8449|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (26ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:47:23.8449|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:47:23.8449|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:47:24.8121|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:47:24.8121|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:47:24.8121|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:47:24.8121|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:47:24.8121|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:47:24.8121|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:47:24.8121|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 2ms reading results.
+2025-12-03 01:47:28.7096|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:47:28.7189|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:47:28.7189|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:47:28.7189|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:47:28.7189|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:47:28.7189|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:47:28.7189|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:48:10.5000|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:48:10.5000|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:48:10.5000|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:48:10.5000|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-03 01:48:10.5317|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (18ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-03 01:48:10.5317|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:48:10.5317|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:48:10.6757|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:48:10.6757|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:48:10.6757|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:48:10.6757|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-03 01:48:10.6871|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-03 01:48:10.6871|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:48:10.6871|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:48:10.6871|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:48:10.6871|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:48:10.6871|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:48:10.6871|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@p41='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p42='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (DbType = Time), @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTimeOffset), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 256), @p25='?' (Size = 256), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Boolean), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime2), @p33='?' (Size = 4000), @p34='?' (DbType = Time), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Address] = @p1, [BookingID] = @p2, [City] = @p3, [CompanyName] = @p4, [ConcurrencyStamp] = @p5, [Country] = @p6, [CreatedAt] = @p7, [Email] = @p8, [EmailConfirmed] = @p9, [EndHour] = @p10, [FirstName] = @p11, [HairStyleId] = @p12, [HomeService] = @p13, [ImageUrl] = @p14, [IsActive] = @p15, [IsDeleted] = @p16, [LastLogin] = @p17, [LastName] = @p18, [Latitude] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [Longitude] = @p22, [LoyaltyPoints] = @p23, [NormalizedEmail] = @p24, [NormalizedUserName] = @p25, [PasswordHash] = @p26, [PasswordResetToken] = @p27, [PhoneNumber] = @p28, [PhoneNumberConfirmed] = @p29, [PostalCode] = @p30, [PromotionalOfferID] = @p31, [ResetTokenExpires] = @p32, [SecurityStamp] = @p33, [StartHour] = @p34, [State] = @p35, [Street] = @p36, [StylePortfolioID] = @p37, [Town] = @p38, [TwoFactorEnabled] = @p39, [UserName] = @p40
+OUTPUT 1
+WHERE [Id] = @p41 AND [ConcurrencyStamp] = @p42;
+2025-12-03 01:48:10.7073|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (15ms) [Parameters=[@p41='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p42='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (DbType = Time), @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTimeOffset), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 256), @p25='?' (Size = 256), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Boolean), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime2), @p33='?' (Size = 4000), @p34='?' (DbType = Time), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Address] = @p1, [BookingID] = @p2, [City] = @p3, [CompanyName] = @p4, [ConcurrencyStamp] = @p5, [Country] = @p6, [CreatedAt] = @p7, [Email] = @p8, [EmailConfirmed] = @p9, [EndHour] = @p10, [FirstName] = @p11, [HairStyleId] = @p12, [HomeService] = @p13, [ImageUrl] = @p14, [IsActive] = @p15, [IsDeleted] = @p16, [LastLogin] = @p17, [LastName] = @p18, [Latitude] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [Longitude] = @p22, [LoyaltyPoints] = @p23, [NormalizedEmail] = @p24, [NormalizedUserName] = @p25, [PasswordHash] = @p26, [PasswordResetToken] = @p27, [PhoneNumber] = @p28, [PhoneNumberConfirmed] = @p29, [PostalCode] = @p30, [PromotionalOfferID] = @p31, [ResetTokenExpires] = @p32, [SecurityStamp] = @p33, [StartHour] = @p34, [State] = @p35, [Street] = @p36, [StylePortfolioID] = @p37, [Town] = @p38, [TwoFactorEnabled] = @p39, [UserName] = @p40
+OUTPUT 1
+WHERE [Id] = @p41 AND [ConcurrencyStamp] = @p42;
+2025-12-03 01:48:10.7073|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:48:10.7073|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:49:28.7202|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:49:28.7202|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:49:28.7202|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:49:28.7202|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:49:28.7445|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:49:28.7445|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:49:28.7445|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 1ms reading results.
+2025-12-03 01:49:30.7213|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:49:30.7213|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:49:30.7213|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:49:30.7213|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:49:30.7213|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [c1].[Id], [c1].[CreatedAt], [c1].[IsDeleted], [c1].[ModifiedAt], [c1].[UserId], [s].[Id], [s].[CartId], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[Id0], [s].[Brand], [s].[Category], [s].[CreatedAt0], [s].[Description], [s].[IsDeleted0], [s].[ModifiedAt0], [s].[Price], [s].[ProductName], [s].[StockQuantity]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[IsDeleted], [c].[ModifiedAt], [c].[UserId]
+    FROM [Carts] AS [c]
+    WHERE [c].[UserId] = @__userId_0
+) AS [c1]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CartId], [c0].[CreatedAt], [c0].[IsDeleted], [c0].[ModifiedAt], [c0].[ProductId], [c0].[Quantity], [c0].[UnitPrice], [h].[Id] AS [Id0], [h].[Brand], [h].[Category], [h].[CreatedAt] AS [CreatedAt0], [h].[Description], [h].[IsDeleted] AS [IsDeleted0], [h].[ModifiedAt] AS [ModifiedAt0], [h].[Price], [h].[ProductName], [h].[StockQuantity]
+    FROM [CartItem] AS [c0]
+    INNER JOIN [HaircareProducts] AS [h] ON [c0].[ProductId] = [h].[Id]
+) AS [s] ON [c1].[Id] = [s].[CartId]
+ORDER BY [c1].[Id], [s].[Id]
+2025-12-03 01:49:30.7213|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:49:30.7213|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 1ms reading results.
+2025-12-03 01:51:41.9371|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:51:41.9371|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:51:41.9371|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:51:41.9371|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-03 01:51:41.9371|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-03 01:51:41.9371|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:51:41.9371|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:51:42.0820|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:51:42.0820|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:51:42.0820|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:51:42.0820|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-03 01:51:42.0820|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-03 01:51:42.0820|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:51:42.0820|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:51:42.0820|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:51:42.0929|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:51:42.0929|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:51:42.0929|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@p41='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p42='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (DbType = Time), @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTimeOffset), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 256), @p25='?' (Size = 256), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Boolean), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime2), @p33='?' (Size = 4000), @p34='?' (DbType = Time), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Address] = @p1, [BookingID] = @p2, [City] = @p3, [CompanyName] = @p4, [ConcurrencyStamp] = @p5, [Country] = @p6, [CreatedAt] = @p7, [Email] = @p8, [EmailConfirmed] = @p9, [EndHour] = @p10, [FirstName] = @p11, [HairStyleId] = @p12, [HomeService] = @p13, [ImageUrl] = @p14, [IsActive] = @p15, [IsDeleted] = @p16, [LastLogin] = @p17, [LastName] = @p18, [Latitude] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [Longitude] = @p22, [LoyaltyPoints] = @p23, [NormalizedEmail] = @p24, [NormalizedUserName] = @p25, [PasswordHash] = @p26, [PasswordResetToken] = @p27, [PhoneNumber] = @p28, [PhoneNumberConfirmed] = @p29, [PostalCode] = @p30, [PromotionalOfferID] = @p31, [ResetTokenExpires] = @p32, [SecurityStamp] = @p33, [StartHour] = @p34, [State] = @p35, [Street] = @p36, [StylePortfolioID] = @p37, [Town] = @p38, [TwoFactorEnabled] = @p39, [UserName] = @p40
+OUTPUT 1
+WHERE [Id] = @p41 AND [ConcurrencyStamp] = @p42;
+2025-12-03 01:51:42.1142|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (21ms) [Parameters=[@p41='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p42='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (DbType = Time), @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTimeOffset), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 256), @p25='?' (Size = 256), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Boolean), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime2), @p33='?' (Size = 4000), @p34='?' (DbType = Time), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Address] = @p1, [BookingID] = @p2, [City] = @p3, [CompanyName] = @p4, [ConcurrencyStamp] = @p5, [Country] = @p6, [CreatedAt] = @p7, [Email] = @p8, [EmailConfirmed] = @p9, [EndHour] = @p10, [FirstName] = @p11, [HairStyleId] = @p12, [HomeService] = @p13, [ImageUrl] = @p14, [IsActive] = @p15, [IsDeleted] = @p16, [LastLogin] = @p17, [LastName] = @p18, [Latitude] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [Longitude] = @p22, [LoyaltyPoints] = @p23, [NormalizedEmail] = @p24, [NormalizedUserName] = @p25, [PasswordHash] = @p26, [PasswordResetToken] = @p27, [PhoneNumber] = @p28, [PhoneNumberConfirmed] = @p29, [PostalCode] = @p30, [PromotionalOfferID] = @p31, [ResetTokenExpires] = @p32, [SecurityStamp] = @p33, [StartHour] = @p34, [State] = @p35, [Street] = @p36, [StylePortfolioID] = @p37, [Town] = @p38, [TwoFactorEnabled] = @p39, [UserName] = @p40
+OUTPUT 1
+WHERE [Id] = @p41 AND [ConcurrencyStamp] = @p42;
+2025-12-03 01:51:42.1142|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:51:42.1142|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:54:24.3130|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:54:24.3130|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:54:24.3130|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:54:24.3130|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-03 01:54:24.3354|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-03 01:54:24.3354|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:54:24.3354|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:54:24.4790|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:54:24.4790|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:54:24.4790|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:54:24.4790|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-03 01:54:24.4850|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-03 01:54:24.4850|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:54:24.4850|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:54:24.4850|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:54:24.4850|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:54:24.4850|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:54:24.4850|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@p41='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p42='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (DbType = Time), @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTimeOffset), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 256), @p25='?' (Size = 256), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Boolean), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime2), @p33='?' (Size = 4000), @p34='?' (DbType = Time), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Address] = @p1, [BookingID] = @p2, [City] = @p3, [CompanyName] = @p4, [ConcurrencyStamp] = @p5, [Country] = @p6, [CreatedAt] = @p7, [Email] = @p8, [EmailConfirmed] = @p9, [EndHour] = @p10, [FirstName] = @p11, [HairStyleId] = @p12, [HomeService] = @p13, [ImageUrl] = @p14, [IsActive] = @p15, [IsDeleted] = @p16, [LastLogin] = @p17, [LastName] = @p18, [Latitude] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [Longitude] = @p22, [LoyaltyPoints] = @p23, [NormalizedEmail] = @p24, [NormalizedUserName] = @p25, [PasswordHash] = @p26, [PasswordResetToken] = @p27, [PhoneNumber] = @p28, [PhoneNumberConfirmed] = @p29, [PostalCode] = @p30, [PromotionalOfferID] = @p31, [ResetTokenExpires] = @p32, [SecurityStamp] = @p33, [StartHour] = @p34, [State] = @p35, [Street] = @p36, [StylePortfolioID] = @p37, [Town] = @p38, [TwoFactorEnabled] = @p39, [UserName] = @p40
+OUTPUT 1
+WHERE [Id] = @p41 AND [ConcurrencyStamp] = @p42;
+2025-12-03 01:54:24.5031|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (14ms) [Parameters=[@p41='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p42='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (DbType = Time), @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTimeOffset), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 256), @p25='?' (Size = 256), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Boolean), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime2), @p33='?' (Size = 4000), @p34='?' (DbType = Time), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Address] = @p1, [BookingID] = @p2, [City] = @p3, [CompanyName] = @p4, [ConcurrencyStamp] = @p5, [Country] = @p6, [CreatedAt] = @p7, [Email] = @p8, [EmailConfirmed] = @p9, [EndHour] = @p10, [FirstName] = @p11, [HairStyleId] = @p12, [HomeService] = @p13, [ImageUrl] = @p14, [IsActive] = @p15, [IsDeleted] = @p16, [LastLogin] = @p17, [LastName] = @p18, [Latitude] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [Longitude] = @p22, [LoyaltyPoints] = @p23, [NormalizedEmail] = @p24, [NormalizedUserName] = @p25, [PasswordHash] = @p26, [PasswordResetToken] = @p27, [PhoneNumber] = @p28, [PhoneNumberConfirmed] = @p29, [PostalCode] = @p30, [PromotionalOfferID] = @p31, [ResetTokenExpires] = @p32, [SecurityStamp] = @p33, [StartHour] = @p34, [State] = @p35, [Street] = @p36, [StylePortfolioID] = @p37, [Town] = @p38, [TwoFactorEnabled] = @p39, [UserName] = @p40
+OUTPUT 1
+WHERE [Id] = @p41 AND [ConcurrencyStamp] = @p42;
+2025-12-03 01:54:24.5031|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:54:24.5031|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:55:32.1727|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:55:32.1727|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:55:32.1727|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:55:32.1727|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-03 01:55:32.1901|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-03 01:55:32.1901|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:55:32.1901|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:55:32.3028|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:55:32.3028|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:55:32.3028|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:55:32.3028|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-03 01:55:32.3028|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-03 01:55:32.3028|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:55:32.3028|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:55:32.3028|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:55:32.3028|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:55:32.3028|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:55:32.3028|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@p41='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p42='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (DbType = Time), @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTimeOffset), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 256), @p25='?' (Size = 256), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Boolean), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime2), @p33='?' (Size = 4000), @p34='?' (DbType = Time), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Address] = @p1, [BookingID] = @p2, [City] = @p3, [CompanyName] = @p4, [ConcurrencyStamp] = @p5, [Country] = @p6, [CreatedAt] = @p7, [Email] = @p8, [EmailConfirmed] = @p9, [EndHour] = @p10, [FirstName] = @p11, [HairStyleId] = @p12, [HomeService] = @p13, [ImageUrl] = @p14, [IsActive] = @p15, [IsDeleted] = @p16, [LastLogin] = @p17, [LastName] = @p18, [Latitude] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [Longitude] = @p22, [LoyaltyPoints] = @p23, [NormalizedEmail] = @p24, [NormalizedUserName] = @p25, [PasswordHash] = @p26, [PasswordResetToken] = @p27, [PhoneNumber] = @p28, [PhoneNumberConfirmed] = @p29, [PostalCode] = @p30, [PromotionalOfferID] = @p31, [ResetTokenExpires] = @p32, [SecurityStamp] = @p33, [StartHour] = @p34, [State] = @p35, [Street] = @p36, [StylePortfolioID] = @p37, [Town] = @p38, [TwoFactorEnabled] = @p39, [UserName] = @p40
+OUTPUT 1
+WHERE [Id] = @p41 AND [ConcurrencyStamp] = @p42;
+2025-12-03 01:55:32.3237|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@p41='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p42='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (DbType = Time), @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTimeOffset), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 256), @p25='?' (Size = 256), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Boolean), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime2), @p33='?' (Size = 4000), @p34='?' (DbType = Time), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Address] = @p1, [BookingID] = @p2, [City] = @p3, [CompanyName] = @p4, [ConcurrencyStamp] = @p5, [Country] = @p6, [CreatedAt] = @p7, [Email] = @p8, [EmailConfirmed] = @p9, [EndHour] = @p10, [FirstName] = @p11, [HairStyleId] = @p12, [HomeService] = @p13, [ImageUrl] = @p14, [IsActive] = @p15, [IsDeleted] = @p16, [LastLogin] = @p17, [LastName] = @p18, [Latitude] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [Longitude] = @p22, [LoyaltyPoints] = @p23, [NormalizedEmail] = @p24, [NormalizedUserName] = @p25, [PasswordHash] = @p26, [PasswordResetToken] = @p27, [PhoneNumber] = @p28, [PhoneNumberConfirmed] = @p29, [PostalCode] = @p30, [PromotionalOfferID] = @p31, [ResetTokenExpires] = @p32, [SecurityStamp] = @p33, [StartHour] = @p34, [State] = @p35, [Street] = @p36, [StylePortfolioID] = @p37, [Town] = @p38, [TwoFactorEnabled] = @p39, [UserName] = @p40
+OUTPUT 1
+WHERE [Id] = @p41 AND [ConcurrencyStamp] = @p42;
+2025-12-03 01:55:32.3237|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:55:32.3237|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:56:14.8499|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:56:14.8499|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:56:14.8626|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (11ms).
+2025-12-03 01:56:14.8626|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__category_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [h].[Id], [h].[Brand], [h].[Category], [h].[CreatedAt], [h].[Description], [h].[IsDeleted], [h].[ModifiedAt], [h].[Price], [h].[ProductName], [h].[StockQuantity], [p].[Id], [p].[AppUserId], [p].[CreatedAt], [p].[HairStyleId], [p].[HaircareProductId], [p].[IsDeleted], [p].[IsMain], [p].[ModifiedAt], [p].[PublicId], [p].[Url], [p].[UserId]
+FROM [HaircareProducts] AS [h]
+LEFT JOIN [Photos] AS [p] ON [h].[Id] = [p].[HaircareProductId]
+WHERE [h].[Category] = @__category_0
+ORDER BY [h].[Id]
+2025-12-03 01:56:14.8626|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__category_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [h].[Id], [h].[Brand], [h].[Category], [h].[CreatedAt], [h].[Description], [h].[IsDeleted], [h].[ModifiedAt], [h].[Price], [h].[ProductName], [h].[StockQuantity], [p].[Id], [p].[AppUserId], [p].[CreatedAt], [p].[HairStyleId], [p].[HaircareProductId], [p].[IsDeleted], [p].[IsMain], [p].[ModifiedAt], [p].[PublicId], [p].[Url], [p].[UserId]
+FROM [HaircareProducts] AS [h]
+LEFT JOIN [Photos] AS [p] ON [h].[Id] = [p].[HaircareProductId]
+WHERE [h].[Category] = @__category_0
+ORDER BY [h].[Id]
+2025-12-03 01:56:14.8771|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:56:14.8771|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 5ms reading results.
+2025-12-03 01:56:57.6718|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:56:57.6718|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:56:57.6718|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:56:57.6718|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-03 01:56:57.6718|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-03 01:56:57.6718|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:56:57.6718|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:56:57.8185|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:56:57.8185|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:56:57.8185|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:56:57.8185|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-03 01:56:57.8185|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-03 01:56:57.8185|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:56:57.8185|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:56:57.8277|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:56:57.8277|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:56:57.8277|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:56:57.8277|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@p41='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p42='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (DbType = Time), @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTimeOffset), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 256), @p25='?' (Size = 256), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Boolean), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime2), @p33='?' (Size = 4000), @p34='?' (DbType = Time), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Address] = @p1, [BookingID] = @p2, [City] = @p3, [CompanyName] = @p4, [ConcurrencyStamp] = @p5, [Country] = @p6, [CreatedAt] = @p7, [Email] = @p8, [EmailConfirmed] = @p9, [EndHour] = @p10, [FirstName] = @p11, [HairStyleId] = @p12, [HomeService] = @p13, [ImageUrl] = @p14, [IsActive] = @p15, [IsDeleted] = @p16, [LastLogin] = @p17, [LastName] = @p18, [Latitude] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [Longitude] = @p22, [LoyaltyPoints] = @p23, [NormalizedEmail] = @p24, [NormalizedUserName] = @p25, [PasswordHash] = @p26, [PasswordResetToken] = @p27, [PhoneNumber] = @p28, [PhoneNumberConfirmed] = @p29, [PostalCode] = @p30, [PromotionalOfferID] = @p31, [ResetTokenExpires] = @p32, [SecurityStamp] = @p33, [StartHour] = @p34, [State] = @p35, [Street] = @p36, [StylePortfolioID] = @p37, [Town] = @p38, [TwoFactorEnabled] = @p39, [UserName] = @p40
+OUTPUT 1
+WHERE [Id] = @p41 AND [ConcurrencyStamp] = @p42;
+2025-12-03 01:56:57.8542|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (24ms) [Parameters=[@p41='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p42='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (DbType = Time), @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTimeOffset), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 256), @p25='?' (Size = 256), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Boolean), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime2), @p33='?' (Size = 4000), @p34='?' (DbType = Time), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Address] = @p1, [BookingID] = @p2, [City] = @p3, [CompanyName] = @p4, [ConcurrencyStamp] = @p5, [Country] = @p6, [CreatedAt] = @p7, [Email] = @p8, [EmailConfirmed] = @p9, [EndHour] = @p10, [FirstName] = @p11, [HairStyleId] = @p12, [HomeService] = @p13, [ImageUrl] = @p14, [IsActive] = @p15, [IsDeleted] = @p16, [LastLogin] = @p17, [LastName] = @p18, [Latitude] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [Longitude] = @p22, [LoyaltyPoints] = @p23, [NormalizedEmail] = @p24, [NormalizedUserName] = @p25, [PasswordHash] = @p26, [PasswordResetToken] = @p27, [PhoneNumber] = @p28, [PhoneNumberConfirmed] = @p29, [PostalCode] = @p30, [PromotionalOfferID] = @p31, [ResetTokenExpires] = @p32, [SecurityStamp] = @p33, [StartHour] = @p34, [State] = @p35, [Street] = @p36, [StylePortfolioID] = @p37, [Town] = @p38, [TwoFactorEnabled] = @p39, [UserName] = @p40
+OUTPUT 1
+WHERE [Id] = @p41 AND [ConcurrencyStamp] = @p42;
+2025-12-03 01:56:57.8542|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:56:57.8542|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:57:02.4060|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:57:02.4060|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:57:02.4060|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:57:02.4060|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-03 01:57:02.4060|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-03 01:57:02.4060|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:57:02.4060|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:57:02.5596|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:57:02.5596|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:57:02.5596|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:57:02.5596|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-03 01:57:02.5626|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-03 01:57:02.5626|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:57:02.5626|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:57:02.5626|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:57:02.5626|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:57:02.5626|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:57:02.5626|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@p41='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p42='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (DbType = Time), @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTimeOffset), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 256), @p25='?' (Size = 256), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Boolean), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime2), @p33='?' (Size = 4000), @p34='?' (DbType = Time), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Address] = @p1, [BookingID] = @p2, [City] = @p3, [CompanyName] = @p4, [ConcurrencyStamp] = @p5, [Country] = @p6, [CreatedAt] = @p7, [Email] = @p8, [EmailConfirmed] = @p9, [EndHour] = @p10, [FirstName] = @p11, [HairStyleId] = @p12, [HomeService] = @p13, [ImageUrl] = @p14, [IsActive] = @p15, [IsDeleted] = @p16, [LastLogin] = @p17, [LastName] = @p18, [Latitude] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [Longitude] = @p22, [LoyaltyPoints] = @p23, [NormalizedEmail] = @p24, [NormalizedUserName] = @p25, [PasswordHash] = @p26, [PasswordResetToken] = @p27, [PhoneNumber] = @p28, [PhoneNumberConfirmed] = @p29, [PostalCode] = @p30, [PromotionalOfferID] = @p31, [ResetTokenExpires] = @p32, [SecurityStamp] = @p33, [StartHour] = @p34, [State] = @p35, [Street] = @p36, [StylePortfolioID] = @p37, [Town] = @p38, [TwoFactorEnabled] = @p39, [UserName] = @p40
+OUTPUT 1
+WHERE [Id] = @p41 AND [ConcurrencyStamp] = @p42;
+2025-12-03 01:57:02.5626|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (11ms) [Parameters=[@p41='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p42='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 256), @p9='?' (DbType = Boolean), @p10='?' (DbType = Time), @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTimeOffset), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 256), @p25='?' (Size = 256), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (Size = 4000), @p29='?' (DbType = Boolean), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = DateTime2), @p33='?' (Size = 4000), @p34='?' (DbType = Time), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Address] = @p1, [BookingID] = @p2, [City] = @p3, [CompanyName] = @p4, [ConcurrencyStamp] = @p5, [Country] = @p6, [CreatedAt] = @p7, [Email] = @p8, [EmailConfirmed] = @p9, [EndHour] = @p10, [FirstName] = @p11, [HairStyleId] = @p12, [HomeService] = @p13, [ImageUrl] = @p14, [IsActive] = @p15, [IsDeleted] = @p16, [LastLogin] = @p17, [LastName] = @p18, [Latitude] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [Longitude] = @p22, [LoyaltyPoints] = @p23, [NormalizedEmail] = @p24, [NormalizedUserName] = @p25, [PasswordHash] = @p26, [PasswordResetToken] = @p27, [PhoneNumber] = @p28, [PhoneNumberConfirmed] = @p29, [PostalCode] = @p30, [PromotionalOfferID] = @p31, [ResetTokenExpires] = @p32, [SecurityStamp] = @p33, [StartHour] = @p34, [State] = @p35, [Street] = @p36, [StylePortfolioID] = @p37, [Town] = @p38, [TwoFactorEnabled] = @p39, [UserName] = @p40
+OUTPUT 1
+WHERE [Id] = @p41 AND [ConcurrencyStamp] = @p42;
+2025-12-03 01:57:02.5791|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:57:02.5791|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-12-03 01:57:05.5640|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:57:05.5640|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:57:05.5640|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-12-03 01:57:05.5640|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [h].[Id], [h].[CreatedAt], [h].[Description], [h].[IsDeleted], [h].[ModifiedAt], [h].[Origin], [h].[PhotoId], [h].[PriceTag], [h].[PromotionalOffer], [h].[StyleName], [h].[StylistPortfolioId], [h].[VideoLinks], [p].[Id], [p].[AppUserId], [p].[CreatedAt], [p].[HairStyleId], [p].[HaircareProductId], [p].[IsDeleted], [p].[IsMain], [p].[ModifiedAt], [p].[PublicId], [p].[Url], [p].[UserId]
+FROM [HairStyles] AS [h]
+LEFT JOIN [Photos] AS [p] ON [h].[Id] = [p].[HairStyleId]
+ORDER BY [h].[Id]
+2025-12-03 01:57:05.5640|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [h].[Id], [h].[CreatedAt], [h].[Description], [h].[IsDeleted], [h].[ModifiedAt], [h].[Origin], [h].[PhotoId], [h].[PriceTag], [h].[PromotionalOffer], [h].[StyleName], [h].[StylistPortfolioId], [h].[VideoLinks], [p].[Id], [p].[AppUserId], [p].[CreatedAt], [p].[HairStyleId], [p].[HaircareProductId], [p].[IsDeleted], [p].[IsMain], [p].[ModifiedAt], [p].[PublicId], [p].[Url], [p].[UserId]
+FROM [HairStyles] AS [h]
+LEFT JOIN [Photos] AS [p] ON [h].[Id] = [p].[HairStyleId]
+ORDER BY [h].[Id]
+2025-12-03 01:57:05.6436|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:57:05.6436|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 71ms reading results.
+2025-12-03 01:57:10.7226|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2025-12-03 01:57:10.7226|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:57:10.7226|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-12-03 01:57:10.7226|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[@__hairStyleId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName], [s].[Id], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[UserID], [h0].[Id], [h0].[CreatedAt], [h0].[Description], [h0].[IsDeleted], [h0].[ModifiedAt], [h0].[Origin], [h0].[PhotoId], [h0].[PriceTag], [h0].[PromotionalOffer], [h0].[StyleName], [h0].[StylistPortfolioId], [h0].[VideoLinks]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [StylistPortfolios] AS [s] ON [a].[Id] = [s].[UserID]
+LEFT JOIN [HairStyles] AS [h0] ON [s].[Id] = [h0].[StylistPortfolioId]
+WHERE EXISTS (
+    SELECT 1
+    FROM [HairStyles] AS [h]
+    WHERE [s].[Id] IS NOT NULL AND [s].[Id] = [h].[StylistPortfolioId] AND [h].[Id] = @__hairStyleId_0)
+ORDER BY [a].[Id], [s].[Id]
+2025-12-03 01:57:10.7485|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (23ms) [Parameters=[@__hairStyleId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[BookingID], [a].[City], [a].[CompanyName], [a].[ConcurrencyStamp], [a].[Country], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[EndHour], [a].[FirstName], [a].[HairStyleId], [a].[HomeService], [a].[ImageUrl], [a].[IsActive], [a].[IsDeleted], [a].[LastLogin], [a].[LastName], [a].[Latitude], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Longitude], [a].[LoyaltyPoints], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PasswordResetToken], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PostalCode], [a].[PromotionalOfferID], [a].[ResetTokenExpires], [a].[SecurityStamp], [a].[StartHour], [a].[State], [a].[Street], [a].[StylePortfolioID], [a].[Town], [a].[TwoFactorEnabled], [a].[UserName], [s].[Id], [s].[CreatedAt], [s].[IsDeleted], [s].[ModifiedAt], [s].[UserID], [h0].[Id], [h0].[CreatedAt], [h0].[Description], [h0].[IsDeleted], [h0].[ModifiedAt], [h0].[Origin], [h0].[PhotoId], [h0].[PriceTag], [h0].[PromotionalOffer], [h0].[StyleName], [h0].[StylistPortfolioId], [h0].[VideoLinks]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [StylistPortfolios] AS [s] ON [a].[Id] = [s].[UserID]
+LEFT JOIN [HairStyles] AS [h0] ON [s].[Id] = [h0].[StylistPortfolioId]
+WHERE EXISTS (
+    SELECT 1
+    FROM [HairStyles] AS [h]
+    WHERE [s].[Id] IS NOT NULL AND [s].[Id] = [h].[StylistPortfolioId] AND [h].[Id] = @__hairStyleId_0)
+ORDER BY [a].[Id], [s].[Id]
+2025-12-03 01:57:10.7647|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'StylistDB' on server '.\SQLEXPRESS'.
+2025-12-03 01:57:10.7649|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'StylistDB' on server '.\SQLEXPRESS' is being disposed after spending 15ms reading results.

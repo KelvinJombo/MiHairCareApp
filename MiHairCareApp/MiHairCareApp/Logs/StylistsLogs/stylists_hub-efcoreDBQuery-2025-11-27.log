@@ -1,0 +1,1307 @@
+2025-11-27 13:26:49.8299|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<IdentityRole>()
+    .FirstOrDefault(r => r.NormalizedName == __normalizedName_0)'
+2025-11-27 13:26:50.2221|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<IdentityRole>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<IdentityRole>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: IdentityRole.Id (string) Required PK AfterSave:Throw, 0], [Property: IdentityRole.ConcurrencyStamp (string) Concurrency, 1], [Property: IdentityRole.Name (string) MaxLength(256), 2], [Property: IdentityRole.NormalizedName (string) Index MaxLength(256), 3] }
+            SELECT TOP(1) a.Id, a.ConcurrencyStamp, a.Name, a.NormalizedName
+            FROM AspNetRoles AS a
+            WHERE a.NormalizedName == @__normalizedName_0) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: IdentityRole.Id (string) Required PK AfterSave:Throw, 0], [Property: IdentityRole.ConcurrencyStamp (string) Concurrency, 1], [Property: IdentityRole.Name (string) MaxLength(256), 2], [Property: IdentityRole.NormalizedName (string) Index MaxLength(256), 3] }
+            SELECT TOP(1) a.Id, a.ConcurrencyStamp, a.Name, a.NormalizedName
+            FROM AspNetRoles AS a
+            WHERE a.NormalizedName == @__normalizedName_0, 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            IdentityRole entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                IdentityRole instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(IdentityRole);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: IdentityRole.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("Microsoft.AspNetCore.Identity.IdentityRole").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetString(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (IdentityRole)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: IdentityRole | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("Microsoft.AspNetCore.Identity.IdentityRole")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: IdentityRole | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("Microsoft.AspNetCore.Identity.IdentityRole")]: 
+                            {
+                                return 
+                                {
+                                    IdentityRole instance;
+                                    instance = new IdentityRole();
+                                    instance.<Id>k__BackingField = dataReader.GetString(0);
+                                    instance.<ConcurrencyStamp>k__BackingField = dataReader.IsDBNull(1) ? default(string) : dataReader.GetString(1);
+                                    instance.<Name>k__BackingField = dataReader.IsDBNull(2) ? default(string) : dataReader.GetString(2);
+                                    instance.<NormalizedName>k__BackingField = dataReader.IsDBNull(3) ? default(string) : dataReader.GetString(3);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: IdentityRole | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("Microsoft.AspNetCore.Identity.IdentityRole")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(IdentityRole)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-11-27 13:26:51.4890|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<AppUser>()
+    .FirstOrDefault(u => u.NormalizedUserName == __normalizedUserName_0)'
+2025-11-27 13:26:51.5112|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<AppUser>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<AppUser>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (string) Required PK AfterSave:Throw, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.Address (string) Required, 2], [Property: AppUser.BookingID (int) Required, 3], [Property: AppUser.City (string) Required, 4], [Property: AppUser.CompanyName (string), 5], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 6], [Property: AppUser.Country (string) Required, 7], [Property: AppUser.CreatedAt (DateTime) Required, 8], [Property: AppUser.Email (string) MaxLength(256), 9], [Property: AppUser.EmailConfirmed (bool) Required, 10], [Property: AppUser.EndHour (TimeSpan) Required, 11], [Property: AppUser.FirstName (string) Required, 12], [Property: AppUser.HomeService (bool) Required, 13], [Property: AppUser.ImageUrl (string) Required, 14], [Property: AppUser.IsActive (bool) Required, 15], [Property: AppUser.IsDeleted (bool) Required, 16], [Property: AppUser.LastLogin (DateTime) Required, 17], [Property: AppUser.LastName (string) Required, 18], [Property: AppUser.Latitude (int) Required, 19], [Property: AppUser.LockoutEnabled (bool) Required, 20], [Property: AppUser.LockoutEnd (DateTimeOffset?), 21], [Property: AppUser.Longitude (int) Required, 22], [Property: AppUser.LoyaltyPoints (int) Required, 23], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 24], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 25], [Property: AppUser.PasswordHash (string), 26], [Property: AppUser.PasswordResetToken (string), 27], [Property: AppUser.PhoneNumber (string), 28], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 29], [Property: AppUser.PostalCode (string) Required, 30], [Property: AppUser.PromotionalOfferID (int) Required, 31], [Property: AppUser.ResetTokenExpires (DateTime?), 32], [Property: AppUser.SecurityStamp (string), 33], [Property: AppUser.StartHour (TimeSpan) Required, 34], [Property: AppUser.State (string) Required, 35], [Property: AppUser.Street (string) Required, 36], [Property: AppUser.StylePortfolioID (string), 37], [Property: AppUser.Town (string) Required, 38], [Property: AppUser.TwoFactorEnabled (bool) Required, 39], [Property: AppUser.UserName (string) MaxLength(256), 40] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.Address, a.BookingID, a.City, a.CompanyName, a.ConcurrencyStamp, a.Country, a.CreatedAt, a.Email, a.EmailConfirmed, a.EndHour, a.FirstName, a.HomeService, a.ImageUrl, a.IsActive, a.IsDeleted, a.LastLogin, a.LastName, a.Latitude, a.LockoutEnabled, a.LockoutEnd, a.Longitude, a.LoyaltyPoints, a.NormalizedEmail, a.NormalizedUserName, a.PasswordHash, a.PasswordResetToken, a.PhoneNumber, a.PhoneNumberConfirmed, a.PostalCode, a.PromotionalOfferID, a.ResetTokenExpires, a.SecurityStamp, a.StartHour, a.State, a.Street, a.StylePortfolioID, a.Town, a.TwoFactorEnabled, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedUserName == @__normalizedUserName_0) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (string) Required PK AfterSave:Throw, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.Address (string) Required, 2], [Property: AppUser.BookingID (int) Required, 3], [Property: AppUser.City (string) Required, 4], [Property: AppUser.CompanyName (string), 5], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 6], [Property: AppUser.Country (string) Required, 7], [Property: AppUser.CreatedAt (DateTime) Required, 8], [Property: AppUser.Email (string) MaxLength(256), 9], [Property: AppUser.EmailConfirmed (bool) Required, 10], [Property: AppUser.EndHour (TimeSpan) Required, 11], [Property: AppUser.FirstName (string) Required, 12], [Property: AppUser.HomeService (bool) Required, 13], [Property: AppUser.ImageUrl (string) Required, 14], [Property: AppUser.IsActive (bool) Required, 15], [Property: AppUser.IsDeleted (bool) Required, 16], [Property: AppUser.LastLogin (DateTime) Required, 17], [Property: AppUser.LastName (string) Required, 18], [Property: AppUser.Latitude (int) Required, 19], [Property: AppUser.LockoutEnabled (bool) Required, 20], [Property: AppUser.LockoutEnd (DateTimeOffset?), 21], [Property: AppUser.Longitude (int) Required, 22], [Property: AppUser.LoyaltyPoints (int) Required, 23], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 24], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 25], [Property: AppUser.PasswordHash (string), 26], [Property: AppUser.PasswordResetToken (string), 27], [Property: AppUser.PhoneNumber (string), 28], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 29], [Property: AppUser.PostalCode (string) Required, 30], [Property: AppUser.PromotionalOfferID (int) Required, 31], [Property: AppUser.ResetTokenExpires (DateTime?), 32], [Property: AppUser.SecurityStamp (string), 33], [Property: AppUser.StartHour (TimeSpan) Required, 34], [Property: AppUser.State (string) Required, 35], [Property: AppUser.Street (string) Required, 36], [Property: AppUser.StylePortfolioID (string), 37], [Property: AppUser.Town (string) Required, 38], [Property: AppUser.TwoFactorEnabled (bool) Required, 39], [Property: AppUser.UserName (string) MaxLength(256), 40] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.Address, a.BookingID, a.City, a.CompanyName, a.ConcurrencyStamp, a.Country, a.CreatedAt, a.Email, a.EmailConfirmed, a.EndHour, a.FirstName, a.HomeService, a.ImageUrl, a.IsActive, a.IsDeleted, a.LastLogin, a.LastName, a.Latitude, a.LockoutEnabled, a.LockoutEnd, a.Longitude, a.LoyaltyPoints, a.NormalizedEmail, a.NormalizedUserName, a.PasswordHash, a.PasswordResetToken, a.PhoneNumber, a.PhoneNumberConfirmed, a.PostalCode, a.PromotionalOfferID, a.ResetTokenExpires, a.SecurityStamp, a.StartHour, a.State, a.Street, a.StylePortfolioID, a.Town, a.TwoFactorEnabled, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedUserName == @__normalizedUserName_0, 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            AppUser entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                AppUser instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(AppUser);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: AppUser.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.AppUser").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetString(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (AppUser)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: AppUser | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.AppUser")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: AppUser | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.AppUser")]: 
+                            {
+                                return 
+                                {
+                                    AppUser instance;
+                                    instance = new AppUser();
+                                    instance.<Id>k__BackingField = dataReader.GetString(0);
+                                    instance.<AccessFailedCount>k__BackingField = dataReader.GetInt32(1);
+                                    instance.<Address>k__BackingField = dataReader.GetString(2);
+                                    instance.<BookingID>k__BackingField = dataReader.GetInt32(3);
+                                    instance.<City>k__BackingField = dataReader.GetString(4);
+                                    instance.<CompanyName>k__BackingField = dataReader.IsDBNull(5) ? default(string) : dataReader.GetString(5);
+                                    instance.<ConcurrencyStamp>k__BackingField = dataReader.IsDBNull(6) ? default(string) : dataReader.GetString(6);
+                                    instance.<Country>k__BackingField = dataReader.GetString(7);
+                                    instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(8);
+                                    instance.<Email>k__BackingField = dataReader.IsDBNull(9) ? default(string) : dataReader.GetString(9);
+                                    instance.<EmailConfirmed>k__BackingField = dataReader.GetBoolean(10);
+                                    instance.<EndHour>k__BackingField = dataReader.GetFieldValue<TimeSpan>(11);
+                                    instance.<FirstName>k__BackingField = dataReader.GetString(12);
+                                    instance.<HomeService>k__BackingField = dataReader.GetBoolean(13);
+                                    instance.<ImageUrl>k__BackingField = dataReader.GetString(14);
+                                    instance.<IsActive>k__BackingField = dataReader.GetBoolean(15);
+                                    instance.<IsDeleted>k__BackingField = dataReader.GetBoolean(16);
+                                    instance.<LastLogin>k__BackingField = dataReader.GetDateTime(17);
+                                    instance.<LastName>k__BackingField = dataReader.GetString(18);
+                                    instance.<Latitude>k__BackingField = dataReader.GetInt32(19);
+                                    instance.<LockoutEnabled>k__BackingField = dataReader.GetBoolean(20);
+                                    instance.<LockoutEnd>k__BackingField = dataReader.IsDBNull(21) ? default(DateTimeOffset?) : (DateTimeOffset?)dataReader.GetFieldValue<DateTimeOffset>(21);
+                                    instance.<Longitude>k__BackingField = dataReader.GetInt32(22);
+                                    instance.<LoyaltyPoints>k__BackingField = dataReader.GetInt32(23);
+                                    instance.<NormalizedEmail>k__BackingField = dataReader.IsDBNull(24) ? default(string) : dataReader.GetString(24);
+                                    instance.<NormalizedUserName>k__BackingField = dataReader.IsDBNull(25) ? default(string) : dataReader.GetString(25);
+                                    instance.<PasswordHash>k__BackingField = dataReader.IsDBNull(26) ? default(string) : dataReader.GetString(26);
+                                    instance.<PasswordResetToken>k__BackingField = dataReader.IsDBNull(27) ? default(string) : dataReader.GetString(27);
+                                    instance.<PhoneNumber>k__BackingField = dataReader.IsDBNull(28) ? default(string) : dataReader.GetString(28);
+                                    instance.<PhoneNumberConfirmed>k__BackingField = dataReader.GetBoolean(29);
+                                    instance.<PostalCode>k__BackingField = dataReader.GetString(30);
+                                    instance.<PromotionalOfferID>k__BackingField = dataReader.GetInt32(31);
+                                    instance.<ResetTokenExpires>k__BackingField = dataReader.IsDBNull(32) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(32);
+                                    instance.<SecurityStamp>k__BackingField = dataReader.IsDBNull(33) ? default(string) : dataReader.GetString(33);
+                                    instance.<StartHour>k__BackingField = dataReader.GetFieldValue<TimeSpan>(34);
+                                    instance.<State>k__BackingField = dataReader.GetString(35);
+                                    instance.<Street>k__BackingField = dataReader.GetString(36);
+                                    instance.<StylePortfolioID>k__BackingField = dataReader.IsDBNull(37) ? default(string) : dataReader.GetString(37);
+                                    instance.<Town>k__BackingField = dataReader.GetString(38);
+                                    instance.<TwoFactorEnabled>k__BackingField = dataReader.GetBoolean(39);
+                                    instance.<UserName>k__BackingField = dataReader.IsDBNull(40) ? default(string) : dataReader.GetString(40);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: AppUser | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.AppUser")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(AppUser)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-11-27 13:26:51.5924|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'MiHairCareApp.Persistence.Context.StylistsDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'EndHour'.
+Invalid column name 'StartHour'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:c4c67f80-7cc8-494d-9b95-b6c0ebc8d32f
+Error Number:207,State:1,Class:16|Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'EndHour'.
+Invalid column name 'StartHour'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:c4c67f80-7cc8-494d-9b95-b6c0ebc8d32f
+Error Number:207,State:1,Class:16
+2025-11-27 14:12:52.5453|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<IdentityRole>()
+    .FirstOrDefault(r => r.NormalizedName == __normalizedName_0)'
+2025-11-27 14:12:53.1116|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<IdentityRole>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<IdentityRole>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: IdentityRole.Id (string) Required PK AfterSave:Throw, 0], [Property: IdentityRole.ConcurrencyStamp (string) Concurrency, 1], [Property: IdentityRole.Name (string) MaxLength(256), 2], [Property: IdentityRole.NormalizedName (string) Index MaxLength(256), 3] }
+            SELECT TOP(1) a.Id, a.ConcurrencyStamp, a.Name, a.NormalizedName
+            FROM AspNetRoles AS a
+            WHERE a.NormalizedName == @__normalizedName_0) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: IdentityRole.Id (string) Required PK AfterSave:Throw, 0], [Property: IdentityRole.ConcurrencyStamp (string) Concurrency, 1], [Property: IdentityRole.Name (string) MaxLength(256), 2], [Property: IdentityRole.NormalizedName (string) Index MaxLength(256), 3] }
+            SELECT TOP(1) a.Id, a.ConcurrencyStamp, a.Name, a.NormalizedName
+            FROM AspNetRoles AS a
+            WHERE a.NormalizedName == @__normalizedName_0, 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            IdentityRole entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                IdentityRole instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(IdentityRole);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: IdentityRole.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("Microsoft.AspNetCore.Identity.IdentityRole").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetString(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (IdentityRole)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: IdentityRole | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("Microsoft.AspNetCore.Identity.IdentityRole")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: IdentityRole | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("Microsoft.AspNetCore.Identity.IdentityRole")]: 
+                            {
+                                return 
+                                {
+                                    IdentityRole instance;
+                                    instance = new IdentityRole();
+                                    instance.<Id>k__BackingField = dataReader.GetString(0);
+                                    instance.<ConcurrencyStamp>k__BackingField = dataReader.IsDBNull(1) ? default(string) : dataReader.GetString(1);
+                                    instance.<Name>k__BackingField = dataReader.IsDBNull(2) ? default(string) : dataReader.GetString(2);
+                                    instance.<NormalizedName>k__BackingField = dataReader.IsDBNull(3) ? default(string) : dataReader.GetString(3);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: IdentityRole | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("Microsoft.AspNetCore.Identity.IdentityRole")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(IdentityRole)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-11-27 14:12:54.1857|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<AppUser>()
+    .FirstOrDefault(u => u.NormalizedUserName == __normalizedUserName_0)'
+2025-11-27 14:12:54.2150|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<AppUser>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<AppUser>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (string) Required PK AfterSave:Throw, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.Address (string) Required, 2], [Property: AppUser.BookingID (int) Required, 3], [Property: AppUser.City (string) Required, 4], [Property: AppUser.CompanyName (string), 5], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 6], [Property: AppUser.Country (string) Required, 7], [Property: AppUser.CreatedAt (DateTime) Required, 8], [Property: AppUser.Email (string) MaxLength(256), 9], [Property: AppUser.EmailConfirmed (bool) Required, 10], [Property: AppUser.EndHour (TimeSpan) Required, 11], [Property: AppUser.FirstName (string) Required, 12], [Property: AppUser.HomeService (bool) Required, 13], [Property: AppUser.ImageUrl (string) Required, 14], [Property: AppUser.IsActive (bool) Required, 15], [Property: AppUser.IsDeleted (bool) Required, 16], [Property: AppUser.LastLogin (DateTime) Required, 17], [Property: AppUser.LastName (string) Required, 18], [Property: AppUser.Latitude (int) Required, 19], [Property: AppUser.LockoutEnabled (bool) Required, 20], [Property: AppUser.LockoutEnd (DateTimeOffset?), 21], [Property: AppUser.Longitude (int) Required, 22], [Property: AppUser.LoyaltyPoints (int) Required, 23], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 24], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 25], [Property: AppUser.PasswordHash (string), 26], [Property: AppUser.PasswordResetToken (string), 27], [Property: AppUser.PhoneNumber (string), 28], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 29], [Property: AppUser.PostalCode (string) Required, 30], [Property: AppUser.PromotionalOfferID (int) Required, 31], [Property: AppUser.ResetTokenExpires (DateTime?), 32], [Property: AppUser.SecurityStamp (string), 33], [Property: AppUser.StartHour (TimeSpan) Required, 34], [Property: AppUser.State (string) Required, 35], [Property: AppUser.Street (string) Required, 36], [Property: AppUser.StylePortfolioID (string), 37], [Property: AppUser.Town (string) Required, 38], [Property: AppUser.TwoFactorEnabled (bool) Required, 39], [Property: AppUser.UserName (string) MaxLength(256), 40] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.Address, a.BookingID, a.City, a.CompanyName, a.ConcurrencyStamp, a.Country, a.CreatedAt, a.Email, a.EmailConfirmed, a.EndHour, a.FirstName, a.HomeService, a.ImageUrl, a.IsActive, a.IsDeleted, a.LastLogin, a.LastName, a.Latitude, a.LockoutEnabled, a.LockoutEnd, a.Longitude, a.LoyaltyPoints, a.NormalizedEmail, a.NormalizedUserName, a.PasswordHash, a.PasswordResetToken, a.PhoneNumber, a.PhoneNumberConfirmed, a.PostalCode, a.PromotionalOfferID, a.ResetTokenExpires, a.SecurityStamp, a.StartHour, a.State, a.Street, a.StylePortfolioID, a.Town, a.TwoFactorEnabled, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedUserName == @__normalizedUserName_0) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (string) Required PK AfterSave:Throw, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.Address (string) Required, 2], [Property: AppUser.BookingID (int) Required, 3], [Property: AppUser.City (string) Required, 4], [Property: AppUser.CompanyName (string), 5], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 6], [Property: AppUser.Country (string) Required, 7], [Property: AppUser.CreatedAt (DateTime) Required, 8], [Property: AppUser.Email (string) MaxLength(256), 9], [Property: AppUser.EmailConfirmed (bool) Required, 10], [Property: AppUser.EndHour (TimeSpan) Required, 11], [Property: AppUser.FirstName (string) Required, 12], [Property: AppUser.HomeService (bool) Required, 13], [Property: AppUser.ImageUrl (string) Required, 14], [Property: AppUser.IsActive (bool) Required, 15], [Property: AppUser.IsDeleted (bool) Required, 16], [Property: AppUser.LastLogin (DateTime) Required, 17], [Property: AppUser.LastName (string) Required, 18], [Property: AppUser.Latitude (int) Required, 19], [Property: AppUser.LockoutEnabled (bool) Required, 20], [Property: AppUser.LockoutEnd (DateTimeOffset?), 21], [Property: AppUser.Longitude (int) Required, 22], [Property: AppUser.LoyaltyPoints (int) Required, 23], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 24], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 25], [Property: AppUser.PasswordHash (string), 26], [Property: AppUser.PasswordResetToken (string), 27], [Property: AppUser.PhoneNumber (string), 28], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 29], [Property: AppUser.PostalCode (string) Required, 30], [Property: AppUser.PromotionalOfferID (int) Required, 31], [Property: AppUser.ResetTokenExpires (DateTime?), 32], [Property: AppUser.SecurityStamp (string), 33], [Property: AppUser.StartHour (TimeSpan) Required, 34], [Property: AppUser.State (string) Required, 35], [Property: AppUser.Street (string) Required, 36], [Property: AppUser.StylePortfolioID (string), 37], [Property: AppUser.Town (string) Required, 38], [Property: AppUser.TwoFactorEnabled (bool) Required, 39], [Property: AppUser.UserName (string) MaxLength(256), 40] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.Address, a.BookingID, a.City, a.CompanyName, a.ConcurrencyStamp, a.Country, a.CreatedAt, a.Email, a.EmailConfirmed, a.EndHour, a.FirstName, a.HomeService, a.ImageUrl, a.IsActive, a.IsDeleted, a.LastLogin, a.LastName, a.Latitude, a.LockoutEnabled, a.LockoutEnd, a.Longitude, a.LoyaltyPoints, a.NormalizedEmail, a.NormalizedUserName, a.PasswordHash, a.PasswordResetToken, a.PhoneNumber, a.PhoneNumberConfirmed, a.PostalCode, a.PromotionalOfferID, a.ResetTokenExpires, a.SecurityStamp, a.StartHour, a.State, a.Street, a.StylePortfolioID, a.Town, a.TwoFactorEnabled, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedUserName == @__normalizedUserName_0, 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            AppUser entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                AppUser instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(AppUser);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: AppUser.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.AppUser").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetString(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (AppUser)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: AppUser | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.AppUser")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: AppUser | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.AppUser")]: 
+                            {
+                                return 
+                                {
+                                    AppUser instance;
+                                    instance = new AppUser();
+                                    instance.<Id>k__BackingField = dataReader.GetString(0);
+                                    instance.<AccessFailedCount>k__BackingField = dataReader.GetInt32(1);
+                                    instance.<Address>k__BackingField = dataReader.GetString(2);
+                                    instance.<BookingID>k__BackingField = dataReader.GetInt32(3);
+                                    instance.<City>k__BackingField = dataReader.GetString(4);
+                                    instance.<CompanyName>k__BackingField = dataReader.IsDBNull(5) ? default(string) : dataReader.GetString(5);
+                                    instance.<ConcurrencyStamp>k__BackingField = dataReader.IsDBNull(6) ? default(string) : dataReader.GetString(6);
+                                    instance.<Country>k__BackingField = dataReader.GetString(7);
+                                    instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(8);
+                                    instance.<Email>k__BackingField = dataReader.IsDBNull(9) ? default(string) : dataReader.GetString(9);
+                                    instance.<EmailConfirmed>k__BackingField = dataReader.GetBoolean(10);
+                                    instance.<EndHour>k__BackingField = dataReader.GetFieldValue<TimeSpan>(11);
+                                    instance.<FirstName>k__BackingField = dataReader.GetString(12);
+                                    instance.<HomeService>k__BackingField = dataReader.GetBoolean(13);
+                                    instance.<ImageUrl>k__BackingField = dataReader.GetString(14);
+                                    instance.<IsActive>k__BackingField = dataReader.GetBoolean(15);
+                                    instance.<IsDeleted>k__BackingField = dataReader.GetBoolean(16);
+                                    instance.<LastLogin>k__BackingField = dataReader.GetDateTime(17);
+                                    instance.<LastName>k__BackingField = dataReader.GetString(18);
+                                    instance.<Latitude>k__BackingField = dataReader.GetInt32(19);
+                                    instance.<LockoutEnabled>k__BackingField = dataReader.GetBoolean(20);
+                                    instance.<LockoutEnd>k__BackingField = dataReader.IsDBNull(21) ? default(DateTimeOffset?) : (DateTimeOffset?)dataReader.GetFieldValue<DateTimeOffset>(21);
+                                    instance.<Longitude>k__BackingField = dataReader.GetInt32(22);
+                                    instance.<LoyaltyPoints>k__BackingField = dataReader.GetInt32(23);
+                                    instance.<NormalizedEmail>k__BackingField = dataReader.IsDBNull(24) ? default(string) : dataReader.GetString(24);
+                                    instance.<NormalizedUserName>k__BackingField = dataReader.IsDBNull(25) ? default(string) : dataReader.GetString(25);
+                                    instance.<PasswordHash>k__BackingField = dataReader.IsDBNull(26) ? default(string) : dataReader.GetString(26);
+                                    instance.<PasswordResetToken>k__BackingField = dataReader.IsDBNull(27) ? default(string) : dataReader.GetString(27);
+                                    instance.<PhoneNumber>k__BackingField = dataReader.IsDBNull(28) ? default(string) : dataReader.GetString(28);
+                                    instance.<PhoneNumberConfirmed>k__BackingField = dataReader.GetBoolean(29);
+                                    instance.<PostalCode>k__BackingField = dataReader.GetString(30);
+                                    instance.<PromotionalOfferID>k__BackingField = dataReader.GetInt32(31);
+                                    instance.<ResetTokenExpires>k__BackingField = dataReader.IsDBNull(32) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(32);
+                                    instance.<SecurityStamp>k__BackingField = dataReader.IsDBNull(33) ? default(string) : dataReader.GetString(33);
+                                    instance.<StartHour>k__BackingField = dataReader.GetFieldValue<TimeSpan>(34);
+                                    instance.<State>k__BackingField = dataReader.GetString(35);
+                                    instance.<Street>k__BackingField = dataReader.GetString(36);
+                                    instance.<StylePortfolioID>k__BackingField = dataReader.IsDBNull(37) ? default(string) : dataReader.GetString(37);
+                                    instance.<Town>k__BackingField = dataReader.GetString(38);
+                                    instance.<TwoFactorEnabled>k__BackingField = dataReader.GetBoolean(39);
+                                    instance.<UserName>k__BackingField = dataReader.IsDBNull(40) ? default(string) : dataReader.GetString(40);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: AppUser | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.AppUser")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(AppUser)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-11-27 14:12:54.4748|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<HaircareProduct>()
+    .Any()'
+2025-11-27 14:12:54.4748|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<bool>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM HaircareProducts AS h)) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM HaircareProducts AS h), 
+        False, 
+        new HashSet<string>(
+            new string[]{ }, 
+            StringComparer.Ordinal
+        )
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        bool? value1;
+        value1 = dataReader.IsDBNull(0) ? default(bool?) : (bool?)dataReader.GetBoolean(0);
+        return (bool)value1;
+    }, 
+    contextType: MiHairCareApp.Persistence.Context.StylistsDBContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)
+    .Single()'
+2025-11-27 14:15:36.0573|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<Cart>()
+    .Include(c => c.Items)
+    .ThenInclude(i => i.Product)
+    .FirstOrDefault(c => c.UserId == __userId_0)'
+2025-11-27 14:15:36.0862|DEBUG|Microsoft.EntityFrameworkCore.Query|Including navigation: 'Cart.Items'.
+2025-11-27 14:15:36.1000|DEBUG|Microsoft.EntityFrameworkCore.Query|Including navigation: 'CartItem.Product'.
+2025-11-27 14:15:36.3239|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Cart>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<Cart>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: Cart.Id (string) Required PK AfterSave:Throw, 0], [Property: Cart.CreatedAt (DateTime) Required, 1], [Property: Cart.IsDeleted (bool) Required, 2], [Property: Cart.ModifiedAt (DateTime) Required, 3], [Property: Cart.UserId (string) Required, 4] }
+                1 -> 0
+                2 -> Dictionary<IProperty, int> { [Property: CartItem.Id (string) Required PK AfterSave:Throw, 5], [Property: CartItem.CartId (no field, string) Shadow FK Index, 6], [Property: CartItem.CreatedAt (DateTime) Required, 7], [Property: CartItem.IsDeleted (bool) Required, 8], [Property: CartItem.ModifiedAt (DateTime) Required, 9], [Property: CartItem.ProductId (string) Required FK Index, 10], [Property: CartItem.Quantity (int) Required, 11], [Property: CartItem.UnitPrice (decimal) Required, 12] }
+                3 -> Dictionary<IProperty, int> { [Property: HaircareProduct.Id (string) Required PK AfterSave:Throw, 13], [Property: HaircareProduct.Brand (string) Required, 14], [Property: HaircareProduct.Category (ProductCategory) Required, 15], [Property: HaircareProduct.CreatedAt (DateTime) Required, 16], [Property: HaircareProduct.Description (string) Required, 17], [Property: HaircareProduct.IsDeleted (bool) Required, 18], [Property: HaircareProduct.ModifiedAt (DateTime) Required, 19], [Property: HaircareProduct.Price (decimal) Required, 20], [Property: HaircareProduct.ProductName (string) Required, 21], [Property: HaircareProduct.StockQuantity (int) Required, 22] }
+                4 -> 5
+                5 -> 13
+            SELECT c1.Id, c1.CreatedAt, c1.IsDeleted, c1.ModifiedAt, c1.UserId, s.Id, s.CartId, s.CreatedAt, s.IsDeleted, s.ModifiedAt, s.ProductId, s.Quantity, s.UnitPrice, s.Id0, s.Brand, s.Category, s.CreatedAt0, s.Description, s.IsDeleted0, s.ModifiedAt0, s.Price, s.ProductName, s.StockQuantity
+            FROM 
+            (
+                SELECT TOP(1) c.Id, c.CreatedAt, c.IsDeleted, c.ModifiedAt, c.UserId
+                FROM Carts AS c
+                WHERE c.UserId == @__userId_0
+            ) AS c1
+            LEFT JOIN 
+            (
+                SELECT c0.Id, c0.CartId, c0.CreatedAt, c0.IsDeleted, c0.ModifiedAt, c0.ProductId, c0.Quantity, c0.UnitPrice, h.Id AS Id0, h.Brand, h.Category, h.CreatedAt AS CreatedAt0, h.Description, h.IsDeleted AS IsDeleted0, h.ModifiedAt AS ModifiedAt0, h.Price, h.ProductName, h.StockQuantity
+                FROM CartItem AS c0
+                INNER JOIN HaircareProducts AS h ON c0.ProductId == h.Id
+            ) AS s ON c1.Id == s.CartId
+            ORDER BY c1.Id ASC, s.Id ASC) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: Cart.Id (string) Required PK AfterSave:Throw, 0], [Property: Cart.CreatedAt (DateTime) Required, 1], [Property: Cart.IsDeleted (bool) Required, 2], [Property: Cart.ModifiedAt (DateTime) Required, 3], [Property: Cart.UserId (string) Required, 4] }
+                1 -> 0
+                2 -> Dictionary<IProperty, int> { [Property: CartItem.Id (string) Required PK AfterSave:Throw, 5], [Property: CartItem.CartId (no field, string) Shadow FK Index, 6], [Property: CartItem.CreatedAt (DateTime) Required, 7], [Property: CartItem.IsDeleted (bool) Required, 8], [Property: CartItem.ModifiedAt (DateTime) Required, 9], [Property: CartItem.ProductId (string) Required FK Index, 10], [Property: CartItem.Quantity (int) Required, 11], [Property: CartItem.UnitPrice (decimal) Required, 12] }
+                3 -> Dictionary<IProperty, int> { [Property: HaircareProduct.Id (string) Required PK AfterSave:Throw, 13], [Property: HaircareProduct.Brand (string) Required, 14], [Property: HaircareProduct.Category (ProductCategory) Required, 15], [Property: HaircareProduct.CreatedAt (DateTime) Required, 16], [Property: HaircareProduct.Description (string) Required, 17], [Property: HaircareProduct.IsDeleted (bool) Required, 18], [Property: HaircareProduct.ModifiedAt (DateTime) Required, 19], [Property: HaircareProduct.Price (decimal) Required, 20], [Property: HaircareProduct.ProductName (string) Required, 21], [Property: HaircareProduct.StockQuantity (int) Required, 22] }
+                4 -> 5
+                5 -> 13
+            SELECT c1.Id, c1.CreatedAt, c1.IsDeleted, c1.ModifiedAt, c1.UserId, s.Id, s.CartId, s.CreatedAt, s.IsDeleted, s.ModifiedAt, s.ProductId, s.Quantity, s.UnitPrice, s.Id0, s.Brand, s.Category, s.CreatedAt0, s.Description, s.IsDeleted0, s.ModifiedAt0, s.Price, s.ProductName, s.StockQuantity
+            FROM 
+            (
+                SELECT TOP(1) c.Id, c.CreatedAt, c.IsDeleted, c.ModifiedAt, c.UserId
+                FROM Carts AS c
+                WHERE c.UserId == @__userId_0
+            ) AS c1
+            LEFT JOIN 
+            (
+                SELECT c0.Id, c0.CartId, c0.CreatedAt, c0.IsDeleted, c0.ModifiedAt, c0.ProductId, c0.Quantity, c0.UnitPrice, h.Id AS Id0, h.Brand, h.Category, h.CreatedAt AS CreatedAt0, h.Description, h.IsDeleted AS IsDeleted0, h.ModifiedAt AS ModifiedAt0, h.Price, h.ProductName, h.StockQuantity
+                FROM CartItem AS c0
+                INNER JOIN HaircareProducts AS h ON c0.ProductId == h.Id
+            ) AS s ON c1.Id == s.CartId
+            ORDER BY c1.Id ASC, s.Id ASC, 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            resultContext.Values == null ? 
+            {
+                Cart entity;
+                entity = 
+                {
+                    MaterializationContext materializationContext1;
+                    IEntityType entityType1;
+                    Cart instance1;
+                    InternalEntityEntry entry1;
+                    bool hasNullKey1;
+                    materializationContext1 = new MaterializationContext(
+                        [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                        queryContext.Context
+                    );
+                    instance1 = default(Cart);
+                    entry1 = queryContext.TryGetEntry(
+                        key: [LIFTABLE Constant: Key: Cart.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Cart").FindPrimaryKey()], 
+                        keyValues: new object[]{ (object)dataReader.GetString(0) }, 
+                        throwOnNullKey: True, 
+                        hasNullKey: hasNullKey1);
+                    !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                    {
+                        entityType1 = entry1.EntityType;
+                        return instance1 = (Cart)entry1.Entity;
+                    } : 
+                    {
+                        ISnapshot shadowSnapshot1;
+                        shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                        entityType1 = [LIFTABLE Constant: EntityType: Cart | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Cart")];
+                        instance1 = switch (entityType1)
+                        {
+                            case [LIFTABLE Constant: EntityType: Cart | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Cart")]: 
+                                {
+                                    return 
+                                    {
+                                        Cart instance;
+                                        instance = new Cart();
+                                        instance.<Id>k__BackingField = dataReader.GetString(0);
+                                        instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(1);
+                                        instance.<IsDeleted>k__BackingField = dataReader.GetBoolean(2);
+                                        instance.<ModifiedAt>k__BackingField = dataReader.GetDateTime(3);
+                                        instance.<UserId>k__BackingField = dataReader.GetString(4);
+                                        (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                            context: materializationContext1.Context, 
+                                            entity: instance, 
+                                            queryTrackingBehavior: TrackAll, 
+                                            structuralType: [LIFTABLE Constant: EntityType: Cart | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Cart")]) : default(void);
+                                        return instance;
+                                    }}
+                            default: 
+                                default(Cart)
+                        }
+                        ;
+                        entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                            entityType: entityType1, 
+                            entity: instance1, 
+                            snapshot: shadowSnapshot1);
+                        return instance1;
+                    } : default(void);
+                    return instance1;
+                };
+                resultContext.Values = new object[]{ entity };
+                ShaperProcessingExpressionVisitor.InitializeIncludeCollection<Cart, Cart>(
+                    collectionId: 0, 
+                    queryContext: queryContext, 
+                    dbDataReader: dataReader, 
+                    resultCoordinator: resultCoordinator, 
+                    entity: (Cart)(resultContext.Values[0]), 
+                    parentIdentifier: (queryContext, dataReader) => new object[]{ dataReader.GetString(0) }, 
+                    outerIdentifier: (queryContext, dataReader) => new object[]{ dataReader.GetString(0) }, 
+                    navigation: [LIFTABLE Constant: Navigation: Cart.Items (ICollection<CartItem>) Collection ToDependent CartItem | Resolver: namelessParameter{3} => namelessParameter{3}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Cart").FindNavigation("Items")], 
+                    clrCollectionAccessor: [LIFTABLE Constant: ClrICollectionAccessor<Cart, ICollection<CartItem>, CartItem> | Resolver: namelessParameter{4} => namelessParameter{4}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Cart").FindNavigation("Items").GetCollectionAccessor()], 
+                    trackingQuery: True, 
+                    setLoaded: True);
+            } : default(void);
+            ShaperProcessingExpressionVisitor.PopulateIncludeCollection<Cart, CartItem>(
+                collectionId: 0, 
+                queryContext: queryContext, 
+                dbDataReader: dataReader, 
+                resultCoordinator: resultCoordinator, 
+                parentIdentifier: (queryContext, dataReader) => new object[]{ dataReader.GetString(0) }, 
+                outerIdentifier: (queryContext, dataReader) => new object[]{ dataReader.GetString(0) }, 
+                selfIdentifier: (queryContext, dataReader) => new object[]
+                { 
+                    dataReader.IsDBNull(5) ? default(string) : dataReader.GetString(5), 
+                    dataReader.IsDBNull(13) ? default(string) : dataReader.GetString(13) 
+                }, 
+                parentIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && Invoke((l, r) => string.Equals(
+                    a: l, 
+                    b: r, 
+                    comparisonType: OrdinalIgnoreCase), (string)left, (string)right) }], 
+                outerIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && Invoke((l, r) => string.Equals(
+                    a: l, 
+                    b: r, 
+                    comparisonType: OrdinalIgnoreCase), (string)left, (string)right) }], 
+                selfIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool>, Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]
+                { 
+                    (left, right) => left == null ? right == null : right != null && Invoke((l, r) => string.Equals(
+                        a: l, 
+                        b: r, 
+                        comparisonType: OrdinalIgnoreCase), (string)left, (string)right), 
+                    (left, right) => left == null ? right == null : right != null && Invoke((l, r) => string.Equals(
+                        a: l, 
+                        b: r, 
+                        comparisonType: OrdinalIgnoreCase), (string)left, (string)right) 
+                }], 
+                innerShaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+                {
+                    CartItem entity;
+                    HaircareProduct entity;
+                    entity = 
+                    {
+                        MaterializationContext materializationContext2;
+                        IEntityType entityType2;
+                        CartItem instance2;
+                        InternalEntityEntry entry2;
+                        bool hasNullKey2;
+                        materializationContext2 = new MaterializationContext(
+                            [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                            queryContext.Context
+                        );
+                        instance2 = default(CartItem);
+                        entry2 = queryContext.TryGetEntry(
+                            key: [LIFTABLE Constant: Key: CartItem.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.CartItem").FindPrimaryKey()], 
+                            keyValues: new object[]{ dataReader.IsDBNull(5) ? default(object) : (object)dataReader.GetString(5) }, 
+                            throwOnNullKey: False, 
+                            hasNullKey: hasNullKey2);
+                        !(hasNullKey2) ? entry2 != default(InternalEntityEntry) ? 
+                        {
+                            entityType2 = entry2.EntityType;
+                            return instance2 = (CartItem)entry2.Entity;
+                        } : 
+                        {
+                            ISnapshot shadowSnapshot2;
+                            shadowSnapshot2 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                            entityType2 = [LIFTABLE Constant: EntityType: CartItem | Resolver: namelessParameter{5} => namelessParameter{5}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.CartItem")];
+                            instance2 = switch (entityType2)
+                            {
+                                case [LIFTABLE Constant: EntityType: CartItem | Resolver: namelessParameter{6} => namelessParameter{6}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.CartItem")]: 
+                                    {
+                                        shadowSnapshot2 = (ISnapshot)new Snapshot<string>(dataReader.IsDBNull(6) ? default(string) : dataReader.GetString(6));
+                                        return 
+                                        {
+                                            CartItem instance;
+                                            instance = new CartItem();
+                                            instance.<Id>k__BackingField = dataReader.IsDBNull(5) ? default(string) : dataReader.GetString(5);
+                                            instance.<CreatedAt>k__BackingField = dataReader.IsDBNull(7) ? default(DateTime) : dataReader.GetDateTime(7);
+                                            instance.<IsDeleted>k__BackingField = dataReader.IsDBNull(8) ? default(bool) : dataReader.GetBoolean(8);
+                                            instance.<ModifiedAt>k__BackingField = dataReader.IsDBNull(9) ? default(DateTime) : dataReader.GetDateTime(9);
+                                            instance.<ProductId>k__BackingField = dataReader.IsDBNull(10) ? default(string) : dataReader.GetString(10);
+                                            instance.<Quantity>k__BackingField = dataReader.IsDBNull(11) ? default(int) : dataReader.GetInt32(11);
+                                            instance.<UnitPrice>k__BackingField = dataReader.IsDBNull(12) ? default(decimal) : dataReader.GetDecimal(12);
+                                            (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                                context: materializationContext2.Context, 
+                                                entity: instance, 
+                                                queryTrackingBehavior: TrackAll, 
+                                                structuralType: [LIFTABLE Constant: EntityType: CartItem | Resolver: namelessParameter{7} => namelessParameter{7}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.CartItem")]) : default(void);
+                                            return instance;
+                                        }}
+                                default: 
+                                    default(CartItem)
+                            }
+                            ;
+                            entry2 = entityType2 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                                entityType: entityType2, 
+                                entity: instance2, 
+                                snapshot: shadowSnapshot2);
+                            return instance2;
+                        } : default(void);
+                        return instance2;
+                    };
+                    entity = 
+                    {
+                        MaterializationContext materializationContext3;
+                        IEntityType entityType3;
+                        HaircareProduct instance3;
+                        InternalEntityEntry entry3;
+                        bool hasNullKey3;
+                        materializationContext3 = new MaterializationContext(
+                            [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                            queryContext.Context
+                        );
+                        instance3 = default(HaircareProduct);
+                        entry3 = queryContext.TryGetEntry(
+                            key: [LIFTABLE Constant: Key: HaircareProduct.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HaircareProduct").FindPrimaryKey()], 
+                            keyValues: new object[]{ dataReader.IsDBNull(13) ? default(object) : (object)dataReader.GetString(13) }, 
+                            throwOnNullKey: False, 
+                            hasNullKey: hasNullKey3);
+                        !(hasNullKey3) ? entry3 != default(InternalEntityEntry) ? 
+                        {
+                            entityType3 = entry3.EntityType;
+                            return instance3 = (HaircareProduct)entry3.Entity;
+                        } : 
+                        {
+                            ISnapshot shadowSnapshot3;
+                            shadowSnapshot3 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                            entityType3 = [LIFTABLE Constant: EntityType: HaircareProduct | Resolver: namelessParameter{8} => namelessParameter{8}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HaircareProduct")];
+                            instance3 = switch (entityType3)
+                            {
+                                case [LIFTABLE Constant: EntityType: HaircareProduct | Resolver: namelessParameter{9} => namelessParameter{9}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HaircareProduct")]: 
+                                    {
+                                        return 
+                                        {
+                                            HaircareProduct instance;
+                                            instance = new HaircareProduct();
+                                            instance.<Id>k__BackingField = dataReader.IsDBNull(13) ? default(string) : dataReader.GetString(13);
+                                            instance.<Brand>k__BackingField = dataReader.IsDBNull(14) ? default(string) : dataReader.GetString(14);
+                                            instance.<Category>k__BackingField = dataReader.IsDBNull(15) ? default(ProductCategory) : Invoke(((EnumToNumberConverter<ProductCategory, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: HaircareProduct.Category (ProductCategory) Required | Resolver: namelessParameter{10} => namelessParameter{10}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HaircareProduct").FindProperty("Category")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(15));
+                                            instance.<CreatedAt>k__BackingField = dataReader.IsDBNull(16) ? default(DateTime) : dataReader.GetDateTime(16);
+                                            instance.<Description>k__BackingField = dataReader.IsDBNull(17) ? default(string) : dataReader.GetString(17);
+                                            instance.<IsDeleted>k__BackingField = dataReader.IsDBNull(18) ? default(bool) : dataReader.GetBoolean(18);
+                                            instance.<ModifiedAt>k__BackingField = dataReader.IsDBNull(19) ? default(DateTime) : dataReader.GetDateTime(19);
+                                            instance.<Price>k__BackingField = dataReader.IsDBNull(20) ? default(decimal) : dataReader.GetDecimal(20);
+                                            instance.<ProductName>k__BackingField = dataReader.IsDBNull(21) ? default(string) : dataReader.GetString(21);
+                                            instance.<StockQuantity>k__BackingField = dataReader.IsDBNull(22) ? default(int) : dataReader.GetInt32(22);
+                                            (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                                context: materializationContext3.Context, 
+                                                entity: instance, 
+                                                queryTrackingBehavior: TrackAll, 
+                                                structuralType: [LIFTABLE Constant: EntityType: HaircareProduct | Resolver: namelessParameter{11} => namelessParameter{11}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HaircareProduct")]) : default(void);
+                                            return instance;
+                                        }}
+                                default: 
+                                    default(HaircareProduct)
+                            }
+                            ;
+                            entry3 = entityType3 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                                entityType: entityType3, 
+                                entity: instance3, 
+                                snapshot: shadowSnapshot3);
+                            return instance3;
+                        } : default(void);
+                        return instance3;
+                    };
+                    ShaperProcessingExpressionVisitor.IncludeReference<CartItem, CartItem, HaircareProduct>(
+                        queryContext: queryContext, 
+                        entity: entity, 
+                        relatedEntity: entity, 
+                        navigation: [LIFTABLE Constant: Navigation: CartItem.Product (HaircareProduct) ToPrincipal HaircareProduct | Resolver: namelessParameter{12} => namelessParameter{12}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.CartItem").FindNavigation("Product")], 
+                        inverseNavigation: default(INavigation), 
+                        fixup: (namelessParameter{13}, namelessParameter{14}) => 
+                        {
+                            return namelessParameter{13}.<Product>k__BackingField = namelessParameter{14};
+                        }, 
+                        trackingQuery: True);
+                    return entity;
+                }, 
+                inverseNavigation: default(INavigationBase), 
+                fixup: (namelessParameter{15}, namelessParameter{16}) => 
+                {
+                    return [LIFTABLE Constant: ClrICollectionAccessor<Cart, ICollection<CartItem>, CartItem> | Resolver: namelessParameter{17} => namelessParameter{17}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Cart").FindNavigation("Items").GetCollectionAccessor()].Add(
+                        entity: namelessParameter{15}, 
+                        value: namelessParameter{16}, 
+                        forMaterialization: True);
+                }, 
+                trackingQuery: True);
+            return IsTrue(resultCoordinator.ResultReady)
+             ? (Cart)(resultContext.Values[0]) : default(Cart);
+        }, 
+        contextType: MiHairCareApp.Persistence.Context.StylistsDBContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-11-27 14:16:08.3684|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<HairStyle>()
+    .Include(h => h.Photos)'
+2025-11-27 14:16:08.3684|DEBUG|Microsoft.EntityFrameworkCore.Query|Including navigation: 'HairStyle.Photos'.
+2025-11-27 14:16:08.3895|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<HairStyle>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Client Projections:
+            0 -> Dictionary<IProperty, int> { [Property: HairStyle.Id (string) Required PK AfterSave:Throw, 0], [Property: HairStyle.CreatedAt (DateTime) Required, 1], [Property: HairStyle.Description (string) Required, 2], [Property: HairStyle.IsDeleted (bool) Required, 3], [Property: HairStyle.ModifiedAt (DateTime) Required, 4], [Property: HairStyle.Origin (HairStyleOrigin) Required, 5], [Property: HairStyle.PhotoId (string), 6], [Property: HairStyle.PriceTag (double) Required, 7], [Property: HairStyle.PromotionalOffer (bool) Required, 8], [Property: HairStyle.StyleName (string) Required, 9], [Property: HairStyle.StylistPortfolioId (no field, string) Shadow FK Index, 10], [Property: HairStyle.VideoLinks (string), 11] }
+            1 -> 0
+            2 -> Dictionary<IProperty, int> { [Property: Photo.Id (string) Required PK AfterSave:Throw, 12], [Property: Photo.AppUserId (no field, string) Shadow FK Index, 13], [Property: Photo.CreatedAt (DateTime) Required, 14], [Property: Photo.HairStyleId (string) FK Index, 15], [Property: Photo.HaircareProductId (string) FK Index, 16], [Property: Photo.IsDeleted (bool) Required, 17], [Property: Photo.IsMain (bool) Required, 18], [Property: Photo.ModifiedAt (DateTime) Required, 19], [Property: Photo.PublicId (string) Required, 20], [Property: Photo.Url (string) Required, 21], [Property: Photo.UserId (string), 22] }
+            3 -> 12
+        SELECT h.Id, h.CreatedAt, h.Description, h.IsDeleted, h.ModifiedAt, h.Origin, h.PhotoId, h.PriceTag, h.PromotionalOffer, h.StyleName, h.StylistPortfolioId, h.VideoLinks, p.Id, p.AppUserId, p.CreatedAt, p.HairStyleId, p.HaircareProductId, p.IsDeleted, p.IsMain, p.ModifiedAt, p.PublicId, p.Url, p.UserId
+        FROM HairStyles AS h
+        LEFT JOIN Photos AS p ON h.Id == p.HairStyleId
+        ORDER BY h.Id ASC) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Client Projections:
+            0 -> Dictionary<IProperty, int> { [Property: HairStyle.Id (string) Required PK AfterSave:Throw, 0], [Property: HairStyle.CreatedAt (DateTime) Required, 1], [Property: HairStyle.Description (string) Required, 2], [Property: HairStyle.IsDeleted (bool) Required, 3], [Property: HairStyle.ModifiedAt (DateTime) Required, 4], [Property: HairStyle.Origin (HairStyleOrigin) Required, 5], [Property: HairStyle.PhotoId (string), 6], [Property: HairStyle.PriceTag (double) Required, 7], [Property: HairStyle.PromotionalOffer (bool) Required, 8], [Property: HairStyle.StyleName (string) Required, 9], [Property: HairStyle.StylistPortfolioId (no field, string) Shadow FK Index, 10], [Property: HairStyle.VideoLinks (string), 11] }
+            1 -> 0
+            2 -> Dictionary<IProperty, int> { [Property: Photo.Id (string) Required PK AfterSave:Throw, 12], [Property: Photo.AppUserId (no field, string) Shadow FK Index, 13], [Property: Photo.CreatedAt (DateTime) Required, 14], [Property: Photo.HairStyleId (string) FK Index, 15], [Property: Photo.HaircareProductId (string) FK Index, 16], [Property: Photo.IsDeleted (bool) Required, 17], [Property: Photo.IsMain (bool) Required, 18], [Property: Photo.ModifiedAt (DateTime) Required, 19], [Property: Photo.PublicId (string) Required, 20], [Property: Photo.Url (string) Required, 21], [Property: Photo.UserId (string), 22] }
+            3 -> 12
+        SELECT h.Id, h.CreatedAt, h.Description, h.IsDeleted, h.ModifiedAt, h.Origin, h.PhotoId, h.PriceTag, h.PromotionalOffer, h.StyleName, h.StylistPortfolioId, h.VideoLinks, p.Id, p.AppUserId, p.CreatedAt, p.HairStyleId, p.HaircareProductId, p.IsDeleted, p.IsMain, p.ModifiedAt, p.PublicId, p.Url, p.UserId
+        FROM HairStyles AS h
+        LEFT JOIN Photos AS p ON h.Id == p.HairStyleId
+        ORDER BY h.Id ASC, 
+        False, 
+        new HashSet<string>(
+            new string[]{ }, 
+            StringComparer.Ordinal
+        )
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        resultContext.Values == null ? 
+        {
+            HairStyle entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                HairStyle instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(HairStyle);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: HairStyle.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HairStyle").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetString(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (HairStyle)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: HairStyle | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HairStyle")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: HairStyle | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HairStyle")]: 
+                            {
+                                shadowSnapshot1 = (ISnapshot)new Snapshot<string>(dataReader.IsDBNull(10) ? default(string) : dataReader.GetString(10));
+                                return 
+                                {
+                                    HairStyle instance;
+                                    instance = new HairStyle();
+                                    instance.<Id>k__BackingField = dataReader.GetString(0);
+                                    instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(1);
+                                    instance.<Description>k__BackingField = dataReader.GetString(2);
+                                    instance.<IsDeleted>k__BackingField = dataReader.GetBoolean(3);
+                                    instance.<ModifiedAt>k__BackingField = dataReader.GetDateTime(4);
+                                    instance.<Origin>k__BackingField = Invoke(((EnumToNumberConverter<HairStyleOrigin, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: HairStyle.Origin (HairStyleOrigin) Required | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HairStyle").FindProperty("Origin")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(5));
+                                    instance.<PhotoId>k__BackingField = dataReader.IsDBNull(6) ? default(string) : dataReader.GetString(6);
+                                    instance.<PriceTag>k__BackingField = dataReader.GetDouble(7);
+                                    instance.<PromotionalOffer>k__BackingField = dataReader.GetBoolean(8);
+                                    instance.<StyleName>k__BackingField = dataReader.GetString(9);
+                                    instance.<VideoLinks>k__BackingField = dataReader.IsDBNull(11) ? default(string) : dataReader.GetString(11);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: HairStyle | Resolver: namelessParameter{3} => namelessParameter{3}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HairStyle")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(HairStyle)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            resultContext.Values = new object[]{ entity };
+            ShaperProcessingExpressionVisitor.InitializeIncludeCollection<HairStyle, HairStyle>(
+                collectionId: 0, 
+                queryContext: queryContext, 
+                dbDataReader: dataReader, 
+                resultCoordinator: resultCoordinator, 
+                entity: (HairStyle)(resultContext.Values[0]), 
+                parentIdentifier: (queryContext, dataReader) => new object[]{ dataReader.GetString(0) }, 
+                outerIdentifier: (queryContext, dataReader) => new object[]{ dataReader.GetString(0) }, 
+                navigation: [LIFTABLE Constant: Navigation: HairStyle.Photos (ICollection<Photo>) Collection ToDependent Photo Inverse: HairStyle | Resolver: namelessParameter{4} => namelessParameter{4}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HairStyle").FindNavigation("Photos")], 
+                clrCollectionAccessor: [LIFTABLE Constant: ClrICollectionAccessor<HairStyle, ICollection<Photo>, Photo> | Resolver: namelessParameter{5} => namelessParameter{5}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HairStyle").FindNavigation("Photos").GetCollectionAccessor()], 
+                trackingQuery: True, 
+                setLoaded: True);
+        } : default(void);
+        ShaperProcessingExpressionVisitor.PopulateIncludeCollection<HairStyle, Photo>(
+            collectionId: 0, 
+            queryContext: queryContext, 
+            dbDataReader: dataReader, 
+            resultCoordinator: resultCoordinator, 
+            parentIdentifier: (queryContext, dataReader) => new object[]{ dataReader.GetString(0) }, 
+            outerIdentifier: (queryContext, dataReader) => new object[]{ dataReader.GetString(0) }, 
+            selfIdentifier: (queryContext, dataReader) => new object[]{ dataReader.IsDBNull(12) ? default(string) : dataReader.GetString(12) }, 
+            parentIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && Invoke((l, r) => string.Equals(
+                a: l, 
+                b: r, 
+                comparisonType: OrdinalIgnoreCase), (string)left, (string)right) }], 
+            outerIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && Invoke((l, r) => string.Equals(
+                a: l, 
+                b: r, 
+                comparisonType: OrdinalIgnoreCase), (string)left, (string)right) }], 
+            selfIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && Invoke((l, r) => string.Equals(
+                a: l, 
+                b: r, 
+                comparisonType: OrdinalIgnoreCase), (string)left, (string)right) }], 
+            innerShaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+            {
+                Photo entity;
+                entity = 
+                {
+                    MaterializationContext materializationContext2;
+                    IEntityType entityType2;
+                    Photo instance2;
+                    InternalEntityEntry entry2;
+                    bool hasNullKey2;
+                    materializationContext2 = new MaterializationContext(
+                        [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                        queryContext.Context
+                    );
+                    instance2 = default(Photo);
+                    entry2 = queryContext.TryGetEntry(
+                        key: [LIFTABLE Constant: Key: Photo.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Photo").FindPrimaryKey()], 
+                        keyValues: new object[]{ dataReader.IsDBNull(12) ? default(object) : (object)dataReader.GetString(12) }, 
+                        throwOnNullKey: False, 
+                        hasNullKey: hasNullKey2);
+                    !(hasNullKey2) ? entry2 != default(InternalEntityEntry) ? 
+                    {
+                        entityType2 = entry2.EntityType;
+                        return instance2 = (Photo)entry2.Entity;
+                    } : 
+                    {
+                        ISnapshot shadowSnapshot2;
+                        shadowSnapshot2 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                        entityType2 = [LIFTABLE Constant: EntityType: Photo | Resolver: namelessParameter{6} => namelessParameter{6}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Photo")];
+                        instance2 = switch (entityType2)
+                        {
+                            case [LIFTABLE Constant: EntityType: Photo | Resolver: namelessParameter{7} => namelessParameter{7}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Photo")]: 
+                                {
+                                    shadowSnapshot2 = (ISnapshot)new Snapshot<string>(dataReader.IsDBNull(13) ? default(string) : dataReader.GetString(13));
+                                    return 
+                                    {
+                                        Photo instance;
+                                        instance = new Photo();
+                                        instance.<Id>k__BackingField = dataReader.IsDBNull(12) ? default(string) : dataReader.GetString(12);
+                                        instance.<CreatedAt>k__BackingField = dataReader.IsDBNull(14) ? default(DateTime) : dataReader.GetDateTime(14);
+                                        instance.<HairStyleId>k__BackingField = dataReader.IsDBNull(15) ? default(string) : dataReader.GetString(15);
+                                        instance.<HaircareProductId>k__BackingField = dataReader.IsDBNull(16) ? default(string) : dataReader.GetString(16);
+                                        instance.<IsDeleted>k__BackingField = dataReader.IsDBNull(17) ? default(bool) : dataReader.GetBoolean(17);
+                                        instance.<IsMain>k__BackingField = dataReader.IsDBNull(18) ? default(bool) : dataReader.GetBoolean(18);
+                                        instance.<ModifiedAt>k__BackingField = dataReader.IsDBNull(19) ? default(DateTime) : dataReader.GetDateTime(19);
+                                        instance.<PublicId>k__BackingField = dataReader.IsDBNull(20) ? default(string) : dataReader.GetString(20);
+                                        instance.<Url>k__BackingField = dataReader.IsDBNull(21) ? default(string) : dataReader.GetString(21);
+                                        instance.<UserId>k__BackingField = dataReader.IsDBNull(22) ? default(string) : dataReader.GetString(22);
+                                        (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                            context: materializationContext2.Context, 
+                                            entity: instance, 
+                                            queryTrackingBehavior: TrackAll, 
+                                            structuralType: [LIFTABLE Constant: EntityType: Photo | Resolver: namelessParameter{8} => namelessParameter{8}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Photo")]) : default(void);
+                                        return instance;
+                                    }}
+                            default: 
+                                default(Photo)
+                        }
+                        ;
+                        entry2 = entityType2 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                            entityType: entityType2, 
+                            entity: instance2, 
+                            snapshot: shadowSnapshot2);
+                        return instance2;
+                    } : default(void);
+                    return instance2;
+                };
+                return entity;
+            }, 
+            inverseNavigation: [LIFTABLE Constant: Navigation: Photo.HairStyle (HairStyle) ToPrincipal HairStyle Inverse: Photos | Resolver: namelessParameter{9} => namelessParameter{9}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Photo").FindNavigation("HairStyle")], 
+            fixup: (namelessParameter{10}, namelessParameter{11}) => 
+            {
+                [LIFTABLE Constant: ClrICollectionAccessor<HairStyle, ICollection<Photo>, Photo> | Resolver: namelessParameter{12} => namelessParameter{12}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HairStyle").FindNavigation("Photos").GetCollectionAccessor()].Add(
+                    entity: namelessParameter{10}, 
+                    value: namelessParameter{11}, 
+                    forMaterialization: True);
+                return namelessParameter{11}.<HairStyle>k__BackingField = namelessParameter{10};
+            }, 
+            trackingQuery: True);
+        return IsTrue(resultCoordinator.ResultReady)
+         ? (HairStyle)(resultContext.Values[0]) : default(HairStyle);
+    }, 
+    contextType: MiHairCareApp.Persistence.Context.StylistsDBContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)'
+2025-11-27 16:16:54.4969|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<HaircareProduct>()
+    .Include(p => p.Photos)
+    .Where(p => (int)p.Category == (int)__category_0)'
+2025-11-27 16:16:54.4969|DEBUG|Microsoft.EntityFrameworkCore.Query|Including navigation: 'HaircareProduct.Photos'.
+2025-11-27 16:16:54.5265|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<HaircareProduct>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Client Projections:
+            0 -> Dictionary<IProperty, int> { [Property: HaircareProduct.Id (string) Required PK AfterSave:Throw, 0], [Property: HaircareProduct.Brand (string) Required, 1], [Property: HaircareProduct.Category (ProductCategory) Required, 2], [Property: HaircareProduct.CreatedAt (DateTime) Required, 3], [Property: HaircareProduct.Description (string) Required, 4], [Property: HaircareProduct.IsDeleted (bool) Required, 5], [Property: HaircareProduct.ModifiedAt (DateTime) Required, 6], [Property: HaircareProduct.Price (decimal) Required, 7], [Property: HaircareProduct.ProductName (string) Required, 8], [Property: HaircareProduct.StockQuantity (int) Required, 9] }
+            1 -> 0
+            2 -> Dictionary<IProperty, int> { [Property: Photo.Id (string) Required PK AfterSave:Throw, 10], [Property: Photo.AppUserId (no field, string) Shadow FK Index, 11], [Property: Photo.CreatedAt (DateTime) Required, 12], [Property: Photo.HairStyleId (string) FK Index, 13], [Property: Photo.HaircareProductId (string) FK Index, 14], [Property: Photo.IsDeleted (bool) Required, 15], [Property: Photo.IsMain (bool) Required, 16], [Property: Photo.ModifiedAt (DateTime) Required, 17], [Property: Photo.PublicId (string) Required, 18], [Property: Photo.Url (string) Required, 19], [Property: Photo.UserId (string), 20] }
+            3 -> 10
+        SELECT h.Id, h.Brand, h.Category, h.CreatedAt, h.Description, h.IsDeleted, h.ModifiedAt, h.Price, h.ProductName, h.StockQuantity, p.Id, p.AppUserId, p.CreatedAt, p.HairStyleId, p.HaircareProductId, p.IsDeleted, p.IsMain, p.ModifiedAt, p.PublicId, p.Url, p.UserId
+        FROM HaircareProducts AS h
+        LEFT JOIN Photos AS p ON h.Id == p.HaircareProductId
+        WHERE h.Category == @__category_0
+        ORDER BY h.Id ASC) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Client Projections:
+            0 -> Dictionary<IProperty, int> { [Property: HaircareProduct.Id (string) Required PK AfterSave:Throw, 0], [Property: HaircareProduct.Brand (string) Required, 1], [Property: HaircareProduct.Category (ProductCategory) Required, 2], [Property: HaircareProduct.CreatedAt (DateTime) Required, 3], [Property: HaircareProduct.Description (string) Required, 4], [Property: HaircareProduct.IsDeleted (bool) Required, 5], [Property: HaircareProduct.ModifiedAt (DateTime) Required, 6], [Property: HaircareProduct.Price (decimal) Required, 7], [Property: HaircareProduct.ProductName (string) Required, 8], [Property: HaircareProduct.StockQuantity (int) Required, 9] }
+            1 -> 0
+            2 -> Dictionary<IProperty, int> { [Property: Photo.Id (string) Required PK AfterSave:Throw, 10], [Property: Photo.AppUserId (no field, string) Shadow FK Index, 11], [Property: Photo.CreatedAt (DateTime) Required, 12], [Property: Photo.HairStyleId (string) FK Index, 13], [Property: Photo.HaircareProductId (string) FK Index, 14], [Property: Photo.IsDeleted (bool) Required, 15], [Property: Photo.IsMain (bool) Required, 16], [Property: Photo.ModifiedAt (DateTime) Required, 17], [Property: Photo.PublicId (string) Required, 18], [Property: Photo.Url (string) Required, 19], [Property: Photo.UserId (string), 20] }
+            3 -> 10
+        SELECT h.Id, h.Brand, h.Category, h.CreatedAt, h.Description, h.IsDeleted, h.ModifiedAt, h.Price, h.ProductName, h.StockQuantity, p.Id, p.AppUserId, p.CreatedAt, p.HairStyleId, p.HaircareProductId, p.IsDeleted, p.IsMain, p.ModifiedAt, p.PublicId, p.Url, p.UserId
+        FROM HaircareProducts AS h
+        LEFT JOIN Photos AS p ON h.Id == p.HaircareProductId
+        WHERE h.Category == @__category_0
+        ORDER BY h.Id ASC, 
+        False, 
+        new HashSet<string>(
+            new string[]{ }, 
+            StringComparer.Ordinal
+        )
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        resultContext.Values == null ? 
+        {
+            HaircareProduct entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                HaircareProduct instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(HaircareProduct);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: HaircareProduct.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HaircareProduct").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetString(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (HaircareProduct)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: HaircareProduct | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HaircareProduct")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: HaircareProduct | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HaircareProduct")]: 
+                            {
+                                return 
+                                {
+                                    HaircareProduct instance;
+                                    instance = new HaircareProduct();
+                                    instance.<Id>k__BackingField = dataReader.GetString(0);
+                                    instance.<Brand>k__BackingField = dataReader.GetString(1);
+                                    instance.<Category>k__BackingField = Invoke(((EnumToNumberConverter<ProductCategory, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: HaircareProduct.Category (ProductCategory) Required | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HaircareProduct").FindProperty("Category")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(2));
+                                    instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(3);
+                                    instance.<Description>k__BackingField = dataReader.GetString(4);
+                                    instance.<IsDeleted>k__BackingField = dataReader.GetBoolean(5);
+                                    instance.<ModifiedAt>k__BackingField = dataReader.GetDateTime(6);
+                                    instance.<Price>k__BackingField = dataReader.GetDecimal(7);
+                                    instance.<ProductName>k__BackingField = dataReader.GetString(8);
+                                    instance.<StockQuantity>k__BackingField = dataReader.GetInt32(9);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: HaircareProduct | Resolver: namelessParameter{3} => namelessParameter{3}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HaircareProduct")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(HaircareProduct)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            resultContext.Values = new object[]{ entity };
+            ShaperProcessingExpressionVisitor.InitializeIncludeCollection<HaircareProduct, HaircareProduct>(
+                collectionId: 0, 
+                queryContext: queryContext, 
+                dbDataReader: dataReader, 
+                resultCoordinator: resultCoordinator, 
+                entity: (HaircareProduct)(resultContext.Values[0]), 
+                parentIdentifier: (queryContext, dataReader) => new object[]{ dataReader.GetString(0) }, 
+                outerIdentifier: (queryContext, dataReader) => new object[]{ dataReader.GetString(0) }, 
+                navigation: [LIFTABLE Constant: Navigation: HaircareProduct.Photos (ICollection<Photo>) Collection ToDependent Photo Inverse: HaircareProduct | Resolver: namelessParameter{4} => namelessParameter{4}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HaircareProduct").FindNavigation("Photos")], 
+                clrCollectionAccessor: [LIFTABLE Constant: ClrICollectionAccessor<HaircareProduct, ICollection<Photo>, Photo> | Resolver: namelessParameter{5} => namelessParameter{5}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HaircareProduct").FindNavigation("Photos").GetCollectionAccessor()], 
+                trackingQuery: True, 
+                setLoaded: True);
+        } : default(void);
+        ShaperProcessingExpressionVisitor.PopulateIncludeCollection<HaircareProduct, Photo>(
+            collectionId: 0, 
+            queryContext: queryContext, 
+            dbDataReader: dataReader, 
+            resultCoordinator: resultCoordinator, 
+            parentIdentifier: (queryContext, dataReader) => new object[]{ dataReader.GetString(0) }, 
+            outerIdentifier: (queryContext, dataReader) => new object[]{ dataReader.GetString(0) }, 
+            selfIdentifier: (queryContext, dataReader) => new object[]{ dataReader.IsDBNull(10) ? default(string) : dataReader.GetString(10) }, 
+            parentIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && Invoke((l, r) => string.Equals(
+                a: l, 
+                b: r, 
+                comparisonType: OrdinalIgnoreCase), (string)left, (string)right) }], 
+            outerIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && Invoke((l, r) => string.Equals(
+                a: l, 
+                b: r, 
+                comparisonType: OrdinalIgnoreCase), (string)left, (string)right) }], 
+            selfIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && Invoke((l, r) => string.Equals(
+                a: l, 
+                b: r, 
+                comparisonType: OrdinalIgnoreCase), (string)left, (string)right) }], 
+            innerShaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+            {
+                Photo entity;
+                entity = 
+                {
+                    MaterializationContext materializationContext2;
+                    IEntityType entityType2;
+                    Photo instance2;
+                    InternalEntityEntry entry2;
+                    bool hasNullKey2;
+                    materializationContext2 = new MaterializationContext(
+                        [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                        queryContext.Context
+                    );
+                    instance2 = default(Photo);
+                    entry2 = queryContext.TryGetEntry(
+                        key: [LIFTABLE Constant: Key: Photo.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Photo").FindPrimaryKey()], 
+                        keyValues: new object[]{ dataReader.IsDBNull(10) ? default(object) : (object)dataReader.GetString(10) }, 
+                        throwOnNullKey: False, 
+                        hasNullKey: hasNullKey2);
+                    !(hasNullKey2) ? entry2 != default(InternalEntityEntry) ? 
+                    {
+                        entityType2 = entry2.EntityType;
+                        return instance2 = (Photo)entry2.Entity;
+                    } : 
+                    {
+                        ISnapshot shadowSnapshot2;
+                        shadowSnapshot2 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                        entityType2 = [LIFTABLE Constant: EntityType: Photo | Resolver: namelessParameter{6} => namelessParameter{6}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Photo")];
+                        instance2 = switch (entityType2)
+                        {
+                            case [LIFTABLE Constant: EntityType: Photo | Resolver: namelessParameter{7} => namelessParameter{7}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Photo")]: 
+                                {
+                                    shadowSnapshot2 = (ISnapshot)new Snapshot<string>(dataReader.IsDBNull(11) ? default(string) : dataReader.GetString(11));
+                                    return 
+                                    {
+                                        Photo instance;
+                                        instance = new Photo();
+                                        instance.<Id>k__BackingField = dataReader.IsDBNull(10) ? default(string) : dataReader.GetString(10);
+                                        instance.<CreatedAt>k__BackingField = dataReader.IsDBNull(12) ? default(DateTime) : dataReader.GetDateTime(12);
+                                        instance.<HairStyleId>k__BackingField = dataReader.IsDBNull(13) ? default(string) : dataReader.GetString(13);
+                                        instance.<HaircareProductId>k__BackingField = dataReader.IsDBNull(14) ? default(string) : dataReader.GetString(14);
+                                        instance.<IsDeleted>k__BackingField = dataReader.IsDBNull(15) ? default(bool) : dataReader.GetBoolean(15);
+                                        instance.<IsMain>k__BackingField = dataReader.IsDBNull(16) ? default(bool) : dataReader.GetBoolean(16);
+                                        instance.<ModifiedAt>k__BackingField = dataReader.IsDBNull(17) ? default(DateTime) : dataReader.GetDateTime(17);
+                                        instance.<PublicId>k__BackingField = dataReader.IsDBNull(18) ? default(string) : dataReader.GetString(18);
+                                        instance.<Url>k__BackingField = dataReader.IsDBNull(19) ? default(string) : dataReader.GetString(19);
+                                        instance.<UserId>k__BackingField = dataReader.IsDBNull(20) ? default(string) : dataReader.GetString(20);
+                                        (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                            context: materializationContext2.Context, 
+                                            entity: instance, 
+                                            queryTrackingBehavior: TrackAll, 
+                                            structuralType: [LIFTABLE Constant: EntityType: Photo | Resolver: namelessParameter{8} => namelessParameter{8}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Photo")]) : default(void);
+                                        return instance;
+                                    }}
+                            default: 
+                                default(Photo)
+                        }
+                        ;
+                        entry2 = entityType2 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                            entityType: entityType2, 
+                            entity: instance2, 
+                            snapshot: shadowSnapshot2);
+                        return instance2;
+                    } : default(void);
+                    return instance2;
+                };
+                return entity;
+            }, 
+            inverseNavigation: [LIFTABLE Constant: Navigation: Photo.HaircareProduct (HaircareProduct) ToPrincipal HaircareProduct Inverse: Photos | Resolver: namelessParameter{9} => namelessParameter{9}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.Photo").FindNavigation("HaircareProduct")], 
+            fixup: (namelessParameter{10}, namelessParameter{11}) => 
+            {
+                [LIFTABLE Constant: ClrICollectionAccessor<HaircareProduct, ICollection<Photo>, Photo> | Resolver: namelessParameter{12} => namelessParameter{12}.Dependencies.Model.FindEntityType("MiHairCareApp.Domain.Entities.HaircareProduct").FindNavigation("Photos").GetCollectionAccessor()].Add(
+                    entity: namelessParameter{10}, 
+                    value: namelessParameter{11}, 
+                    forMaterialization: True);
+                return namelessParameter{11}.<HaircareProduct>k__BackingField = namelessParameter{10};
+            }, 
+            trackingQuery: True);
+        return IsTrue(resultCoordinator.ResultReady)
+         ? (HaircareProduct)(resultContext.Values[0]) : default(HaircareProduct);
+    }, 
+    contextType: MiHairCareApp.Persistence.Context.StylistsDBContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)'
