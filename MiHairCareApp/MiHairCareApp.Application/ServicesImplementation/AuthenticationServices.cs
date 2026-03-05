@@ -11,6 +11,7 @@ using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Domain;
 using MiHairCareApp.Domain.Entities;
 using MiHairCareApp.Domain.Entities.Helper;
+using MiHairCareApp.Domain.Exceptions;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 
@@ -49,17 +50,12 @@ namespace MiHairCareApp.Application.ServicesImplementation
 
         public async Task<ApiResponse<RegisterResponseDto>> RegisterAsync(UserCreateDto createDto)
         {
-            var user = await _userManager.FindByEmailAsync(createDto.Email);
-            if (user != null)
-            {
-                return ApiResponse<RegisterResponseDto>.Failed("User with this email already exists.", StatusCodes.Status400BadRequest, new List<string>());
-            }
+            if (createDto == null)
+                throw new ValidationException("Registration payload cannot be null");
 
-            var userr = await _unitOfWork.UserRepository.FindAsync(x => x.PhoneNumber == createDto.PhoneNumber);
-            if (userr.Count > 0)
-            {
-                return ApiResponse<RegisterResponseDto>.Failed("User with this phone number already exists.", StatusCodes.Status400BadRequest, new List<string>());
-            }
+            var existingByEmail = await _userManager.FindByEmailAsync(createDto.Email);
+            if (existingByEmail != null)
+                throw new ValidationException("User with this email already exists.");
 
             var appUser = new AppUser()
             {

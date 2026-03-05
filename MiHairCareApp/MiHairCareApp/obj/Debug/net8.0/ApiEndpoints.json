@@ -360,6 +360,22 @@
   },
   {
     "ContainingType": "MiHairCareApp.Controllers.HairStylesController",
+    "Method": "GetStylistPortfolio",
+    "RelativePath": "api/HairStyles/{userId}/portfolio",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MiHairCareApp.Controllers.HairStylesController",
     "Method": "AddHairStyle",
     "RelativePath": "api/HairStyles/addHairStyle",
     "HttpMethod": "POST",
@@ -568,16 +584,6 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MiHairCareApp.Controllers.HairStylesController",
-    "Method": "GetStylesForPortfolio",
-    "RelativePath": "api/HairStyles/stylesForPortfolio",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -1073,22 +1079,6 @@
   },
   {
     "ContainingType": "MiHairCareApp.Controllers.StylistsController",
-    "Method": "GetStylistPortfolio",
-    "RelativePath": "api/Stylists/{userId}/portfolio",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MiHairCareApp.Controllers.StylistsController",
     "Method": "UpdatePortfolio",
     "RelativePath": "api/Stylists/{userId}/portfolio",
     "HttpMethod": "POST",
@@ -1386,8 +1376,8 @@
   },
   {
     "ContainingType": "MiHairCareApp.Controllers.UsersController",
-    "Method": "GetUsersWithCompany",
-    "RelativePath": "api/Users/stylist-users",
+    "Method": "RegularUsers",
+    "RelativePath": "api/Users/users",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

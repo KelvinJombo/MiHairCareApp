@@ -1,10 +1,5 @@
 ﻿using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiHairCareApp.Application.Interfaces.Services
 {
@@ -15,14 +10,15 @@ namespace MiHairCareApp.Application.Interfaces.Services
         Task<ApiResponse<List<HairStyleResponseDto>>> GetAllAfricanHairStyles();
         Task<ApiResponse<List<HairStyleResponseDto>>> GetAllAmericanHairStyles();
         Task<ApiResponse<List<HairStyleResponseDto>>> GetAllAsianHairStyles();
-        Task<ApiResponse<List<HairStyleResponseDto>>> GetAllEuropianHairStyles();
+        Task<ApiResponse<List<HairStyleResponseDto>>> GetAllEuropeanHairStyles();
         Task<ApiResponse<HairStyleResponseDto>> GetHairStyleById(string hairStyleId);
         Task<ApiResponse<HairStyleResponseDto>> GetHairStyleByTitle(string hairStyleTitle);
+        //Task<ApiResponse<List<AllHairStylesResponseDto>>> GetStylistPortFolioAsync();
         Task<ApiResponse<bool>> DeleteAHairStyle(string hairStyleId);
         Task<ApiResponse<PhotoDto>> AddHairStylePhoto(UpdateHairStylePhotoDto updatePhotoDto);
         Task<ApiResponse<string>> GetHairStylePhotoAsync(string photoId);
         Task<bool> DeleteHairStylePhotoAsync(string photoId);
         Task<ApiResponse<HairStyleResponseDto>> UpdateHairStyleAsync(UpdateHairStylePhotoDto updatePhotoDto);
-        Task<ApiResponse<List<AllHairStylesResponseDto>>> GetAllPortFolioStyles();
+        Task<ApiResponse<List<PortfolioHairStyleDto>>> GetStylistPortfolioAsync(string userId);
     }
 }

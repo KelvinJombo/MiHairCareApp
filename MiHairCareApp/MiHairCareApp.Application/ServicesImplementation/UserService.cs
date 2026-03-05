@@ -25,16 +25,19 @@ namespace MiHairCareApp.Application.ServicesImplementation
             _mapper = mapper;
             _cloudinaryServices = cloudinaryServices;
             _stripeSettings = stripeSettings.Value;
-        }
+        }         
 
 
+        
 
-        public async Task<ApiResponse<List<RegisterResponseDto>>> GetStylistUsers()
+
+        public async Task<ApiResponse<List<RegisterResponseDto>>> GetRegUsers()
         {
-            var users = await _unitOfWork.UserRepository.FindAsync(user => user.CompanyName != null);
+            var users = await _unitOfWork.UserRepository.FindAsync(user => user.CompanyName == null);
             var result = _mapper.Map<List<RegisterResponseDto>>(users);
             return ApiResponse<List<RegisterResponseDto>>.Success(result, "Users retrieved successfully", 200);
         }
+
 
 
         public async Task<ApiResponse<GetUserResponseDto>> GetUserById(string userId)

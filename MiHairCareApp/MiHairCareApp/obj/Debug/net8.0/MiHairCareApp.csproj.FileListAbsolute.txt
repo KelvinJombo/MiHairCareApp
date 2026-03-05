@@ -191,11 +191,6 @@ C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCare
 C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\MiHairCareApp.sourcelink.json
 C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\staticwebassets\msbuild.MiHairCareApp.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\staticwebassets\msbuild.build.MiHairCareApp.props
-C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MiHairCareApp.props
-C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MiHairCareApp.props
-C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\scopedcss\bundle\MiHairCareApp.styles.css
 C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\MiHairCa.C0F45FE2.Up2Date
 C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\MiHairCareApp.dll
@@ -203,3 +198,11 @@ C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCare
 C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\MiHairCareApp.pdb
 C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\MiHairCareApp.genruntimeconfig.cache
 C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\ref\MiHairCareApp.dll
+C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\bin\Debug\net8.0\MiHairCareApp.staticwebassets.endpoints.json
+C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\HP\OneDrive\Desktop\Code_Projects\HairCareRepo\MiHairCareApp\MiHairCareApp\MiHairCareApp\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

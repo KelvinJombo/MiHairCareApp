@@ -22,8 +22,9 @@ namespace MiHairCareApp.Application.Interfaces
         Task<ApiResponse<string>> ConfirmEmail(string userid, string token);
         ApiResponse<string> ExtractUserIdFromToken(string authToken);
         Task<bool> UpdateStylistPortfolioAsync(string userId, List<string> hairStyleIds);
+        Task<ApiResponse<List<RegisterResponseDto>>> GetStylistUsers();
         Task<ApiResponse<List<PortfolioResponseDto>>> GetStylistsByHairStyle(string hairStyleId);
-        Task<ApiResponse<List<RegisterResponseDto>>> GetUsersWithNullCompanyNameAsync();
-        Task<List<PortfolioHairStyleDto>?> GetStylistPortfolioAsync(string stylistId);
+        //Task<ApiResponse<List<RegisterResponseDto>>> GetUsersWithNullCompanyNameAsync();
+        
     }
 }

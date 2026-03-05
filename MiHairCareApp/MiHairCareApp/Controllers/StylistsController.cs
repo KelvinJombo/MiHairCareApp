@@ -6,6 +6,7 @@ using MiHairCareApp.Application.Interfaces;
 using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Domain;
 using MiHairCareApp.Domain.Entities;
+using MiHairCareApp.Extensions;
 
 
 namespace MiHairCareApp.Controllers
@@ -148,19 +149,7 @@ namespace MiHairCareApp.Controllers
             }
         }
 
-
-        [HttpGet("{userId}/portfolio")]
-        public async Task<IActionResult> GetStylistPortfolio(string userId)
-        {
-            var portfolio = await _stylistServices.GetStylistPortfolioAsync(userId);
-
-            if (portfolio == null)
-                return NotFound("Stylist not found.");
-
-            return Ok(portfolio);
-        }
-
-
+        
 
         [HttpPost("update-password")]
         public async Task<IActionResult> UpdatePassword([FromBody] UpdatePasswordDto model, [FromHeader(Name = "Authorization")] string authToken)
@@ -250,23 +239,21 @@ namespace MiHairCareApp.Controllers
 
             return Ok(new ApiResponse<string>(true, "Logout successful", 200, null, new List<string>()));
         }
-
+               
 
         [HttpGet("stylistUsers")]
         public async Task<IActionResult> GetStylists()
         {
-            return Ok(await _stylistServices.GetUsersWithNullCompanyNameAsync());
+            return Ok(await _stylistServices.GetStylistUsers());
         }
+
+
 
         [HttpGet("hairstylists/{hairStyleId}")]
         public async Task<IActionResult> GetStylistsByHairStyle(string hairStyleId)
         {
             var response = await _stylistServices.GetStylistsByHairStyle(hairStyleId);
-
-            //if (!response.Success)
-            //    return NotFound(response);
-
-            return Ok(response);
+            return response.ToActionResult();
         }
 
         [HttpPost("{userId}/portfolio")]

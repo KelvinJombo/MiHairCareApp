@@ -94,7 +94,8 @@ try
 
     var app = builder.Build();
 
-     
+    app.UseMiddleware<MiHairCareApp.Middleware.ExceptionHandlingMiddleware>();
+
     if (app.Environment.IsDevelopment())
     {
         app.UseSwagger();

@@ -9,6 +9,7 @@ using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Domain;
 using MiHairCareApp.Domain.Entities;
 using MiHairCareApp.Domain.Enums;
+using MiHairCareApp.Domain.Exceptions;
 
 namespace MiHairCareApp.Application.ServicesImplementation
 {
@@ -27,416 +28,203 @@ namespace MiHairCareApp.Application.ServicesImplementation
             _logger = logger;
         }
 
-
-
         public async Task<ApiResponse<HairStyleResponseDto>> AddHairStyleAsync(CreateHairStyleDto hairDto)
         {
             if (hairDto == null)
-            {
-                return ApiResponse<HairStyleResponseDto>.Failed(
-                    "Hair DTO cannot be null", 400, new List<string> { "Invalid input" });
-            }
+                throw new ValidationException("Hair DTO cannot be null");
 
-            var hairStyleModel = _mapper.Map<HairStyle>(hairDto);
+            var hairStyleModel = _mapper.Map<HairStyle>(hairDto) ?? throw new ServiceException("Mapping Hair DTO to HairStyle model failed");
 
-            // Assign the enum
             hairStyleModel.Origin = hairDto.OriginEnum;
 
-            if (hairStyleModel == null)
+            if (hairDto.Image != null)
             {
-                return ApiResponse<HairStyleResponseDto>.Failed(
-                    "Mapping Hair DTO to HairStyle model failed", 500, new List<string> { "Mapping failure" });
+                var img = await _cloudinaryServices.UploadImageAsync(hairDto.Image);
+                if (img == null) throw new ServiceException("Image upload failed");
+
+                var photo = new Photo { Url = img.Url, PublicId = img.PublicId, IsMain = hairDto.IsMainPhoto };
+                hairStyleModel.Photos = new List<Photo> { photo };
             }
 
-            try
-            {
-                if (hairDto.Image != null)
-                {
-                    var img = await _cloudinaryServices.UploadImageAsync(hairDto.Image);
-                    if (img == null)
-                        return ApiResponse<HairStyleResponseDto>.Failed(
-                            "Image upload failed", StatusCodes.Status500InternalServerError, new List<string>());
+            await _unitOfWork.HairStyleRepository.AddAsync(hairStyleModel);
+            await _unitOfWork.SaveChangesAsync();
 
-                    var photo = new Photo
-                    {
-                        Url = img.Url,
-                        PublicId = img.PublicId,
-                        IsMain = hairDto.IsMainPhoto,
-                    };
-
-                    hairStyleModel.Photos = new List<Photo> { photo };
-                }
-
-                await _unitOfWork.HairStyleRepository.AddAsync(hairStyleModel);
-                await _unitOfWork.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "An error occurred while adding the hairStyle");
-                return ApiResponse<HairStyleResponseDto>.Failed(
-                    "An error occurred while adding the hairStyle", 500, new List<string> { ex.Message });
-            }
-
-            var viewHairStyle = _mapper.Map<HairStyleResponseDto>(hairStyleModel);
-
-            if (viewHairStyle == null)
-            {
-                return ApiResponse<HairStyleResponseDto>.Failed(
-                    "Mapping hairStyle model to response DTO failed", 500, new List<string> { "Mapping failure" });
-            }
-
+            var viewHairStyle = _mapper.Map<HairStyleResponseDto>(hairStyleModel) ?? throw new ServiceException("Mapping hairStyle model to response DTO failed");
             return ApiResponse<HairStyleResponseDto>.Success(viewHairStyle, "HairStyle added successfully", 201);
         }
 
-
-
-
-
         public async Task<ApiResponse<List<HairStyleResponseDto>>> GetAllHairStyles()
         {
-            var hairStyles = await _unitOfWork.HairStyleRepository
-                .Query()
-                .Include(h => h.Photos)
-                .ToListAsync();
-
+            var hairStyles = await _unitOfWork.HairStyleRepository.Query().Include(h => h.Photos).ToListAsync();
             var result = _mapper.Map<List<HairStyleResponseDto>>(hairStyles);
-
-            return ApiResponse<List<HairStyleResponseDto>>
-                .Success(result, "HairStyles retrieved successfully", 200);
+            return ApiResponse<List<HairStyleResponseDto>>.Success(result, "HairStyles retrieved successfully", 200);
         }
 
-
-        public async Task<ApiResponse<List<AllHairStylesResponseDto>>> GetAllPortFolioStyles()
+        public async Task<ApiResponse<List<PortfolioHairStyleDto>>> GetStylistPortfolioAsync(string userId)
         {
             var hairStyles = await _unitOfWork.HairStyleRepository
                 .Query()
+                .Where(h => h.Id == userId)
                 .Include(h => h.Photos)
                 .ToListAsync();
 
-            var result = _mapper.Map<List<AllHairStylesResponseDto>>(hairStyles);
+            if (!hairStyles.Any())
+                return ApiResponse<List<PortfolioHairStyleDto>>.Failed(
+                    "Stylist portfolio not found", 404, new List<string>()
+                );
 
-            return ApiResponse<List<AllHairStylesResponseDto>>
-                .Success(result, "HairStyles retrieved successfully", 200);
+            var result = _mapper.Map<List<PortfolioHairStyleDto>>(hairStyles);
+
+            return ApiResponse<List<PortfolioHairStyleDto>>.Success(
+                result, "HairStyles retrieved successfully", 200
+            );
         }
-
-
 
         public async Task<ApiResponse<List<HairStyleResponseDto>>> GetAllAfricanHairStyles()
         {
-            var hairStyles = await _unitOfWork.HairStyleRepository
-                .Query()
-                .Where(h => h.Origin == HairStyleOrigin.African)
-                .Include(h => h.Photos)
-                .ToListAsync();
-
+            var hairStyles = await _unitOfWork.HairStyleRepository.Query().Where(h => h.Origin == HairStyleOrigin.African).Include(h => h.Photos).ToListAsync();
             var result = _mapper.Map<List<HairStyleResponseDto>>(hairStyles);
-
-            return ApiResponse<List<HairStyleResponseDto>>
-                .Success(result, "African HairStyles retrieved successfully", 200);
+            return ApiResponse<List<HairStyleResponseDto>>.Success(result, "African HairStyles retrieved successfully", 200);
         }
-
 
         public async Task<ApiResponse<List<HairStyleResponseDto>>> GetAllAmericanHairStyles()
         {
-            var hairStyles = await _unitOfWork.HairStyleRepository
-                .Query()
-                .Where(h => h.Origin == HairStyleOrigin.American)
-                .Include(h => h.Photos)
-                .ToListAsync();
+            var hairStyles = await _unitOfWork.HairStyleRepository.Query().Where(h => h.Origin == HairStyleOrigin.American).Include(h => h.Photos).ToListAsync();
             var result = _mapper.Map<List<HairStyleResponseDto>>(hairStyles);
-            return ApiResponse<List<HairStyleResponseDto>>.Success(result, "American HairStyles retrieved successfully", 200);
+            return ApiResponse<List<HairStyleResponseDto>>.Success(result, "African HairStyles retrieved successfully", 200);
         }
-
-
 
         public async Task<ApiResponse<List<HairStyleResponseDto>>> GetAllAsianHairStyles()
         {
-            var hairStyles = await _unitOfWork.HairStyleRepository
-                .Query()
-                .Where(h => h.Origin == HairStyleOrigin.Asian)
-                .Include(h => h.Photos)
-                .ToListAsync();
+            var hairStyles = await _unitOfWork.HairStyleRepository.Query().Where(h => h.Origin == HairStyleOrigin.Asian).Include(h => h.Photos).ToListAsync();
             var result = _mapper.Map<List<HairStyleResponseDto>>(hairStyles);
-            return ApiResponse<List<HairStyleResponseDto>>.Success(result, "Asian HairStyles retrieved successfully", 200);
+            return ApiResponse<List<HairStyleResponseDto>>.Success(result, "African HairStyles retrieved successfully", 200);
         }
 
-
-
-        public async Task<ApiResponse<List<HairStyleResponseDto>>> GetAllEuropianHairStyles()
+        public async Task<ApiResponse<List<HairStyleResponseDto>>> GetAllEuropeanHairStyles()
         {
-            var hairStyles = await _unitOfWork.HairStyleRepository
-                .Query()
-                .Where(h => h.Origin == HairStyleOrigin.European)
-                .Include(h => h.Photos)
-                .ToListAsync();
+            var hairStyles = await _unitOfWork.HairStyleRepository.Query().Where(h => h.Origin == HairStyleOrigin.European).Include(h => h.Photos).ToListAsync();
             var result = _mapper.Map<List<HairStyleResponseDto>>(hairStyles);
-            return ApiResponse<List<HairStyleResponseDto>>.Success(result, "European HairStyles retrieved successfully", 200);
+            return ApiResponse<List<HairStyleResponseDto>>.Success(result, "African HairStyles retrieved successfully", 200);
         }
-
-
 
         public async Task<ApiResponse<HairStyleResponseDto>> GetHairStyleById(string hairStyleId)
         {
-            try
-            {
-                var hairStyle = await _unitOfWork.HairStyleRepository.Query().Include(p => p.Photos).FirstOrDefaultAsync(p => p.Id == hairStyleId);
-                if (hairStyle == null)
-                {
-                    return ApiResponse<HairStyleResponseDto>.Failed("", 400, new List<string>() { "Given id does not exits in Database" });
-                }
-                var hairStyledata = _mapper.Map<HairStyleResponseDto>(hairStyle);
-                return ApiResponse<HairStyleResponseDto>.Success(hairStyledata, "HairStyle information retrieved successfully", 200);
-            }
-            catch (Exception ex)
-            {
+            if (string.IsNullOrEmpty(hairStyleId)) throw new ValidationException("HairStyle id required");
 
-                _logger.LogError(ex, "An error occurred while retrieving the hairStyle");
-                return ApiResponse<HairStyleResponseDto>.Failed("An error occurred while retrieving the hairStyle", 500, new List<string> { ex.Message });
-            }
-            
+            var hairStyle = await _unitOfWork.HairStyleRepository.Query().Include(p => p.Photos).FirstOrDefaultAsync(p => p.Id == hairStyleId);
+            if (hairStyle == null) throw new NotFoundException("Given id does not exist in Database");
+
+            var hairStyledata = _mapper.Map<HairStyleResponseDto>(hairStyle);
+            return ApiResponse<HairStyleResponseDto>.Success(hairStyledata, "HairStyle information retrieved successfully", 200);
         }
-
 
         public async Task<ApiResponse<HairStyleResponseDto>> GetHairStyleByTitle(string hairStyleTitle)
         {
-            try
-            {
-                var hairStyle = await _unitOfWork.HairStyleRepository.Query().Include(p => p.Photos).FirstOrDefaultAsync(p => p.StyleName == hairStyleTitle);
-                if (hairStyle == null)
-                {
-                    return ApiResponse<HairStyleResponseDto>.Failed("", 400, new List<string>() { "Given id does not exits in Database" });
-                }
-                var hairStyledata = _mapper.Map<HairStyleResponseDto>(hairStyle);
-                return ApiResponse<HairStyleResponseDto>.Success(hairStyledata, "HairStyle information retrieved successfully", 200);
-            }
-            catch (Exception ex)
-            {
+            if (string.IsNullOrEmpty(hairStyleTitle)) throw new ValidationException("HairStyle title required");
 
-                _logger.LogError(ex, "An error occurred while retrieving the hairStyle");
-                return ApiResponse<HairStyleResponseDto>.Failed("An error occurred while retrieving the hairStyle", 500, new List<string> { ex.Message });
-            }
+            var hairStyle = await _unitOfWork.HairStyleRepository.Query().Include(p => p.Photos).FirstOrDefaultAsync(p => p.StyleName == hairStyleTitle);
+            if (hairStyle == null) throw new NotFoundException("Given title does not exist in Database");
 
+            var hairStyledata = _mapper.Map<HairStyleResponseDto>(hairStyle);
+            return ApiResponse<HairStyleResponseDto>.Success(hairStyledata, "HairStyle information retrieved successfully", 200);
         }
-
-
-
-
-
 
         public async Task<ApiResponse<bool>> DeleteAHairStyle(string hairStyleId)
         {
             var hairStyle = await _unitOfWork.HairStyleRepository.GetByIdAsync(hairStyleId);
-            if (hairStyle == null)
-            {
-                return ApiResponse<bool>.Failed("HairStyle not found", StatusCodes.Status404NotFound, new List<string>());
+            if (hairStyle == null) throw new NotFoundException("HairStyle not found");
 
-            }
-            else
-            {
-                hairStyle.IsDeleted = true;
-                _unitOfWork.HairStyleRepository.Update(hairStyle);
-                await _unitOfWork.SaveChangesAsync();
-                return ApiResponse<bool>.Success(true, "HairStyle deleted successfully", StatusCodes.Status200OK);
-
-            }
+            hairStyle.IsDeleted = true;
+            _unitOfWork.HairStyleRepository.Update(hairStyle);
+            await _unitOfWork.SaveChangesAsync();
+            return ApiResponse<bool>.Success(true, "HairStyle deleted successfully", StatusCodes.Status200OK);
         }
-
-
-
 
         public async Task<ApiResponse<PhotoDto>> AddHairStylePhoto(UpdateHairStylePhotoDto updatePhotoDto)
         {
-            if (updatePhotoDto.Image == null)
-            {
-                return ApiResponse<PhotoDto>.Failed("No file selected. Please select an image", StatusCodes.Status400BadRequest, new List<string>());
-            }
-            if (string.IsNullOrEmpty(updatePhotoDto.HairStyleId))
-            {
-                return ApiResponse<PhotoDto>.Failed("Input a valid Id.", StatusCodes.Status400BadRequest, new List<string>());
-            }
+            if (updatePhotoDto.Image == null) throw new ValidationException("No file selected. Please select an image");
+            if (string.IsNullOrEmpty(updatePhotoDto.HairStyleId)) throw new ValidationException("Input a valid Id.");
 
             var hairStyle = await _unitOfWork.HairStyleRepository.GetByIdAsync(updatePhotoDto.HairStyleId);
-            if (hairStyle == null)
-            {
-                return ApiResponse<PhotoDto>.Failed("HairStyle not found", StatusCodes.Status400BadRequest, new List<string>());
-            }
+            if (hairStyle == null) throw new NotFoundException("HairStyle not found");
 
             var img = await _cloudinaryServices.UploadImageAsync(updatePhotoDto.Image);
-            if (img == null)
-            {
-                return ApiResponse<PhotoDto>.Failed("Image upload failed", StatusCodes.Status500InternalServerError, new List<string>());
-            }
+            if (img == null) throw new ServiceException("Image upload failed");
 
-            var photo = new Photo
-            {
-                Url = img.Url,
-                PublicId = img.PublicId,
-                IsMain = updatePhotoDto.IsMain,
-                HairStyleId = updatePhotoDto.HairStyleId
-            };
-
+            var photo = new Photo { Url = img.Url, PublicId = img.PublicId, IsMain = updatePhotoDto.IsMain, HairStyleId = updatePhotoDto.HairStyleId };
             await _unitOfWork.PhotoRepository.AddAsync(photo);
             await _unitOfWork.SaveChangesAsync();
 
-            var photoDto = new PhotoDto
-            {
-                Url = photo.Url,
-                IsMain = photo.IsMain,
-                PublicId = photo.PublicId
-            };
-
+            var photoDto = new PhotoDto { Url = photo.Url, IsMain = photo.IsMain, PublicId = photo.PublicId };
             return ApiResponse<PhotoDto>.Success(photoDto, "HairStyle photo added successfully", StatusCodes.Status200OK);
         }
 
-
-
-
         public async Task<ApiResponse<HairStyleResponseDto>> UpdateHairStyleAsync(UpdateHairStylePhotoDto updatePhotoDto)
         {
-            if (string.IsNullOrEmpty(updatePhotoDto.HairStyleId))
-            {
-                return ApiResponse<HairStyleResponseDto>.Failed("Input a valid HairStyle Id.", StatusCodes.Status400BadRequest, new List<string>());
-            }
+            if (string.IsNullOrEmpty(updatePhotoDto.HairStyleId)) throw new ValidationException("Input a valid HairStyle Id.");
 
             var hairStyle = await _unitOfWork.HairStyleRepository.GetByIdAsync(updatePhotoDto.HairStyleId);
-            if (hairStyle == null)
-            {
-                return ApiResponse<HairStyleResponseDto>.Failed("HairStyle not found", StatusCodes.Status404NotFound, new List<string>());
-            }
+            if (hairStyle == null) throw new NotFoundException("HairStyle not found");
 
-            // ✅ Update hairstyle info
-            if (!string.IsNullOrEmpty(updatePhotoDto.StyleName))
-                hairStyle.StyleName = updatePhotoDto.StyleName;
+            if (!string.IsNullOrEmpty(updatePhotoDto.StyleName)) hairStyle.StyleName = updatePhotoDto.StyleName;
+            if (!string.IsNullOrEmpty(updatePhotoDto.Description)) hairStyle.Description = updatePhotoDto.Description;
 
-            if (!string.IsNullOrEmpty(updatePhotoDto.Description))
-                hairStyle.Description = updatePhotoDto.Description;
-
-            // ✅ Add new photo if uploaded
             if (updatePhotoDto.Image != null)
             {
                 var img = await _cloudinaryServices.UploadImageAsync(updatePhotoDto.Image);
-                if (img == null)
-                {
-                    return ApiResponse<HairStyleResponseDto>.Failed("Image upload failed", StatusCodes.Status500InternalServerError, new List<string>());
-                }
+                if (img == null) throw new ServiceException("Image upload failed");
 
-                var newPhoto = new Photo
-                {
-                    Url = img.Url,
-                    PublicId = img.PublicId,
-                    IsMain = updatePhotoDto.IsMain,
-                    HairStyleId = updatePhotoDto.HairStyleId
-                };
-
+                var newPhoto = new Photo { Url = img.Url, PublicId = img.PublicId, IsMain = updatePhotoDto.IsMain, HairStyleId = updatePhotoDto.HairStyleId };
                 hairStyle.Photos.Add(newPhoto);
             }
 
             await _unitOfWork.SaveChangesAsync();
 
-            // ✅ Map to DTO
             var hairStyleDto = new HairStyleResponseDto
             {
                 StyleName = hairStyle.StyleName,
                 Description = hairStyle.Description,
                 PriceTag = hairStyle.PriceTag,
                 PromotionalOffer = hairStyle.PromotionalOffer,
-                Photos = hairStyle.Photos.Select(p => new PhotoDto
-                {
-                    Url = p.Url,
-                    PublicId = p.PublicId,
-                    IsMain = p.IsMain
-                }).ToList()
-
-
+                Photos = hairStyle.Photos.Select(p => new PhotoDto { Url = p.Url, PublicId = p.PublicId, IsMain = p.IsMain }).ToList()
             };
 
             return ApiResponse<HairStyleResponseDto>.Success(hairStyleDto, "HairStyle updated successfully", StatusCodes.Status200OK);
         }
 
-
-
-
-
-
-
-
-
-
         public async Task<ApiResponse<string>> GetHairStylePhotoAsync(string photoId)
         {
-            if (string.IsNullOrEmpty(photoId))
-            {
-                return ApiResponse<string>.Failed("Invalid Request.", StatusCodes.Status400BadRequest, new List<string>());
-            }
+            if (string.IsNullOrEmpty(photoId)) throw new ValidationException("Invalid Request.");
 
             var photo = await _unitOfWork.PhotoRepository.GetByIdAsync(photoId);
-            if (photo == null)
-            {
-                return ApiResponse<string>.Failed("HairStyle not found", StatusCodes.Status400BadRequest, new List<string>());
-            }
-
-            if (string.IsNullOrEmpty(photo.Url))
-            {
-                return ApiResponse<string>.Failed("No photo found for the Hairstyle", StatusCodes.Status400BadRequest, new List<string>());
-            }
+            if (photo == null || string.IsNullOrEmpty(photo.Url)) throw new NotFoundException("No photo found for the Hairstyle");
 
             return ApiResponse<string>.Success(photo.Url, "HairStyle photo retrieved successfully", StatusCodes.Status200OK);
         }
 
-
-
-
-
-
-
         public async Task<bool> DeleteHairStylePhotoAsync(string photoId)
         {
-            // Step 1: Get the user from the database
             var photo = await _unitOfWork.PhotoRepository.GetByIdAsync(photoId);
+            if (photo == null || string.IsNullOrEmpty(photo.Url)) return false;
 
-            if (photo == null || string.IsNullOrEmpty(photo.Url))
-            {
-                return false;
-            }
-
-            // Step 2: Extract the publicId from the ImageUrl
             var publicId = ExtractPublicIdFromUrl(photo.Url);
+            if (string.IsNullOrEmpty(publicId)) return false;
 
-            if (string.IsNullOrEmpty(publicId))
-            {
-                return false;
-            }
-
-            // Step 3: Delete the photo from Cloudinary
             var deletionResult = await _cloudinaryServices.DeletePhotoAsync(publicId);
+            if (deletionResult.Result != "ok") return false;
 
-            // Check if deletion from Cloudinary was successful
-            if (deletionResult.Result != "ok")
-            {
-                return false;
-            }
-
-            // Step 4: Delete the photo URL from the database
             photo.Url = null;
-
             _unitOfWork.PhotoRepository.Update(photo);
             await _unitOfWork.SaveChangesAsync();
-
             return true;
         }
 
-
-
-        // Helper method to extract publicId from ImageUrl
         private string ExtractPublicIdFromUrl(string imageUrl)
         {
-            // Assuming the publicId is the last part of the URL without the file extension
             var uri = new Uri(imageUrl);
-            var segments = uri.Segments;
-            var fileName = segments.Last();
-            var publicId = Path.GetFileNameWithoutExtension(fileName);
-            return publicId;
+            var fileName = uri.Segments.Last();
+            return Path.GetFileNameWithoutExtension(fileName);
         }
-
     }
 }

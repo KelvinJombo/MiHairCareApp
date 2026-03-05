@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 namespace MiHairCareApp.Application.Interfaces.Services
 {
     public interface IUserService
-    {
-        Task<ApiResponse<List<RegisterResponseDto>>> GetStylistUsers();
+    {       
+        Task<ApiResponse<List<RegisterResponseDto>>> GetRegUsers();
         Task<ApiResponse<bool>> DeleteUser(string id);
         //Task<ApiResponse<List<NewUserResponseDto>>> GetNewUsers();
         //Task<ApiResponse<decimal[]>> AdminDashboardUserInfo();

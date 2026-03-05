@@ -37,7 +37,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
             {
                 var wallet = _mapper.Map<Wallet>(createWalletDto);
                 wallet.WalletNumber = WalletGenerator.SetWalletId(createWalletDto.PhoneNumber);
-                wallet.Currency = Currency.Naira;
+                wallet.Currency = Currency.NGN;
 
                 // Generate a random transaction pin or prompt the user to set their own
                 wallet.TransactionPin = GenerateRandomTransactionPin();

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces.Services;
+using MiHairCareApp.Extensions;
 
 namespace MiHairCareApp.Controllers
 {
@@ -17,78 +18,86 @@ namespace MiHairCareApp.Controllers
 
 
         [HttpPost("addStylistReview")]
-        public async Task<ActionResult> AddStylistReview(CreateStylistReviewDto reviewDto)
+        public async Task<IActionResult> AddStylistReview(CreateStylistReviewDto reviewDto)
         { 
             
-           return Ok(await _reviewsService.CreateUserReviewAsync(reviewDto));
-            
-        }
+           var result = await _reviewsService.CreateUserReviewAsync(reviewDto);
+            return result.ToActionResult();
 
+        }
+         
 
         [HttpPost("addProductReview")]
-        public async Task<ActionResult> AddProductReview(CreateProductReviewDto reviewDto)
+        public async Task<IActionResult> AddProductReview(CreateProductReviewDto reviewDto)
         {
 
-            return Ok(await _reviewsService.CreateProductReviewAsync(reviewDto));
+            var result = await _reviewsService.CreateProductReviewAsync(reviewDto);
+            return result.ToActionResult();
 
         }
 
 
 
         [HttpPost("getProductReview")]
-        public async Task<ActionResult> ViewProductReview(string reviewId)
+        public async Task<IActionResult> ViewProductReview(string reviewId)
         {
-
-            return Ok(await _reviewsService.GetProductReviewAsync(reviewId));
+            
+            var result = await _reviewsService.GetProductReviewAsync(reviewId);
+            return result.ToActionResult();
 
         }
 
 
         [HttpPost("getStylistReview")]
-        public async Task<ActionResult> ViewStylistReview(string reviewId)
+        public async Task<IActionResult> ViewStylistReview(string reviewId)
         {
 
-            return Ok(await _reviewsService.GetUserReviewAsync(reviewId));
+            var result = await _reviewsService.GetUserReviewAsync(reviewId);
+            return result.ToActionResult();
 
         }
 
 
 
         [HttpPost("deleteProductReview")]
-        public async Task<ActionResult> DeleteProductReview(string reviewId)
+        public async Task<IActionResult> DeleteProductReview(string reviewId)
         {
 
-            return Ok(await _reviewsService.DeleteProductReviewAsync(reviewId));
+            var result = await _reviewsService.DeleteProductReviewAsync(reviewId);
+            return result.ToActionResult();
 
         }
 
 
 
         [HttpPost("deleteUserReview")]
-        public async Task<ActionResult> DeleteUserReview(string reviewId)
+        public async Task<IActionResult> DeleteUserReview(string reviewId)
         {
 
-            return Ok(await _reviewsService.DeleteUserReviewAsync(reviewId));
+            var result = await _reviewsService.DeleteUserReviewAsync(reviewId);
+            return result.ToActionResult();
 
         }
 
 
 
         [HttpPost("updateProductReview")]
-        public async Task<ActionResult> UpdateProductReview(UpdateReviewDto reviewDto)
+        public async Task<IActionResult> UpdateProductReview(UpdateReviewDto reviewDto)
         {
 
-            return Ok(await _reviewsService.UpdateProductReviewAsync(reviewDto));
+            var result = await _reviewsService.UpdateProductReviewAsync(reviewDto);
+            return result.ToActionResult();
 
         }
 
 
 
         [HttpPost("updateUserReview")]
-        public async Task<ActionResult> UpdateUserReview(UpdateReviewDto reviewDto)
+        public async Task<IActionResult> UpdateUserReview(UpdateReviewDto reviewDto)
         {
 
-            return Ok(await _reviewsService.UpdateProductReviewAsync(reviewDto));
+            var result = await _reviewsService.UpdateProductReviewAsync(reviewDto);
+            return result.ToActionResult();
 
         }
 

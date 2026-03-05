@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using MiHairCareApp.Application.Interfaces;
 using MiHairCareApp.Application.Interfaces.Repository;
 using MiHairCareApp.Application.Interfaces.Services;
@@ -43,7 +44,7 @@ namespace MiHairCareApp.Persistence.Extensions
             });
 
             // Register UserManager and RoleManager for both AppUser and Stylist
-            services.AddScoped<UserManager<AppUser>>();             
+            services.AddScoped<UserManager<AppUser>>();           
             services.AddScoped<RoleManager<IdentityRole>>();
 
             // Register other services
@@ -51,10 +52,19 @@ namespace MiHairCareApp.Persistence.Extensions
             configuration.GetSection("EmailSettings").Bind(emailSettings);
             services.AddSingleton(emailSettings);
 
-            services.AddScoped<IPaymentService, PaymentService>();
+            // Configure Cloudinary settings using options pattern
+            services.Configure<CloudinarySettings>(configuration.GetSection("CloudinarySettings"));
+            services.AddSingleton(provider =>
+            {
+                var settings = provider.GetRequiredService<IOptions<CloudinarySettings>>().Value;
+                var account = new Account(settings.CloudName, settings.ApiKey, settings.ApiSecret);
+                return new Cloudinary(account);
+            });
 
+            // Register services and repositories
             services.AddTransient<IEmailServices, EmailServices>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
             services.AddScoped<IHairStyleServices, HairStyleServices>();
             services.AddScoped<IAuthenticationServices, AuthenticationServices>();
             services.AddScoped<IStylistAuthServices, StylistAuthServices>();
@@ -68,25 +78,8 @@ namespace MiHairCareApp.Persistence.Extensions
             services.AddScoped<ICartService, CartService>();
             services.AddScoped<IPaymentService, PaymentService>();
 
-
-            // Register Cloudinary services
-            var cloudinarySettings = new CloudinarySettings();
-            configuration.GetSection("CloudinarySettings").Bind(cloudinarySettings);
-            services.AddSingleton(cloudinarySettings);
-            services.AddSingleton(provider =>
-            {
-                var account = new Account(
-                    cloudinarySettings.CloudName,
-                    cloudinarySettings.ApiKey,
-                    cloudinarySettings.ApiSecret);
-                return new Cloudinary(account);
-            });
-
-             
-            services.AddScoped(typeof(ICloudinaryServices<>), typeof(CloudinaryServices<>));
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
- 
-            services.AddScoped(typeof(CloudinaryServices<>));
+            services.AddScoped(typeof(ICloudinaryServices<>), typeof(CloudinaryServices<>));
 
         } 
 

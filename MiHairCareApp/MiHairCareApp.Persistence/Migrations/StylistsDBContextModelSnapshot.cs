@@ -92,8 +92,8 @@ namespace MiHairCareApp.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Latitude")
-                        .HasColumnType("int");
+                    b.Property<double>("Latitude")
+                        .HasColumnType("float");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -101,8 +101,8 @@ namespace MiHairCareApp.Persistence.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
 
-                    b.Property<int>("Longitude")
-                        .HasColumnType("int");
+                    b.Property<double>("Longitude")
+                        .HasColumnType("float");
 
                     b.Property<int>("LoyaltyPoints")
                         .HasColumnType("int");

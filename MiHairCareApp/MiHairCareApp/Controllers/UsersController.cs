@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces.Services;
+using MiHairCareApp.Extensions;
 
 namespace MiHairCareApp.Controllers
 {
@@ -23,16 +24,25 @@ namespace MiHairCareApp.Controllers
         }
 
 
-        [HttpGet("stylist-users")]
-        public async Task<IActionResult> GetUsersWithCompany()
+        //[HttpGet("stylist-users")]
+        //public async Task<IActionResult> GetUsersWithCompany()
+        //{
+        //    var response = await _userService.GetStylistUsers();
+        //    if (response != null)
+        //    {
+        //        return Ok(response);
+        //    }
+        //    return BadRequest(response);
+        //}
+
+        [HttpGet("users")]
+        public async Task<IActionResult> RegularUsers()
         {
-            var response = await _userService.GetStylistUsers();
-            if (response != null)
-            {
-                return Ok(response);
-            }
-            return BadRequest(response);
+            var result = await _userService.GetRegUsers();
+            return result.ToActionResult();
         }
+
+
 
 
         [HttpPost("add-photo")]

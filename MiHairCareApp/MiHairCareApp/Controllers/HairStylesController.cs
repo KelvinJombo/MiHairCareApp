@@ -3,6 +3,7 @@ using MiHairCareApp.Application.DTO;
 using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Domain;
 using MiHairCareApp.Domain.Enums;
+using MiHairCareApp.Extensions;
 
 namespace MiHairCareApp.Controllers
 {
@@ -23,46 +24,26 @@ namespace MiHairCareApp.Controllers
         [HttpPost("addHairStyle")]
         public async Task<IActionResult> AddHairStyle([FromForm] CreateHairStyleDto dto)
         {
-            if (!ModelState.IsValid)
-            {
-                var errors = string.Join("; ", ModelState.Values
-                    .SelectMany(v => v.Errors)
-                    .Select(e => e.ErrorMessage));
-                return BadRequest(new { Message = "Model binding failed", Errors = errors });
-            }
-
-            if (!Enum.TryParse<HairStyleOrigin>(dto.Origin, true, out var originEnum))
-            {
-                return BadRequest($"Invalid origin value: {dto.Origin}");
-            }
-
-            dto.OriginEnum = originEnum;
-
             var result = await _hairStyleServices.AddHairStyleAsync(dto);
-
-            if (!result.Succeeded)
-                return StatusCode(result.StatusCode, result);
-
-            return Ok(result);
+            return result.ToActionResult();
+            
         }
-
-
-
-
 
 
         //[Authorize(Roles = "Admin")]
         [HttpGet("getById")]
         public async Task<IActionResult> GetHairStyleById(string hairStyleId)
         {
-            return Ok(await _hairStyleServices.GetHairStyleById(hairStyleId));
+            var result = await _hairStyleServices.GetHairStyleById(hairStyleId);
+            return result.ToActionResult();
         }
 
 
         [HttpGet("getByTitle")]
         public async Task<IActionResult> GetHairStyleByName(string hairStyleTitle)
         {
-            return Ok(await _hairStyleServices.GetHairStyleByTitle(hairStyleTitle));
+            var result = await _hairStyleServices.GetHairStyleByTitle(hairStyleTitle);
+            return result.ToActionResult();
         }
 
 
@@ -73,22 +54,26 @@ namespace MiHairCareApp.Controllers
         public async Task<IActionResult> GetHairStyles()
         {
             var response = await _hairStyleServices.GetAllHairStyles();
-            if (response != null)
-            {
-                return Ok(response);
-            }
-            return BadRequest(response);
+            return response.ToActionResult();
+            
         }
 
-        [HttpGet("stylesForPortfolio")]
-        public async Task<IActionResult> GetStylesForPortfolio()
+        //[HttpGet("stylesForPortfolio")]
+        //public async Task<IActionResult> GetStylesForPortfolio()
+        //{
+        //    var response = await _hairStyleServices.GetStylistPortFolioAsync();
+        //    if (response != null)
+        //    {
+        //        return Ok(response);
+        //    }
+        //    return BadRequest(response);
+        //} 
+
+        [HttpGet("{userId}/portfolio")]
+        public async Task<IActionResult> GetStylistPortfolio(string userId)
         {
-            var response = await _hairStyleServices.GetAllPortFolioStyles();
-            if (response != null)
-            {
-                return Ok(response);
-            }
-            return BadRequest(response);
+            var result = await _hairStyleServices.GetStylistPortfolioAsync(userId);
+            return result.ToActionResult();
         }
 
 
@@ -96,14 +81,17 @@ namespace MiHairCareApp.Controllers
         [HttpGet("all-African")]
         public async Task<IActionResult> GetAllAfricanHairStyles()
         {
-            return Ok(await _hairStyleServices.GetAllAfricanHairStyles());
+            var result = await _hairStyleServices.GetAllAfricanHairStyles();
+
+            return result.ToActionResult();
         }
 
         //[Authorize(Roles = "Admin, User")]
         [HttpGet("all-American")]
         public async Task<IActionResult> GetAllAmricanHairStyles()
         {
-            return Ok(await _hairStyleServices.GetAllAmericanHairStyles());
+            var result = await _hairStyleServices.GetAllAmericanHairStyles();
+            return result.ToActionResult();
         }
 
 
@@ -111,21 +99,24 @@ namespace MiHairCareApp.Controllers
         [HttpGet("all-European")]
         public async Task<IActionResult> GetAllEuropeanHairStyles()
         {
-            return Ok(await _hairStyleServices.GetAllEuropianHairStyles());
+            var result = await _hairStyleServices.GetAllEuropeanHairStyles();
+            return result.ToActionResult();
         }
 
         //[Authorize(Roles = "Admin, User")]
         [HttpGet("all-Asian")]
         public async Task<IActionResult> GetAllAsianHairStyles()
         {
-            return Ok(await _hairStyleServices.GetAllAsianHairStyles());
+            var result = await _hairStyleServices.GetAllAsianHairStyles();
+            return result.ToActionResult();
         }
 
         //[Authorize(Roles = "Admin")]
         [HttpPost("addHairStylePhoto")]
         public async Task<IActionResult> AddPhoto([FromForm] UpdateHairStylePhotoDto updatePhotoDto)
         {
-            return Ok(await _hairStyleServices.AddHairStylePhoto(updatePhotoDto));
+            var result = await _hairStyleServices.AddHairStylePhoto(updatePhotoDto);
+            return result.ToActionResult();
         }
 
 
@@ -134,22 +125,16 @@ namespace MiHairCareApp.Controllers
         public async Task<IActionResult> ViewPhoto(string photoId)
         {
             var photoResponse = await _hairStyleServices.GetHairStylePhotoAsync(photoId);
-
-            if (photoResponse.Succeeded)
-            {
-                return Ok(photoResponse);
-            }
-            else
-            {
-                return BadRequest(photoResponse);
-            }
+            return photoResponse.ToActionResult();
+           
         }
 
         //[Authorize(Roles = "Admin")]
         [HttpDelete("deleteHairStyle")]
         public async Task<IActionResult> DeleteHairStyle(string hairStyleId)
         {
-            return Ok(await _hairStyleServices.DeleteAHairStyle(hairStyleId));
+            var result = await _hairStyleServices.DeleteAHairStyle(hairStyleId);
+            return result.ToActionResult();
         }
 
 
@@ -159,7 +144,9 @@ namespace MiHairCareApp.Controllers
         [HttpDelete("deleteHairStylePhoto")]
         public async Task<IActionResult> DeletePhoto(string photoId)
         {
-            return Ok(await _hairStyleServices.DeleteHairStylePhotoAsync(photoId));
+            var result = await _hairStyleServices.DeleteHairStylePhotoAsync(photoId);
+            return result ? Ok(new ApiResponse<bool>(true, "Photo deleted successfully", 200, true, new List<string>()))
+                          : BadRequest(new ApiResponse<bool>(false, "Failed to delete photo", 400, false, new List<string>()));
         }
 
 

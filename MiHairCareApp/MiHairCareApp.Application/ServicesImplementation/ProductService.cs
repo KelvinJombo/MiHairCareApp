@@ -9,6 +9,7 @@ using MiHairCareApp.Application.Interfaces.Services;
 using MiHairCareApp.Domain;
 using MiHairCareApp.Domain.Entities;
 using MiHairCareApp.Domain.Enums;
+using MiHairCareApp.Domain.Exceptions;
 
 namespace MiHairCareApp.Application.ServicesImplementation
 {
@@ -16,7 +17,7 @@ namespace MiHairCareApp.Application.ServicesImplementation
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        private readonly ILogger _logger;
+        private readonly ILogger<ProductService> _logger;
         private readonly ICloudinaryServices<ProductService> _cloudinaryServices;
 
         public ProductService(IUnitOfWork unitOfWork, IMapper mapper, ILogger<ProductService> logger, ICloudinaryServices<ProductService> cloudinaryServices)
@@ -27,257 +28,113 @@ namespace MiHairCareApp.Application.ServicesImplementation
             _cloudinaryServices = cloudinaryServices;
         }
 
-
-
-      
         public async Task<ApiResponse<ViewProductDto>> AddProductAsync(CreateProductDto productDto)
         {
             if (productDto == null)
+                throw new ValidationException("Product DTO cannot be null");
+
+            var productModel = _mapper.Map<HaircareProduct>(productDto)
+                ?? throw new ServiceException("Mapping product DTO to product model failed");
+
+            if (productDto.Image != null)
             {
-                return ApiResponse<ViewProductDto>.Failed("Product DTO cannot be null", 400, new List<string> { "Invalid input" });
+                var img = await _cloudinaryServices.UploadImageAsync(productDto.Image);
+                if (img == null)
+                    throw new ServiceException("Image upload failed");
+
+                var photo = new Photo { Url = img.Url, PublicId = img.PublicId, IsMain = productDto.IsMainPhoto };
+                productModel.Photos = new List<Photo> { photo };
             }
 
+            await _unitOfWork.ProductRepository.AddAsync(productModel);
+            await _unitOfWork.SaveChangesAsync();
 
-            var productModel = _mapper.Map<HaircareProduct>(productDto);
+            var viewProduct = _mapper.Map<ViewProductDto>(productModel)
+                ?? throw new ServiceException("Mapping product model to view product DTO failed");
 
-            if (productModel == null)
-            {
-                return ApiResponse<ViewProductDto>.Failed("Mapping product DTO to product model failed", 500, new List<string> { "Mapping failure" });
-            }
-             
-
-            try
-            {
-                // Handle photo upload if an image is provided
-                if (productDto.Image != null)
-                {
-                    var img = await _cloudinaryServices.UploadImageAsync(productDto.Image);
-                    if (img == null)
-                    {
-                        return ApiResponse<ViewProductDto>.Failed("Image upload failed", StatusCodes.Status500InternalServerError, new List<string>());
-                    }
-
-                    var photo = new Photo
-                    {
-                        Url = img.Url,
-                        PublicId = img.PublicId,
-                        IsMain = productDto.IsMainPhoto,
-                    };
-
-                    productModel.Photos = new List<Photo> { photo };                    
-
-                }
-
-                await _unitOfWork.ProductRepository.AddAsync(productModel);
-                await _unitOfWork.SaveChangesAsync();
-            }            
-            catch (Exception ex)
-            {
-                 
-                _logger.LogError(ex, "An error occurred while adding the product");
-                return ApiResponse<ViewProductDto>.Failed("An error occurred while adding the product", 500, new List<string> { ex.Message });
-            }
-
-            var viewProduct = _mapper.Map<ViewProductDto>(productModel);
-
-            if (viewProduct == null)
-            {
-                return ApiResponse<ViewProductDto>.Failed("Mapping product model to view product DTO failed", 500, new List<string> { "Mapping failure" });
-            }
-
-            return ApiResponse<ViewProductDto>.Success(viewProduct, "Product added successfully", 201);
+            return ApiResponse<ViewProductDto>.Success(viewProduct, "Product added successfully", StatusCodes.Status201Created);
         }
-
-
 
         public async Task<ApiResponse<ViewProductDto>> GetProductById(string id)
         {
-            try
-            {
-                var product = await _unitOfWork.ProductRepository.Query().Include(p => p.Photos).FirstOrDefaultAsync(p => p.Id == id);
+            var product = await _unitOfWork.ProductRepository.Query().Include(p => p.Photos).FirstOrDefaultAsync(p => p.Id == id);
 
-                if (product == null)
-                {
-                    return ApiResponse<ViewProductDto>.Failed("Can't find a product with the specified ID", 404, new List<string> { "No Product Found" });
-                }
+            if (product == null)
+                throw new NotFoundException("Can't find a product with the specified ID");
 
-                var viewProduct = _mapper.Map<ViewProductDto>(product);
-
-                return ApiResponse<ViewProductDto>.Success(viewProduct, "Product retrieved successfully", 200);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "An error occurred while retrieving the product");
-                return ApiResponse<ViewProductDto>.Failed("An error occurred while retrieving the product", 500, new List<string> { ex.Message });
-            }
+            var viewProduct = _mapper.Map<ViewProductDto>(product);
+            return ApiResponse<ViewProductDto>.Success(viewProduct, "Product retrieved successfully", StatusCodes.Status200OK);
         }
-
 
         public async Task<ApiResponse<ViewProductDto>> GetProductByName(string productName)
         {
-            try
-            {
-                var product = await _unitOfWork.ProductRepository.Query().Include(p => p.Photos).FirstOrDefaultAsync(p => p.ProductName == productName);
+            var product = await _unitOfWork.ProductRepository.Query().Include(p => p.Photos).FirstOrDefaultAsync(p => p.ProductName == productName);
 
-                if (product == null)
-                {
-                    return ApiResponse<ViewProductDto>.Failed("Can't find a product with the specified ID", 404, new List<string> { "No Product Found" });
-                }
+            if (product == null)
+                throw new NotFoundException("Can't find a product with the specified name");
 
-                var viewProduct = _mapper.Map<ViewProductDto>(product);
-
-                return ApiResponse<ViewProductDto>.Success(viewProduct, "Product retrieved successfully", 200);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "An error occurred while retrieving the product");
-                return ApiResponse<ViewProductDto>.Failed("An error occurred while retrieving the product", 500, new List<string> { ex.Message });
-            }
+            var viewProduct = _mapper.Map<ViewProductDto>(product);
+            return ApiResponse<ViewProductDto>.Success(viewProduct, "Product retrieved successfully", StatusCodes.Status200OK);
         }
-
-
-
 
         public async Task<ApiResponse<IEnumerable<ViewProductDto>>> GetAllProducts()
         {
-            try
-            {
-                var products = await _unitOfWork.ProductRepository.Query().Include(p => p.Photos).ToListAsync();
+            var products = await _unitOfWork.ProductRepository.Query().Include(p => p.Photos).ToListAsync();
 
+            if (products == null || !products.Any())
+                return ApiResponse<IEnumerable<ViewProductDto>>.Failed("No products were found", StatusCodes.Status404NotFound, new List<string> { "Nothing found" });
 
-                if (products == null || !products.Any())
-                {
-                    return ApiResponse<IEnumerable<ViewProductDto>>.Failed("No products were found", 404, new List<string> { "Nothing found" });
-                }
-
-                var viewProducts = _mapper.Map<List<ViewProductDto>>(products);
-
-                return ApiResponse<IEnumerable<ViewProductDto>>.Success(viewProducts, "Products retrieved successfully", 200);
-            }
-            catch (Exception ex)
-            {
-                 
-                _logger.LogError(ex, "An error occurred while retrieving the products");
-                return ApiResponse<IEnumerable<ViewProductDto>>.Failed("An error occurred while retrieving the products", 500, new List<string> { ex.Message });
-            }
+            var viewProducts = _mapper.Map<List<ViewProductDto>>(products);
+            return ApiResponse<IEnumerable<ViewProductDto>>.Success(viewProducts, "Products retrieved successfully", StatusCodes.Status200OK);
         }
-
 
         public async Task<ApiResponse<IEnumerable<ViewProductDto>>> GetProductsByCategoryAsync(ProductCategory category)
         {
-            try
-            {
-                var products = await _unitOfWork.ProductRepository.Query().Include(p => p.Photos).Where(p => p.Category == category).ToListAsync();
+            var products = await _unitOfWork.ProductRepository.Query().Include(p => p.Photos).Where(p => p.Category == category).ToListAsync();
 
+            if (products == null || !products.Any())
+                return ApiResponse<IEnumerable<ViewProductDto>>.Failed($"No products found in category '{category}'", StatusCodes.Status404NotFound, new List<string> { "Nothing found" });
 
-                if (products == null || !products.Any())
-                {
-                    return ApiResponse<IEnumerable<ViewProductDto>>.Failed(
-                        $"No products found in category '{category}'",
-                        404,
-                        new List<string> { "Nothing found" }
-                    );
-                }
-
-                var viewProducts = _mapper.Map<List<ViewProductDto>>(products);
-
-                return ApiResponse<IEnumerable<ViewProductDto>>.Success(
-                    viewProducts,
-                    $"Products in category '{category}' retrieved successfully",
-                    200
-                );
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "An error occurred while retrieving products for category {Category}", category);
-
-                return ApiResponse<IEnumerable<ViewProductDto>>.Failed(
-                    "An error occurred while retrieving products",
-                    500,
-                    new List<string> { ex.Message }
-                );
-            }
+            var viewProducts = _mapper.Map<List<ViewProductDto>>(products);
+            return ApiResponse<IEnumerable<ViewProductDto>>.Success(viewProducts, $"Products in category '{category}' retrieved successfully", StatusCodes.Status200OK);
         }
-
-
-
 
         public async Task<ApiResponse<ViewProductDto>> UpdateProduct(UpdateProductsDto productDto)
         {
-            try
+            if (productDto == null)
+                throw new ValidationException("Product DTO cannot be null");
+
+            var product = await _unitOfWork.ProductRepository.FindSingleAsync(p => p.Id == productDto.Id);
+            if (product == null)
+                throw new NotFoundException("Product not found");
+
+            if (productDto.Image != null)
             {
-                var product = await _unitOfWork.ProductRepository.FindSingleAsync(p => p.Id == productDto.Id);
+                var img = await _cloudinaryServices.UploadImageAsync(productDto.Image);
+                if (img == null)
+                    throw new ServiceException("Image upload failed");
 
-                if (product == null)
-                {
-                    return ApiResponse<ViewProductDto>.Failed("Product not found", 404, new List<string> { "No Product Found" });
-                }
-
-                // Handle photo upload if an image is provided
-                if (productDto.Image != null)
-                {
-                    var img = await _cloudinaryServices.UploadImageAsync(productDto.Image);
-                    if (img == null)
-                    {
-                        return ApiResponse<ViewProductDto>.Failed("Image upload failed", StatusCodes.Status500InternalServerError, new List<string>());
-                    }
-
-                    var photo = new Photo
-                    {
-                        Url = img.Url,
-                        PublicId = img.PublicId,
-                        IsMain = productDto.IsMainPhoto,
-                    };
-
-                    product.Photos = new List<Photo> { photo };
-
-
-                }                     
-
-                _unitOfWork.ProductRepository.Update(product);  
-                await _unitOfWork.SaveChangesAsync();  
-
-                var updatedProduct = _mapper.Map<ViewProductDto>(product);
-                return ApiResponse<ViewProductDto>.Success(updatedProduct, "Product updated successfully", 200);
+                var photo = new Photo { Url = img.Url, PublicId = img.PublicId, IsMain = productDto.IsMainPhoto };
+                product.Photos = new List<Photo> { photo };
             }
-            catch (Exception ex)
-            {
-                 
-                _logger.LogError(ex, "An error occurred while updating the product");
-                return ApiResponse<ViewProductDto>.Failed("An error occurred while updating the product", 500, new List<string> { ex.Message });
-            }
+
+            _unitOfWork.ProductRepository.Update(product);
+            await _unitOfWork.SaveChangesAsync();
+
+            var updatedProduct = _mapper.Map<ViewProductDto>(product);
+            return ApiResponse<ViewProductDto>.Success(updatedProduct, "Product updated successfully", StatusCodes.Status200OK);
         }
-
-
-
 
         public async Task<ApiResponse<bool>> DeleteProduct(string id)
         {
-            try
-            {
-                var product = await _unitOfWork.ProductRepository.FindAsync(p => p.Id == id);
+            var product = await _unitOfWork.ProductRepository.FindAsync(p => p.Id == id);
+            if (product == null)
+                throw new NotFoundException("Product not found");
 
-                if (product == null)
-                {
-                    return ApiResponse<bool>.Failed("Product not found", 404, new List<string> { "No Product Found" });
-                }
+                  _unitOfWork.ProductRepository.DeleteAllAsync(product);
+            await _unitOfWork.SaveChangesAsync();
 
-                _unitOfWork.ProductRepository.DeleteAllAsync(product);
-                await _unitOfWork.SaveChangesAsync();  
-
-                return ApiResponse<bool>.Success(true, "Product deleted successfully", 200);
-            }
-            catch (Exception ex)
-            {
-                // Log exception here (e.g., using a logging framework)
-                _logger.LogError(ex, "An error occurred while deleting the product");
-                return ApiResponse<bool>.Failed("An error occurred while deleting the product", 500, new List<string> { ex.Message });
-            }
+            return ApiResponse<bool>.Success(true, "Product deleted successfully", StatusCodes.Status200OK);
         }
-
-
-
-       
-
     }
 }
